@@ -1,0 +1,14 @@
+namespace = yagisans_better_stellaris
+
+# Flag mod as active
+event = {
+    id = yagisans_better_stellaris.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        NOT = { has_global_flag = yagisans_better_stellaris_installed }
+	}
+	immediate = {
+		set_global_flag = yagisans_better_stellaris_installed
+	}
+}

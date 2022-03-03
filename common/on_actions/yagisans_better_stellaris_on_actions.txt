@@ -1,0 +1,13 @@
+# Fired when the game starts
+on_game_start = {
+	events = {
+		yagisans_better_stellaris.1 # Flag mod as installed
+	}
+}
+
+# Fired when loading a single-player game
+on_single_player_save_game_load = {
+	events = {
+		yagisans_better_stellaris.1 # Flag mod as installed
+	}
+}
