@@ -29,45 +29,45 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 ### Defence Armies
 
-| Defense Army      | Vanilla | Modded |
-| ----------------- | ------: | -----: |
-| Army Damage       |     1.5 |
-| Morale Damage     |         |
-| Collateral Damage |     0.0 |
-| War Exhaustion    |     0.0 |
-| Health            |    1.25 |
-| Morale            |    1.25 |
-| Pop Species       | Organic |
+| Defense Army      | Vanilla |  Modded |
+| ----------------- | ------: | ------: |
+| Army Damage       |     1.5 |     1.5 |
+| Morale Damage     |         |     0.5 |
+| Collateral Damage |     0.0 |     0.0 |
+| War Exhaustion    |     0.0 |     0.5 |
+| Health            |    1.25 |     1.0 |
+| Morale            |    1.25 |     1.5 |
+| Pop Species       | Organic | Organic |
 
-| Undead Defense Army | Vanilla | Modded |
-| ------------------- | ------: | -----: |
-| Army Damage         |     1.5 |
-| Morale Damage       |    1.75 |
-| Collateral Damage   |     0.0 |
-| War Exhaustion      |     0.0 |
-| Health              |    1.75 |
-| Morale              |  Immune |
-| Pop Species         | Organic |
+| Undead Defense Army | Vanilla |  Modded |
+| ------------------- | ------: | ------: |
+| Army Damage         |     1.5 |     1.5 |
+| Morale Damage       |    1.75 |     2.0 |
+| Collateral Damage   |     0.0 |     0.0 |
+| War Exhaustion      |     0.0 |     0.1 |
+| Health              |    1.75 |     1.5 |
+| Morale              |  Immune |  Immune |
+| Pop Species         | Organic | Organic |
 
 | Robotic Defense Army | Vanilla | Modded |
 | -------------------- | ------: | -----: |
-| Army Damage          |     1.0 |
-| Morale Damage        |     1.0 |
-| Collateral Damage    |     0.0 |
-| War Exhaustion       |     0.0 |
-| Health               |    1.25 |
-| Morale               |  Immune |
-| Pop Species          |   Robot |
+| Army Damage          |     1.0 |    2.0 |
+| Morale Damage        |     1.0 |    1.0 |
+| Collateral Damage    |     0.0 |    0.0 |
+| War Exhaustion       |     0.0 |   0.25 |
+| Health               |    1.25 |   1.25 |
+| Morale               |  Immune | Immune |
+| Pop Species          |   Robot |  Robot |
 
-| Drone Grid        |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |         1.10 |
-| Morale Damage     |          1.0 |
-| Collateral Damage |          0.0 |
-| War Exhaustion    |          0.0 |
-| Health            |         1.10 |
-| Morale            |       Immune |
-| Pop Species       | Machine Unit |
+| Drone Grid        |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |         1.10 |          2.0 |
+| Morale Damage     |          1.0 |          1.0 |
+| Collateral Damage |          0.0 |          0.0 |
+| War Exhaustion    |          0.0 |         0.25 |
+| Health            |         1.10 |         1.25 |
+| Morale            |       Immune |       Immune |
+| Pop Species       | Machine Unit | Machine Unit |
 
 ### Assault Armies
 
