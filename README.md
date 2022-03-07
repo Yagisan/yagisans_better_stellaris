@@ -4,6 +4,17 @@
 
 Ground combat in Stellaris is rather lacking by default. In theory it should be a vital part of conquest, but instead feels inconsequential. These changes seek to make ground combat a more strategic, and useful part of the game.
 
+### Generals
+
+In vanilla Stellaris, Generals are functionally useless. Their traits are lackluster at best, and they die far too quickly, with a 5% chance per army death. To make them more useful, their experience rate gain has been buffed, and their chance of dying has been nerfed. However, their traits still remain fairly lackluster.
+
+| Leader - General Related Defines                      | Vanilla | Modded |
+| ----------------------------------------------------- | ------: | -----: |
+| LEADER_GENERAL_GROUND_COMBAT_BASE_EXPERIENCE          |     100 |    200 |
+| LEADER_GENERAL_GROUND_COMBAT_EXPERIENCE_SCALE         |     2.5 |    4.0 |
+| LEADER_GENERAL_GROUND_COMBAT_ARMIES_KILLED_CONVERSION |    0.25 |   0.50 |
+| GENERAL_DEATH_CHANCE                                  |    0.05 |   0.01 |
+
 ### Defence Armies
 
 | Defense Army      | Vanilla | Modded |
