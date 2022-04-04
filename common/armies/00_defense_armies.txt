@@ -10,12 +10,12 @@
 defense_army = {
 	defensive = yes
 	is_pop_spawned = yes
-	health = 1.0
+	health = 1.00
 	damage = 1.50
-	morale = 1.50
-	morale_damage = 0.5
+	morale = 1.25
+	morale_damage = 0.50
 	collateral_damage = 0.0
-	war_exhaustion = 0.5
+	war_exhaustion = 0.50
 	icon = GFX_army_type_defensive
 
 	potential = {
@@ -44,8 +44,8 @@ undead_defense_army = {
 	damage = 1.50
 	collateral_damage = 0.0
 	has_morale = no
-	morale_damage = 2.0
-	war_exhaustion = 0.1
+	morale_damage = 2.00
+	war_exhaustion = 0.10
 	icon = GFX_army_type_undead
 	use_armynames_from = undead_army
 
@@ -106,7 +106,7 @@ machine_defense = {
 	defensive = yes
 	is_pop_spawned = yes
 	health = 1.25
-	damage = 2.0
+	damage = 2.00
 	has_morale = no
 	morale_damage = 1.00
 	collateral_damage = 0.0
