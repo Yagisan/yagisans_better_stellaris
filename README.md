@@ -1,5 +1,18 @@
 # Yagisan's Better Stellaris
 
+## Anomalies
+
+In the base game, you eventually run out of anomalies, and your science ships become much less useful. By respawning anomalies scientests can continue to level up, and science ships can continue to be useful, thoughut the game.
+
+### Respawning
+
+Each year the game will now attempt to respawn anomalies, provided their spawn conditions are met. These can respawn anywhere in the galaxy, in both player and AI controlled space.
+
+The specfic spawn rates are:
+- Every year, try to respawn 1 anomaly.
+- Every second year, try to respawn 4 anomalies.
+- Every fifth year, try to respawn 10 anomalies.
+
 ## Warfare
 
 ### War Exhaustion
