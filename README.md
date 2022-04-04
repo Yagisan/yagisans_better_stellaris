@@ -31,29 +31,29 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Defense Army      | Vanilla |  Modded |
 | ----------------- | ------: | ------: |
-| Army Damage       |     1.5 |     1.5 |
-| Morale Damage     |         |     0.5 |
-| Collateral Damage |     0.0 |     0.0 |
-| War Exhaustion    |     0.0 |     0.5 |
-| Health            |    1.25 |     1.0 |
-| Morale            |    1.25 |     1.5 |
+| Army Damage       |     1.5 |    1.50 |
+| Morale Damage     |         |    0.50 |
+| Collateral Damage |     0.0 |    0.00 |
+| War Exhaustion    |     0.0 |    0.50 |
+| Health            |    1.25 |    1.00 |
+| Morale            |    1.25 |    1.25 |
 | Pop Species       | Organic | Organic |
 
 | Undead Defense Army | Vanilla |  Modded |
 | ------------------- | ------: | ------: |
-| Army Damage         |     1.5 |     1.5 |
-| Morale Damage       |    1.75 |     2.0 |
-| Collateral Damage   |     0.0 |     0.0 |
-| War Exhaustion      |     0.0 |     0.1 |
-| Health              |    1.75 |     1.5 |
+| Army Damage         |     1.5 |    1.50 |
+| Morale Damage       |    1.75 |    2.00 |
+| Collateral Damage   |     0.0 |    0.00 |
+| War Exhaustion      |     0.0 |    0.10 |
+| Health              |    1.75 |    1.50 |
 | Morale              |  Immune |  Immune |
 | Pop Species         | Organic | Organic |
 
 | Robotic Defense Army | Vanilla | Modded |
 | -------------------- | ------: | -----: |
-| Army Damage          |     1.0 |    2.0 |
-| Morale Damage        |     1.0 |    1.0 |
-| Collateral Damage    |     0.0 |    0.0 |
+| Army Damage          |     1.0 |   2.00 |
+| Morale Damage        |     1.0 |   1.00 |
+| Collateral Damage    |     0.0 |   0.00 |
 | War Exhaustion       |     0.0 |   0.25 |
 | Health               |    1.25 |   1.25 |
 | Morale               |  Immune | Immune |
@@ -61,9 +61,9 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Drone Grid        |      Vanilla |       Modded |
 | ----------------- | -----------: | -----------: |
-| Army Damage       |         1.10 |          2.0 |
-| Morale Damage     |          1.0 |          1.0 |
-| Collateral Damage |          0.0 |          0.0 |
+| Army Damage       |         1.10 |         2.00 |
+| Morale Damage     |          1.0 |         1.00 |
+| Collateral Damage |          0.0 |         0.00 |
 | War Exhaustion    |          0.0 |         0.25 |
 | Health            |         1.10 |         1.25 |
 | Morale            |       Immune |       Immune |
@@ -71,145 +71,145 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 ### Assault Armies
 
-| Assault Army      |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          1.0 |
-| Morale Damage     |          1.0 |
-| Collateral Damage |          1.0 |
-| War Exhaustion    |          1.0 |
-| Health            |          1.0 |
-| Morale            |          1.0 |
-| Cost              | 100 Minerals |
-| Time              |           90 |
-| Upkeep            |     1 Energy |
-| Pop Species       |      Organic |
+| Assault Army      |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          1.0 |         2.00 |
+| Morale Damage     |          1.0 |         1.00 |
+| Collateral Damage |          1.0 |         1.00 |
+| War Exhaustion    |          1.0 |         1.00 |
+| Health            |          1.0 |         1.00 |
+| Morale            |          1.0 |         1.25 |
+| Cost              | 100 Minerals | 100 Minerals |
+| Time              |           90 |           90 |
+| Upkeep            |     1 Energy |     1 Energy |
+| Pop Species       |      Organic |      Organic |
 
-| Slave Army        |     Vanilla | Modded |
-| ----------------- | ----------: | -----: |
-| Army Damage       |         1.0 |
-| Morale Damage     |        0.75 |
-| Collateral Damage |         1.5 |
-| War Exhaustion    |         0.5 |
-| Health            |           1 |
-| Morale            |        0.75 |
-| Cost              | 50 Minerals |
-| Time              |          60 |
-| Upkeep            |  0.5 Energy |
-| Pop Species       |     Organic |
+| Slave Army        |     Vanilla |      Modded |
+| ----------------- | ----------: | ----------: |
+| Army Damage       |         1.0 |        1.00 |
+| Morale Damage     |        0.75 |        0.50 |
+| Collateral Damage |         1.5 |        1.50 |
+| War Exhaustion    |         0.5 |        0.10 |
+| Health            |           1 |        0.75 |
+| Morale            |        0.75 |        0.50 |
+| Cost              | 50 Minerals | 50 Minerals |
+| Time              |          60 |          60 |
+| Upkeep            |  0.5 Energy |  0.5 Energy |
+| Pop Species       |     Organic |     Organic |
 
-| Clone Army        |     Vanilla | Modded |
-| ----------------- | ----------: | -----: |
-| Army Damage       |         1.0 |
-| Morale Damage     |             |
-| Collateral Damage |        1.25 |
-| War Exhaustion    |         0.5 |
-| Health            |         1.0 |
-| Morale            |         1.0 |
-| Cost              | 75 Minerals |
-| Time              |          30 |
-| Upkeep            | 0.75 Energy |
-| Pop Species       |     Organic |
+| Clone Army        |     Vanilla |      Modded |
+| ----------------- | ----------: | ----------: |
+| Army Damage       |         1.0 |        1.80 |
+| Morale Damage     |             |        1.00 |
+| Collateral Damage |        1.25 |        1.25 |
+| War Exhaustion    |         0.5 |        0.25 |
+| Health            |         1.0 |        1.00 |
+| Morale            |         1.0 |        1.00 |
+| Cost              | 75 Minerals | 75 Minerals |
+| Time              |          30 |          30 |
+| Upkeep            | 0.75 Energy | 0.75 Energy |
+| Pop Species       |     Organic |     Organic |
 
-| Robotic Army      |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          1.0 |
-| Morale Damage     |          1.0 |
-| Collateral Damage |          1.5 |
-| War Exhaustion    |          0.5 |
-| Health            |          2.0 |
-| Morale            |       Immune |
-| Cost              | 150 Minerals |
-| Time              |           90 |
-| Upkeep            |   1.5 Energy |
-| Pop Species       |      Robotic |
+| Robotic Army      |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          1.0 |         2.20 |
+| Morale Damage     |          1.0 |         1.00 |
+| Collateral Damage |          1.5 |         0.75 |
+| War Exhaustion    |          0.5 |         0.25 |
+| Health            |          2.0 |         1.50 |
+| Morale            |       Immune |       Immune |
+| Cost              | 150 Minerals | 150 Minerals |
+| Time              |           90 |           90 |
+| Upkeep            |   1.5 Energy |   1.5 Energy |
+| Pop Species       |      Robotic |      Robotic |
 
-| Psionic Army      |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          2.0 |
-| Morale Damage     |          1.5 |
-| Collateral Damage |          0.5 |
-| War Exhaustion    |          3.0 |
-| Health            |         1.75 |
-| Morale            |          2.5 |
-| Cost              | 250 Minerals |
-| Time              |          120 |
-| Upkeep            |   2.5 Energy |
-| Pop Species       |      Organic |
+| Psionic Army      |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          2.0 |         3.00 |
+| Morale Damage     |          1.5 |         2.00 |
+| Collateral Damage |          0.5 |         0.50 |
+| War Exhaustion    |          3.0 |         1.25 |
+| Health            |         1.75 |         1.75 |
+| Morale            |          2.5 |         2.00 |
+| Cost              | 250 Minerals | 250 Minerals |
+| Time              |          120 |          120 |
+| Upkeep            |   2.5 Energy |   2.5 Energy |
+| Pop Species       |      Organic |      Organic |
 
-| Xenomorph Army    |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          2.0 |
-| Morale Damage     |          2.0 |
-| Collateral Damage |          5.0 |
-| War Exhaustion    |         0.25 |
-| Health            |          2.0 |
-| Morale            |       Immune |
-| Cost              | 200 Minerals |
-| Time              |          100 |
-| Upkeep            |     2 Energy |
-| Pop Species       |      Organic |
+| Xenomorph Army    |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          2.0 |         4.00 |
+| Morale Damage     |          2.0 |         1.50 |
+| Collateral Damage |          5.0 |         3.00 |
+| War Exhaustion    |         0.25 |         0.20 |
+| Health            |          2.0 |         2.00 |
+| Morale            |       Immune |       Immune |
+| Cost              | 200 Minerals | 200 Minerals |
+| Time              |          100 |          100 |
+| Upkeep            |     2 Energy |     2 Energy |
+| Pop Species       |      Organic |      Organic |
 
-| Gene Warrior Army |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          2.0 |
-| Morale Damage     |          1.0 |
-| Collateral Damage |         0.75 |
-| War Exhaustion    |          3.0 |
-| Health            |          2.5 |
-| Morale            |          2.5 |
-| Cost              | 300 Minerals |
-| Time              |          150 |
-| Upkeep            |     3 Energy |
-| Pop Species       |      Organic |
+| Gene Warrior Army |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          2.0 |         4.00 |
+| Morale Damage     |          1.0 |         1.00 |
+| Collateral Damage |         0.75 |         0.75 |
+| War Exhaustion    |          3.0 |         1.50 |
+| Health            |          2.5 |         2.50 |
+| Morale            |          2.5 |         3.00 |
+| Cost              | 300 Minerals | 300 Minerals |
+| Time              |          150 |          150 |
+| Upkeep            |     3 Energy |     3 Energy |
+| Pop Species       |      Organic |      Organic |
 
-| Hunter-Killer Army |      Vanilla | Modded |
-| ------------------ | -----------: | -----: |
-| Army Damage        |          1.0 |
-| Morale Damage      |          1.0 |
-| Collateral Damage  |          2.0 |
-| War Exhaustion     |          0.5 |
-| Health             |          1.0 |
-| Morale             |       Immune |
-| Cost               | 100 Minerals |
-| Time               |           90 |
-| Upkeep             |     1 energy |
-| Pop Species        |        Robot |
+| Hunter-Killer Army |      Vanilla |       Modded |
+| ------------------ | -----------: | -----------: |
+| Army Damage        |          1.0 |         2.20 |
+| Morale Damage      |          1.0 |         1.00 |
+| Collateral Damage  |          2.0 |         0.75 |
+| War Exhaustion     |          0.5 |         0.25 |
+| Health             |          1.0 |         1.00 |
+| Morale             |       Immune |       Immune |
+| Cost               | 100 Minerals | 100 Minerals |
+| Time               |           90 |           90 |
+| Upkeep             |     1 energy |     1 energy |
+| Pop Species        |        Robot |        Robot |
 
-| Battle Frame      |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          1.5 |
-| Morale Damage     |          1.5 |
-| Collateral Damage |          2.0 |
-| War Exhaustion    |          1.0 |
-| Health            |          2.5 |
-| Morale            |       Immune |
-| Cost              | 200 Minerals |
-| Time              |          120 |
-| Upkeep            |     2 Energy |
-| Pop Species       |        Robot |
+| Battle Frame      |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          1.5 |         3.00 |
+| Morale Damage     |          1.5 |         1.25 |
+| Collateral Damage |          2.0 |         1.25 |
+| War Exhaustion    |          1.0 |         0.75 |
+| Health            |          2.5 |         2.00 |
+| Morale            |       Immune |       Immune |
+| Cost              | 200 Minerals | 200 Minerals |
+| Time              |          120 |          120 |
+| Upkeep            |     2 Energy |     2 Energy |
+| Pop Species       |        Robot |        Robot |
 
-| Mega-Warform      |      Vanilla | Modded |
-| ----------------- | -----------: | -----: |
-| Army Damage       |          4.0 |
-| Morale Damage     |          1.5 |
-| Collateral Damage |          4.0 |
-| War Exhaustion    |          4.0 |
-| Health            |          6.0 |
-| Morale            |       Immune |
-| Cost              | 800 Minerals |
-| Time              |          500 |
-| Upkeep            |     8 Energy |
-| Pop Species       |        Robot |
+| Mega-Warform      |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          4.0 |         5.00 |
+| Morale Damage     |          1.5 |         1.50 |
+| Collateral Damage |          4.0 |         2.00 |
+| War Exhaustion    |          4.0 |         1.50 |
+| Health            |          6.0 |         6.00 |
+| Morale            |       Immune |       Immune |
+| Cost              | 800 Minerals | 800 Minerals |
+| Time              |          500 |          500 |
+| Upkeep            |     8 Energy |     8 Energy |
+| Pop Species       |        Robot |        Robot |
 
-| Undead Army       |     Vanilla | Modded |
-| ----------------- | ----------: | -----: |
-| Army Damage       |         1.0 |
-| Morale Damage     |        1.75 |
-| Collateral Damage |        1.25 |
-| War Exhaustion    |         0.5 |
-| Health            |         1.0 |
-| Morale            |      Immune |
-| Cost              |  100 Energy |
-| Time              |          60 |
-| Upkeep            | 0.75 Energy |
-| Pop Species       |     Organic |
+| Undead Army       |     Vanilla |      Modded |
+| ----------------- | ----------: | ----------: |
+| Army Damage       |         1.0 |        2.00 |
+| Morale Damage     |        1.75 |        2.00 |
+| Collateral Damage |        1.25 |        1.25 |
+| War Exhaustion    |         0.5 |        0.10 |
+| Health            |         1.0 |        1.00 |
+| Morale            |      Immune |      Immune |
+| Cost              |  100 Energy |  100 Energy |
+| Time              |          60 |          30 |
+| Upkeep            | 0.75 Energy | 0.75 Energy |
+| Pop Species       |     Organic |     Organic |
