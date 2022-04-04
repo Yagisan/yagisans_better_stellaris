@@ -53,7 +53,6 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_ILLICIT_DARK_CAT } }	
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_CRATER_CAT } }
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_CLUSTER_CAT } }
-		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_MINING_CAT } }
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_GEAR_CAT } }
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = DIMENSIONAL_POCKET_CAT } }
 		# Gas Giant only events.
@@ -74,7 +73,8 @@ ybs_anomaly_spawner = {
 		# Molten Planet only events.
 		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_molten } } add_anomaly = { category = MOLTEN_BASE_CAT } }
 		# Tropical Planet only events.
-		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = TROP_PETS_CAT } }	
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = TROP_PETS_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = TROP_WOODS_CAT } }
 		# Ocean Planet only events.
 		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = SEA_CAT } }
 		# Arctic Planet only events.
@@ -99,12 +99,46 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tropical is_planet_class = pc_continental is_planet_class = pc_tundra } } add_anomaly = { category = CONT_SIGNS_CAT } }
 		# Continental / Arid events.
 		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_arid is_planet_class = pc_continental } } add_anomaly = { category = GEN_ABANDONED_SHIP_CAT } }
+		# Continental / Gaia events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_gaia is_planet_class = pc_continental } } add_anomaly = { category = GAIA_RECORD_CAT } }
 		# Barren / Cold Barren / Toxic / Frozen / Tomb events.
 		5 = { modifier = { factor = 0 is_planet_class = pc_toxic is_planet_class = pc_barren_cold is_planet_class = pc_barren is_planet_class = pc_frozen is_planet_class = pc_nuked } add_anomaly = { category = UHB_BUOY_CAT } }
 		# Barren / Toxic / Frozen / Molten with Moon events.
 		5 = { modifier = { factor = 0 is_star = yes is_planet_class = pc_gas_giant has_moon = no num_moons > 1 } add_anomaly = { category = PROJ_MOON_CAT } }
 		# Black Hole events.
 		5 = { modifier = { factor = 0 NOT = { is_star_class = sc_black_hole } } add_anomaly = { category = HOLE_RADIATION_CAT } }
+		## 02_anomaly_categories.txt
+		# Asteroid only events.
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_MINING_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = GEN_LOST_CARGO_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = GEN_MYSTICAL_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = TEMPORAL_PRISM_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = VENDING_MACHINE_CAT } }
+		# Toxic Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = TOX_PLANET_CAT } }
+		# Ocean Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = WAT_PLANET_CAT } }
+		# Desert Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_desert } } add_anomaly = { category = DES_BURIED_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_desert } } add_anomaly = { category = DES_PLANET_CAT } }
+		# Tropical Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = TROP_BIOLOGY_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = TROP_CONDITIONS_CAT } }
+		# Arid Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_arid } } add_anomaly = { category = ARID_SENSOR_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_arid } } add_anomaly = { category = ARID_PLANET_CAT } }
+		# Continental Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_continental } } add_anomaly = { category = CON_BIOLOGY_CAT } }
+		# Tomb Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_nuked } } add_anomaly = { category = NUKE_PLANET_CAT } }
+		# Cold Barren / Tundra events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_barren_cold } } add_anomaly = { category = GEN_DERELICT_SHIP_CAT } }
+		# Desert / Arid events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_desert is_planet_class = pc_arid } } add_anomaly = { category = SUN_RAYS_CAT } }
+		# Tundra / Toxic / Tomb events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_nuked is_planet_class = pc_toxic } } add_anomaly = { category = GEN_OLD_WAR_CAT } }
+		# Cold Barren / Frozen events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_frozen is_planet_class = pc_barren_cold } } add_anomaly = { category = COLD_RESEARCH_CAT } }
 
 	}
 }
