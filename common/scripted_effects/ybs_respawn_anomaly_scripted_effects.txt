@@ -29,10 +29,7 @@ ybs_anomaly_spawner = {
 		# Frozen Planet only events.
 		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_frozen } } add_anomaly = { category = life_frozen_category } }
 		# Barren Planet only events.
-		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren } } add_anomaly = { category = life_barren_category } }
 		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren } } add_anomaly = { category = fungal_emitters_category } }
-		# Cold Barren Planet only events.
-		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren_cold } } add_anomaly = { category = life_barren_category } }
 		# Unihabitable Planet only events.
 		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = impact_uninhabitable_category } }
 		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = energy_uninhabitable_category } }
@@ -46,8 +43,68 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = mountain_uninhabitable_category } }
 		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = object_uninhabitable_category } }
 		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = station_uninhabitable_category } }
-		# Asteroid / Barren / Cold Barren Living Metal Rare event.
+		# Barren / Cold Barren events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold } } add_anomaly = { category = life_barren_category } }
+		# Asteroid / Barren / Cold Barren events.
 		5 = { modifier = { factor = 0 NOR = { is_asteroid = yes is_planet_class = pc_barren is_planet_class = pc_barren_cold } } add_anomaly = { category = living_metal_category } }
+		## 01_anomaly_categories.txt
+		# Asteroid only events.
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_WAVELENGTHS_1_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_ILLICIT_DARK_CAT } }	
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_CRATER_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_CLUSTER_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_MINING_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = AST_GEAR_CAT } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = DIMENSIONAL_POCKET_CAT } }
+		# Gas Giant only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = GAS_ZRO_ICE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = GAS_CLOUDY_CAT } }
+		# Toxic Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = TOX_PURPLE_RAIN_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = TOX_MAT_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = TOX_STRUCTURES_CAT } }
+		# Frozen Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_frozen } } add_anomaly = { category = FROZ_BASE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_frozen } } add_anomaly = { category = FROZ_ILLUMINATED_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_frozen } } add_anomaly = { category = FROZ_BOX_CAT } }
+		# Barren Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren } } add_anomaly = { category = BARR_BASE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren } } add_anomaly = { category = BAR_COLONY_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren planet_size < 26 planet_size > 9 } } add_anomaly = { category = FRBR_GRIMACING_CAT } }
+		# Molten Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_molten } } add_anomaly = { category = MOLTEN_BASE_CAT } }
+		# Tropical Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = TROP_PETS_CAT } }	
+		# Ocean Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = SEA_CAT } }
+		# Arctic Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_arctic } } add_anomaly = { category = FROZ_BASE2_CAT } }
+		# Desert Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_desert } } add_anomaly = { category = GEN_DESERT_CAT } }
+		# Gaia Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gaia } } add_anomaly = { category = GAIA_MOVE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gaia } } add_anomaly = { category = GAEA_CHECKERED_CAT } }
+		# Habitable Planet only events.
+		5 = { modifier = { factor = 0 habitable_planet = no } add_anomaly = { category = HBL_MUSIC_1_CAT } }
+		5 = { modifier = { factor = 0 habitable_planet = no } add_anomaly = { category = LEVELED_CAT } }
+		5 = { modifier = { factor = 0 is_star = yes is_asteroid = yes is_ringworld = yes is_planet_class = pc_gas_giant } add_anomaly = { category = GEN_PLAYGROUND_CAT } }
+		# Unhabitable Planet only events.
+		5 = { modifier = { factor = 0 is_star = yes is_asteroid = yes is_ringworld = yes habitable_planet = yes is_planet_class = pc_gas_giant } add_anomaly = { category = UHB_ANCIENT_RUINS_1_CAT } }
+		5 = { modifier = { factor = 0 is_star = yes is_asteroid = yes is_ringworld = yes habitable_planet = yes is_planet_class = pc_gas_giant } add_anomaly = { category = ATM_ANOMALY_CAT } }
+		# Tropical / Continental / Ocean events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tropical is_planet_class = pc_continental is_planet_class = pc_ocean } } add_anomaly = { category = HAB_CORN_CAT } }
+		# Tropical / Continental / Arid events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tropical is_planet_class = pc_continental is_planet_class = pc_arid } } add_anomaly = { category = HAB_MAT_CAT } }
+		# Tropical / Continental / Tundra events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tropical is_planet_class = pc_continental is_planet_class = pc_tundra } } add_anomaly = { category = CONT_SIGNS_CAT } }
+		# Continental / Arid events.
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_arid is_planet_class = pc_continental } } add_anomaly = { category = GEN_ABANDONED_SHIP_CAT } }
+		# Barren / Cold Barren / Toxic / Frozen / Tomb events.
+		5 = { modifier = { factor = 0 is_planet_class = pc_toxic is_planet_class = pc_barren_cold is_planet_class = pc_barren is_planet_class = pc_frozen is_planet_class = pc_nuked } add_anomaly = { category = UHB_BUOY_CAT } }
+		# Barren / Toxic / Frozen / Molten with Moon events.
+		5 = { modifier = { factor = 0 is_star = yes is_planet_class = pc_gas_giant has_moon = no num_moons > 1 } add_anomaly = { category = PROJ_MOON_CAT } }
+		# Black Hole events.
+		5 = { modifier = { factor = 0 NOT = { is_star_class = sc_black_hole } } add_anomaly = { category = HOLE_RADIATION_CAT } }
 
 	}
 }
