@@ -12,16 +12,23 @@ on_single_player_save_game_load = {
 	}
 }
 
-# Each year, try to respawn an anomaly.
+# Each year, try to respawn 1 anomaly.
 on_yearly_pulse = { 
 	events = { 
 		yagisans_better_stellaris.10
 	} 
 }
 
-# Every second year, try to respawn multiple anomalies.
+# Every second year, try to respawn 4 anomalies.
 on_bi_yearly_pulse = { 
 	events = { 
-		yagisans_better_stellaris.10
+		yagisans_better_stellaris.11
+	} 
+}
+
+# Every fifth year, try to respawn 10 anomalies.
+on_five_year_pulse = { 
+	events ={
+		yagisans_better_stellaris.12
 	} 
 }
