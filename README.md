@@ -236,12 +236,197 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale                  |  Immune | Immune |
 | Pop Species             |   Robot |  Robot |
 
-| Machine  Occupation Army |      Vanilla |       Modded |
-| ------------------------ | -----------: | -----------: |
-| Army Damage              |         1.10 |         2.20 |
-| Morale Damage            |          1.0 |         1.00 |
-| Collateral Damage        |          0.0 |         0.00 |
-| War Exhaustion           |          0.0 |         0.25 |
-| Health                   |         1.10 |         1.75 |
-| Morale                   |       Immune |       Immune |
-| Pop Species              | Machine Unit | Machine Unit |
+| Machine Occupation Army |      Vanilla |       Modded |
+| ----------------------- | -----------: | -----------: |
+| Army Damage             |         1.10 |         2.20 |
+| Morale Damage           |          1.0 |         1.00 |
+| Collateral Damage       |          0.0 |         0.00 |
+| War Exhaustion          |          0.0 |         0.25 |
+| Health                  |         1.10 |         1.75 |
+| Morale                  |       Immune |       Immune |
+| Pop Species             | Machine Unit | Machine Unit |
+
+### Event Armies
+
+| Rebel Army    | Vanilla | Modded |
+| ------------- | ------: | -----: |
+| Army Damage   |     0.5 |   1.00 |
+| Morale Damage |         |   0.50 |
+| Health        |     0.5 |   1.00 |
+| Morale        |     1.0 |   1.20 |
+
+| Rebel Slave Army | Vanilla | Modded |
+| ---------------- | ------: | -----: |
+| Army Damage      |     0.8 |   1.00 |
+| Morale Damage    |         |   0.50 |
+| Health           |     0.8 |   0.90 |
+| Morale           |    1.80 |   1.00 |
+
+| Primitive Army | Vanilla | Modded |
+| -------------- | ------: | -----: |
+| Army Damage    |     0.1 |   0.20 |
+| Morale Damage  |         |   0.20 |
+| Health         |     0.5 |   0.50 |
+| Morale         |    0.80 |   0.80 |
+
+| Industrial Army | Vanilla | Modded |
+| --------------- | ------: | -----: |
+| Army Damage     |     0.4 |   0.90 |
+| Morale Damage   |         |   0.40 |
+| Health          |     0.5 |   0.70 |
+| Morale          |    0.80 |   0.80 |
+
+| Post-Atomic Army | Vanilla | Modded |
+| ---------------- | ------: | -----: |
+| Army Damage      |     0.6 |   1.00 |
+| Morale Damage    |         |   0.50 |
+| Health           |       1 |   1.00 |
+| Morale           |       1 |   1.00 |
+
+| Subterranean Industrial Army | Vanilla | Modded |
+| ---------------------------- | ------: | -----: |
+| Army Damage                  |     0.4 |   0.90 |
+| Morale Damage                |         |   0.40 |
+| Health                       |     0.5 |   0.70 |
+| Morale                       |    0.80 |   0.80 |
+
+| Subterranean Post-Atomic Army | Vanilla | Modded |
+| ----------------------------- | ------: | -----: |
+| Army Damage                   |     0.6 |   1.00 |
+| Morale Damage                 |         |   0.50 |
+| Health                        |       1 |   1.00 |
+| Morale                        |       1 |   1.00 |
+
+| Mutant Horror Army | Vanilla | Modded |
+| ------------------ | ------: | -----: |
+| Army Damage        |     1.5 |   3.00 |
+| Morale Damage      |     1.5 |   1.50 |
+| Health             |       2 |   2.00 |
+| Morale             |  Immune | Immune |
+
+| Swarm Army    | Vanilla | Modded |
+| ------------- | ------: | -----: |
+| Army Damage   |     1.5 |   4.00 |
+| Morale Damage |     1.5 |   2.00 |
+| Health        |       2 |   1.50 |
+| Morale        |  Immune | Immune |
+
+| Rampaging Tree Army | Vanilla | Modded |
+| ------------------- | ------: | -----: |
+| Army Damage         |     1.0 |   2.00 |
+| Morale Damage       |     1.0 |   0.50 |
+| Health              |     1.0 |   1.25 |
+| Morale              |  Immune | Immune |
+
+| Enraged Colonist Army | Vanilla | Modded |
+| --------------------- | ------: | -----: |
+| Army Damage           |     0.5 |   1.00 |
+| Morale Damage         |         |   0.75 |
+| Health                |     0.5 |   1.00 |
+| Morale                |  Immune | Immune |
+
+| Pre-Space Ketling Army | Vanilla | Modded |
+| ---------------------- | ------: | -----: |
+| Army Damage            |     0.6 |   0.90 |
+| Morale Damage          |         |   0.40 |
+| Health                 |     1.0 |   0.70 |
+| Morale                 |     1.0 |   0.80 |
+
+| Titanic Life Army |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          3.0 |         4.00 |
+| Morale Damage     |          2.0 |         1.00 |
+| Collateral Damage |          3.0 |         3.00 |
+| War Exhaustion    |          2.0 |         1.00 |
+| Health            |          5.0 |         5.00 |
+| Morale            |          3.0 |         3.00 |
+| Cost              | 300 Minerals | 300 Minerals |
+| Time              |           90 |           90 |
+| Upkeep            |     1 Energy |     1 Energy |
+
+| Azizian Army      |                Vanilla |                 Modded |
+| ----------------- | ---------------------: | ---------------------: |
+| Army Damage       |                    3.0 |                   4.00 |
+| Morale Damage     |                    2.0 |                   2.00 |
+| Collateral Damage |                        |                   2.00 |
+| War Exhaustion    |                        |                   1.00 |
+| Health            |                    5.0 |                   5.00 |
+| Morale            |                    2.0 |                   2.00 |
+| Cost              | 250 Minerals 50 energy | 250 Minerals 50 energy |
+| Time              |                     90 |                     90 |
+| Upkeep            |               1 Energy |               1 Energy |
+
+| Titanic Guardian Army | Vanilla | Modded |
+| --------------------- | ------: | -----: |
+| Army Damage           |     2.0 |   4.00 |
+| Morale Damage         |     3.0 |   1.00 |
+| Health                |     8.0 |   5.00 |
+| Morale                |     3.0 |   3.00 |
+
+| Shroud Army       | Vanilla |   Modded |
+| ----------------- | ------: | -------: |
+| Army Damage       |     5.0 |     6.00 |
+| Morale Damage     |     2.0 |     2.00 |
+| Collateral Damage |         |     1.00 |
+| War Exhaustion    |     5.0 |     2.00 |
+| Health            |     7.0 |    10.00 |
+| Morale            |  Immune |   Immune |
+| Upkeep            |         | 1 Energy |
+
+| Gray Nanite Army  | Vanilla |   Modded |
+| ----------------- | ------: | -------: |
+| Army Damage       |    10.0 |     8.00 |
+| Morale Damage     |     6.0 |     3.00 |
+| Collateral Damage |     5.0 |     5.00 |
+| War Exhaustion    |     4.0 |     4.00 |
+| Health            |    18.0 |    14.00 |
+| Morale            |  Immune |   Immune |
+| Upkeep            |         | 1 Energy |
+
+| Care Defensive Protocols | Vanilla | Modded |
+| ------------------------ | ------: | -----: |
+| Army Damage              |     4.0 |   5.00 |
+| Morale Damage            |     1.5 |   1.50 |
+| Collateral Damage        |     4.0 |   2.00 |
+| War Exhaustion           |     4.0 |   1.50 |
+| Health                   |     6.0 |   6.00 |
+| Morale                   |  Immune | Immune |
+
+| Sentinels     | Vanilla | Modded |
+| ------------- | ------: | -----: |
+| Army Damage   |     4.0 |   5.00 |
+| Morale Damage |     5.0 |   5.00 |
+| Health        |     7.0 |   6.00 |
+| Morale        |  Immune | Immune |
+
+| Cybrex Warform    |    Vanilla |     Modded |
+| ----------------- | ---------: | ---------: |
+| Army Damage       |        5.0 |       6.00 |
+| Morale Damage     |        2.0 |       2.00 |
+| Collateral Damage |        5.0 |       2.00 |
+| War Exhaustion    |        4.0 |       1.00 |
+| Health            |        7.0 |       9.00 |
+| Morale            |     Immune |     Immune |
+| Cost              | 250 Alloys | 250 Alloys |
+| Time              |        500 |        500 |
+| Upkeep            |   8 Energy |   8 Energy |
+| Pop Species       |      Robot |      Robot |
+
+| Imperial Legions  |      Vanilla |       Modded |
+| ----------------- | -----------: | -----------: |
+| Army Damage       |          2.5 |         2.50 |
+| Morale Damage     |          1.0 |         1.00 |
+| Collateral Damage |         0.75 |         0.75 |
+| War Exhaustion    |          3.0 |         2.00 |
+| Health            |          3.0 |         3.00 |
+| Morale            |          3.0 |         3.00 |
+| Cost              | 300 Minerals | 300 Minerals |
+| Time              |          150 |          150 |
+| Upkeep            |     3 Energy |     3 Energy |
+
+| Ice Armies    | Vanilla | Modded |
+| ------------- | ------: | -----: |
+| Army Damage   |     1.5 |   2.00 |
+| Morale Damage |     1.5 |   1.50 |
+| Health        |     2.0 |   2.00 |
+| Morale        |  Immune | Immune |
