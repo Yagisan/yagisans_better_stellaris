@@ -1,5 +1,6 @@
 ybs_anomaly_spawner = {
 	random_list = {
+		## 00_anomaly_categories.txt
 		# Asteroid only events.
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = crashed_ship_asteroid_category } }
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = origin_asteroid_category } }
@@ -8,6 +9,45 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = hatch_asteroid_category } }
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = collision_asteroid_category } }
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = station_asteroid_category } }
-		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = life_asteroid_category } }		
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = life_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = lost_soul_cat } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = on_crashed_ship_cat } }
+		# Gas Giant only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = object_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = moon_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = life_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = storms_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = aerostat_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = cargo_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = debris_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = signal_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = ship_gasgiant_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gas_giant } is_moon = yes }  add_anomaly = { category = terminal_gasgiant_category } }
+		# Toxic Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = life_toxic_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = inhabited_toxic_category } }
+		# Frozen Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_frozen } } add_anomaly = { category = life_frozen_category } }
+		# Barren Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren } } add_anomaly = { category = life_barren_category } }
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren } } add_anomaly = { category = fungal_emitters_category } }
+		# Cold Barren Planet only events.
+		5 = { modifier = { factor = 0 NOT = { is_planet_class = pc_barren_cold } } add_anomaly = { category = life_barren_category } }
+		# Unihabitable Planet only events.
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = impact_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = energy_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = signal_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = asteroid_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = solar_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = battle_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = shipyard_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = writing_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = beacon_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = mountain_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = object_uninhabitable_category } }
+		5 = { modifier = { factor = 0 uninhabitable_regular_planet = no } add_anomaly = { category = station_uninhabitable_category } }
+		# Asteroid / Barren / Cold Barren Living Metal Rare event.
+		5 = { modifier = { factor = 0 NOR = { is_asteroid = yes is_planet_class = pc_barren is_planet_class = pc_barren_cold } } add_anomaly = { category = living_metal_category } }
+
 	}
 }
