@@ -1,0 +1,13 @@
+ybs_anomaly_spawner = {
+	random_list = {
+		# Asteroid only events.
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = crashed_ship_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = origin_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = debris_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = emissions_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = hatch_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = collision_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = station_asteroid_category } }
+		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = life_asteroid_category } }		
+	}
+}

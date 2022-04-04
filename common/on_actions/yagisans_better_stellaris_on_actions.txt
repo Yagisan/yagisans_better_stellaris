@@ -11,3 +11,17 @@ on_single_player_save_game_load = {
 		yagisans_better_stellaris.1 # Flag mod as installed
 	}
 }
+
+# Each year, try to respawn an anomaly.
+on_yearly_pulse = { 
+	events = { 
+		yagisans_better_stellaris.10
+	} 
+}
+
+# Every second year, try to respawn multiple anomalies.
+on_bi_yearly_pulse = { 
+	events = { 
+		yagisans_better_stellaris.10
+	} 
+}

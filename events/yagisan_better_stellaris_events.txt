@@ -12,3 +12,11 @@ event = {
 		set_global_flag = yagisans_better_stellaris_installed
 	}
 }
+
+# Attempt to spawn a single anomaly
+event = {
+    id = yagisans_better_stellaris.10
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { while = { count = 1 random_galaxy_planet = { limit = { ybs_anomaly_possible = yes } ybs_anomaly_spawner = yes } } }
+}
