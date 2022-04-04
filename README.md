@@ -213,3 +213,35 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Time              |          60 |          30 |
 | Upkeep            | 0.75 Energy | 0.75 Energy |
 | Pop Species       |     Organic |     Organic |
+
+### Occupation Armies
+
+| Occupation Army   | Vanilla |  Modded |
+| ----------------- | ------: | ------: |
+| Army Damage       |     1.5 |    1.50 |
+| Morale Damage     |         |    1.00 |
+| Collateral Damage |     0.0 |    0.00 |
+| War Exhaustion    |     0.0 |    0.50 |
+| Health            |    1.25 |    1.50 |
+| Morale            |    1.25 |    1.50 |
+| Pop Species       | Organic | Organic |
+
+| Robotic Occupation Army | Vanilla | Modded |
+| ----------------------- | ------: | -----: |
+| Army Damage             |     1.0 |   2.20 |
+| Morale Damage           |     1.0 |   1.00 |
+| Collateral Damage       |     0.0 |   0.00 |
+| War Exhaustion          |     0.0 |   0.25 |
+| Health                  |    1.25 |   1.75 |
+| Morale                  |  Immune | Immune |
+| Pop Species             |   Robot |  Robot |
+
+| Machine  Occupation Army |      Vanilla |       Modded |
+| ------------------------ | -----------: | -----------: |
+| Army Damage              |         1.10 |         2.20 |
+| Morale Damage            |          1.0 |         1.00 |
+| Collateral Damage        |          0.0 |         0.00 |
+| War Exhaustion           |          0.0 |         0.25 |
+| Health                   |         1.10 |         1.75 |
+| Morale                   |       Immune |       Immune |
+| Pop Species              | Machine Unit | Machine Unit |
