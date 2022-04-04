@@ -50,12 +50,12 @@ assault_army = {
 # Slave Armies
 slave_army = {
 	damage = 1.00
-	health = 0.75
+	health = 1.00
 	morale = 0.50
 	morale_damage = 0.50
 	collateral_damage = 1.50
 	war_exhaustion = 0.10
-	time = 60
+	time = 45
 	icon = GFX_army_type_slave
 
 	resources = {
@@ -98,7 +98,7 @@ slave_army = {
 
 # Clone Armies
 clone_army = {
-	damage = 1.80
+	damage = 1.75
 	health = 1.00
 	morale = 1.00
 	morale_damage = 1.00
@@ -300,7 +300,7 @@ gene_warrior_army = {
 # Hunter-Killer Armies
 machine_assault_1 = {
 	damage = 2.20
-	health = 1.00
+	health = 1.50
 	has_morale = no
 	morale_damage = 1.00
 	collateral_damage = 0.75
@@ -336,7 +336,7 @@ machine_assault_1 = {
 # Battle Frames
 machine_assault_2 = {
 	damage = 3.00
-	health = 2.00
+	health = 2.20
 	has_morale = no
 	morale_damage = 1.25
 	collateral_damage = 1.25
@@ -400,7 +400,7 @@ machine_assault_3 = {
 
 # Undead Armies
 undead_army = {
-	damage = 2.00
+	damage = 1.75
 	health = 1.00
 	has_morale = no
 	collateral_damage = 1.25

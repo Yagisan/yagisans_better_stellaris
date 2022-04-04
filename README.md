@@ -32,11 +32,11 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Defense Army      | Vanilla |  Modded |
 | ----------------- | ------: | ------: |
 | Army Damage       |     1.5 |    1.50 |
-| Morale Damage     |         |    0.50 |
+| Morale Damage     |         |    1.00 |
 | Collateral Damage |     0.0 |    0.00 |
 | War Exhaustion    |     0.0 |    0.50 |
-| Health            |    1.25 |    1.00 |
-| Morale            |    1.25 |    1.25 |
+| Health            |    1.25 |    1.50 |
+| Morale            |    1.25 |    1.50 |
 | Pop Species       | Organic | Organic |
 
 | Undead Defense Army | Vanilla |  Modded |
@@ -51,21 +51,21 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Robotic Defense Army | Vanilla | Modded |
 | -------------------- | ------: | -----: |
-| Army Damage          |     1.0 |   2.00 |
+| Army Damage          |     1.0 |   2.20 |
 | Morale Damage        |     1.0 |   1.00 |
 | Collateral Damage    |     0.0 |   0.00 |
 | War Exhaustion       |     0.0 |   0.25 |
-| Health               |    1.25 |   1.25 |
+| Health               |    1.25 |   1.75 |
 | Morale               |  Immune | Immune |
 | Pop Species          |   Robot |  Robot |
 
 | Drone Grid        |      Vanilla |       Modded |
 | ----------------- | -----------: | -----------: |
-| Army Damage       |         1.10 |         2.00 |
+| Army Damage       |         1.10 |         2.20 |
 | Morale Damage     |          1.0 |         1.00 |
 | Collateral Damage |          0.0 |         0.00 |
 | War Exhaustion    |          0.0 |         0.25 |
-| Health            |         1.10 |         1.25 |
+| Health            |         1.10 |         1.75 |
 | Morale            |       Immune |       Immune |
 | Pop Species       | Machine Unit | Machine Unit |
 
@@ -90,16 +90,16 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale Damage     |        0.75 |        0.50 |
 | Collateral Damage |         1.5 |        1.50 |
 | War Exhaustion    |         0.5 |        0.10 |
-| Health            |           1 |        0.75 |
+| Health            |           1 |        1.00 |
 | Morale            |        0.75 |        0.50 |
 | Cost              | 50 Minerals | 50 Minerals |
-| Time              |          60 |          60 |
+| Time              |          60 |          45 |
 | Upkeep            |  0.5 Energy |  0.5 Energy |
 | Pop Species       |     Organic |     Organic |
 
 | Clone Army        |     Vanilla |      Modded |
 | ----------------- | ----------: | ----------: |
-| Army Damage       |         1.0 |        1.80 |
+| Army Damage       |         1.0 |        1.75 |
 | Morale Damage     |             |        1.00 |
 | Collateral Damage |        1.25 |        1.25 |
 | War Exhaustion    |         0.5 |        0.25 |
@@ -168,7 +168,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale Damage      |          1.0 |         1.00 |
 | Collateral Damage  |          2.0 |         0.75 |
 | War Exhaustion     |          0.5 |         0.25 |
-| Health             |          1.0 |         1.00 |
+| Health             |          1.0 |         1.50 |
 | Morale             |       Immune |       Immune |
 | Cost               | 100 Minerals | 100 Minerals |
 | Time               |           90 |           90 |
@@ -181,7 +181,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale Damage     |          1.5 |         1.25 |
 | Collateral Damage |          2.0 |         1.25 |
 | War Exhaustion    |          1.0 |         0.75 |
-| Health            |          2.5 |         2.00 |
+| Health            |          2.5 |         2.20 |
 | Morale            |       Immune |       Immune |
 | Cost              | 200 Minerals | 200 Minerals |
 | Time              |          120 |          120 |
@@ -203,7 +203,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Undead Army       |     Vanilla |      Modded |
 | ----------------- | ----------: | ----------: |
-| Army Damage       |         1.0 |        2.00 |
+| Army Damage       |         1.0 |        1.75 |
 | Morale Damage     |        1.75 |        2.00 |
 | Collateral Damage |        1.25 |        1.25 |
 | War Exhaustion    |         0.5 |        0.10 |
