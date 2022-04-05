@@ -1,5 +1,10 @@
 # Yagisan's Better Stellaris
 
+![GitHub all releases](https://img.shields.io/github/downloads/Yagisan/yagisans_better_stellaris/total?logo=GitHub&style=for-the-badge)![GitHub issues](https://img.shields.io/github/issues/Yagisan/yagisans_better_stellaris?logo=GitHub&style=for-the-badge)![Discord](https://img.shields.io/discord/958710541017317397?label=Yagisan%27s%20Discord&logo=discord&style=for-the-badge)
+
+| [![patreon](assets/images/become_a_patron_button.png)](https://patreon.com/yagisan) | [![ko-fi](assets/images/support_on_kofi_button.png)](https://ko-fi.com/yagisan) | [![Discord Banner 2](https://discordapp.com/api/guilds/958710541017317397/widget.png?style=banner2)](https://discord.gg/rB5RFgHhUD) |
+| - | - | - |
+
 ## Anomalies
 
 In the base game, you eventually run out of anomalies, and your science ships become much less useful. By respawning anomalies scientests can continue to level up, and science ships can continue to be useful, thoughut the game.
