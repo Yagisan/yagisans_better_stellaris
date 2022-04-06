@@ -139,6 +139,78 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_nuked is_planet_class = pc_toxic } } add_anomaly = { category = GEN_OLD_WAR_CAT } }
 		# Cold Barren / Frozen events.
 		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_frozen is_planet_class = pc_barren_cold } } add_anomaly = { category = COLD_RESEARCH_CAT } }
-
+		## Distant Stars Story Pack anomalies. Should be gated behind host_has_dlc = "Distant Stars Story Pack"
+		## 95_anomaly_categories_distant_stars.txt
+		# Asteroid only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = DISTAR_GEODE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = DISTAR_PUZZLE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = ast_debris_field_1_cat_2 } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = stolen_ship_cat } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = disco_trojan_asteroid_cat } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = disco_stranded_scientist_cat } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = disco_alien_machine_cat } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_asteroid = no } add_anomaly = { category = disco_speed_demon_cat } }
+		# Gas Giant only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = DISTAR_LOST_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_gas_giant } } add_anomaly = { category = debris_gasgiant_category_temp } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_gas_giant } years_passed < 5 } add_anomaly = { category = DISTAR_MEDGAS_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_gas_giant is_inside_nebula = yes } } add_anomaly = { category = DISTAR_RUM_CAT } }
+		# Frozen Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_ICE_CAT } }
+		# Molten Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_molten } } add_anomaly = { category = DISTAR_MOLTEN_CAT } }
+		# Toxic Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = DISTAR_METAL_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = DISTAR_WARFORM_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_toxic } } add_anomaly = { category = disco_impossible_organism_cat } }
+		# Barren Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_barren } } add_anomaly = { category = DISTAR_THIRSTY_CAT } }
+		# Ocean Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = DISTAR_OCEAN_CAT } }
+		# Gaia Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_gaia } } add_anomaly = { category = gaia_planet_cat }	}
+		# Barren / Cold Barren events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_NANO_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_NANOCITY_CAT } }
+		# Barren / Desert / Gaia events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_desert is_planet_class = pc_barren is_planet_class = pc_gaia } } add_anomaly = { category = DISTAR_NANOSAND_CAT } }
+		# Desert / Arid / Savvanah events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_desert is_planet_class = pc_arid is_planet_class = pc_savannah } } add_anomaly = { category = disco_molluscoid_miners_cat } }	
+		# Asteroid / Molten / Barren / Cold Barren / Toxic / Frozen events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_asteroid = yes is_planet_class = pc_barren_cold is_planet_class = pc_molten is_planet_class = pc_barren is_planet_class = pc_toxic is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_ELECTRO_CAT } }
+		# Molten / Barren / Cold Barren / Toxic / Frozen events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_molten is_planet_class = pc_barren is_planet_class = pc_toxic is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_MERCURY_CAT } }
+		# Tropical / Continental / Savannah / Alpine / Ocean / Gaia events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_tropical is_planet_class = pc_continental is_planet_class = pc_savannah is_planet_class = pc_alpine is_planet_class = pc_ocean is_planet_class = pc_gaia } } add_anomaly = { category = DISTAR_SOY_CAT } }
+		# Tropical / Continental / Savannah / Ocean / Gaia events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_tropical is_planet_class = pc_continental is_planet_class = pc_savannah is_planet_class = pc_ocean is_planet_class = pc_gaia } } add_anomaly = { category = peculiar_patterns_cat } }
+		# Barren / Cold Barren / Toxic / Tomb events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_barren is_planet_class = pc_toxic is_planet_class = pc_barren_cold is_planet_class = pc_nuked } } add_anomaly = { category = tomb_world_cat } }
+		# Habitable Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no } add_anomaly = { category = DISTAR_SOOTHE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no } add_anomaly = { category = DISTAR_SOOTHE_GC_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no } add_anomaly = { category = DISTAR_ZONE_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no } add_anomaly = { category = corrupt_data_cat } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no } add_anomaly = { category = alien_life_cat } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no planet_size < 15 } add_anomaly = { category = DISTAR_EXO_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no NOT = { has_planet_modifier = pm_dangerous_wildlife } } add_anomaly = { category = DISTAR_BRAINSLUG_CAT } }
+		# Habitable Planet excluding Desert or Arctic events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } habitable_planet = no OR = { is_planet_class = pc_desert is_planet_class = pc_arctic } } add_anomaly = { category = DISTAR_FLYTRAP_CAT } }		
+		# Moon only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_moon = no habitable_planet = yes } add_anomaly = { category = moon_cat } }
+		# L-Cluster related events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = yes years_passed < 5 } add_anomaly = { category = transmitter_cat } }	
+		# Star only Events
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no } add_anomaly = { category = DISTAR_SIGNAL_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no } add_anomaly = { category = irregular_energy_cat } }
+		# Black Hole only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOT = { is_star_class = sc_black_hole } } add_anomaly = { category = DISTAR_RAINBOW_CAT } }
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOT = { is_star_class = sc_black_hole } } add_anomaly = { category = DISTAR_HOLO_CAT } }
+		# Pulsar / Neutron Star only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOR = { is_star_class = sc_neutron_star is_star_class = sc_pulsar } } add_anomaly = { category = DISTAR_TIME_CAT } }
+		# Black Hole / Pulsar / Neutron Star only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOR = { is_star_class = sc_black_hole is_star_class = sc_neutron_star is_star_class = sc_pulsar } } add_anomaly = { category = disco_breathing_rift_cat } }
+		# Yellow-White Dwarf Star only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOT = { is_star_class = sc_f } } add_anomaly = { category = DISTAR_DIAMOND_CAT } }
 	}
 }
