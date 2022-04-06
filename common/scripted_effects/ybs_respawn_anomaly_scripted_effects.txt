@@ -139,6 +139,8 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_nuked is_planet_class = pc_toxic } } add_anomaly = { category = GEN_OLD_WAR_CAT } }
 		# Cold Barren / Frozen events.
 		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_tundra is_planet_class = pc_frozen is_planet_class = pc_barren_cold } } add_anomaly = { category = COLD_RESEARCH_CAT } }
+		# Not Orange Dwarves or Red Dwarves events. (Is the event code bugged, shouldn't it want a star class?)
+		5 = { modifier = { factor = 0 NOR = { is_planet_class = pc_k_star is_planet_class = pc_m_star } } add_anomaly = { category = SUN_TEAPOT_CAT } }
 		## Distant Stars Story Pack anomalies. Should be gated behind host_has_dlc = "Distant Stars Story Pack"
 		## 95_anomaly_categories_distant_stars.txt
 		# Asteroid only events.
