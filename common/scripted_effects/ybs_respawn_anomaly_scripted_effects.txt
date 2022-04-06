@@ -171,7 +171,7 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = DISTAR_OCEAN_CAT } }
 		# Gaia Planet only events.
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOT = { is_planet_class = pc_gaia } } add_anomaly = { category = gaia_planet_cat }	}
-		# Barren / Cold Barren events.
+		# Cold Barren / Frozen events.
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_NANO_CAT } }
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_frozen } } add_anomaly = { category = DISTAR_NANOCITY_CAT } }
 		# Barren / Desert / Gaia events.
@@ -214,5 +214,11 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOR = { is_star_class = sc_black_hole is_star_class = sc_neutron_star is_star_class = sc_pulsar } } add_anomaly = { category = disco_breathing_rift_cat } }
 		# Yellow-White Dwarf Star only events.
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Distant Stars Story Pack" } is_star = no NOT = { is_star_class = sc_f } } add_anomaly = { category = DISTAR_DIAMOND_CAT } }
+		## Federations anomalies. Should be gated behind host_has_dlc = "Federations"
+		## 92_anomaly_categories_federations.txt
+		# Barren / Cold Barren events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Federations" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_barren } } add_anomaly = { category = strange_signal_category } }
+		# Ocean Planet only events.
+		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Federations" } NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = SEA_CRYSTAL_CAT } }
 	}
 }
