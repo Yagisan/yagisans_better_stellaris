@@ -220,5 +220,17 @@ ybs_anomaly_spawner = {
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Federations" } NOR = { is_planet_class = pc_barren_cold is_planet_class = pc_barren } } add_anomaly = { category = strange_signal_category } }
 		# Ocean Planet only events.
 		5 = { modifier = { factor = 0 NOT = { host_has_dlc = "Federations" } NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = SEA_CRYSTAL_CAT } }
+		## Uplift anomalies. These should be rather rare. Weighted at 1/5 of a normal event.
+		## 97_anomaly_categories_Uplifts.txt
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_ocean } } add_anomaly = { category = UPLIFT_OCEAN_CAT } }		
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_arctic } } add_anomaly = { category = UPLIFT_ARCTIC_CAT } }			
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_desert } } add_anomaly = { category = UPLIFT_SNAKEOID_CAT } }	
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_desert } } add_anomaly = { category = UPLIFT_DESERT_CAT } }		
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tropical } } add_anomaly = { category = UPLIFT_TROPICAL_CAT } }		
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_arid } } add_anomaly = { category = UPLIFT_ARID_CAT } }		
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_continental } } add_anomaly = { category = UPLIFT_CONTINENTAL_CAT } }
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tundra } } add_anomaly = { category = UPLIFT_TUNDRA_CAT } }
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_nuked } } add_anomaly = { category = UPLIFT_ROACHOID_CAT } }
+		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gaia } } add_anomaly = { category = UPLIFT_GENERIC_CAT } }
 	}
 }
