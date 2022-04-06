@@ -1,5 +1,8 @@
 ybs_anomaly_spawner = {
 	random_list = {
+		15 = { }
+		85 = {
+	random_list = {
 		## 00_anomaly_categories.txt
 		# Asteroid only events.
 		5 = { modifier = { factor = 0 is_asteroid = no } add_anomaly = { category = crashed_ship_asteroid_category } }
@@ -232,5 +235,7 @@ ybs_anomaly_spawner = {
 		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_tundra } } add_anomaly = { category = UPLIFT_TUNDRA_CAT } }
 		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_nuked } } add_anomaly = { category = UPLIFT_ROACHOID_CAT } }
 		1 = { modifier = { factor = 0 NOT = { is_planet_class = pc_gaia } } add_anomaly = { category = UPLIFT_GENERIC_CAT } }
+	}
+	}
 	}
 }
