@@ -1,34 +1,34 @@
 # Fired when the game starts
 on_game_start = {
 	events = {
-		yagisans_better_stellaris.1 # Flag mod as installed
+		yagisans_better_stellaris.1		# Flag mod as installed
 	}
 }
 
 # Fired when loading a single-player game
 on_single_player_save_game_load = {
 	events = {
-		yagisans_better_stellaris.1 # Flag mod as installed
+		yagisans_better_stellaris.1		# Flag mod as installed
 	}
 }
 
 # Each year, try to respawn 1 anomaly.
-on_yearly_pulse = { 
-	events = { 
+on_yearly_pulse = {
+	events = {
 		yagisans_better_stellaris.10
-	} 
+	}
 }
 
 # Every second year, try to respawn 4 anomalies.
-on_bi_yearly_pulse = { 
-	events = { 
+on_bi_yearly_pulse = {
+	events = {
 		yagisans_better_stellaris.11
-	} 
+	}
 }
 
 # Every fifth year, try to respawn 10 anomalies.
-on_five_year_pulse = { 
-	events ={
+on_five_year_pulse = {
+	events = {
 		yagisans_better_stellaris.12
-	} 
+	}
 }

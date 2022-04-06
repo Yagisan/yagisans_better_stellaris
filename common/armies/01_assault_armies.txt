@@ -1,32 +1,33 @@
 #Defensive armies can't transport of the planet
 #maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
-
 # Assault Armies
 assault_army = {
-	damage = 2.00
-	health = 1.00
+	damage = 2
+	health = 1
 	morale = 1.25
-	morale_damage = 1.00
-	collateral_damage = 1.00
-	war_exhaustion = 1.00
+	morale_damage = 1
+	collateral_damage = 1
+	war_exhaustion = 1
 	time = 90
 	icon = GFX_army_type_assault
-	prerequisites = { "tech_assault_armies" }
+	prerequisites = {
+		"tech_assault_armies"
+	}
 	resources = {
 		category = armies
 		cost = {
 			minerals = 100
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	show_tech_unlock_if = {
 		OR = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 			has_valid_civic = civic_machine_assimilator
 		}
 	}
@@ -40,7 +41,9 @@ assault_army = {
 		}
 		owner = {
 			OR = {
-				NOT = { has_authority = auth_machine_intelligence }
+				NOT = {
+					has_authority = auth_machine_intelligence
+				}
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -49,31 +52,31 @@ assault_army = {
 
 # Slave Armies
 slave_army = {
-	damage = 1.00
-	health = 1.00
-	morale = 0.50
-	morale_damage = 0.50
-	collateral_damage = 1.50
-	war_exhaustion = 0.10
+	damage = 1
+	health = 1
+	morale = 0.5
+	morale_damage = 0.5
+	collateral_damage = 1.5
+	war_exhaustion = 0.1
 	time = 45
 	icon = GFX_army_type_slave
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 50
 		}
-
 		upkeep = {
 			energy = 0.5
 		}
 	}
-
-	prerequisites = { "tech_neural_implants" }
-
+	prerequisites = {
+		"tech_neural_implants"
+	}
 	allow = {
 		has_building = building_slave_processing
-		any_owned_pop = { is_pop_category = slave }
+		any_owned_pop = {
+			is_pop_category = slave
+		}
 	}
 	potential = {
 		owner = {
@@ -91,7 +94,9 @@ slave_army = {
 		}
 		owner = {
 			has_policy_flag = slavery_allowed
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 		}
 	}
 }
@@ -99,35 +104,34 @@ slave_army = {
 # Clone Armies
 clone_army = {
 	damage = 1.75
-	health = 1.00
-	morale = 1.00
-	morale_damage = 1.00
+	health = 1
+	morale = 1
+	morale_damage = 1
 	collateral_damage = 1.25
 	war_exhaustion = 0.25
 	time = 30
 	icon = GFX_army_type_clone
 	pop_limited = no
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 75
 		}
-
 		upkeep = {
 			energy = 0.75
 		}
 	}
-
-	prerequisites = { "tech_gene_banks" }
-
+	prerequisites = {
+		"tech_gene_banks"
+	}
 	show_tech_unlock_if = {
 		OR = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 			has_civic = civic_machine_assimilator
 		}
 	}
-
 	potential = {
 		from = {
 			NOR = {
@@ -138,7 +142,9 @@ clone_army = {
 		}
 		owner = {
 			OR = {
-				NOT = { has_authority = auth_machine_intelligence }
+				NOT = {
+					has_authority = auth_machine_intelligence
+				}
 				has_civic = civic_machine_assimilator
 			}
 		}
@@ -147,68 +153,74 @@ clone_army = {
 
 # Robotic Armies
 robotic_army = {
-	damage = 2.20
-	health = 1.50
-	morale_damage = 1.00
+	damage = 2.2
+	health = 1.5
+	morale_damage = 1
 	collateral_damage = 0.75
 	war_exhaustion = 0.25
 	has_morale = no
 	time = 90
 	icon = GFX_army_type_robot
 	has_species = yes
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 150
 		}
-
 		upkeep = {
 			energy = 1.5
 		}
 	}
-
 	potential = {
-		from = { has_trait = "trait_mechanical" }
+		from = {
+			has_trait = "trait_mechanical"
+		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 		}
 	}
-
-	prerequisites = { "tech_droid_workers" }
-
+	prerequisites = {
+		"tech_droid_workers"
+	}
 	allow = {
-		owner = { NOT = { has_policy_flag = robots_outlawed } }
+		owner = {
+			NOT = {
+				has_policy_flag = robots_outlawed
+			}
+		}
 	}
 }
 
 # Psionic Armies
 psionic_army = {
-	damage = 3.00
-	morale_damage = 2.00
+	damage = 3
+	morale_damage = 2
 	health = 1.75
-	morale = 2.00
-	collateral_damage = 0.50
+	morale = 2
+	collateral_damage = 0.5
 	war_exhaustion = 1.25
 	time = 120
 	icon = GFX_army_type_psionic
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 250
 		}
-
 		upkeep = {
 			energy = 2.5
 		}
 	}
-
-	prerequisites = { "tech_telepathy" }
+	prerequisites = {
+		"tech_telepathy"
+	}
 	potential = {
 		from = {
 			OR = {
-				NOT = { host_has_dlc = "Utopia" }
+				NOT = {
+					host_has_dlc = "Utopia"
+				}
 				OR = {
 					has_trait = trait_latent_psionic
 					has_trait = trait_psionic
@@ -221,66 +233,67 @@ psionic_army = {
 			}
 		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 		}
 	}
 }
 
 # Xenomorph Armies
 xenomorph_army = {
-	damage = 4.00
-	morale_damage = 1.50
-	collateral_damage = 3.00
-	war_exhaustion = 0.20
-	health = 2.00
+	damage = 4
+	morale_damage = 1.5
+	collateral_damage = 3
+	war_exhaustion = 0.2
+	health = 2
 	has_morale = no
 	time = 100
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 200
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	potential = {
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 		}
 	}
-
-	prerequisites = { "tech_morphogenetic_field_mastery" }
+	prerequisites = {
+		"tech_morphogenetic_field_mastery"
+	}
 }
 
 # Gene Warrior Armies
 gene_warrior_army = {
-	damage = 4.00
-	health = 2.50
-	morale = 3.00
-	morale_damage = 1.00
+	damage = 4
+	health = 2.5
+	morale = 3
+	morale_damage = 1
 	collateral_damage = 0.75
-	war_exhaustion = 1.50
+	war_exhaustion = 1.5
 	time = 150
 	icon = GFX_army_type_gene_warrior
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 300
 		}
-
 		upkeep = {
 			energy = 3
 		}
 	}
-
-	prerequisites = { "tech_gene_seed_purification" }
+	prerequisites = {
+		"tech_gene_seed_purification"
+	}
 	potential = {
 		from = {
 			NOR = {
@@ -290,143 +303,140 @@ gene_warrior_army = {
 			}
 		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 		}
 	}
 }
 
 ### Machine Empire Armies
-
 # Hunter-Killer Armies
 machine_assault_1 = {
-	damage = 2.20
-	health = 1.50
+	damage = 2.2
+	health = 1.5
 	has_morale = no
-	morale_damage = 1.00
+	morale_damage = 1
 	collateral_damage = 0.75
 	war_exhaustion = 0.25
 	time = 90
 	has_species = yes
-
 	icon = GFX_army_type_machine_assault
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 100
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	potential = {
-		owner = { has_authority = auth_machine_intelligence }
+		owner = {
+			has_authority = auth_machine_intelligence
+		}
 		from = {
 			has_trait = "trait_machine_unit"
 		}
 	}
-
-	show_tech_unlock_if = { has_authority = auth_machine_intelligence }
-
-	prerequisites = { "tech_assault_armies" }
+	show_tech_unlock_if = {
+		has_authority = auth_machine_intelligence
+	}
+	prerequisites = {
+		"tech_assault_armies"
+	}
 }
 
 # Battle Frames
 machine_assault_2 = {
-	damage = 3.00
-	health = 2.20
+	damage = 3
+	health = 2.2
 	has_morale = no
 	morale_damage = 1.25
 	collateral_damage = 1.25
 	war_exhaustion = 0.75
 	time = 120
 	has_species = yes
-
 	icon = GFX_army_type_machine_assault
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 200
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	potential = {
-		owner = { has_authority = auth_machine_intelligence }
+		owner = {
+			has_authority = auth_machine_intelligence
+		}
 		from = {
 			has_trait = "trait_machine_unit"
 		}
 	}
-
-	prerequisites = { "tech_adaptive_combat_algorithms" }
+	prerequisites = {
+		"tech_adaptive_combat_algorithms"
+	}
 }
 
 # Mega-Warform
 machine_assault_3 = {
-	damage = 5.00
-	health = 6.00
+	damage = 5
+	health = 6
 	has_morale = no
-	morale_damage = 1.50
-	collateral_damage = 2.00
-	war_exhaustion = 1.50
+	morale_damage = 1.5
+	collateral_damage = 2
+	war_exhaustion = 1.5
 	time = 500
 	has_species = no
-
 	icon = GFX_army_type_machine_assault
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 800
 		}
-
 		upkeep = {
 			energy = 8
 		}
 	}
-
 	potential = {
-		owner = { has_authority = auth_machine_intelligence }
+		owner = {
+			has_authority = auth_machine_intelligence
+		}
 	}
-
-	prerequisites = { "tech_biomechanics" }
+	prerequisites = {
+		"tech_biomechanics"
+	}
 }
 
 # Undead Armies
 undead_army = {
 	damage = 1.75
-	health = 1.00
+	health = 1
 	has_morale = no
 	collateral_damage = 1.25
-	morale_damage = 2.00
-	war_exhaustion = 0.10
+	morale_damage = 2
+	war_exhaustion = 0.1
 	time = 30
 	icon = GFX_army_type_undead
 	pop_limited = no
-	disband_if_species_lacks_rights = no #i.e. if you resurrect your enemies, you get to keep these armies, even if you are a purifier
-	prerequisites = { "tech_assault_armies" }
-
+	disband_if_species_lacks_rights = no	#i.e. if you resurrect your enemies, you get to keep these armies, even if you are a purifier
+	prerequisites = {
+		"tech_assault_armies"
+	}
 	resources = {
 		category = armies
 		cost = {
 			energy = 100
 		}
-
 		upkeep = {
 			energy = 0.75
 		}
 	}
-
 	show_tech_unlock_if = {
 		has_valid_civic = civic_reanimated_armies
 	}
-
 	potential = {
 		from = {
 			NOR = {

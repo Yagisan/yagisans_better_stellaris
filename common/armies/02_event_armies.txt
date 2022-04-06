@@ -2,16 +2,14 @@
 # Maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 # Morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
 # Building spawned armies can't be built normally, but only created from pops working buildings
-
 # Rebel Armies
 rebel_army = {
 	rebel = yes
-	damage = 1.00
-	health = 1.00
-	morale = 1.20
-	morale_damage = 0.50
+	damage = 1
+	health = 1
+	morale = 1.2
+	morale_damage = 0.5
 	icon = GFX_army_type_rebel
-
 	potential = {
 		always = no
 	}
@@ -21,12 +19,11 @@ rebel_army = {
 rebel_slave_defense_army = {
 	defensive = yes
 	time = 60
-	health = 0.80
-	damage = 1.00
-	morale = 1.00
-	morale_damage = 0.50
+	health = 0.8
+	damage = 1
+	morale = 1
+	morale_damage = 0.5
 	icon = GFX_army_type_rebel
-
 	potential = {
 		always = no
 	}
@@ -39,9 +36,8 @@ primitive_army = {
 	damage = 0.2
 	health = 0.5
 	morale = 0.8
-	morale_damage = 0.20
+	morale_damage = 0.2
 	icon = GFX_army_type_primitive
-
 	potential = {
 		owner = {
 			is_primitive = yes
@@ -52,7 +48,9 @@ primitive_army = {
 				has_country_flag = renaissance_age
 				has_country_flag = steam_age
 			}
-			NOT = { has_country_flag = humans_late_medieval_age }
+			NOT = {
+				has_country_flag = humans_late_medieval_age
+			}
 		}
 	}
 }
@@ -63,10 +61,9 @@ primitive_additional_army = {
 	damage = 0.2
 	health = 0.5
 	morale = 0.8
-	morale_damage = 0.20
+	morale_damage = 0.2
 	icon = GFX_army_type_primitive
 	use_armynames_from = primitive_army
-
 	potential = {
 		always = no
 	}
@@ -76,12 +73,11 @@ primitive_additional_army = {
 industrial_army = {
 	defensive = yes
 	is_pop_spawned = yes
-	damage = 0.90
-	health = 0.70
-	morale = 0.80
-	morale_damage = 0.40
+	damage = 0.9
+	health = 0.7
+	morale = 0.8
+	morale_damage = 0.4
 	icon = GFX_army_type_primitive
-
 	potential = {
 		owner = {
 			is_primitive = yes
@@ -89,7 +85,9 @@ industrial_army = {
 				has_country_flag = machine_age
 				has_country_flag = industrial_age
 			}
-			NOT = { has_country_flag = humans_machine_age }
+			NOT = {
+				has_country_flag = humans_machine_age
+			}
 		}
 	}
 }
@@ -98,12 +96,11 @@ industrial_army = {
 postatomic_army = {
 	defensive = yes
 	is_pop_spawned = yes
-	damage = 1.00
-	health = 1.00
-	morale = 1.00
-	morale_damage = 0.50
+	damage = 1
+	health = 1
+	morale = 1
+	morale_damage = 0.5
 	icon = GFX_army_type_primitive
-
 	potential = {
 		owner = {
 			is_primitive = yes
@@ -111,7 +108,9 @@ postatomic_army = {
 				has_country_flag = atomic_age
 				has_country_flag = early_space_age
 			}
-			NOT = { has_country_flag = humans_early_space_age }
+			NOT = {
+				has_country_flag = humans_early_space_age
+			}
 		}
 	}
 }
@@ -119,12 +118,11 @@ postatomic_army = {
 # Subterranean Industrial Armies
 subterranean_industrial_army = {
 	defensive = yes
-	damage = 0.90
-	health = 0.70
-	morale = 0.80
-	morale_damage = 0.40
+	damage = 0.9
+	health = 0.7
+	morale = 0.8
+	morale_damage = 0.4
 	icon = GFX_army_type_primitive
-
 	potential = {
 		owner = {
 			is_primitive = yes
@@ -132,7 +130,9 @@ subterranean_industrial_army = {
 				has_country_flag = machine_age
 				has_country_flag = industrial_age
 			}
-			NOT = { has_country_flag = humans_machine_age }
+			NOT = {
+				has_country_flag = humans_machine_age
+			}
 		}
 	}
 }
@@ -140,12 +140,11 @@ subterranean_industrial_army = {
 # Subterranean Post-Atomic Armies
 subterranean_postatomic_army = {
 	defensive = yes
-	damage = 1.00
-	health = 1.00
-	morale = 1.00
-	morale_damage = 0.50
+	damage = 1
+	health = 1
+	morale = 1
+	morale_damage = 0.5
 	icon = GFX_army_type_primitive
-
 	potential = {
 		owner = {
 			is_primitive = yes
@@ -153,7 +152,9 @@ subterranean_postatomic_army = {
 				has_country_flag = atomic_age
 				has_country_flag = early_space_age
 			}
-			NOT = { has_country_flag = humans_early_space_age }
+			NOT = {
+				has_country_flag = humans_early_space_age
+			}
 		}
 	}
 }
@@ -161,13 +162,12 @@ subterranean_postatomic_army = {
 # Mutant Horror Armies
 mutant_army = {
 	defensive = yes
-	damage = 3.00
-	morale_damage = 1.50
-	health = 2.00
+	damage = 3
+	morale_damage = 1.5
+	health = 2
 	has_morale = no
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	potential = {
 		always = no
 	}
@@ -175,14 +175,13 @@ mutant_army = {
 
 # Swarm Armies
 swarm_army = {
-	damage = 4.00
-	morale_damage = 2.00
-	health = 1.50
+	damage = 4
+	morale_damage = 2
+	health = 1.5
 	has_morale = no
 	time = 180
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	potential = {
 		exists = owner
 		owner = {
@@ -194,13 +193,12 @@ swarm_army = {
 # Rampaging Tree Armies
 tree_army = {
 	defensive = yes
-	damage = 2.00
-	morale_damage = 0.50
+	damage = 2
+	morale_damage = 0.5
 	health = 1.25
 	has_morale = no
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	potential = {
 		always = no
 	}
@@ -209,13 +207,12 @@ tree_army = {
 # Enraged Colonist Armies
 enraged_army = {
 	defensive = yes
-	damage = 1.00
-	health = 1.00
+	damage = 1
+	health = 1
 	has_morale = no
 	morale_damage = 0.75
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	potential = {
 		always = no
 	}
@@ -224,12 +221,11 @@ enraged_army = {
 # Pre-Space Ketling Armies
 ketling_army = {
 	defensive = yes
-	damage = 0.90
-	health = 0.70
-	morale = 0.80
-	morale_damage = 0.40
+	damage = 0.9
+	health = 0.7
+	morale = 0.8
+	morale_damage = 0.4
 	icon = GFX_army_type_primitive
-
 	potential = {
 		always = no
 	}
@@ -240,45 +236,45 @@ ketling_army = {
 # Should be very strong and quite expensive, but cannot get attachments and can be built only in limited numbers
 # Currently limited to 3. Ideally it would be X * Num of planets you have done the project one, but that is too complex for scripts
 titanic_assault_army = {
-	damage = 4.00
-	health = 5.00
-	morale = 3.00
-	morale_damage = 1.00
-	collateral_damage = 3.0
-	war_exhaustion = 1.00
+	damage = 4
+	health = 5
+	morale = 3
+	morale_damage = 1
+	collateral_damage = 3
+	war_exhaustion = 1
 	time = 90
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 300
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	potential = {
 		custom_tooltip = {
 			text = titanic_troop_limit_tooltip
-			planet = { has_planet_flag = titanic_life_can_build }
+			planet = {
+				has_planet_flag = titanic_life_can_build
+			}
 			owner = {
 				has_country_flag = titanic_life_soldiers
 			}
 		}
 	}
-
 	allow = {
 		custom_tooltip = {
 			text = titanic_troop_limit_tooltip
-			planet = { has_planet_flag = titanic_life_can_build }
+			planet = {
+				has_planet_flag = titanic_life_can_build
+			}
 			owner = {
 				has_country_flag = titanic_life_soldiers
 				NOT = {
-					 check_variable = {
+					check_variable = {
 						which = "titanic_life_soldier_count"
 						value = 3
 					}
@@ -286,7 +282,6 @@ titanic_assault_army = {
 			}
 		}
 	}
-
 	on_queued = {
 		owner = {
 			change_variable = {
@@ -295,7 +290,6 @@ titanic_assault_army = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		owner = {
 			change_variable = {
@@ -308,46 +302,46 @@ titanic_assault_army = {
 
 # Azizian Army: Based on titanic life assault army
 titanic_azizian_assault_army = {
-	damage = 4.00
-	health = 5.00
-	morale = 2.00
-	morale_damage = 2.00
-	collateral_damage = 2.00
-	war_exhaustion = 1.00
+	damage = 4
+	health = 5
+	morale = 2
+	morale_damage = 2
+	collateral_damage = 2
+	war_exhaustion = 1
 	time = 90
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 250
 			energy = 50
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	potential = {
 		custom_tooltip = {
 			text = azizian_troop_limit_tooltip
-			planet = { has_planet_flag = titanic_azizian_can_build }
+			planet = {
+				has_planet_flag = titanic_azizian_can_build
+			}
 			owner = {
 				has_country_flag = titanic_azizian_soldiers
 			}
 		}
 	}
-
 	allow = {
 		custom_tooltip = {
 			text = azizian_troop_limit_tooltip
-			planet = { has_planet_flag = titanic_azizian_can_build }
+			planet = {
+				has_planet_flag = titanic_azizian_can_build
+			}
 			owner = {
 				has_country_flag = titanic_azizian_soldiers
 				NOT = {
-					 check_variable = {
+					check_variable = {
 						which = "titanic_azizian_soldier_count"
 						value = 3
 					}
@@ -355,7 +349,6 @@ titanic_azizian_assault_army = {
 			}
 		}
 	}
-
 	on_queued = {
 		owner = {
 			change_variable = {
@@ -364,7 +357,6 @@ titanic_azizian_assault_army = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		owner = {
 			change_variable = {
@@ -378,21 +370,19 @@ titanic_azizian_assault_army = {
 #Can't be built, is spawned on Titanic life planets after special project + event. Partly as reward, partly to ensure having this on multiple planets is always useful.
 titanic_guardian_army = {
 	defensive = yes
-	damage = 4.00
-	health = 5.00
-	morale = 3.00
-	morale_damage = 1.00
+	damage = 4
+	health = 5
+	morale = 3
+	morale_damage = 1
 	time = 5
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	resources = {
 		category = armies
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	potential = {
 		always = no
 	}
@@ -400,23 +390,21 @@ titanic_guardian_army = {
 
 # Given as a reward from the Shroud
 shroud_army = {
-	damage = 6.00
-	health = 10.00
+	damage = 6
+	health = 10
 	has_morale = no
-	morale_damage = 2.0
-	collateral_damage = 1.00
-	war_exhaustion = 2.00
+	morale_damage = 2
+	collateral_damage = 1
+	war_exhaustion = 2
 	time = 5
 	icon = GFX_army_type_psionic
 	has_species = no
-
 	resources = {
 		category = armies
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	potential = {
 		always = no
 	}
@@ -424,12 +412,12 @@ shroud_army = {
 
 # Gray Nanite Army
 gray_army = {
-	damage = 8.00
-	health = 14.00
+	damage = 8
+	health = 14
 	has_morale = no
-	morale_damage = 3.00
-	collateral_damage = 5.00
-	war_exhaustion = 4.00
+	morale_damage = 3
+	collateral_damage = 5
+	war_exhaustion = 4
 	time = 5
 	resources = {
 		category = armies
@@ -439,7 +427,6 @@ gray_army = {
 	}
 	has_species = no
 	icon = GFX_army_type_machine_assault
-
 	potential = {
 		always = no
 	}
@@ -448,17 +435,15 @@ gray_army = {
 # Mega-Warform
 care_defensive_protocols = {
 	defensive = yes
-	damage = 5.00
-	health = 6.00
+	damage = 5
+	health = 6
 	has_morale = no
-	morale_damage = 1.50
-	collateral_damage = 2.00
-	war_exhaustion = 1.50
+	morale_damage = 1.5
+	collateral_damage = 2
+	war_exhaustion = 1.5
 	time = 500
 	has_species = no
-
 	icon = GFX_army_type_machine_assault
-
 	potential = {
 		always = no
 	}
@@ -467,13 +452,12 @@ care_defensive_protocols = {
 # Sentinels
 sentinel_army = {
 	defensive = yes
-	damage = 5.00
-	morale_damage = 5.00
-	health = 6.00
+	damage = 5
+	morale_damage = 5
+	health = 6
 	has_morale = no
 	icon = GFX_army_type_machine_assault
 	has_species = no
-
 	potential = {
 		always = no
 	}
@@ -481,31 +465,29 @@ sentinel_army = {
 
 # Improved Mega-Warform, unlocked by War Forge relic
 cybrex_warform = {
-	damage = 6.00
-	health = 9.00
+	damage = 6
+	health = 9
 	has_morale = no
-	morale_damage = 2.00
-	collateral_damage = 2.00
-	war_exhaustion = 1.00
+	morale_damage = 2
+	collateral_damage = 2
+	war_exhaustion = 1
 	time = 500
 	has_species = no
-
 	icon = GFX_army_type_machine_assault
-
 	resources = {
 		category = armies
 		cost = {
 			alloys = 250
 		}
-
 		upkeep = {
 			energy = 8
 		}
 	}
-
 	potential = {
 		custom_tooltip = {
-			planet = { is_capital = yes }
+			planet = {
+				is_capital = yes
+			}
 			owner = {
 				has_relic = r_war_forge
 			}
@@ -514,36 +496,31 @@ cybrex_warform = {
 }
 
 # Imperial Legions
-
 imperial_legion = {
-	damage = 2.50
-	health = 3.00
-	morale = 3.00
-	morale_damage = 1.00
+	damage = 2.5
+	health = 3
+	morale = 3
+	morale_damage = 1
 	collateral_damage = 0.75
-	war_exhaustion = 2.00
+	war_exhaustion = 2
 	time = 150
 	icon = GFX_army_type_imperial
 	has_species = no
-
 	resources = {
 		category = armies
 		cost = {
 			minerals = 300
 		}
-
 		upkeep = {
 			energy = 3
 		}
 	}
-
 	potential = {
 		owner = {
 			is_galactic_emperor = yes
 			is_active_resolution = "resolution_emperor_imperial_legions"
 		}
 	}
-
 	allow = {
 		custom_tooltip = {
 			text = imperial_legion_limit_tooltip
@@ -555,7 +532,6 @@ imperial_legion = {
 			}
 		}
 	}
-
 	on_queued = {
 		owner = {
 			change_variable = {
@@ -564,7 +540,6 @@ imperial_legion = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		owner = {
 			change_variable = {
@@ -576,25 +551,23 @@ imperial_legion = {
 }
 
 giant_undead_army = {
-	damage = 3.00
-	health = 7.00
+	damage = 3
+	health = 7
 	has_morale = no
 	collateral_damage = 3.5
 	morale_damage = 3
-	war_exhaustion = 0.50
+	war_exhaustion = 0.5
 	icon = GFX_army_type_undead
 	pop_limited = no
-	prerequisites = { "tech_assault_armies" }
-
+	prerequisites = {
+		"tech_assault_armies"
+	}
 	resources = {
 		category = armies
-
 		upkeep = {
 			energy = 1.5
 		}
 	}
-
-
 	potential = {
 		always = no
 	}
@@ -603,13 +576,12 @@ giant_undead_army = {
 # Ice Armies
 ice_army = {
 	defensive = yes
-	damage = 2.00
-	morale_damage = 2.50
-	health = 2.00
+	damage = 2
+	morale_damage = 2.5
+	health = 2
 	has_morale = no
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	potential = {
 		always = no
 	}

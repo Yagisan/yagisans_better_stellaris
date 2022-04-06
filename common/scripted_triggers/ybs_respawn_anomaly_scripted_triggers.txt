@@ -1,8 +1,8 @@
 ybs_anomaly_possible = {
-    has_anomaly = no
-    has_deposit = no
-    is_capital = no
-    is_colony = no 
-    has_owner = no
-    num_pops = 0
+	has_anomaly = no
+	has_deposit = no
+	is_capital = no
+	is_colony = no
+	has_owner = no
+	num_pops = 0
 }

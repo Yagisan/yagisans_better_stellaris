@@ -2,19 +2,17 @@
 #maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
 #building spawned armies can't be built normally, but only created from pops working buildings
-
 # Occupation Armies
 occupation_army = {
 	defensive = yes
 	occupation = yes
-	health = 1.50
-	damage = 1.50
-	morale = 1.50
-	morale_damage = 1.00
-	collateral_damage = 0.0
-	war_exhaustion = 0.50
+	health = 1.5
+	damage = 1.5
+	morale = 1.5
+	morale_damage = 1
+	collateral_damage = 0
+	war_exhaustion = 0.5
 	icon = GFX_army_type_defensive
-
 	potential = {
 		from = {
 			NOR = {
@@ -25,7 +23,9 @@ occupation_army = {
 		}
 		owner = {
 			OR = {
-				NOT = { has_authority = auth_machine_intelligence }
+				NOT = {
+					has_authority = auth_machine_intelligence
+				}
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -36,26 +36,30 @@ occupation_army = {
 robotic_occupation_army = {
 	defensive = yes
 	occupation = yes
-	damage = 2.20
+	damage = 2.2
 	health = 1.75
-	morale_damage = 1.00
-	collateral_damage = 0.0
+	morale_damage = 1
+	collateral_damage = 0
 	war_exhaustion = 0.25
 	has_morale = no
 	icon = GFX_army_type_robot
 	has_species = yes
-
 	potential = {
 		from = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
 		}
 	}
-
 	allow = {
-		owner = { NOT = { has_policy_flag = robots_outlawed } }
+		owner = {
+			NOT = {
+				has_policy_flag = robots_outlawed
+			}
+		}
 	}
 }
 
@@ -64,16 +68,17 @@ machine_occupation_army = {
 	defensive = yes
 	occupation = yes
 	health = 1.75
-	damage = 2.20
+	damage = 2.2
 	has_morale = no
-	morale_damage = 1.00
-	collateral_damage = 0.0
+	morale_damage = 1
+	collateral_damage = 0
 	war_exhaustion = 0.25
 	icon = GFX_army_type_machine_defensive
 	has_species = yes
-
 	potential = {
-		owner = { has_authority = auth_machine_intelligence }
+		owner = {
+			has_authority = auth_machine_intelligence
+		}
 		from = {
 			has_trait = "trait_machine_unit"
 		}

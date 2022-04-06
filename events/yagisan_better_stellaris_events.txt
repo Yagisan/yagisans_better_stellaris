@@ -1,12 +1,13 @@
 namespace = yagisans_better_stellaris
-
 # Flag mod as active
 event = {
-    id = yagisans_better_stellaris.1
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        NOT = { has_global_flag = yagisans_better_stellaris_installed }
+	id = yagisans_better_stellaris.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = yagisans_better_stellaris_installed
+		}
 	}
 	immediate = {
 		set_global_flag = yagisans_better_stellaris_installed
@@ -15,24 +16,54 @@ event = {
 
 # Attempt to spawn 1 anomaly
 event = {
-    id = yagisans_better_stellaris.10
-    hide_window = yes
-    is_triggered_only = yes
-    immediate = { while = { count = 1 random_galaxy_planet = { limit = { ybs_anomaly_possible = yes } ybs_anomaly_spawner = yes } } }
+	id = yagisans_better_stellaris.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 1
+			random_galaxy_planet = {
+				limit = {
+					ybs_anomaly_possible = yes
+				}
+				ybs_anomaly_spawner = yes
+			}
+		}
+	}
 }
 
 # Attempt to spawn 4 anomalies
 event = {
-    id = yagisans_better_stellaris.11
-    hide_window = yes
-    is_triggered_only = yes
-    immediate = { while = { count = 4 random_galaxy_planet = { limit = { ybs_anomaly_possible = yes } ybs_anomaly_spawner = yes } } }
+	id = yagisans_better_stellaris.11
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 4
+			random_galaxy_planet = {
+				limit = {
+					ybs_anomaly_possible = yes
+				}
+				ybs_anomaly_spawner = yes
+			}
+		}
+	}
 }
 
 # Attempt to spawn 10 anomalies
 event = {
-    id = yagisans_better_stellaris.12
-    hide_window = yes
-    is_triggered_only = yes
-    immediate = { while = { count = 10 random_galaxy_planet = { limit = { ybs_anomaly_possible = yes } ybs_anomaly_spawner = yes } } }
+	id = yagisans_better_stellaris.12
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 10
+			random_galaxy_planet = {
+				limit = {
+					ybs_anomaly_possible = yes
+				}
+				ybs_anomaly_spawner = yes
+			}
+		}
+	}
 }
