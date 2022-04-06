@@ -564,7 +564,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
+						NOR = {
 							is_planet_class = pc_barren
 							planet_size < 26
 							planet_size > 9
@@ -1213,7 +1213,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
+						NOR = {
 							is_planet_class = pc_gas_giant
 							is_inside_nebula = yes
 						}
