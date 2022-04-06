@@ -7,13 +7,17 @@
 
 ## Anomalies
 
-In the base game, you eventually run out of anomalies, and your science ships become much less useful. By respawning anomalies scientests can continue to level up, and science ships can continue to be useful, thoughut the game.
+In the base game, you eventually run out of anomalies, and your science ships become much less useful. By respawning anomalies scientists can continue to level up, and science ships can continue to be useful, throughout the game.
 
 ### Respawning
 
 Each year the game will now attempt to respawn anomalies, provided their spawn conditions are met. These can respawn anywhere in the galaxy, in both player and AI controlled space.
 
-The specfic spawn rates are:
+The respawn system will attempt to respawn all Vanilla anomalies, and if you own the respective DLC, All Distant Stars Story Pack and Federations anomalies. The vanilla uplift anomalies will respawn too, but have been configured to have 1/5 the chance of regular anomalies.
+
+Each attempt at respawning an anomaly has an 85% chance of success.
+
+The specific spawn rates are:
 - Every year, try to respawn 1 anomaly.
 - Every second year, try to respawn 4 anomalies.
 - Every fifth year, try to respawn 10 anomalies.
