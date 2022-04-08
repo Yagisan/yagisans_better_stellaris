@@ -26,6 +26,7 @@ event = {
 				limit = {
 					ybs_anomaly_possible = yes
 				}
+				log = "Yagisan - Attempting to spawn anomaly at [This.Planet.GetName]"
 				ybs_anomaly_spawner = yes
 			}
 		}
@@ -44,6 +45,7 @@ event = {
 				limit = {
 					ybs_anomaly_possible = yes
 				}
+				log = "Yagisan - Attempting to spawn anomaly at [This.Planet.GetName]"
 				ybs_anomaly_spawner = yes
 			}
 		}
@@ -62,6 +64,7 @@ event = {
 				limit = {
 					ybs_anomaly_possible = yes
 				}
+				log = "Yagisan - Attempting to spawn anomaly at [This.Planet.GetName]"
 				ybs_anomaly_spawner = yes
 			}
 		}
@@ -70,7 +73,6 @@ event = {
 
 # The AI appears to be somewhat lazy in making sure it's pops are in the most efficent job.
 # We are going to give it a helping hand, by forcing it to reevaluate jobs a bit more often.
-
 # Let's optimise some pops. First Limit to just the AI countries. (Should I optimise player pops?)
 event = {
 	id = yagisans_better_stellaris.20
@@ -79,7 +81,6 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "yagisans_better_stellaris.20"
 		every_country = {
 			limit = {
 				is_ai = yes
@@ -99,7 +100,6 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "yagisans_better_stellaris.21"
 		every_owned_planet = {
 			limit = {
 				num_pops >= 1
@@ -126,8 +126,7 @@ planet_event = {
 		is_occupied_flag = no
 	}
 	immediate = {
+		log = "Yagisan - Checking Employment for [From.GetName] on [This.Planet.GetName]"
 		check_planet_employment = yes
-		log = "yagisans_better_stellaris.22"
-
 	}
 }
