@@ -67,3 +67,67 @@ event = {
 		}
 	}
 }
+
+# The AI appears to be somewhat lazy in making sure it's pops are in the most efficent job.
+# We are going to give it a helping hand, by forcing it to reevaluate jobs a bit more often.
+
+# Let's optimise some pops. First Limit to just the AI countries. (Should I optimise player pops?)
+event = {
+	id = yagisans_better_stellaris.20
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "yagisans_better_stellaris.20"
+		every_country = {
+			limit = {
+				is_ai = yes
+			}
+			country_event = {
+				id = yagisans_better_stellaris.21
+			}
+		}
+	}
+}
+
+# Now limit to every planet with 1 or more pops.
+country_event = {
+	id = yagisans_better_stellaris.21
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "yagisans_better_stellaris.21"
+		every_owned_planet = {
+			limit = {
+				num_pops >= 1
+			}
+			planet_event = {
+				id = yagisans_better_stellaris.22
+			}
+		}
+	}
+}
+
+# If nothing special is happening, force an employment check.
+planet_event = {
+	id = yagisans_better_stellaris.22
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	# Only trigger if owned by an AI, and not occupied or under attack.
+	pre_triggers = {
+		has_owner = yes
+		is_ai = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	immediate = {
+		check_planet_employment = yes
+		log = "yagisans_better_stellaris.22"
+
+	}
+}

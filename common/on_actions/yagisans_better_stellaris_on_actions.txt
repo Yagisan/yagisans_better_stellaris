@@ -12,10 +12,24 @@ on_single_player_save_game_load = {
 	}
 }
 
+# Loaded a save? Quickly check AI employment.
+on_single_player_save_game_load = {
+	events = {
+		yagisans_better_stellaris.20
+	}
+}
+
 # Each year, try to respawn 1 anomaly.
 on_yearly_pulse = {
 	events = {
 		yagisans_better_stellaris.10
+	}
+}
+
+# End of year AI employment check.
+on_yearly_pulse = {
+	events = {
+		yagisans_better_stellaris.20
 	}
 }
 
