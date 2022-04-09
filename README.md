@@ -3,7 +3,19 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/Yagisan/yagisans_better_stellaris/total?logo=GitHub&style=for-the-badge)![GitHub issues](https://img.shields.io/github/issues/Yagisan/yagisans_better_stellaris?logo=GitHub&style=for-the-badge)![Discord](https://img.shields.io/discord/958710541017317397?label=Yagisan%27s%20Discord&logo=discord&style=for-the-badge)
 
 | [![patreon](assets/images/become_a_patron_button.png)](https://patreon.com/yagisan) | [![ko-fi](assets/images/support_on_kofi_button.png)](https://ko-fi.com/yagisan) | [![Discord Banner 2](https://discordapp.com/api/guilds/958710541017317397/widget.png?style=banner2)](https://discord.gg/rB5RFgHhUD) |
-| - | - | - |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+
+- [Yagisan's Better Stellaris](#yagisans-better-stellaris)
+  - [Anomalies](#anomalies)
+    - [Respawning](#respawning)
+  - [Warfare](#warfare)
+    - [War Exhaustion](#war-exhaustion)
+  - [Ground Combat](#ground-combat)
+    - [Generals](#generals)
+    - [Defence Armies](#defence-armies)
+    - [Assault Armies](#assault-armies)
+    - [Occupation Armies](#occupation-armies)
+    - [Event Armies](#event-armies)
 
 ## Anomalies
 
@@ -18,6 +30,7 @@ The respawn system will attempt to respawn all Vanilla anomalies, and if you own
 Each attempt at respawning an anomaly has an 85% chance of success.
 
 The specific spawn rates are:
+
 - Every year, try to respawn 1 anomaly.
 - Every second year, try to respawn 4 anomalies.
 - Every fifth year, try to respawn 10 anomalies.
@@ -51,7 +64,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 ### Defence Armies
 
-| Defense Army      | Vanilla |  Modded |
+| Defence Army      | Vanilla |  Modded |
 | ----------------- | ------: | ------: |
 | Army Damage       |     1.5 |    1.50 |
 | Morale Damage     |         |    1.00 |
@@ -61,7 +74,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale            |    1.25 |    1.50 |
 | Pop Species       | Organic | Organic |
 
-| Undead Defense Army | Vanilla |  Modded |
+| Undead Defence Army | Vanilla |  Modded |
 | ------------------- | ------: | ------: |
 | Army Damage         |     1.5 |    1.50 |
 | Morale Damage       |    1.75 |    2.00 |
@@ -71,7 +84,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale              |  Immune |  Immune |
 | Pop Species         | Organic | Organic |
 
-| Robotic Defense Army | Vanilla | Modded |
+| Robotic Defence Army | Vanilla | Modded |
 | -------------------- | ------: | -----: |
 | Army Damage          |     1.0 |   2.20 |
 | Morale Damage        |     1.0 |   1.00 |
