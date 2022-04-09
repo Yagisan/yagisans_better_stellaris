@@ -72,8 +72,12 @@ event = {
 }
 
 # The AI appears to be somewhat lazy in making sure it's pops are in the most efficent job.
-# We are going to give it a helping hand, by forcing it to reevaluate jobs a bit more often.
+# We are going to give it a helping hand, by forcing it to re-evaluate jobs a bit more often.
 # Let's optimise some pops. First Limit to just the AI countries. (Should I optimise player pops?)
+# Each country will be checked between 10 and 180 days from the event firing.
+# Each planet in the selected country will be checked between 0 and 90 days from the event firing.
+# This will allow all countries to complete re-evaluating jobs within 270 days of the initial event,
+# and if the rng is suitably random, not at the same time, so there won't be a noticeable lag spike.
 event = {
 	id = yagisans_better_stellaris.20
 	title = OK
@@ -91,8 +95,11 @@ event = {
 					is_country_type = awakened_marauders
 				}
 			}
+			# Trigger randomly between 10 and 180 (days + random) days from now.
 			country_event = {
 				id = yagisans_better_stellaris.21
+				days = 10
+				random = 170
 			}
 		}
 	}
@@ -110,8 +117,10 @@ country_event = {
 			limit = {
 				num_pops >= 1
 			}
+			# Trigger randomly between 0 and 90 days from now.
 			planet_event = {
 				id = yagisans_better_stellaris.22
+				random = 90
 			}
 		}
 	}
