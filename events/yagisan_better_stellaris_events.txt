@@ -84,6 +84,12 @@ event = {
 		every_country = {
 			limit = {
 				is_ai = yes
+				# Check regular empires, awakened fallen empires, and the great khan only.
+				OR = {
+					is_country_type = default
+					is_country_type = awakened_fallen_empire
+					is_country_type = awakened_marauders
+				}
 			}
 			country_event = {
 				id = yagisans_better_stellaris.21
