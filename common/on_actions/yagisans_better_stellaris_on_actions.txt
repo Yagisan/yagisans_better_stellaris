@@ -26,17 +26,17 @@ on_yearly_pulse = {
 	}
 }
 
-# End of year AI employment check.
-on_yearly_pulse = {
-	events = {
-		yagisans_better_stellaris.20
-	}
-}
-
 # Every second year, try to respawn 4 anomalies.
 on_bi_yearly_pulse = {
 	events = {
 		yagisans_better_stellaris.11
+	}
+}
+
+# Every second year AI employment check.
+on_bi_yearly_pulse = {
+	events = {
+		yagisans_better_stellaris.20
 	}
 }
 
