@@ -362,6 +362,7 @@ trait_pc_relic_preference = {
 	sorting_priority = 30
 	modifier = {
 		pc_relic_habitability = @primary
+		pc_city_habitability = @primary
 	}
 	ai_weight = {
 		weight = 0
@@ -426,6 +427,7 @@ trait_pc_city_preference = {
 	sorting_priority = 30
 	modifier = {
 		pc_city_habitability = @primary
+		pc_relic_habitability = @primary
 	}
 	ai_weight = {
 		weight = 0
