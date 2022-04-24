@@ -26,6 +26,13 @@ on_yearly_pulse = {
 	}
 }
 
+# Each year, Quickly check Player employment.
+on_yearly_pulse = {
+	events = {
+		yagisans_better_stellaris.30
+	}
+}
+
 # Every second year, try to respawn 4 anomalies.
 on_bi_yearly_pulse = {
 	events = {
