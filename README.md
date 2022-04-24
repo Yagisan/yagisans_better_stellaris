@@ -46,7 +46,6 @@ Overall, War Exhaustion is an interesting mechanic. However some aspects of warf
 | WAR_EXHAUSTION_ARMY_KILLED_MULT |    0.25 |   0.50 |
 | OCCUPATION_POP_VALUE            |     0.1 |   0.30 |
 
-
 ## Ground Combat
 
 Ground combat in Stellaris is rather lacking by default. In theory it should be a vital part of conquest, but instead feels inconsequential. These changes seek to make ground combat a more strategic, and useful part of the game.
