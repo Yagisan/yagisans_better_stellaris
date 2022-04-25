@@ -71,7 +71,7 @@ event = {
 	}
 }
 
-# The AI appears to be somewhat lazy in making sure it's pops are in the most efficent job.
+# The AI appears to be somewhat lazy in making sure it's pops are in the most efficient job.
 # We are going to give it a helping hand, by forcing it to re-evaluate jobs a bit more often.
 # Let's optimise some pops. First Limit to just the AI countries.
 # Each country will be checked between 10 and 180 days from the event firing.
