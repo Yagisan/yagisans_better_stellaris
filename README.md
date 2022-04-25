@@ -6,6 +6,7 @@
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 - [Yagisan's Better Stellaris](#yagisans-better-stellaris)
+  - [Jobs](#jobs)
   - [Anomalies](#anomalies)
     - [Respawning](#respawning)
   - [Warfare](#warfare)
@@ -16,6 +17,18 @@
     - [Assault Armies](#assault-armies)
     - [Occupation Armies](#occupation-armies)
     - [Event Armies](#event-armies)
+
+## Jobs
+
+The Stellaris AI appears to be somewhat lazy in making sure it's pops are in the most efficient job. To give it a helping hand we force it to re-evaluate jobs a bit more often. Once every two years **or** when loading a save game, we will scan for all AI empires, and flag them to be checked.
+
+Each empire will be scheduled randomly between 10 and 180 days from the event firing. Already scheduled empires will be skipped. Once it is time to check the empire, each planet will be scheduled randomly between 0 and 90 days from the event firing.
+
+This will allow all AI empires to complete re-evaluating jobs within 270 days of the initial event, and if the Stellaris random number generator is suitably random, not at the same time, so there won't be a noticeable lag spike.
+
+As a result pops tend to gradually end up in the most "optimal" job for them based on Stellaris or mod weightings. This does rely on Stellaris and/or the mod added job to have correctly set up their weightings.
+
+Player empires will be checked on the 28th day of each year. There's no delay for checking a player empire, as even in multiplayer, there's usually far less of them - and I want to minimise a confusing UI issue that occurs when moving pops around. Stellaris updates the UI instantly when firing pops. It updates at the end of the month when hiring pops.
 
 ## Anomalies
 
