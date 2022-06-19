@@ -2,6 +2,7 @@
 #maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
 #building spawned armies can't be built normally, but only created from pops working buildings
+
 # Occupation Armies
 occupation_army = {
 	defensive = yes
@@ -13,6 +14,7 @@ occupation_army = {
 	collateral_damage = 0
 	war_exhaustion = 0.5
 	icon = GFX_army_type_defensive
+
 	potential = {
 		from = {
 			NOR = {
@@ -23,9 +25,7 @@ occupation_army = {
 		}
 		owner = {
 			OR = {
-				NOT = {
-					has_authority = auth_machine_intelligence
-				}
+				NOT = { has_authority = auth_machine_intelligence }
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -44,22 +44,18 @@ robotic_occupation_army = {
 	has_morale = no
 	icon = GFX_army_type_robot
 	has_species = yes
+
 	potential = {
 		from = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = {
-				has_authority = auth_machine_intelligence
-			}
+			NOT = { has_authority = auth_machine_intelligence }
 		}
 	}
+
 	allow = {
-		owner = {
-			NOT = {
-				has_policy_flag = robots_outlawed
-			}
-		}
+		owner = { NOT = { has_policy_flag = robots_outlawed } }
 	}
 }
 
@@ -75,10 +71,9 @@ machine_occupation_army = {
 	war_exhaustion = 0.25
 	icon = GFX_army_type_machine_defensive
 	has_species = yes
+
 	potential = {
-		owner = {
-			has_authority = auth_machine_intelligence
-		}
+		owner = { has_authority = auth_machine_intelligence }
 		from = {
 			has_trait = "trait_machine_unit"
 		}
