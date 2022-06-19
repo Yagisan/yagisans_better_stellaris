@@ -1,6 +1,9 @@
 #Defensive armies can't transport of the planet
 #maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
+
+#ai_weight: as standard, but note that it pre-filters by whether the country can recruit this army (measuring by whether it is an assault army, whether it has the tech prereqs, and whether it passes potential_country)
+
 # Assault Armies
 assault_army = {
 	damage = 2
@@ -11,23 +14,27 @@ assault_army = {
 	war_exhaustion = 1
 	time = 90
 	icon = GFX_army_type_assault
-	prerequisites = {
-		"tech_assault_armies"
-	}
+	prerequisites = { "tech_assault_armies" }
 	resources = {
 		category = armies
 		cost = {
 			minerals = 100
 		}
+
 		upkeep = {
 			energy = 1
 		}
 	}
+
 	show_tech_unlock_if = {
 		OR = {
-			NOT = {
-				has_authority = auth_machine_intelligence
+			NOT = { has_authority = auth_machine_intelligence }
+			has_valid_civic = civic_machine_assimilator
 			}
+	}
+	potential_country = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
 			has_valid_civic = civic_machine_assimilator
 		}
 	}
@@ -39,12 +46,37 @@ assault_army = {
 				is_sapient = no
 			}
 		}
-		owner = {
+	}
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
 			OR = {
-				NOT = {
-					has_authority = auth_machine_intelligence
+				is_fallen_empire = yes
+				has_technology = tech_telepathy
+				has_technology = tech_gene_seed_purification
+				AND = {
+			OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+					has_technology = tech_gene_banks
 				}
-				has_valid_civic = civic_machine_assimilator
+			}
+		}
+		modifier = {
+			factor = 0.01 #cannot guarantee that they actually have slaves/robots to get armies from
+			OR = {
+				AND = {
+					has_ai_personality_behaviour = slaver
+					has_technology = tech_neural_implants
+				}
+				AND = {
+					has_ai_personality_behaviour = robot_liberator
+					has_technology = tech_droid_workers
+				}
+				has_valid_civic = civic_reanimated_armies
 			}
 		}
 	}
@@ -60,31 +92,33 @@ slave_army = {
 	war_exhaustion = 0.1
 	time = 45
 	icon = GFX_army_type_slave
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 50
 		}
+
 		upkeep = {
 			energy = 0.5
 		}
 	}
-	prerequisites = {
-		"tech_neural_implants"
-	}
+
+	prerequisites = { "tech_neural_implants" }
+
 	allow = {
 		has_building = building_slave_processing
-		any_owned_pop = {
-			is_pop_category = slave
+		any_owned_pop = { is_pop_category = slave }
 		}
-	}
-	potential = {
-		owner = {
+	potential_country = {
+		has_policy_flag = slavery_allowed
+		NOT = { has_authority = auth_machine_intelligence }
 			any_owned_pop = {
 				is_pop_category = slave
 				is_same_species = from
 			}
 		}
+	potential = {
 		from = {
 			NOR = {
 				has_trait = "trait_mechanical"
@@ -92,10 +126,28 @@ slave_army = {
 				is_sapient = no
 			}
 		}
-		owner = {
-			has_policy_flag = slavery_allowed
-			NOT = {
-				has_authority = auth_machine_intelligence
+	}
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			OR = {
+				is_fallen_empire = yes
+				NOT = { has_ai_personality_behaviour = slaver }
+				has_technology = tech_telepathy
+				has_technology = tech_gene_seed_purification
+				AND = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+					has_technology = tech_gene_banks
+				}
+				AND = {
+					has_ai_personality_behaviour = robot_liberator
+					has_technology = tech_droid_workers
+				}
 			}
 		}
 	}
@@ -112,23 +164,30 @@ clone_army = {
 	time = 30
 	icon = GFX_army_type_clone
 	pop_limited = no
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 75
 		}
+
 		upkeep = {
 			energy = 0.75
 		}
 	}
-	prerequisites = {
-		"tech_gene_banks"
-	}
+
+	prerequisites = { "tech_gene_banks" }
+
 	show_tech_unlock_if = {
 		OR = {
-			NOT = {
-				has_authority = auth_machine_intelligence
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
 			}
+	}
+
+	potential_country = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
 			has_civic = civic_machine_assimilator
 		}
 	}
@@ -140,13 +199,28 @@ clone_army = {
 				is_sapient = no
 			}
 		}
-		owner = {
+	}
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
 			OR = {
-				NOT = {
-					has_authority = auth_machine_intelligence
+				is_fallen_empire = yes
+				has_technology = tech_telepathy
+				has_technology = tech_gene_seed_purification
+				NAND = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+					has_technology = tech_gene_banks
 				}
-				has_civic = civic_machine_assimilator
 			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_clone_army
 		}
 	}
 }
@@ -162,33 +236,50 @@ robotic_army = {
 	time = 90
 	icon = GFX_army_type_robot
 	has_species = yes
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 150
 		}
+
 		upkeep = {
 			energy = 1.5
 		}
 	}
+
+	potential_country = {
+		NOT = { has_authority = auth_machine_intelligence }
+		}
 	potential = {
-		from = {
-			has_trait = "trait_mechanical"
-		}
-		owner = {
-			NOT = {
-				has_authority = auth_machine_intelligence
+		from = { has_trait = "trait_mechanical" }
 			}
-		}
-	}
-	prerequisites = {
-		"tech_droid_workers"
-	}
+
+	prerequisites = { "tech_droid_workers" }
+
 	allow = {
-		owner = {
-			NOT = {
-				has_policy_flag = robots_outlawed
+		owner = { NOT = { has_policy_flag = robots_outlawed } }
+		}
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			OR = {
+				NOT = { has_policy_flag = robots_outlawed }
+				has_technology = tech_telepathy
+				has_technology = tech_gene_seed_purification
+				NAND = {
+					has_ai_personality_behaviour = robot_liberator
+					has_technology = tech_droid_workers
+	}
+	}
+			is_fallen_empire = no
 			}
+		modifier = {
+			set = 0
+			is_fallen_empire = yes
+			NOT = { has_ethic = ethic_fanatic_materialist }
 		}
 	}
 }
@@ -203,24 +294,26 @@ psionic_army = {
 	war_exhaustion = 1.25
 	time = 120
 	icon = GFX_army_type_psionic
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 250
 		}
+
 		upkeep = {
 			energy = 2.5
 		}
 	}
-	prerequisites = {
-		"tech_telepathy"
+
+	prerequisites = { "tech_telepathy" }
+	potential_country = {
+		NOT = { has_authority = auth_machine_intelligence }
 	}
 	potential = {
 		from = {
 			OR = {
-				NOT = {
-					host_has_dlc = "Utopia"
-				}
+				NOT = { host_has_dlc = "Utopia" }
 				OR = {
 					has_trait = trait_latent_psionic
 					has_trait = trait_psionic
@@ -232,10 +325,21 @@ psionic_army = {
 				is_sapient = no
 			}
 		}
-		owner = {
-			NOT = {
-				has_authority = auth_machine_intelligence
 			}
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			OR = {
+				NOT = { has_technology = tech_telepathy }
+				has_technology = tech_gene_seed_purification
+			}
+		}
+		modifier = {
+			set = 0
+			is_fallen_empire = yes
+			NOT = { has_ethic = ethic_fanatic_spiritualist }
 		}
 	}
 }
@@ -251,24 +355,38 @@ xenomorph_army = {
 	time = 100
 	icon = GFX_army_type_xenomorph
 	has_species = no
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 200
 		}
+
 		upkeep = {
 			energy = 2
 		}
 	}
-	potential = {
-		owner = {
-			NOT = {
-				has_authority = auth_machine_intelligence
+
+	potential_country = {
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+
+	prerequisites = { "tech_morphogenetic_field_mastery" }
+
+	ai_weight = {
+		base = 10
+		modifier = {
+			factor = 10
+			is_fallen_empire = yes
+			has_ethic = ethic_fanatic_xenophobe
 			}
+		modifier = {
+			set = 0
+			OR = {
+				is_pacifist = yes
+				is_xenophile = yes
 		}
 	}
-	prerequisites = {
-		"tech_morphogenetic_field_mastery"
 	}
 }
 
@@ -282,17 +400,21 @@ gene_warrior_army = {
 	war_exhaustion = 1.5
 	time = 150
 	icon = GFX_army_type_gene_warrior
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 300
 		}
+
 		upkeep = {
 			energy = 3
 		}
 	}
-	prerequisites = {
-		"tech_gene_seed_purification"
+
+	prerequisites = { "tech_gene_seed_purification" }
+	potential_country = {
+		NOT = { has_authority = auth_machine_intelligence }
 	}
 	potential = {
 		from = {
@@ -302,15 +424,20 @@ gene_warrior_army = {
 				is_sapient = no
 			}
 		}
-		owner = {
-			NOT = {
-				has_authority = auth_machine_intelligence
 			}
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			is_fallen_empire = yes
+			NOT = { has_ethic = ethic_fanatic_xenophile }
 		}
 	}
 }
 
 ### Machine Empire Armies
+
 # Hunter-Killer Armies
 machine_assault_1 = {
 	damage = 2.2
@@ -321,16 +448,21 @@ machine_assault_1 = {
 	war_exhaustion = 0.25
 	time = 90
 	has_species = yes
+
 	icon = GFX_army_type_machine_assault
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 100
 		}
+
 		upkeep = {
 			energy = 1
 		}
 	}
+
+	potential_country = { has_authority = auth_machine_intelligence }
 	potential = {
 		owner = {
 			has_authority = auth_machine_intelligence
@@ -339,11 +471,17 @@ machine_assault_1 = {
 			has_trait = "trait_machine_unit"
 		}
 	}
-	show_tech_unlock_if = {
-		has_authority = auth_machine_intelligence
+
+	show_tech_unlock_if = { has_authority = auth_machine_intelligence }
+
+	prerequisites = { "tech_assault_armies" }
+
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			has_technology = tech_adaptive_combat_algorithms
 	}
-	prerequisites = {
-		"tech_assault_armies"
 	}
 }
 
@@ -357,26 +495,31 @@ machine_assault_2 = {
 	war_exhaustion = 0.75
 	time = 120
 	has_species = yes
+
 	icon = GFX_army_type_machine_assault
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 200
 		}
+
 		upkeep = {
 			energy = 2
 		}
 	}
+
+	potential_country = { has_authority = auth_machine_intelligence }
 	potential = {
-		owner = {
-			has_authority = auth_machine_intelligence
-		}
 		from = {
 			has_trait = "trait_machine_unit"
 		}
 	}
-	prerequisites = {
-		"tech_adaptive_combat_algorithms"
+
+	prerequisites = { "tech_adaptive_combat_algorithms" }
+
+	ai_weight = {
+		base = 100
 	}
 }
 
@@ -390,23 +533,26 @@ machine_assault_3 = {
 	war_exhaustion = 1.5
 	time = 500
 	has_species = no
+
 	icon = GFX_army_type_machine_assault
+
 	resources = {
 		category = armies
 		cost = {
 			minerals = 800
 		}
+
 		upkeep = {
 			energy = 8
 		}
 	}
-	potential = {
-		owner = {
-			has_authority = auth_machine_intelligence
-		}
-	}
-	prerequisites = {
-		"tech_biomechanics"
+
+	potential_country = { has_authority = auth_machine_intelligence }
+
+	prerequisites = { "tech_biomechanics" }
+
+	ai_weight = {
+		base = 50
 	}
 }
 
@@ -422,21 +568,24 @@ undead_army = {
 	icon = GFX_army_type_undead
 	pop_limited = no
 	disband_if_species_lacks_rights = no	#i.e. if you resurrect your enemies, you get to keep these armies, even if you are a purifier
-	prerequisites = {
-		"tech_assault_armies"
-	}
+	prerequisites = { "tech_assault_armies" }
+
 	resources = {
 		category = armies
 		cost = {
 			energy = 100
 		}
+
 		upkeep = {
 			energy = 0.75
 		}
 	}
+
 	show_tech_unlock_if = {
 		has_valid_civic = civic_reanimated_armies
 	}
+
+	potential_country = { has_valid_civic = civic_reanimated_armies }
 	potential = {
 		from = {
 			NOR = {
@@ -452,8 +601,9 @@ undead_army = {
 				value >= 1
 			}
 		}
-		owner = {
-			has_valid_civic = civic_reanimated_armies
 		}
+
+	ai_weight = {
+		base = 100
 	}
 }
