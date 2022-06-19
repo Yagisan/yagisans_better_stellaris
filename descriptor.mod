@@ -5,4 +5,4 @@ tags={
 	"Balance"
 }
 name="Yagisan's Better Stellaris"
-supported_version="3.3.2"
+supported_version="3.4.3"
