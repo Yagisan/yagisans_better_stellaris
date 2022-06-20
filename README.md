@@ -131,6 +131,16 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale            |       Immune |       Immune |
 | Pop Species       | Machine Unit | Machine Unit |
 
+| Offspring Defence Army | Vanilla |  Modded |
+| ---------------------- | ------: | ------: |
+| Army Damage            |    1.75 |    1.75 |
+| Morale Damage          |    1.30 |    1.30 |
+| Collateral Damage      |     0.0 |    0.00 |
+| War Exhaustion         |     0.0 |    0.25 |
+| Health                 |    2.00 |    2.00 |
+| Morale                 |  Immune |  Immune |
+| Pop Species            | Organic | Organic |
+
 ### Assault Armies
 
 | Assault Army      |      Vanilla |       Modded |
