@@ -176,7 +176,7 @@ offspring_defense = {
 	has_morale = no
 	morale_damage = 1.30
 	collateral_damage = 0.0
-	war_exhaustion = 0.0
+	war_exhaustion = 0.25
 	icon = GFX_army_type_xenomorph
 	has_species = yes
 
