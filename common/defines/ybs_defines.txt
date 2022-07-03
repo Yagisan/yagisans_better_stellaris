@@ -21,13 +21,13 @@ NAI = {
 	WAR_NEUTRAL_SPACE_PRIO = 0.1	# [0.5] Priority on targeting enemies in neutral space
 	# Multiplers ?
 	WAR_ATTACK_CLAIM_PRIO = 5	# [1.5] Priority on targeting enemy systems we have claimed
-	WAR_DEFENSE_CLAIM_PRIO = 3	# [1.5] Priority on defending claimed system we have conquered
-	WAR_DEFENSE_OWN_PLANET_PRIO = 2	# [1.5] Priority on defending own planets in a controlled system
+	WAR_DEFENSE_CLAIM_PRIO = 1	# [1.5] Priority on defending claimed system we have conquered
+	WAR_DEFENSE_OWN_PLANET_PRIO = 5	# [1.5] Priority on defending own planets in a controlled system
 	WAR_DEFENSE_OWN_PLANET_ENEMY_CONTROL_PRIO = 80	# [5] Priority on defending own planets in an enemy controlled system
 	# Planet / Starbase Additional Multiplers ?
 	WAR_ATTACK_PLANET_PRIO = 5	# [2] Priority on targeting enemy systems with planets
 	WAR_ATTACK_PLANET_CONTROLLED_SYSTEM_PRIO = 10	# [3] Priority on targeting enemy planets in controlled systems
-	WAR_ATTACK_STARBASE_PRIO = 1	# [4] Priority on targeting enemy systems with upgraded starbases
+	WAR_ATTACK_STARBASE_PRIO = 8	# [4] Priority on targeting enemy systems with upgraded starbases
 	WAR_DEFEND_STARBASE_PRIO = 3	# [2.5] Priority on defending systems with an upgraded starbase
 	# Fleet Additional Multiplers ?
 	WAR_ATTACK_MILITARY_FLEET_PRIO = 5	# [5] Priority on targeting enemy military fleets
