@@ -14,6 +14,7 @@
     - [Respawning](#respawning)
   - [Warfare](#warfare)
     - [War Exhaustion](#war-exhaustion)
+  - [Space Combat](#space-combat)
   - [Ground Combat](#ground-combat)
     - [Generals](#generals)
     - [Defence Armies](#defence-armies)
@@ -73,6 +74,28 @@ Overall, War Exhaustion is an interesting mechanic. However some aspects of warf
 | ------------------------------- | ------: | -----: |
 | WAR_EXHAUSTION_ARMY_KILLED_MULT |    0.25 |   0.50 |
 | OCCUPATION_POP_VALUE            |     0.1 |   0.30 |
+
+## Space Combat
+
+The default Stellaris space combat AI displays some "selfish" behaviours. By default it agressively tries to conquer as many systems as it can, while neglecting defence and allies. This often results in the AI winning battles, but ultimately losing the war due to wargoals.
+
+For example, in a defensive war, the defender's allied AI is only interested in taking its claims on the attacker.  Unfortunately, this causes two problems:
+- Defenders and attackers enter a race to see who can take their claimed systems first.  If they are different systems, the war stalemates until war exhaustion force ends the war.
+- Because the defender's allied AI is only interested in its claims, it does not care about defending its ally's systems.  The defender is often stuck on its own.  If the claimed systems are taken, both defender and their allies lose the war.
+
+To try and mitigate this, I have implemented a shakeup of how the AI prioritises space combat. This is fundamentally incompatible with other space combat AI mods, such as Starnet.
+
+The new space combat AI behaviour priority is:
+
+- Reclaim our occupied planets.
+- Defend our own territory.
+- Defend our allies territory.
+- Defend conquered territory.
+- Prioritise attacks along our border.
+- Prioritise attacks along allies border.
+- Prioritise attacks along conquered border.
+- Prioritise attacks in neutral space.
+
 
 ## Ground Combat
 
