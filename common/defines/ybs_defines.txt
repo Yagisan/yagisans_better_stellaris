@@ -42,7 +42,7 @@ NAI = {
 	# How strong do we ned to be to start or end a fight?
 	ENEMY_FLEET_POWER_MULT = 0.95	# [1.2] AI will need the fleet power of the enemy multiplied by this value to become offensive in an offensive war
 	ENEMY_ARMY_POWER_MULT = 1.2	# [1.0] AI will need the military power of the enemy multiplied by this value to land armies on planet
-	ENEMY_FLEET_POWER_HOME_SYSTEM_MULT = 0.9	# [1.0] AI will need the fleet power of the enemy multiplied by this value to attack hostiles in own systems
+	ENEMY_FLEET_POWER_HOME_SYSTEM_MULT = 0.6	# [1.0] AI will need the fleet power of the enemy multiplied by this value to attack hostiles in own systems
 	# How many armies should we have?
 	MIN_ASSAULT_ARMIES = 20 # [20]
 	MAX_ASSAULT_ARMIES = 200 # [60]
