@@ -30,16 +30,16 @@ NAI = {
 	WAR_DEFENSE_OWN_PLANET_ENEMY_CONTROL_PRIO = 20	# [5] Priority on defending own planets in an enemy controlled system
 	# Planet / Starbase Additional Multiplers ?
 	# Ideally we target planets - but fleets don't seem to be retasked if something more urgent comes up, so lower priority
-	WAR_ATTACK_PLANET_PRIO = 1.25	# [2] Priority on targeting enemy systems with planets
+	WAR_ATTACK_PLANET_PRIO = 3	# [2] Priority on targeting enemy systems with planets
 	# This seems to be planet bombing - we should only do this if there nothing better to do
 	WAR_ATTACK_PLANET_CONTROLLED_SYSTEM_PRIO = 1	# [3] Priority on targeting enemy planets in controlled systems
 	# Same as planets - but slightly higher priority
-	WAR_ATTACK_STARBASE_PRIO = 1.75	# [4] Priority on targeting enemy systems with upgraded starbases
-	WAR_DEFEND_STARBASE_PRIO = 1	# [2.5] Priority on defending systems with an upgraded starbase
+	WAR_ATTACK_STARBASE_PRIO = 5	# [4] Priority on targeting enemy systems with upgraded starbases
+	WAR_DEFEND_STARBASE_PRIO = 2	# [2.5] Priority on defending systems with an upgraded starbase
 	# Fleet Additional Multiplers ?
 	# Targeting fleets makes it easier for the AI to defend - but also includes space monsters ...
-	WAR_ATTACK_MILITARY_FLEET_PRIO = 2	# [5] Priority on targeting enemy military fleets
-	WAR_ATTACK_JUMP_DRIVE_FLEET_PRIO = 2	# [2] Priority on targeting vulnerable jump-drive fleets that are in cooldown
+	WAR_ATTACK_MILITARY_FLEET_PRIO = 10	# [5] Priority on targeting enemy military fleets
+	WAR_ATTACK_JUMP_DRIVE_FLEET_PRIO = 3	# [2] Priority on targeting vulnerable jump-drive fleets that are in cooldown
 	# Flat bonuses ?
 	HOSTILE_FLEETS_TARGET_SCORE = 50	# [20] extra score for engaging hostile fleets
 	CAPITAL_TARGET_SCORE = 25	# [5] extra score for defending/invading a capital
