@@ -49,10 +49,15 @@ NAI = {
 	CHOKEPOINT_TARGET_MULT = 1.2	# [2] extra multiplier for defensive scoring of chokepoints
 	AI_NO_RETREAT_LIMIT = 10	# [3] At fewer owner/controlled planets than this, the AI will fight to the death in their home systems
 	WAR_EXHAUSTION_TO_INTERVENE = 0.2	# [0.25] AI may want to intervene to help empires with this war exhaustion or higher
-	# How strong do we ned to be to start or end a fight?
+	# How strong do we need to be to start or end a fight?
 	ENEMY_FLEET_POWER_MULT = 0.99	# [1.2] AI will need the fleet power of the enemy multiplied by this value to become offensive in an offensive war
 	ENEMY_ARMY_POWER_MULT = 1.2	# [1.0] AI will need the military power of the enemy multiplied by this value to land armies on planet
 	ENEMY_FLEET_POWER_HOME_SYSTEM_MULT = 0.9	# [1.0] AI will need the fleet power of the enemy multiplied by this value to attack hostiles in own systems
+	# How far away should we look for targets
+	FLEET_MAX_DISTANCE_LOOKUP = 8	# [20] Maximum number of hops the fleet AI should consider when assigning mission.
+	# If no objective is found, the backup AI will send it to the closest objective available, or back to base.
+	FLEET_MAX_DISTANCE_LOOKUP_LARGE = 16	# [30] Maximum number of hops the fleet AI should consider when assigning mission on a large map (800 systems or more).
+	FLEET_MAX_DISTANCE_LOOKUP_HUGE = 32	# [50] Maximum number of hops the fleet AI should consider when assigning mission on a large map (1000 systems or more)
 	# How many armies should we have?
 	MIN_ASSAULT_ARMIES = 20	# [20]
 	MAX_ASSAULT_ARMIES = 200	# [60]
