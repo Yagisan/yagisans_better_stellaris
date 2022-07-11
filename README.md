@@ -88,14 +88,26 @@ To try and mitigate this, I have implemented a shakeup of how the AI prioritises
 The new space combat AI behaviour priority is:
 
 - Reclaim our occupied planets.
-- Defend our own territory.
-- Defend our allies territory.
-- Defend conquered territory.
+- Defend our own invaded territory.
+- Defend our allies invaded territory.
 - Prioritise attacks along our border.
 - Prioritise attacks along allies border.
 - Prioritise attacks along conquered border.
 - Prioritise attacks in neutral space.
+- Defend our own territory.
+- Defend our allies territory.
+- Defend conquered territory.
 
+When slecting targets, the new priorty order is
+
+- Enemy Fleets
+- Enemy Starbases
+- Systems with Planets
+- All other systems.
+
+The logic being fleets are what win wars, so they need to go first, and starbases make fleets, so they should go next.
+
+Space Combat AI is a mixture of decision weights (I can tweak those) and hardcoded AI choices (I can't change those), and at the time of writting, I have not completely worked out the interactions between the two. I have observered that the "Defense" goal makes the AI defend, even if no attacks are incoming - which is not ideal.
 
 ## Ground Combat
 
