@@ -4,3 +4,6 @@
 *.jpg -text -diff -delta
 *.png -text -diff -delta
 *.webp -text -diff -delta
+.gitattributes export-ignore  
+.gitignore export-ignore
+.vscode export-ignore
