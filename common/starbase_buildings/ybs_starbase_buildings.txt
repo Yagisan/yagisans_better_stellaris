@@ -1,0 +1,131 @@
+ybs_star_patrol = {
+	icon = "GFX_spaceport_module_crew_quarters"
+	construction_days = 360
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_strike_craft_1
+			is_gestalt = no
+		}
+		is_orbital_ring = no
+	}
+	possible = {
+		has_starbase_module = hangar_bay
+		not = {
+			has_starbase_building = ybs_star_patrol
+		}
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count >= 1
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count < 2
+			}
+		}
+		starbase_trade_protection_range_add = 3
+		starbase_trade_protection_add = 10
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count >= 2
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count < 3
+			}
+		}
+		starbase_trade_protection_range_add = 4
+		starbase_trade_protection_add = 15
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count >= 3
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count < 4
+			}
+		}
+		starbase_trade_protection_range_add = 5
+		starbase_trade_protection_add = 20
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count >= 4
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count < 5
+			}
+		}
+		starbase_trade_protection_range_add = 6
+		starbase_trade_protection_add = 25
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count >= 5
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count < 6
+			}
+		}
+		starbase_trade_protection_range_add = 7
+		starbase_trade_protection_add = 30
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = hangar_bay
+				count >= 6
+			}
+		}
+		starbase_trade_protection_range_add = 8
+		starbase_trade_protection_add = 35
+	}
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+	}
+}

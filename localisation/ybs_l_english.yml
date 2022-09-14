@@ -1,3 +1,6 @@
 ﻿l_english:
-ybs_artifact_buy_collector:0 "Buy from Private Collectors"
-ybs_artifact_buy_collector_desc:0 "Buy from private collectors at a premium"
+ybs_artifact_buy_collector: "Buy from Private Collectors"
+ybs_artifact_buy_collector_desc: "Buy from private collectors at a premium"
+sstarpatrolbase: "Star Patrol Base"
+sm_ybs_star_patrol: "Star Patrol Office"
+sm_ybs_star_patrol_desc: "Interstellar piracy protection"
