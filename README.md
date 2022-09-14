@@ -21,6 +21,7 @@
     - [Assault Armies](#assault-armies)
     - [Occupation Armies](#occupation-armies)
     - [Event Armies](#event-armies)
+  - [Artifacts](#artifacts)
 
 ## Jobs
 
@@ -77,7 +78,7 @@ Overall, War Exhaustion is an interesting mechanic. However some aspects of warf
 
 ## Space Combat
 
-The default Stellaris space combat AI displays some "selfish" behaviours. By default it agressively tries to conquer as many systems as it can, while neglecting defence and allies. This often results in the AI winning battles, but ultimately losing the war due to wargoals.
+The default Stellaris space combat AI displays some "selfish" behaviours. By default it aggressively tries to conquer as many systems as it can, while neglecting defence and allies. This often results in the AI winning battles, but ultimately losing the war due to war goals.
 
 For example, in a defensive war, the defender's allied AI is only interested in taking its claims on the attacker.  Unfortunately, this causes two problems:
 - Defenders and attackers enter a race to see who can take their claimed systems first.  If they are different systems, the war stalemates until war exhaustion force ends the war.
@@ -98,7 +99,7 @@ The new space combat AI behaviour priority is:
 - Defend our allies territory.
 - Defend conquered territory.
 
-When slecting targets, the new priorty order is
+When selecting targets, the new priority order is
 
 - Enemy Fleets
 - Enemy Starbases
@@ -107,7 +108,7 @@ When slecting targets, the new priorty order is
 
 The logic being fleets are what win wars, so they need to go first, and starbases make fleets, so they should go next.
 
-Space Combat AI is a mixture of decision weights (I can tweak those) and hardcoded AI choices (I can't change those), and at the time of writting, I have not completely worked out the interactions between the two. I have observered that the "Defense" goal makes the AI defend, even if no attacks are incoming - which is not ideal.
+Space Combat AI is a mixture of decision weights (I can tweak those) and hardcoded AI choices (I can't change those), and at the time of writing, I have not completely worked out the interactions between the two. I have observed that the "Defense" goal makes the AI defend, even if no attacks are incoming - which is not ideal.
 
 ## Ground Combat
 
@@ -537,3 +538,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale Damage |     1.5 |   1.50 |
 | Health        |     2.0 |   2.00 |
 | Morale        |  Immune | Immune |
+
+## Artifacts
+
+Without the Rubicator relic, artifacts are very difficult to acquire. Regular (Non-gestalt) empires now have a new option to buy artifacts from private collectors. These come at inflated prices, but do offer a way to continue acquiring them into the late game. If the AI has a surplus of resources, and less than 50 artifacts, they may purchase them as well.
