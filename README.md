@@ -34,6 +34,7 @@
       - [Curator Think Tank](#curator-think-tank)
       - [Trader Proxy Office](#trader-proxy-office)
       - [Command Center](#command-center)
+      - [Transit Hub](#transit-hub)
     - [New Starbase Buildings](#new-starbase-buildings)
       - [Star Patrol Office](#star-patrol-office)
 
@@ -670,6 +671,16 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 **Changes**
 
 - +1 Starbase Capacity
+
+#### Transit Hub
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 180 | 3 | **No** |
+
+**Changes**
+
+- No longer able to build on Orbital Rings.
 
 ### New Starbase Buildings
 

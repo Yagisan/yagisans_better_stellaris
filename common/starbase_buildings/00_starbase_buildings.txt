@@ -1279,11 +1279,9 @@ transit_hub = {
 	}
 	possible = {
 		custom_tooltip = {
-			fail_text = "requires_starport_or_ring"
-			OR = {
-				has_starbase_size >= starbase_starport
-				is_orbital_ring = yes
-			}
+			fail_text = "requires_starport"
+			is_orbital_ring = no
+			has_starbase_size >= starbase_starport
 		}
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
