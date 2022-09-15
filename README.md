@@ -547,6 +547,25 @@ Without the Rubicator relic, artifacts are very difficult to acquire. Regular (N
 
 ## Starbase Buildings
 
+With the addition of Orbital Rings, it's now possible to have more starbase buildings in each system. I have created several new buildings, and selectively edited a few vanilla buildings to provide the player with more options.
+
 ### Star Patrol Office
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   200   | 360 | 3 | **No** |
+
+**Requirements**
+
+- Max 1 per system.
+- Starbase must have at least 1 Hanger Bay
+- Not a gestalt empire.
+
+**Effects**
+
+- Adds 5 trade protection for the Star Patrol office, and 5 trade protection for each hanger in the starbase. (Maximum of 35 trade protection)
+- Adds 2 trade protection range for the Star Patrol office, and 1 trade protection range for each hanger in the starbase. (Maximum of 8 trade protection range)
+
+**Description**
 
 Non-gestalt empires can build a Star Patrol Office on any starbase with a hanger. This will extend both the range, and value of its anti-piracy protection. These starbases, when not in a system with colonies, or next to another empire will be known as Star Patrol Base.

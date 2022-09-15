@@ -24,7 +24,6 @@ ybs_star_patrol = {
 			energy = 3
 		}
 	}
-
 	triggered_station_modifier = {
 		potential = {
 			hidden_trigger = {
