@@ -10,7 +10,13 @@ ybs_star_patrol = {
 		is_orbital_ring = no
 	}
 	possible = {
-		has_starbase_module = hangar_bay
+		OR = {
+			has_starbase_module = hangar_bay
+			starbase_buildable_is_in_queue_before = {
+				first = hangar_bay
+				second = ybs_star_patrol
+			}
+		}
 		not = {
 			has_starbase_building = ybs_star_patrol
 		}
