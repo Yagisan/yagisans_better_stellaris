@@ -5,14 +5,19 @@ crew_quarters = {
 	resources = {
 		category = starbase_buildings
 		cost = {
-			alloys = 50
+			alloys = 25
 		}
-		upkeep = {
-			energy = 1
+	}
+	potential = {
+		not = {
+			has_starbase_building = crew_quarters
 		}
 	}
 	orbit_modifier = {
 		ship_orbit_upkeep_mult = -0.25
+	}
+	country_modifier = {
+		country_naval_cap_add = 2
 	}
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
@@ -53,6 +58,28 @@ hydroponics_bay = {
 resource_silo = {
 	icon = "GFX_spaceport_module_resource_silo"
 	construction_days = 180
+	potential = {
+		exists = owner
+		is_orbital_ring = no
+		or = {
+			owner = {
+				is_ai = no
+			}
+			and = {
+				owner = {
+					is_ai = yes
+				}
+				# Don't build in colony systems. Better to build something else here.
+				not = {
+					solar_system = {
+						any_system_planet = {
+							is_colony = yes
+						}
+					}
+				}
+			}
+		}
+	}
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -113,7 +140,7 @@ nebula_refinery = {
 	resources = {
 		category = starbase_buildings
 		cost = {
-			alloys = 100
+			alloys = 200
 		}
 		produces = {
 			minerals = 10
@@ -127,8 +154,26 @@ nebula_refinery = {
 			}
 			exotic_gases = 1
 		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_volatile_motes
+				}
+			}
+			volatile_motes = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_rare_crystals
+				}
+			}
+			rare_crystals = 1
+		}
 		upkeep = {
-			energy = 2
+			energy = 3
 		}
 	}
 	show_in_tech = "tech_space_mining_1"
@@ -156,11 +201,16 @@ listening_post = {
 		owner = {
 			has_technology = tech_sensors_2
 		}
+		not = {
+			has_starbase_building = listening_post
+		}
 		is_orbital_ring = no
 	}
 	station_modifier = {
-		ship_sensor_range_add = 2
-		ship_hyperlane_range_add = 4
+		ship_sensor_range_add = 3
+		ship_hyperlane_range_add = 6
+		starbase_trade_protection_range_add = 2
+		starbase_trade_protection_add = 1
 	}
 	triggered_station_modifier = {
 		potential = {
@@ -199,6 +249,9 @@ offworld_trading_company = {
 			is_gestalt = no
 		}
 		is_orbital_ring = no
+		not = {
+			has_starbase_building = offworld_trading_company
+		}
 	}
 	possible = {
 		custom_tooltip = {
@@ -212,12 +265,21 @@ offworld_trading_company = {
 				second = offworld_trading_company
 			}
 		}
+		not = {
+			has_starbase_building = offworld_trading_company
+		}
 	}
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
+	}
+	station_modifier = {
+		starbase_trade_collection_range_add = 2
+	}
+	system_modifier = {
+		trade_value_mult = 0.1
 	}
 	triggered_station_modifier = {
 		potential = {
@@ -262,6 +324,9 @@ fleet_academy = {
 				first = shipyard
 				second = fleet_academy
 			}
+		}
+		not = {
+			has_starbase_building = fleet_academy
 		}
 	}
 	ship_modifier = {
@@ -314,6 +379,9 @@ naval_logistics_office = {
 					first = orbital_ring_anchorage
 					second = naval_logistics_office
 				}
+			}
+			not = {
+				has_starbase_building = naval_logistics_office
 			}
 		}
 	}
@@ -619,6 +687,25 @@ deep_space_black_site = {
 			}
 		}
 		is_orbital_ring = no
+		or = {
+			owner = {
+				is_ai = no
+			}
+			and = {
+				owner = {
+					is_ai = yes
+				}
+				solar_system = {
+					any_system_planet = {
+						is_colony = yes
+					}
+				}
+			}
+		}
+		has_starbase_size >= starbase_starport
+		not = {
+			has_starbase_building = deep_space_black_site
+		}
 	}
 	possible = {
 		custom_tooltip = {
@@ -649,6 +736,7 @@ deep_space_black_site = {
 	system_modifier = {
 		pop_government_ethic_attraction = 0.25
 		planet_stability_add = 5
+		planet_crime_mult = -0.1
 	}
 	show_in_tech = "tech_living_state"
 	ai_build_at_chokepoint = no
@@ -706,9 +794,9 @@ curator_think_tank = {
 			alloys = 100
 		}
 		produces = {
-			physics_research = 5
-			society_research = 5
-			engineering_research = 5
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
 		}
 		produces = {
 			trigger = {
@@ -1037,6 +1125,15 @@ shroud_beacon = {
 communications_jammer = {
 	icon = "GFX_starbase_communication_jammer"
 	construction_days = 180
+	potential = {
+		not = {
+			has_starbase_building = communications_jammer
+		}
+		OR = {
+			has_starbase_size >= starbase_starport
+			is_orbital_ring = yes
+		}
+	}
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -1082,6 +1179,15 @@ communications_jammer = {
 disruption_field = {
 	icon = "GFX_spaceport_module_orbital_mind_control_lazer"
 	construction_days = 180
+	potential = {
+		OR = {
+			has_starbase_size >= starbase_starport
+			is_orbital_ring = yes
+		}
+		not = {
+			has_starbase_building = disruption_field
+		}
+	}
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -1134,6 +1240,10 @@ warp_fluctuator = {
 			is_gestalt = no
 		}
 		is_orbital_ring = no
+		not = {
+			has_starbase_building = warp_fluctuator
+		}
+		has_starbase_size >= starbase_starport
 	}
 	possible = {
 		custom_tooltip = {
@@ -1246,6 +1356,13 @@ command_center = {
 		owner = {
 			has_technology = tech_command_matrix
 		}
+		OR = {
+			has_starbase_size >= starbase_starfortress
+			has_starbase_size >= orbital_ring_tier_3
+		}
+		not = {
+			has_starbase_building = command_center
+		}
 	}
 	possible = {
 		custom_tooltip = {
@@ -1275,11 +1392,14 @@ command_center = {
 	resources = {
 		category = starbase_buildings
 		cost = {
-			alloys = 250
+			alloys = 500
 		}
 		upkeep = {
 			energy = 5
 		}
+	}
+	country_modifier = {
+		country_starbase_capacity_add = 1
 	}
 	equipped_component = "STARBASE_AURA_COMMAND_CENTER"
 	show_in_tech = "tech_command_matrix"
@@ -1347,6 +1467,9 @@ trader_proxy_office = {
 			}
 		}
 		is_orbital_ring = no
+		not = {
+			has_starbase_building = trader_proxy_office
+		}
 	}
 	possible = {
 		custom_tooltip = {
@@ -1403,7 +1526,7 @@ trader_proxy_office = {
 				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 			}
 		}
-		trade_value_add = 5
+		trade_value_add = 10
 	}
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes

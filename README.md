@@ -23,7 +23,18 @@
     - [Event Armies](#event-armies)
   - [Artifacts](#artifacts)
   - [Starbase Buildings](#starbase-buildings)
-    - [Star Patrol Office](#star-patrol-office)
+    - [Changed Starbase Buildings](#changed-starbase-buildings)
+      - [Crew Quarters / Crew Gestation Chambers / Service Umbilicals](#crew-quarters--crew-gestation-chambers--service-umbilicals)
+      - [Resource Silo](#resource-silo)
+      - [Nebula Refinery](#nebula-refinery)
+      - [Listening Post](#listening-post)
+      - [Offworld Trading Company](#offworld-trading-company)
+      - [Deep Space Black Site](#deep-space-black-site)
+      - [Curator Think Tank](#curator-think-tank)
+      - [Trader Proxy Office](#trader-proxy-office)
+      - [Command Center](#command-center)
+    - [New Starbase Buildings](#new-starbase-buildings)
+      - [Star Patrol Office](#star-patrol-office)
 
 ## Jobs
 
@@ -549,7 +560,110 @@ Without the Rubicator relic, artifacts are very difficult to acquire. Regular (N
 
 With the addition of Orbital Rings, it's now possible to have more starbase buildings in each system. I have created several new buildings, and selectively edited a few vanilla buildings to provide the player with more options.
 
-### Star Patrol Office
+### Changed Starbase Buildings
+
+#### Crew Quarters / Crew Gestation Chambers / Service Umbilicals
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   25   | 180 | 0 | **Yes** |
+
+**Changes**
+
+- Reduced building cost
+- No upkeep
+- Now provides 2 Naval capacity.
+
+#### Resource Silo
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   50   | 180 | 0 | **No** |
+
+**Changes**
+
+- No longer able to build on Orbital Rings
+- AI will no longer try building this in systems with colonies.
+
+#### Nebula Refinery
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   200   | 360 | 3 | **Yes** |
+
+**Changes**
+
+- Will now also produce 1 Volatile Mote with Mote Stabilization technology.
+- Will now also produce 1 Rare Crystal with Rare Crystal Mining technology.
+
+#### Listening Post
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 360 | 2 | **No** |
+
+**Changes**
+
+- +3 Sensor Range
+- +6 Hyperlane detection Range
+- +2 Trade Protection Range
+- +1 Trade Protection
+
+#### Offworld Trading Company
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 360 | 0 | **No** |
+
+**Changes**
+
+- +2 Trade Collection Range
+- +10% Trade for each colony in the system.
+
+#### Deep Space Black Site
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 360 | 2 | **No** |
+
+**Changes**
+
+- -10% Crime for each colony in the system.
+- AI will no longer try building this in systems without colonies.
+
+#### Curator Think Tank
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 360 | 2 | **No** |
+
+**Changes**
+
+- +10 Research
+
+#### Trader Proxy Office
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 360 | 0 | **No** |
+
+**Changes**
+
+- +10 Trade to the station with Unchained Knowledge resolution level 3 or above
+
+#### Command Center
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   500   | 360 | 5 | **Yes** |
+
+**Changes**
+
+- +1 Starbase Capacity
+
+### New Starbase Buildings
+
+#### Star Patrol Office
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
