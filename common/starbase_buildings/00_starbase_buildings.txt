@@ -1,85 +1,75 @@
 crew_quarters = {
 	icon = "GFX_spaceport_module_crew_quarters"
 	construction_days = 180
-
 	initial = yes
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 50
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	orbit_modifier = {
 		ship_orbit_upkeep_mult = -0.25
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 hydroponics_bay = {
 	icon = "GFX_spaceport_module_hydroponic_farms"
 	construction_days = 180
-
 	potential = {
 		exists = owner
-		owner = { has_technology = "tech_hydroponics" }
+		owner = {
+			has_technology = "tech_hydroponics"
+		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 50
 		}
-
 		produces = {
 			food = 10
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	show_in_tech = "tech_hydroponics"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 resource_silo = {
 	icon = "GFX_spaceport_module_resource_silo"
 	construction_days = 180
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 50
 		}
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_technology = tech_construction_templates }
+				NOT = {
+					has_technology = tech_construction_templates
+				}
 			}
 		}
 		country_resource_max_add = 5000
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			exists = owner
@@ -89,23 +79,22 @@ resource_silo = {
 		}
 		country_resource_max_add = 10000
 	}
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 nebula_refinery = {
 	icon = "GFX_spaceport_nebula_refinery"
 	construction_days = 360
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_space_mining_1 }
+		owner = {
+			has_technology = tech_space_mining_1
+		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -116,71 +105,68 @@ nebula_refinery = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_nebula"
-			star = { is_inside_nebula = yes }
+			star = {
+				is_inside_nebula = yes
+			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		produces = {
 			minerals = 10
 		}
-
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_technology = tech_mine_exotic_gases }
+				owner = {
+					has_technology = tech_mine_exotic_gases
+				}
 			}
 			exotic_gases = 1
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	show_in_tech = "tech_space_mining_1"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 listening_post = {
 	icon = "GFX_spaceport_module_navigators_guild"
 	construction_days = 360
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_sensors_2 }
+		owner = {
+			has_technology = tech_sensors_2
+		}
 		is_orbital_ring = no
 	}
-
 	station_modifier = {
 		ship_sensor_range_add = 2
 		ship_hyperlane_range_add = 4
 	}
-
 	triggered_station_modifier = {
 		potential = {
-			hidden_trigger = { exists = this }
+			hidden_trigger = {
+				exists = this
+			}
 			exists = owner
 			owner = {
 				is_galactic_community_member = yes
@@ -192,24 +178,20 @@ listening_post = {
 				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 			}
 		}
-
 		ship_sensor_range_add = 1
 		ship_hyperlane_range_add = 1
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
-
 	show_in_tech = "tech_sensors_2"
 }
 
 offworld_trading_company = {
 	icon = "GFX_starbase_offworld_trading_company"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
@@ -218,7 +200,6 @@ offworld_trading_company = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -232,31 +213,28 @@ offworld_trading_company = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
 	}
-
 	triggered_station_modifier = {
 		potential = {
-			hidden_trigger = { exists = this }
+			hidden_trigger = {
+				exists = this
+			}
 			has_starbase_module = trading_hub
 		}
 		trade_value_add = 2
 		mult = value:num_starbase_modules_of_type|TYPE|trading_hub|
 	}
-
 	custom_tooltip = sm_offworld_trading_company_desc_modifier
-
 	show_in_tech = "tech_space_trading"
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -270,14 +248,13 @@ offworld_trading_company = {
 fleet_academy = {
 	icon = "GFX_spaceport_module_fleet_academy"
 	construction_days = 360
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_interstellar_fleet_traditions }
-
+		owner = {
+			has_technology = tech_interstellar_fleet_traditions
+		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		OR = {
 			has_starbase_module = shipyard
@@ -287,28 +264,23 @@ fleet_academy = {
 			}
 		}
 	}
-
 	ship_modifier = {
 		ship_starting_experience_add = 100
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	show_in_tech = "tech_interstellar_fleet_traditions"
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -322,12 +294,12 @@ fleet_academy = {
 naval_logistics_office = {
 	icon = "GFX_starbase_naval_logistics"
 	construction_days = 360
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_interstellar_fleet_traditions }
+		owner = {
+			has_technology = tech_interstellar_fleet_traditions
+		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_anchorage"
@@ -345,25 +317,21 @@ naval_logistics_office = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	custom_tooltip = sm_naval_logistics_office_desc_modifier
 	show_in_tech = "tech_interstellar_fleet_traditions"
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -377,13 +345,13 @@ naval_logistics_office = {
 titan_yards = {
 	icon = "GFX_spaceport_module_titan_assembly_yard"
 	construction_days = 720
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_titans }
+		owner = {
+			has_technology = tech_titans
+		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_citadel"
@@ -397,24 +365,20 @@ titan_yards = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 500
 		}
-
 		upkeep = {
 			energy = 10
 		}
 	}
-
 	custom_tooltip = sm_titan_yards_desc_modifier
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -426,7 +390,9 @@ titan_yards = {
 			factor = 0
 			owner = {
 				any_owned_starbase = {
-					NOT = { is_same_value = root }
+					NOT = {
+						is_same_value = root
+					}
 					has_starbase_building = titan_yards
 				}
 			}
@@ -437,19 +403,17 @@ titan_yards = {
 colossus_yards = {
 	icon = "GFX_spaceport_module_colossus_assembly_yard"
 	construction_days = 720
-
 	potential = {
 		exists = owner
 		owner = {
 			OR = {
 				has_technology = tech_colossus
 				has_technology = tech_juggernaut
-				has_technology = tech_btc_1 # star-eater
+				has_technology = tech_btc_1				# star-eater
 			}
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_citadel"
@@ -463,26 +427,22 @@ colossus_yards = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 1000
 		}
-
 		upkeep = {
 			energy = 20
 		}
 	}
-
 	custom_tooltip = sm_colossus_yards_desc_modifier
 	show_in_tech = "tech_colossus"
 	show_in_tech = "tech_juggernaut"
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -494,7 +454,9 @@ colossus_yards = {
 			factor = 0
 			owner = {
 				any_owned_starbase = {
-					NOT = { is_same_value = root }
+					NOT = {
+						is_same_value = root
+					}
 					has_starbase_building = colossus_yards
 				}
 			}
@@ -505,12 +467,12 @@ colossus_yards = {
 black_hole_observatory = {
 	icon = "GFX_spaceport_module_observatory"
 	construction_days = 360
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_sensors_3 }
+		owner = {
+			has_technology = tech_sensors_3
+		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -521,16 +483,16 @@ black_hole_observatory = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_black_hole"
-			star = { is_star_class = sc_black_hole }
+			star = {
+				is_star_class = sc_black_hole
+			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		produces = {
 			physics_research = 15
 		}
@@ -552,33 +514,30 @@ black_hole_observatory = {
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_technology = tech_mine_dark_matter }
+				owner = {
+					has_technology = tech_mine_dark_matter
+				}
 			}
 			sr_dark_matter = 1
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	show_in_tech = "tech_sensors_3"
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 target_uplink_computer = {
 	icon = "GFX_spaceport_synchronized_defenses"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -588,42 +547,37 @@ target_uplink_computer = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	station_modifier = {
-		ship_weapon_range_mult = 0.50
+		ship_weapon_range_mult = 0.5
 	}
-
 	defense_platform_modifier = {
-		ship_weapon_range_mult = 0.50
+		ship_weapon_range_mult = 0.5
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 defense_grid = {
 	icon = "GFX_starbase_defense_grid_supercomputer"
 	construction_days = 360
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_synchronized_defences }
+		owner = {
+			has_technology = tech_synchronized_defences
+		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -633,44 +587,39 @@ defense_grid = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 150
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	station_modifier = {
 		starbase_defense_platform_capacity_add = 8
 	}
-
 	show_in_tech = "tech_synchronized_defences"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 deep_space_black_site = {
 	icon = "GFX_starbase_deep_space_black_site"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
 			has_technology = tech_living_state
-			NOT = { has_ethic = ethic_gestalt_consciousness }
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -685,40 +634,33 @@ deep_space_black_site = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		produces = {
 			unity = 1
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	system_modifier = {
 		pop_government_ethic_attraction = 0.25
 		planet_stability_add = 5
 	}
-
 	show_in_tech = "tech_living_state"
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 curator_think_tank = {
 	icon = "GFX_starbase_curator_think_tank"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
@@ -727,7 +669,6 @@ curator_think_tank = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -759,19 +700,16 @@ curator_think_tank = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		produces = {
 			physics_research = 5
 			society_research = 5
 			engineering_research = 5
 		}
-
 		produces = {
 			trigger = {
 				exists = owner
@@ -788,23 +726,20 @@ curator_think_tank = {
 			society_research = 5
 			engineering_research = 5
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 art_college = {
 	icon = "GFX_starbase_artist_college"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
@@ -813,7 +748,6 @@ art_college = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -845,17 +779,14 @@ art_college = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		produces = {
 			unity = 10
 		}
-
 		produces = {
 			trigger = {
 				exists = owner
@@ -870,23 +801,20 @@ art_college = {
 			}
 			unity = 10
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 salvager_workshop = {
 	icon = "GFX_starbase_salvager_workshop"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
@@ -895,7 +823,6 @@ salvager_workshop = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -927,7 +854,6 @@ salvager_workshop = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -936,7 +862,6 @@ salvager_workshop = {
 		upkeep = {
 			energy = 3
 		}
-
 		produces = {
 			trigger = {
 				exists = owner
@@ -952,13 +877,11 @@ salvager_workshop = {
 			alloys = 5
 		}
 	}
-
 	orbit_modifier = {
 		ship_orbit_upkeep_mult = -0.2
 		ship_repair_hull_mult = 0.3
 		ship_repair_armor_mult = 0.3
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
@@ -969,7 +892,6 @@ salvager_workshop = {
 shroud_beacon = {
 	icon = "GFX_starbase_shroud_beacon"
 	construction_days = 720
-
 	potential = {
 		exists = owner
 		owner = {
@@ -979,7 +901,6 @@ shroud_beacon = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -992,7 +913,9 @@ shroud_beacon = {
 					has_star_flag = shroudwalker_enclave_system
 					any_fleet_in_system = {
 						exists = owner
-						owner = { has_country_flag = shroudwalker_enclave_country }
+						owner = {
+							has_country_flag = shroudwalker_enclave_country
+						}
 					}
 				}
 			}
@@ -1002,7 +925,9 @@ shroud_beacon = {
 			solar_system = {
 				if = {
 					limit = {
-						NOT = { has_star_flag = spawned_shroud_tunnel }
+						NOT = {
+							has_star_flag = spawned_shroud_tunnel
+						}
 					}
 					has_natural_wormhole = no
 				}
@@ -1016,14 +941,20 @@ shroud_beacon = {
 						any_system_within_border = {
 							OR = {
 								has_star_flag = spawned_shroud_tunnel
-								starbase = { has_starbase_building = shroud_beacon }
+								starbase = {
+									has_starbase_building = shroud_beacon
+								}
 							}
 						}
 					}
 				}
 				AND = {
-					solar_system = { has_star_flag = spawned_shroud_tunnel }
-					NOT = { has_starbase_building = shroud_beacon }
+					solar_system = {
+						has_star_flag = spawned_shroud_tunnel
+					}
+					NOT = {
+						has_starbase_building = shroud_beacon
+					}
 				}
 			}
 		}
@@ -1036,11 +967,12 @@ shroud_beacon = {
 						has_country_flag = shroud_beacon@root.owner
 					}
 				}
-				owner = { has_country_flag = shroud_beacon }
+				owner = {
+					has_country_flag = shroud_beacon
+				}
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -1051,7 +983,6 @@ shroud_beacon = {
 			energy = 3
 		}
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
@@ -1063,29 +994,39 @@ shroud_beacon = {
 				any_neighbor_system = {
 					any_fleet_in_system = {
 						exists = owner
-						owner = { has_country_flag = shroudwalker_enclave_country }
+						owner = {
+							has_country_flag = shroudwalker_enclave_country
+						}
 					}
 				}
 			}
 		}
 	}
-
 	on_finished = {
 		if = {
 			limit = {
-				solar_system = { NOT = { has_star_flag = spawned_shroud_tunnel } }
+				solar_system = {
+					NOT = {
+						has_star_flag = spawned_shroud_tunnel
+					}
+				}
 			}
 			shroudwalker_enclave_starbase_create_shroud_tunnel = yes
 		}
 		fleet.owner = {
-			country_event = { id = enclave.4200 }
-			country_event = { id = origin.5625 }
+			country_event = {
+				id = enclave.4200
+			}
+			country_event = {
+				id = origin.5625
+			}
 		}
 	}
-
 	on_destroyed = {
 		fleet.owner = {
-			country_event = { id = enclave.6015 }
+			country_event = {
+				id = enclave.6015
+			}
 		}
 	}
 }
@@ -1093,11 +1034,9 @@ shroud_beacon = {
 #################
 # AURA BUILDINGS
 #################
-
 communications_jammer = {
 	icon = "GFX_starbase_communication_jammer"
 	construction_days = 180
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -1114,7 +1053,6 @@ communications_jammer = {
 			}
 		}
 	}
-
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
@@ -1124,31 +1062,26 @@ communications_jammer = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 50
 		}
-
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	equipped_component = "STARBASE_AURA_COMMUNICATIONS_JAMMER"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 disruption_field = {
 	icon = "GFX_spaceport_module_orbital_mind_control_lazer"
 	construction_days = 180
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -1165,7 +1098,6 @@ disruption_field = {
 			}
 		}
 	}
-
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
@@ -1175,31 +1107,26 @@ disruption_field = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	equipped_component = "STARBASE_AURA_DISRUPTION_FIELD"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 warp_fluctuator = {
 	icon = "GFX_spaceport_module_atmospheric_manipulator"
 	construction_days = 180
-
 	potential = {
 		exists = owner
 		owner = {
@@ -1208,49 +1135,41 @@ warp_fluctuator = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
 			has_starbase_size >= starbase_starport
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
-
 	station_modifier = {
 		starbase_trade_collection_range_add = 1
 	}
-
 	show_in_tech = "tech_interstellar_economics"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
 transit_hub = {
 	icon = "GFX_spaceport_module_pioneering_terminal"
 	construction_days = 180
-
 	potential = {
 		exists = owner
 		owner = {
 			has_technology = tech_hyper_drive_2
 		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport_or_ring"
@@ -1275,7 +1194,6 @@ transit_hub = {
 			}
 		}
 	}
-
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
@@ -1285,27 +1203,21 @@ transit_hub = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 3
 		}
 	}
-
 	system_modifier = {
-		planet_resettlement_unemployed_mult = 1.00
-
+		planet_resettlement_unemployed_mult = 1
 		show_only_custom_tooltip = no
 		custom_tooltip = "sm_transit_hub_migrate_effect_desc"
 	}
-
 	show_in_tech = "tech_hyper_drive_2"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
@@ -1316,7 +1228,9 @@ transit_hub = {
 				solar_system = {
 					any_system_planet = {
 						exists = owner
-						owner = { is_country_type = default }
+						owner = {
+							is_country_type = default
+						}
 					}
 				}
 			}
@@ -1327,12 +1241,12 @@ transit_hub = {
 command_center = {
 	icon = "GFX_starbase_command_center"
 	construction_days = 360
-
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_command_matrix }
+		owner = {
+			has_technology = tech_command_matrix
+		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starfortress_or_ring_3"
@@ -1349,7 +1263,6 @@ command_center = {
 			}
 		}
 	}
-
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
@@ -1359,25 +1272,21 @@ command_center = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 250
 		}
-
 		upkeep = {
 			energy = 5
 		}
 	}
-
 	equipped_component = "STARBASE_AURA_COMMAND_CENTER"
 	show_in_tech = "tech_command_matrix"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -1422,11 +1331,9 @@ command_center = {
 #		}
 #	}
 #}
-
 trader_proxy_office = {
 	icon = "GFX_starbase_offworld_trading_company"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
@@ -1441,21 +1348,23 @@ trader_proxy_office = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
 			has_starbase_size >= starbase_starport
 		}
-		NOT = { has_starbase_building = trader_proxy_office }
-
+		NOT = {
+			has_starbase_building = trader_proxy_office
+		}
 		custom_tooltip = {
 			fail_text = "requires_trade_enclave"
 			solar_system = {
 				OR = {
 					any_system_planet = {
 						exists = owner
-						owner = { is_country_type = default }
+						owner = {
+							is_country_type = default
+						}
 					}
 					AND = {
 						has_star_flag = enclave
@@ -1470,22 +1379,20 @@ trader_proxy_office = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
 	}
-
 	country_modifier = {
 		country_trade_fee = -0.05
 	}
-
 	triggered_station_modifier = {
 		potential = {
-			hidden_trigger = { exists = this }
-
+			hidden_trigger = {
+				exists = this
+			}
 			exists = owner
 			owner = {
 				is_galactic_community_member = yes
@@ -1496,18 +1403,20 @@ trader_proxy_office = {
 				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 			}
 		}
-
 		trade_value_add = 5
 	}
-
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			OR = {
-				solar_system = { NOT = { has_star_flag = guardians_traders_system } }
+				solar_system = {
+					NOT = {
+						has_star_flag = guardians_traders_system
+					}
+				}
 				has_starbase_building = trader_proxy_office
 				solar_system = {
 					any_fleet_in_system = {
@@ -1522,14 +1431,12 @@ trader_proxy_office = {
 dragon_hatchery = {
 	icon = "GFX_starbase_dragon_hatchery"
 	construction_days = 720
-
 	potential = {
 		exists = owner
 		owner = {
 			is_dragon_breeder_country = yes
 		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_citadel"
@@ -1543,7 +1450,6 @@ dragon_hatchery = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -1553,13 +1459,11 @@ dragon_hatchery = {
 			energy = 10
 		}
 	}
-
 	custom_tooltip = dragon_hatchery_tooltip
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			owner = {
@@ -1577,20 +1481,17 @@ dragon_hatchery = {
 ice_mining_station = {
 	icon = "GFX_starbase_ice_mining_station"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
 			has_ascension_perk = ap_hydrocentric
 		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
 			has_starbase_size >= starbase_starport
 		}
-
 		custom_tooltip = {
 			fail_text = requires_ice_source
 			solar_system = {
@@ -1601,24 +1502,20 @@ ice_mining_station = {
 			}
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
 	}
-
 	custom_tooltip = ice_mining_station_tooltip
-
 	system_modifier = {
 		station_gatherers_produces_mult = 0.15
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			owner = {
@@ -1636,33 +1533,28 @@ ice_mining_station = {
 offspring_outlook = {
 	icon = "GFX_offspring_aura_sb"
 	construction_days = 180
-
 	potential = {
 		exists = owner
 		owner = {
 			has_origin = origin_progenitor_hive
 		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
 			has_starbase_size >= starbase_starport
 		}
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 150
 		}
-
 		upkeep = {
 			energy = 2
 		}
 	}
 	equipped_component = "STARBASE_OFFSPRING_OUTLOOK"
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
@@ -1673,7 +1565,6 @@ offspring_outlook = {
 mercenary_garrison = {
 	icon = "GFX_starbase_mercenary_garrison"
 	construction_days = 360
-
 	potential = {
 		exists = owner
 		owner = {
@@ -1682,7 +1573,6 @@ mercenary_garrison = {
 		}
 		is_orbital_ring = no
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
@@ -1702,7 +1592,6 @@ mercenary_garrison = {
 			}
 		}
 	}
-
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
@@ -1712,13 +1601,12 @@ mercenary_garrison = {
 			}
 		}
 	}
-
 	equipped_component = "STARBASE_AURA_MERCENARY_GARRISON"
-
 	triggered_country_modifier = {
 		potential = {
-			hidden_trigger = { exists = this }
-
+			hidden_trigger = {
+				exists = this
+			}
 			exists = owner
 			owner = {
 				is_galactic_community_member = yes
@@ -1729,21 +1617,17 @@ mercenary_garrison = {
 				is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 			}
 		}
-
 		country_naval_cap_add = 5
 	}
-
 	resources = {
 		category = starbase_buildings
 		cost = {
 			alloys = 100
 		}
-
 		upkeep = {
 			energy = 20
 		}
 	}
-
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
