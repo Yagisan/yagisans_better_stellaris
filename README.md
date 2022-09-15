@@ -35,6 +35,10 @@
       - [Trader Proxy Office](#trader-proxy-office)
       - [Command Center](#command-center)
       - [Transit Hub](#transit-hub)
+      - [Disruption Field Generator](#disruption-field-generator)
+      - [Hydroponics Bay](#hydroponics-bay)
+      - [Shroud Beacon](#shroud-beacon)
+      - [Naval Logistics Offices](#naval-logistics-offices)
     - [New Starbase Buildings](#new-starbase-buildings)
       - [Star Patrol Office](#star-patrol-office)
 
@@ -586,6 +590,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 - No longer able to build on Orbital Rings
 - AI will no longer try building this in systems with colonies.
+- Starts with 5000 storage. Can add 5000 more via tech.
 
 #### Nebula Refinery
 
@@ -620,6 +625,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 **Changes**
 
 - +10% Trade for all colonies in the system.
+- AI can now build at chokepoints
 
 #### Hyperlane Registrar
 
@@ -630,6 +636,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 **Changes**
 
 - +2 Trade Collection Range
+- AI can now build outside of chokepoints
 
 #### Deep Space Black Site
 
@@ -681,8 +688,35 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 **Changes**
 
 - No longer able to build on Orbital Rings.
+- AI won't build it unless it has free jobs, free housing, or unemployed pops.
+
+#### Disruption Field Generator
+
+**Changes**
+
+- Can no longer build in pulsar systems. Pulsars disable shields, so this is useless there.
+- Construction aborted if the system contains a Communications Jammer (bugfix)
+
+#### Hydroponics Bay
+
+**Changes**
+
+- Drastically reduce AI weight if they don't use food.
+- Drastically reduce AI weight if they are producing food and have a massive (10,000+) stockpile.
+
+#### Shroud Beacon
+
+**Changes**
+
+- AI much less likely to build this in the same sector as Shroudwalkers
+
+#### Naval Logistics Offices
 
 ### New Starbase Buildings
+
+**Changes**
+
+- AI can now build these on Orbital Rings.
 
 #### Star Patrol Office
 

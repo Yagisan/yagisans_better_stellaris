@@ -52,6 +52,25 @@ hydroponics_bay = {
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
 		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			factor = 0.1
+			owner = {
+				country_uses_food = no
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 0
+				}
+				resource_stockpile_compare = {
+					resource = food
+					value >= 10000
+				}
+			}
+		}
 	}
 }
 
@@ -86,15 +105,7 @@ resource_silo = {
 			alloys = 50
 		}
 	}
-	triggered_country_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOT = {
-					has_technology = tech_construction_templates
-				}
-			}
-		}
+	country_modifier = {
 		country_resource_max_add = 5000
 	}
 	triggered_country_modifier = {
@@ -104,7 +115,7 @@ resource_silo = {
 				has_technology = tech_construction_templates
 			}
 		}
-		country_resource_max_add = 10000
+		country_resource_max_add = 5000
 	}
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
@@ -290,7 +301,7 @@ offworld_trading_company = {
 	}
 	custom_tooltip = sm_offworld_trading_company_desc_modifier
 	show_in_tech = "tech_space_trading"
-	ai_build_at_chokepoint = no
+	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
 		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
@@ -396,13 +407,22 @@ naval_logistics_office = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
-		modifier = {
-			factor = 0
-			count_starbase_modules = {
+		weight = 0
+		complex_trigger_modifier = {
+			trigger = count_starbase_modules
+			parameters = {
 				type = anchorage
-				count < 1
 			}
+			mode = add
+			mult = 50
+		}
+		complex_trigger_modifier = {
+			trigger = count_starbase_modules
+			parameters = {
+				type = orbital_ring_anchorage
+			}
+			mode = add
+			mult = 50
 		}
 	}
 }
@@ -1086,6 +1106,19 @@ shroud_beacon = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0.1
+			sector = {
+				any_system_within_border = {
+					any_fleet_in_system = {
+						exists = owner
+						owner = {
+							has_country_flag = shroudwalker_enclave_country
+						}
+					}
+				}
+			}
+		}
 	}
 	on_finished = {
 		if = {
@@ -1184,6 +1217,12 @@ disruption_field = {
 		not = {
 			has_starbase_building = disruption_field
 		}
+		system_star = {
+			NOR = {
+				is_star_class = sc_pulsar
+				is_star_class = sc_binary_1
+			}
+		}
 	}
 	possible = {
 		custom_tooltip = {
@@ -1200,11 +1239,20 @@ disruption_field = {
 				include_being_constructed = yes
 			}
 		}
+		custom_tooltip = {
+			fail_text = "pulsar_disables_shields"
+			system_star = {
+				NOR = {
+					is_star_class = sc_pulsar
+					is_star_class = sc_binary_1
+				}
+			}
+		}
 	}
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
-				type = communications_jammer
+				type = disruption_field
 				count > 1
 				include_being_constructed = yes
 			}
@@ -1262,7 +1310,7 @@ warp_fluctuator = {
 	}
 	show_in_tech = "tech_interstellar_economics"
 	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = no
+	ai_build_outside_chokepoint = yes
 	ai_weight = {
 		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
@@ -1302,7 +1350,7 @@ transit_hub = {
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
-				type = communications_jammer
+				type = transit_hub
 				count > 1
 				include_being_constructed = yes
 			}
@@ -1335,6 +1383,11 @@ transit_hub = {
 						exists = owner
 						owner = {
 							is_country_type = default
+						}
+						OR = {
+							free_jobs <= 0
+							free_housing <= 0
+							num_unemployed > 0
 						}
 					}
 				}
