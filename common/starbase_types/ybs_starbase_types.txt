@@ -62,9 +62,6 @@ sstarpatrolbase = {
 					}
 				}
 			}
-			target_uplink_computer = {
-				base = 1
-			}
 			communications_jammer = {
 				base = 1
 				modifier = {
@@ -74,19 +71,19 @@ sstarpatrolbase = {
 					}
 				}
 			}
+			target_uplink_computer = {
+				base = 2
+			}
+			command_center = {
+				base = 2
+			}
+			defense_grid = {
+				base = 1
+			}
+			communications_jammer = {
+				base = 1
+			}
 			disruption_field = {
-				base = 1
-			}
-			nebula_refinery = {
-				base = 1
-			}
-			resource_silo = {
-				base = 0.5
-			}
-			art_college = {
-				base = 1
-			}
-			curator_think_tank = {
 				base = 1
 			}
 			ice_mining_station = {
@@ -97,6 +94,33 @@ sstarpatrolbase = {
 			}
 			hydroponics_bay = {
 				base = 1
+			}
+			offspring_outlook = {
+				base = 20
+			}
+			nebula_refinery = {
+				base = 1
+			}
+			black_hole_observatory = {
+				base = 1
+			}
+			art_college = {
+				base = 1
+			}
+			curator_think_tank = {
+				base = 1
+			}
+			trader_proxy_office = {
+				base = 1
+			}
+			salvager_workshop = {
+				base = 1
+			}
+			mercenary_garrison = {
+				base = 1
+			}
+			resource_silo = {
+				base = 0.5
 			}
 		}
 		modules = {
