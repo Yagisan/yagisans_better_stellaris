@@ -275,9 +275,6 @@ offworld_trading_company = {
 			alloys = 100
 		}
 	}
-	station_modifier = {
-		starbase_trade_collection_range_add = 2
-	}
 	system_modifier = {
 		trade_value_mult = 0.1
 	}
@@ -1261,7 +1258,7 @@ warp_fluctuator = {
 		}
 	}
 	station_modifier = {
-		starbase_trade_collection_range_add = 1
+		starbase_trade_collection_range_add = 2
 	}
 	show_in_tech = "tech_interstellar_economics"
 	ai_build_at_chokepoint = yes

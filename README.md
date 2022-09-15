@@ -29,6 +29,7 @@
       - [Nebula Refinery](#nebula-refinery)
       - [Listening Post](#listening-post)
       - [Offworld Trading Company](#offworld-trading-company)
+      - [Hyperlane Registrar](#hyperlane-registrar)
       - [Deep Space Black Site](#deep-space-black-site)
       - [Curator Think Tank](#curator-think-tank)
       - [Trader Proxy Office](#trader-proxy-office)
@@ -617,8 +618,17 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 **Changes**
 
+- +10% Trade for all colonies in the system.
+
+#### Hyperlane Registrar
+
+| Cost | Time | Upkeep | Orbital Ring |
+| ---- | ---- | ------ | ------------ |
+|   100   | 180 | 2 | **No** |
+
+**Changes**
+
 - +2 Trade Collection Range
-- +10% Trade for each colony in the system.
 
 #### Deep Space Black Site
 
@@ -628,7 +638,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 **Changes**
 
-- -10% Crime for each colony in the system.
+- -10% Crime for all colonies in the system.
 - AI will no longer try building this in systems without colonies.
 
 #### Curator Think Tank
