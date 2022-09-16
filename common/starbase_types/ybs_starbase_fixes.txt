@@ -39,27 +39,45 @@ sanchorage = {
 		# token followed by priority
 		buildings = {
 			naval_logistics_office = {
-				base = 5
+				base = 100
 			}
-			defense_grid = {
-				base = 0.05
+			deep_space_black_site = {
+				base = 100
 			}
-			communications_jammer = {
-				base = 0.05
+			transit_hub = {
+				base = 100
+			}
+			command_center = {
+				base = 100
 			}
 			curator_think_tank = {
-				base = 2
+				base = 50
 			}
 			art_college = {
-				base = 2
+				base = 50
+			}
+			trader_proxy_office = {
+				base = 50
+			}
+			salvager_workshop = {
+				base = 50
+			}
+			black_hole_observatory = {
+				base = 50
 			}
 			nebula_refinery = {
-				base = 2
+				base = 50
 			}
 			ice_mining_station = {
-				base = 2
+				base = 50
+			}
+			offspring_outlook = {
+				base = 50
 			}
 			dragon_hatchery = {
+				base = 50
+			}
+			resource_silo = {
 				base = 2
 			}
 			hydroponics_bay = {
@@ -69,23 +87,11 @@ sanchorage = {
 			warp_fluctuator = {
 				base = 1
 			}
-			transit_hub = {
+			communications_jammer = {
 				base = 1
 			}
-			black_hole_observatory = {
-				base = 2
-			}
-			deep_space_black_site = {
-				base = 2
-			}
-			salvager_workshop = {
-				base = 2
-			}
-			trader_proxy_office = {
-				base = 2
-			}
-			salvager_workshop = {
-				base = 2
+			defense_grid = {
+				base = 1
 			}
 			shroud_beacon = {
 				base = 1
@@ -126,8 +132,7 @@ strading_hub = {
 		}
 		modifier = {
 			add = 100
-			# Hyperlane Registrar
-			has_starbase_building = warp_fluctuator
+			has_starbase_building = offworld_trading_company
 		}
 		# try to be on the capital system.
 		modifier = {
@@ -258,58 +263,61 @@ strading_hub = {
 		# token followed by priority
 		buildings = {
 			offworld_trading_company = {
-				base = 2
+				base = 100
 			}
-			nebula_refinery = {
-				base = 1
+			# Hyperlane Registrar
+			warp_fluctuator = {
+				base = 100
 			}
-			resource_silo = {
-				base = 0.25
+			deep_space_black_site = {
+				base = 100
 			}
-			art_college = {
-				base = 1
+			transit_hub = {
+				base = 100
 			}
 			curator_think_tank = {
-				base = 1
+				base = 50
+			}
+			art_college = {
+				base = 50
+			}
+			trader_proxy_office = {
+				base = 50
+			}
+			salvager_workshop = {
+				base = 50
+			}
+			black_hole_observatory = {
+				base = 50
+			}
+			nebula_refinery = {
+				base = 50
 			}
 			ice_mining_station = {
-				base = 1
+				base = 50
+			}
+			offspring_outlook = {
+				base = 50
 			}
 			dragon_hatchery = {
-				base = 0.05
+				base = 50
+			}
+			command_center = {
+				base = 50
+			}
+			resource_silo = {
+				base = 2
 			}
 			hydroponics_bay = {
+				base = 2
+			}
+			communications_jammer = {
 				base = 1
 			}
 			defense_grid = {
 				base = 1
 			}
-			communications_jammer = {
-				base = 0.05
-			}
-			# Hyperlane Registrar
-			warp_fluctuator = {
-				base = 5
-			}
-			offspring_outlook = {
-				base = 1
-			}
 			shroud_beacon = {
-				base = 2
-			}
-			transit_hub = {
-				base = 0.5
-			}
-			deep_space_black_site = {
-				base = 1
-			}
-			black_hole_observatory = {
-				base = 1
-			}
-			trader_proxy_office = {
-				base = 2
-			}
-			salvager_workshop = {
 				base = 1
 			}
 		}
@@ -472,60 +480,69 @@ sfortress = {
 		}
 		# token followed by priority
 		buildings = {
-			# First to shoot often wins.
-			target_uplink_computer = {
-				base = 2
-			}
-			command_center = {
-				base = 0.9
-			}
-			defense_grid = {
-				base = 1
+			offspring_outlook = {
+				base = 100
 			}
 			communications_jammer = {
-				base = 1
+				base = 100
 			}
-			disruption_field = {
-				base = 1
-			}
-			ice_mining_station = {
-				base = 0.5
-			}
-			dragon_hatchery = {
-				base = 0.5
-			}
-			hydroponics_bay = {
-				base = 0.05
-			}
-			transit_hub = {
-				base = 0.1
+			command_center = {
+				base = 100
 			}
 			deep_space_black_site = {
-				base = 0.2
+				base = 50
 			}
-			# A building tax
-			offspring_outlook = {
-				base = 20
-			}
-			nebula_refinery = {
-				base = 1
-			}
-			black_hole_observatory = {
-				base = 1
-			}
-			art_college = {
-				base = 0.5
+			transit_hub = {
+				base = 50
 			}
 			curator_think_tank = {
-				base = 0.5
+				base = 50
+			}
+			art_college = {
+				base = 50
 			}
 			trader_proxy_office = {
-				base = 1
+				base = 50
 			}
 			salvager_workshop = {
-				base = 1
+				base = 50
+			}
+			black_hole_observatory = {
+				base = 50
+			}
+			nebula_refinery = {
+				base = 50
+			}
+			ice_mining_station = {
+				base = 50
+			}
+			dragon_hatchery = {
+				base = 50
+			}
+			disruption_field = {
+				base = 25
 			}
 			mercenary_garrison = {
+				base = 25
+			}
+			# First to shoot often wins.
+			target_uplink_computer = {
+				base = 25
+			}
+			defense_grid = {
+				base = 25
+			}
+			resource_silo = {
+				base = 2
+			}
+			hydroponics_bay = {
+				base = 2
+			}
+			# Hyperlane Registrar
+			warp_fluctuator = {
+				base = 1
+			}
+			shroud_beacon = {
 				base = 1
 			}
 		}
