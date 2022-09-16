@@ -54,73 +54,72 @@ sstarpatrolbase = {
 		}
 		buildings = {
 			ybs_star_patrol = {
-				base = 1
-				modifier = {
-					add = 1000
-					NOT = {
-						has_starbase_building = ybs_star_patrol
-					}
-				}
-			}
-			communications_jammer = {
-				base = 1
-				modifier = {
-					add = 500
-					NOT = {
-						has_starbase_building = communications_jammer
-					}
-				}
-			}
-			target_uplink_computer = {
-				base = 2
-			}
-			command_center = {
-				base = 2
-			}
-			defense_grid = {
-				base = 1
-			}
-			communications_jammer = {
-				base = 1
-			}
-			disruption_field = {
-				base = 1
-			}
-			ice_mining_station = {
-				base = 1
-			}
-			dragon_hatchery = {
-				base = 1
-			}
-			hydroponics_bay = {
-				base = 1
+				base = 100
 			}
 			offspring_outlook = {
-				base = 20
+				base = 100
 			}
-			nebula_refinery = {
-				base = 1
+			communications_jammer = {
+				base = 100
 			}
-			black_hole_observatory = {
-				base = 1
+			command_center = {
+				base = 100
 			}
-			art_college = {
-				base = 1
+			deep_space_black_site = {
+				base = 50
+			}
+			transit_hub = {
+				base = 50
 			}
 			curator_think_tank = {
-				base = 1
+				base = 50
+			}
+			art_college = {
+				base = 50
 			}
 			trader_proxy_office = {
-				base = 1
+				base = 50
 			}
 			salvager_workshop = {
-				base = 1
+				base = 50
+			}
+			black_hole_observatory = {
+				base = 50
+			}
+			nebula_refinery = {
+				base = 50
+			}
+			ice_mining_station = {
+				base = 50
+			}
+			dragon_hatchery = {
+				base = 50
+			}
+			disruption_field = {
+				base = 25
 			}
 			mercenary_garrison = {
-				base = 1
+				base = 25
+			}
+			# First to shoot often wins.
+			target_uplink_computer = {
+				base = 25
+			}
+			defense_grid = {
+				base = 25
 			}
 			resource_silo = {
-				base = 0.5
+				base = 2
+			}
+			hydroponics_bay = {
+				base = 2
+			}
+			# Hyperlane Registrar
+			warp_fluctuator = {
+				base = 1
+			}
+			shroud_beacon = {
+				base = 1
 			}
 		}
 		modules = {
