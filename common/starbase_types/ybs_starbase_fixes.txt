@@ -32,7 +32,6 @@ sshipyard = {
 							has_starbase_module = shipyard
 							has_starbase_module = orbital_ring_shipyard
 						}
-						# is_occupied_flag = no
 					}
 				}
 			}
