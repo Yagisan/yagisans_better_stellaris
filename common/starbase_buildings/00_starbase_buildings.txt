@@ -243,7 +243,7 @@ listening_post = {
 		ship_hyperlane_range_add = 1
 	}
 	ai_build_at_chokepoint = yes
-	ai_build_outside_chokepoint = no
+	ai_build_outside_chokepoint = yes
 	ai_weight = {
 		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
@@ -1431,7 +1431,7 @@ command_center = {
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
-				type = communications_jammer
+				type = command_center
 				count > 1
 				include_being_constructed = yes
 			}
