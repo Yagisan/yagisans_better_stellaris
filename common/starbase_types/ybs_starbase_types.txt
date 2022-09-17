@@ -31,13 +31,13 @@ sstarpatrolbase = {
 	weight_modifier = {
 		base = 0
 		complex_trigger_modifier = {
-			#+75 for each hangar_bay
+			#+100 for each hangar_bay
 			trigger = count_starbase_modules
 			parameters = {
 				type = hangar_bay
 			}
 			mode = add
-			mult = 75
+			mult = 100
 		}
 		modifier = {
 			add = 1000
@@ -131,6 +131,191 @@ sstarpatrolbase = {
 						has_starbase_module = hangar_bay
 					}
 				}
+			}
+		}
+	}
+}
+
+# Listening Post
+slisteningpost = {
+	potential = {
+		has_starbase_size > starbase_outpost
+	}
+	weight_modifier = {
+		base = 0
+		complex_trigger_modifier = {
+			#+100 for each hangar_bay
+			trigger = count_starbase_modules
+			parameters = {
+				type = hangar_bay
+			}
+			mode = add
+			mult = 100
+		}
+		modifier = {
+			add = 200
+			has_starbase_building = listening_post
+			exists = owner
+		}
+		# Next to a neighbour
+		modifier = {
+			add = 200
+			solar_system = {
+				any_neighbor_system = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_value = root.owner
+						}
+					}
+				}
+			}
+		}
+		# Next to a hostile neighbour
+		modifier = {
+			add = 300
+			solar_system = {
+				any_neighbor_system = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_value = root.owner
+						}
+						relative_power = {
+							who = root.owner
+							category = all
+							value > pathetic
+						}
+						OR = {
+							NOT = {
+								has_established_contact = root.owner
+							}
+							opinion_level = {
+								who = root.owner
+								level <= poor
+							}
+							is_rival = root.owner
+							is_hostile = root.owner
+							is_domineering_to = root.owner
+							is_hostile_to = root.owner
+							is_disloyal_to = root.owner
+							is_unfriendly_to = root.owner
+							# Fallen empire
+							is_angry_to = root.owner
+							# Awakened Empire with low opinion
+							# Double up because they are likely coming for us
+							is_belligerent_to = root.owner
+							root.owner = {
+								is_threatened_to = prev
+							}
+							# They want our land!
+							has_claim = root.owner
+							# Better safe than sorry
+							has_valid_civic = civic_fanatic_purifiers
+							has_valid_civic = civic_hive_devouring_swarm
+							has_valid_civic = civic_machine_assimilator
+							has_valid_civic = civic_machine_terminator
+						}
+					}
+				}
+			}
+		}
+	}
+	ai_design = {
+		min = {
+			base = 0
+		}
+		ratio = {
+			base = 0.2
+			modifier = {
+				add = 0.1
+				exists = owner
+				owner = {
+					has_ethic = ethic_militarist
+				}
+			}
+			modifier = {
+				add = 0.1
+				exists = owner
+				owner = {
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		# token followed by priority
+		buildings = {
+			listening_post = {
+				base = 100
+			}
+			offspring_outlook = {
+				base = 100
+			}
+			communications_jammer = {
+				base = 100
+			}
+			command_center = {
+				base = 100
+			}
+			# First to shoot often wins.
+			target_uplink_computer = {
+				base = 100
+			}
+			deep_space_black_site = {
+				base = 50
+			}
+			transit_hub = {
+				base = 50
+			}
+			curator_think_tank = {
+				base = 50
+			}
+			art_college = {
+				base = 50
+			}
+			trader_proxy_office = {
+				base = 50
+			}
+			salvager_workshop = {
+				base = 50
+			}
+			black_hole_observatory = {
+				base = 50
+			}
+			nebula_refinery = {
+				base = 50
+			}
+			ice_mining_station = {
+				base = 50
+			}
+			dragon_hatchery = {
+				base = 50
+			}
+			disruption_field = {
+				base = 25
+			}
+			mercenary_garrison = {
+				base = 25
+			}
+			defense_grid = {
+				base = 25
+			}
+			resource_silo = {
+				base = 2
+			}
+			hydroponics_bay = {
+				base = 2
+			}
+			# Hyperlane Registrar
+			warp_fluctuator = {
+				base = 1
+			}
+			shroud_beacon = {
+				base = 1
+			}
+		}
+		modules = {
+			hangar_bay = {
+				base = 1
 			}
 		}
 	}

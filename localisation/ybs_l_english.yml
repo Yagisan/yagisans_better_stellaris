@@ -2,6 +2,7 @@
 ybs_artifact_buy_collector: "Buy from Private Collectors"
 ybs_artifact_buy_collector_desc: "Buy from private collectors at a premium"
 sstarpatrolbase: "Star Patrol Base"
+slisteningpost: "Listening Post"
 sm_ybs_star_patrol: "Star Patrol Office"
 sm_ybs_star_patrol_desc: "Interstellar piracy protection"
 pulsar_disables_shields: "£trigger_no£ §RShields are already nullified by this systems pulsar.§!"
