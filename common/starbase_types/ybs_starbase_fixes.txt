@@ -70,7 +70,10 @@ sshipyard = {
 				base = 80
 			}
 			colossus_yards = {
-				base = 600
+				base = 60
+			}
+			dragon_hatchery = {
+				base = 60
 			}
 			deep_space_black_site = {
 				base = 50
@@ -97,9 +100,6 @@ sshipyard = {
 				base = 50
 			}
 			ice_mining_station = {
-				base = 50
-			}
-			dragon_hatchery = {
 				base = 50
 			}
 			shroud_beacon = {
@@ -235,10 +235,9 @@ strading_hub = {
 	potential = {
 		has_starbase_size > starbase_outpost
 		exists = owner
+		exists = owner
 		owner = {
-			NOT = {
-				has_ethic = ethic_gestalt_consciousness
-			}
+			is_gestalt = no
 		}
 	}
 	weight_modifier = {
