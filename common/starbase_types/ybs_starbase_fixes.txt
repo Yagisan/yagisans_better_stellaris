@@ -364,7 +364,7 @@ sfortress = {
 			mult = 75
 		}
 		modifier = {
-			add = 150
+			add = 250
 			# Choke point - near a possible threat.
 			solar_system = {
 				is_bottleneck_system = yes
