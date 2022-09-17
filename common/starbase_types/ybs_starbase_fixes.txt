@@ -16,6 +16,7 @@ sshipyard = {
 		}
 		modifier = {
 			add = 1000
+			exists = owner
 			owner = {
 				is_ai = yes
 				NOR = {
@@ -234,7 +235,6 @@ sanchorage = {
 strading_hub = {
 	potential = {
 		has_starbase_size > starbase_outpost
-		exists = owner
 		exists = owner
 		owner = {
 			is_gestalt = no

@@ -31,18 +31,17 @@ sstarpatrolbase = {
 	weight_modifier = {
 		base = 0
 		complex_trigger_modifier = {
-			#+100 for each hangar_bay
+			#+75 for each hangar_bay
 			trigger = count_starbase_modules
 			parameters = {
 				type = hangar_bay
 			}
 			mode = add
-			mult = 100
+			mult = 75
 		}
 		modifier = {
 			add = 1000
 			has_starbase_building = ybs_star_patrol
-			exists = owner
 		}
 	}
 	ai_design = {
@@ -54,7 +53,7 @@ sstarpatrolbase = {
 		}
 		buildings = {
 			ybs_star_patrol = {
-				base = 100
+				base = 500
 			}
 			offspring_outlook = {
 				base = 100
@@ -144,22 +143,21 @@ slisteningpost = {
 	weight_modifier = {
 		base = 0
 		complex_trigger_modifier = {
-			#+100 for each hangar_bay
+			#+75 for each hangar_bay
 			trigger = count_starbase_modules
 			parameters = {
 				type = hangar_bay
 			}
 			mode = add
-			mult = 100
+			mult = 75
 		}
 		modifier = {
-			add = 200
+			add = 1000
 			has_starbase_building = listening_post
-			exists = owner
 		}
 		# Next to a neighbour
 		modifier = {
-			add = 200
+			add = 100
 			solar_system = {
 				any_neighbor_system = {
 					exists = owner
@@ -245,7 +243,7 @@ slisteningpost = {
 		# token followed by priority
 		buildings = {
 			listening_post = {
-				base = 100
+				base = 500
 			}
 			offspring_outlook = {
 				base = 100
