@@ -41,6 +41,13 @@
       - [Naval Logistics Offices](#naval-logistics-offices)
     - [New Starbase Buildings](#new-starbase-buildings)
       - [Star Patrol Office](#star-patrol-office)
+  - [Starbase Types](#starbase-types)
+    - [Shipyards](#shipyards)
+    - [Anchorages](#anchorages)
+    - [Trading Hubs](#trading-hubs)
+    - [Fortress / Bastion Systems](#fortress--bastion-systems)
+    - [Star Patrol Offices](#star-patrol-offices)
+    - [Listening Posts](#listening-posts)
 
 ## Jobs
 
@@ -738,3 +745,33 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 **Description**
 
 Non-gestalt empires can build a Star Patrol Office on any starbase with a hanger. This will extend both the range, and value of its anti-piracy protection. These starbases, when not in a system with colonies, or next to another empire will be known as Star Patrol Base.
+
+## Starbase Types
+
+Existing starbase types have been modified to build several previously player only buildings for the AI. Additional starbase types have been created for specific roles. Starbase placement logic has been changed to account for political stances between empires.
+
+Once critical buildings have been built on a starbase, building slots permitting, they will attempt to prioritise special buildings such as the Curator Think Tank, Deep Space Black Site, or Black Hole Observatory, before choosing generic useful buildings.
+
+### Shipyards
+
+Shipyards will be the first priority if an empire has no other ship building capacity. They will prioritise a Fleet Academy / Battle Simulators, Crew Quarters / Crew Gestation Chambers / Service Umbilicals, Titan Yards, Colossus Yards, and Dragon Hatcheries.
+
+### Anchorages
+
+These are now a much more economically focused starbase. They will prioritise a Naval Logistics Office, Deep Space Black Site, Transit Hub, and Command Centre. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic useful buildings.
+
+### Trading Hubs
+
+These will try to place themselves over capital planets, and avoid being near other trade hubs, or locations cut off from the empire. They will prioritise an Offworld Trading Company, Hyperlane Registrar, Deep Space Black Site, and Transit Hub. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic useful buildings.
+
+### Fortress / Bastion Systems
+
+They will try to build themselves in chokepoints near threats. Threat logic is complex but basically, if they don't like you, or want your territory, they are a threat. They will prioritise an Offspring Outlook, Communications Jammer, and Command Centre. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
+
+### Star Patrol Offices
+
+They will try to build themselves in chokepoints, and avoid building near other Star Patrol Offices. Being an anti-piracy base, they will build exclusively hanger bays, and they will avoid building near threats, and will not build in systems with Colonies. They will prioritise a Star Patrol Office an Offspring Outlook, Communications Jammer, and Command Centre. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
+
+### Listening Posts
+
+They will build themselves next to neighbouring empires, prioritising hostile one, and avoid building near other Listening Posts. They will prioritise a Listening Posts, an Offspring Outlook, Communications Jammer, Command Centre and Target Uplink Computer. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
