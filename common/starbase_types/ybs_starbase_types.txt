@@ -218,6 +218,29 @@ slisteningpost = {
 				}
 			}
 		}
+		# Not next to an existing Listening Post
+		modifier = {
+			factor = 0
+			owner = {
+				is_ai = yes
+			}
+			solar_system = {
+				any_neighbor_system = {
+					any_neighbor_system = {
+						exists = starbase
+						starbase = {
+							NOT = {
+								is_same_value = root
+							}
+							owner = {
+								is_same_value = root.owner
+							}
+							has_starbase_module = listening_post
+						}
+					}
+				}
+			}
+		}
 	}
 	ai_design = {
 		min = {
