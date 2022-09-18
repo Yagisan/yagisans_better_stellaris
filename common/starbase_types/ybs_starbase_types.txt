@@ -28,29 +28,6 @@ sstarpatrolbase = {
 			}
 		}
 	}
-	# Not next to an existing Star Patrol
-	modifier = {
-		factor = 0
-		owner = {
-			is_ai = yes
-		}
-		solar_system = {
-			any_neighbor_system = {
-				any_neighbor_system = {
-					exists = starbase
-					starbase = {
-						NOT = {
-							is_same_value = root
-						}
-						owner = {
-							is_same_value = root.owner
-						}
-						has_starbase_module = ybs_star_patrol
-					}
-				}
-			}
-		}
-	}
 	weight_modifier = {
 		base = 0
 		complex_trigger_modifier = {
@@ -65,6 +42,29 @@ sstarpatrolbase = {
 		modifier = {
 			add = 1000
 			has_starbase_building = ybs_star_patrol
+		}
+		# Not next to an existing Star Patrol
+		modifier = {
+			factor = 0
+			owner = {
+				is_ai = yes
+			}
+			solar_system = {
+				any_neighbor_system = {
+					any_neighbor_system = {
+						exists = starbase
+						starbase = {
+							NOT = {
+								is_same_value = root
+							}
+							owner = {
+								is_same_value = root.owner
+							}
+							has_starbase_building = ybs_star_patrol
+						}
+					}
+				}
+			}
 		}
 	}
 	ai_design = {
@@ -258,7 +258,7 @@ slisteningpost = {
 							owner = {
 								is_same_value = root.owner
 							}
-							has_starbase_module = listening_post
+							has_starbase_building = listening_post
 						}
 					}
 				}
