@@ -53,13 +53,13 @@ hydroponics_bay = {
 	ai_weight = {
 		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
-			factor = 0.1
+			factor = 0
 			owner = {
 				country_uses_food = no
 			}
 		}
 		modifier = {
-			factor = 0.1
+			factor = 0
 			owner = {
 				resource_income_compare = {
 					resource = food

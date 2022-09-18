@@ -186,7 +186,7 @@ slisteningpost = {
 		}
 		# Next to a neighbour
 		modifier = {
-			add = 100
+			add = 300
 			solar_system = {
 				any_neighbor_system = {
 					exists = owner
@@ -364,7 +364,10 @@ slisteningpost = {
 		}
 		modules = {
 			hangar_bay = {
-				base = 1
+				base = 1.2
+			}
+			missile_battery = {
+				base = 0.8
 			}
 		}
 	}
