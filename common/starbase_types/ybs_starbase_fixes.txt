@@ -197,13 +197,13 @@ sanchorage = {
 			offspring_outlook = {
 				base = 2
 			}
-			dragon_hatchery = {
+			resource_silo = {
 				base = 2
 			}
-			resource_silo = {
-				base = 1
-			}
 			hydroponics_bay = {
+				base = 2
+			}
+			dragon_hatchery = {
 				base = 1
 			}
 			# Hyperlane Registrar
