@@ -43,23 +43,29 @@ sstarpatrolbase = {
 			add = 1000
 			has_starbase_building = ybs_star_patrol
 		}
-		# Not next to an existing Star Patrol
+		modifier = {
+			add = 150
+			# Choke point - more desirable
+			solar_system = {
+				is_bottleneck_system = yes
+			}
+		}
+		# Not near to an existing Star Patrol
 		modifier = {
 			factor = 0
 			owner = {
 				is_ai = yes
 			}
 			solar_system = {
-				any_neighbor_system = {
-					any_neighbor_system = {
+				closest_system = {
+					max_steps = 3
+					limit = {
 						exists = starbase
+						exists = owner
+						owner = {
+							is_same_value = root.owner
+						}
 						starbase = {
-							NOT = {
-								is_same_value = root
-							}
-							owner = {
-								is_same_value = root.owner
-							}
 							has_starbase_building = ybs_star_patrol
 						}
 					}
@@ -241,23 +247,22 @@ slisteningpost = {
 				}
 			}
 		}
-		# Not next to an existing Listening Post
+		# Not near to an existing Listening Post
 		modifier = {
 			factor = 0
 			owner = {
 				is_ai = yes
 			}
 			solar_system = {
-				any_neighbor_system = {
-					any_neighbor_system = {
+				closest_system = {
+					max_steps = 2
+					limit = {
 						exists = starbase
+						exists = owner
+						owner = {
+							is_same_value = root.owner
+						}
 						starbase = {
-							NOT = {
-								is_same_value = root
-							}
-							owner = {
-								is_same_value = root.owner
-							}
 							has_starbase_building = listening_post
 						}
 					}
