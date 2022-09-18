@@ -76,65 +76,65 @@ sstarpatrolbase = {
 		}
 		buildings = {
 			ybs_star_patrol = {
-				base = 500
+				base = 5
 			}
 			offspring_outlook = {
-				base = 100
+				base = 3
 			}
 			communications_jammer = {
-				base = 100
+				base = 3
 			}
 			command_center = {
-				base = 100
+				base = 3
 			}
 			deep_space_black_site = {
-				base = 50
+				base = 2
 			}
 			transit_hub = {
-				base = 50
+				base = 2
 			}
 			curator_think_tank = {
-				base = 50
+				base = 2
 			}
 			art_college = {
-				base = 50
+				base = 2
 			}
 			trader_proxy_office = {
-				base = 50
+				base = 2
 			}
 			salvager_workshop = {
-				base = 50
+				base = 2
 			}
 			black_hole_observatory = {
-				base = 50
+				base = 2
 			}
 			nebula_refinery = {
-				base = 50
+				base = 2
 			}
 			ice_mining_station = {
-				base = 50
+				base = 2
 			}
 			dragon_hatchery = {
-				base = 50
+				base = 2
 			}
 			disruption_field = {
-				base = 25
+				base = 1.5
 			}
 			mercenary_garrison = {
-				base = 25
+				base = 1.5
 			}
 			# First to shoot often wins.
 			target_uplink_computer = {
-				base = 25
+				base = 1.5
 			}
 			defense_grid = {
-				base = 25
+				base = 1.5
 			}
 			resource_silo = {
-				base = 2
+				base = 1
 			}
 			hydroponics_bay = {
-				base = 2
+				base = 1
 			}
 			# Hyperlane Registrar
 			warp_fluctuator = {
@@ -289,65 +289,65 @@ slisteningpost = {
 		# token followed by priority
 		buildings = {
 			listening_post = {
-				base = 500
+				base = 5
 			}
 			offspring_outlook = {
-				base = 100
+				base = 3
 			}
 			communications_jammer = {
-				base = 100
+				base = 3
 			}
 			command_center = {
-				base = 100
+				base = 3
 			}
 			# First to shoot often wins.
 			target_uplink_computer = {
-				base = 100
+				base = 3
 			}
 			deep_space_black_site = {
-				base = 50
+				base = 2
 			}
 			transit_hub = {
-				base = 50
+				base = 2
 			}
 			curator_think_tank = {
-				base = 50
+				base = 2
 			}
 			art_college = {
-				base = 50
+				base = 2
 			}
 			trader_proxy_office = {
-				base = 50
+				base = 2
 			}
 			salvager_workshop = {
-				base = 50
+				base = 2
 			}
 			black_hole_observatory = {
-				base = 50
+				base = 2
 			}
 			nebula_refinery = {
-				base = 50
+				base = 2
 			}
 			ice_mining_station = {
-				base = 50
+				base = 2
 			}
 			dragon_hatchery = {
-				base = 50
+				base = 2
 			}
 			disruption_field = {
-				base = 25
+				base = 1.5
 			}
 			mercenary_garrison = {
-				base = 25
+				base = 1.5
 			}
 			defense_grid = {
-				base = 25
+				base = 1.5
 			}
 			resource_silo = {
-				base = 2
+				base = 1
 			}
 			hydroponics_bay = {
-				base = 2
+				base = 1
 			}
 			# Hyperlane Registrar
 			warp_fluctuator = {
