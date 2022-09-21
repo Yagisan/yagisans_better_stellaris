@@ -183,9 +183,6 @@ sanchorage = {
 			transit_hub = {
 				base = 3
 			}
-			command_center = {
-				base = 3
-			}
 			curator_think_tank = {
 				base = 2
 			}
@@ -238,6 +235,9 @@ sanchorage = {
 				base = 1
 			}
 			solar_panel_network = {
+				base = 1
+			}
+			command_center = {
 				base = 1
 			}
 		}
