@@ -177,6 +177,9 @@ sanchorage = {
 			naval_logistics_office = {
 				base = 3
 			}
+			command_center = {
+				base = 3
+			}
 			deep_space_black_site = {
 				base = 3
 			}
@@ -227,9 +230,6 @@ sanchorage = {
 				base = 1
 			}
 			shroud_beacon = {
-				base = 1
-			}
-			command_center = {
 				base = 1
 			}
 		}
