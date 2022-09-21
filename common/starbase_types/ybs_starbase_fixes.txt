@@ -538,6 +538,7 @@ sfortress = {
 				is_bottleneck_system = yes
 			}
 			closest_system = {
+				min_steps = 0
 				max_steps = 3
 				limit = {
 					exists = owner

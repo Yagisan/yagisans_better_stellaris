@@ -58,6 +58,7 @@ sstarpatrolbase = {
 			}
 			solar_system = {
 				closest_system = {
+					min_steps = 0
 					max_steps = 3
 					limit = {
 						exists = starbase
@@ -255,6 +256,7 @@ slisteningpost = {
 			}
 			solar_system = {
 				closest_system = {
+					min_steps = 0
 					max_steps = 2
 					limit = {
 						exists = starbase
@@ -270,6 +272,7 @@ slisteningpost = {
 			}
 		}
 	}
+	ai_use_defense_platforms = yes	#AI will not build defense platforms otherwise, except in the capital system
 	ai_design = {
 		min = {
 			base = 0

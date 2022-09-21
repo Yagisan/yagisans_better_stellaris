@@ -489,6 +489,7 @@ sorbital_fortress = {
 			has_starbase_module = orbital_ring_hangar_bay
 		}
 	}
+	ai_use_defense_platforms = yes	#AI will not build defense platforms otherwise, except in the capital system
 	weight_modifier = {
 		base = 0
 		complex_trigger_modifier = {
