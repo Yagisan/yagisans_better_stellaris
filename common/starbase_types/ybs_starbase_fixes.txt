@@ -229,15 +229,15 @@ sanchorage = {
 			shroud_beacon = {
 				base = 1
 			}
+			command_center = {
+				base = 1
+			}
 		}
 		modules = {
 			anchorage = {
 				base = 1
 			}
 			solar_panel_network = {
-				base = 1
-			}
-			command_center = {
 				base = 1
 			}
 		}
