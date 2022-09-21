@@ -446,6 +446,9 @@ sorbital_anchorage = {
 			naval_logistics_office = {
 				base = 10
 			}
+			command_center = {
+				base = 3
+			}
 			defense_grid = {
 				base = 0.25
 			}
@@ -540,7 +543,7 @@ sorbital_fortress = {
 				base = 2
 			}
 			command_center = {
-				base = 2
+				base = 3
 			}
 			defense_grid = {
 				base = 1
