@@ -115,15 +115,16 @@ To try and mitigate this, I have implemented a shakeup of how the AI prioritises
 The new space combat AI behaviour priority is:
 
 - Reclaim our occupied planets.
-- Defend our own invaded territory.
-- Defend our allies invaded territory.
+- Reclaim allies occupied planets.
 - Prioritise attacks along our border.
 - Prioritise attacks along allies border.
+- Defend our own invaded territory.
+- Defend our allies invaded territory.
 - Prioritise attacks along conquered border.
-- Prioritise attacks in neutral space.
 - Defend our own territory.
 - Defend our allies territory.
 - Defend conquered territory.
+- Prioritise attacks in neutral space.
 
 When selecting targets, the new priority order is
 
