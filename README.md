@@ -469,7 +469,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Titanic Life Army |      Vanilla |       Modded |
 | ----------------- | -----------: | -----------: |
-| Army Damage       |          3.0 |         4.00 |
+| Army Damage       |          3.0 |         5.00 |
 | Morale Damage     |          2.0 |         1.00 |
 | Collateral Damage |          3.0 |         3.00 |
 | War Exhaustion    |          2.0 |         1.00 |
@@ -493,7 +493,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Titanic Guardian Army | Vanilla | Modded |
 | --------------------- | ------: | -----: |
-| Army Damage           |     2.0 |   4.00 |
+| Army Damage           |     2.0 |   5.00 |
 | Morale Damage         |     3.0 |   1.00 |
 | Health                |     8.0 |   5.00 |
 | Morale                |     3.0 |   3.00 |
@@ -536,10 +536,10 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 | Cybrex Warform    |    Vanilla |     Modded |
 | ----------------- | ---------: | ---------: |
-| Army Damage       |        5.0 |       6.00 |
+| Army Damage       |        5.0 |       8.00 |
 | Morale Damage     |        2.0 |       2.00 |
-| Collateral Damage |        5.0 |       2.00 |
-| War Exhaustion    |        4.0 |       1.00 |
+| Collateral Damage |        5.0 |       4.00 |
+| War Exhaustion    |        4.0 |       4.00 |
 | Health            |        7.0 |       9.00 |
 | Morale            |     Immune |     Immune |
 | Cost              | 250 Alloys | 250 Alloys |
@@ -566,6 +566,35 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Health        |     2.0 |   2.00 |
 | Morale        |  Immune | Immune |
 
+| Giant Undead Army | Vanilla | Modded |
+| ----------------- | ------: | -----: |
+| Army Damage       |     3.0 |   5.00 |
+| Morale Damage     |     3.0 |   3.00 |
+| Collateral Damage |     3.5 |    3.5 |
+| War Exhaustion    |     0.5 |    0.5 |
+| Health            |     7.0 |   7.00 |
+| Morale            |  Immune | Immune |
+
+| Mercenary Army    |  Vanilla |   Modded |
+| ----------------- | -------: | -------: |
+| Army Damage       |      1.1 |     2.10 |
+| Morale Damage     |      1.0 |     1.00 |
+| Collateral Damage |      2.5 |      2.5 |
+| War Exhaustion    |      0.5 |      0.5 |
+| Health            |      1.0 |      1.0 |
+| Morale            |      0.5 |      0.5 |
+| Upkeep            | 2 Energy | 2 Energy |
+
+| Mechanized Mercenary Army |  Vanilla |   Modded |
+| ------------------------- | -------: | -------: |
+| Army Damage               |      2.2 |     3.00 |
+| Morale Damage             |      1.0 |     1.00 |
+| Collateral Damage         |      3.0 |      3.0 |
+| War Exhaustion            |      0.5 |      0.5 |
+| Health                    |      1.8 |      1.8 |
+| Morale                    |      1.0 |      1.0 |
+| Upkeep                    | 5 Energy | 5 Energy |
+
 ## Artifacts
 
 Without the Rubicator relic, artifacts are very difficult to acquire. Regular (Non-gestalt) empires now have a new option to buy artifacts from private collectors. These come at inflated prices, but do offer a way to continue acquiring them into the late game. If the AI has a surplus of resources, and less than 50 artifacts, they may purchase them as well.
@@ -580,7 +609,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   25   | 180 | 0 | **Yes** |
+| 25   | 180  | 0      | **Yes**      |
 
 **Changes**
 
@@ -592,7 +621,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   50   | 180 | 0 | **No** |
+| 50   | 180  | 0      | **No**       |
 
 **Changes**
 
@@ -604,7 +633,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   200   | 360 | 3 | **Yes** |
+| 200  | 360  | 3      | **Yes**      |
 
 **Changes**
 
@@ -615,7 +644,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 360 | 2 | **No** |
+| 100  | 360  | 2      | **No**       |
 
 **Changes**
 
@@ -628,7 +657,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 360 | 0 | **No** |
+| 100  | 360  | 0      | **No**       |
 
 **Changes**
 
@@ -639,7 +668,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 180 | 2 | **No** |
+| 100  | 180  | 2      | **No**       |
 
 **Changes**
 
@@ -650,7 +679,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 360 | 2 | **No** |
+| 100  | 360  | 2      | **No**       |
 
 **Changes**
 
@@ -661,7 +690,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 360 | 2 | **No** |
+| 100  | 360  | 2      | **No**       |
 
 **Changes**
 
@@ -671,7 +700,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 360 | 0 | **No** |
+| 100  | 360  | 0      | **No**       |
 
 **Changes**
 
@@ -681,7 +710,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   500   | 360 | 5 | **Yes** |
+| 500  | 360  | 5      | **Yes**      |
 
 **Changes**
 
@@ -691,7 +720,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   100   | 180 | 3 | **No** |
+| 100  | 180  | 3      | **No**       |
 
 **Changes**
 
@@ -730,7 +759,7 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 | Cost | Time | Upkeep | Orbital Ring |
 | ---- | ---- | ------ | ------------ |
-|   200   | 360 | 3 | **No** |
+| 200  | 360  | 3      | **No**       |
 
 **Requirements**
 
