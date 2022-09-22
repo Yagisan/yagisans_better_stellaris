@@ -2,10 +2,8 @@
 #maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
 #building spawned armies can't be built normally, but only created from pops working buildings
-
 #spawn_chance: only works on defensive armies; pop scope check that lets you give weights for what sort of army should be spawned
 #		Calculation is health * spawn_chance (default: 1), and it always picks the best one
-
 # Defense Armies
 defense_army = {
 	defensive = yes
@@ -17,18 +15,18 @@ defense_army = {
 	collateral_damage = 0
 	war_exhaustion = 0.5
 	icon = GFX_army_type_defensive
-
 	resources = {
 		category = armies
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
 			}
 			unity = 0.5
 		}
 	}
-
 	potential = {
 		from = {
 			NOR = {
@@ -40,7 +38,9 @@ defense_army = {
 		owner = {
 			is_primitive = no
 			OR = {
-				NOT = { has_authority = auth_machine_intelligence }
+				NOT = {
+					has_authority = auth_machine_intelligence
+				}
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -59,7 +59,6 @@ undead_defense_army = {
 	war_exhaustion = 0.1
 	icon = GFX_army_type_undead
 	use_armynames_from = undead_army
-
 	potential = {
 		from = {
 			NOR = {
@@ -71,28 +70,28 @@ undead_defense_army = {
 		planet = {
 			OR = {
 				AND = {
-			has_active_building = building_dread_encampment
-			num_assigned_jobs = {
-				job = necromancer
-				value >= 1
-			}
-		}
+					has_active_building = building_dread_encampment
+					num_assigned_jobs = {
+						job = necromancer
+						value >= 1
+					}
+				}
 				has_planet_flag = active_dread_outpost
 			}
 		}
 	}
-
 	resources = {
 		category = armies
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
 			}
 			unity = 0.5
 		}
 	}
-
 	spawn_chance = {
 		factor = 100
 	}
@@ -110,29 +109,34 @@ robotic_defense_army = {
 	has_morale = no
 	icon = GFX_army_type_robot
 	has_species = yes
-
 	potential = {
 		from = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
+			NOT = {
+				has_authority = auth_machine_intelligence
 			}
 		}
-
+	}
 	resources = {
 		category = armies
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
-	}
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
+			}
 			unity = 0.5
+		}
+	}
+	allow = {
+		owner = {
+			NOT = {
+				has_policy_flag = robots_outlawed
 			}
 		}
-
-	allow = {
-		owner = { NOT = { has_policy_flag = robots_outlawed } }
 	}
 }
 
@@ -148,20 +152,22 @@ machine_defense = {
 	war_exhaustion = 0.25
 	icon = GFX_army_type_machine_defensive
 	has_species = yes
-
 	potential = {
-		owner = { has_authority = auth_machine_intelligence }
+		owner = {
+			has_authority = auth_machine_intelligence
+		}
 		from = {
 			has_trait = "trait_machine_unit"
 		}
 	}
-
 	resources = {
 		category = armies
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
 			}
 			unity = 0.5
 		}
@@ -174,12 +180,11 @@ offspring_defense = {
 	health = 2
 	damage = 1.75
 	has_morale = no
-	morale_damage = 1.30
-	collateral_damage = 0.0
+	morale_damage = 1.3
+	collateral_damage = 0
 	war_exhaustion = 0.25
 	icon = GFX_army_type_xenomorph
 	has_species = yes
-
 	potential = {
 		OR = {
 			AND = {
@@ -190,7 +195,9 @@ offspring_defense = {
 				}
 			}
 			AND = {
-				planet.owner = { has_origin = origin_progenitor_hive }
+				planet.owner = {
+					has_origin = origin_progenitor_hive
+				}
 				OR = {
 					AND = {
 						has_building = building_offspring_nest
@@ -204,13 +211,14 @@ offspring_defense = {
 			}
 		}
 	}
-
 	resources = {
 		category = armies
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
 			}
 			unity = 0.5
 		}
