@@ -98,6 +98,21 @@ gateway_0 = {
 				}
 			}
 		}
+		# Restrict AI to one gateway per sector, to prevent gateway spam and make hyper relays more useful.
+		modifier = {
+			factor = 0
+			exists = sector
+			sector = {
+				any_system_within_border = {
+					OR = {
+						has_megastructure = gateway_0
+						has_megastructure = gateway_ruined
+						has_megastructure = gateway_restored
+						has_megastructure = gateway_final
+					}
+				}
+			}
+		}
 	}
 
 	on_build_start = {}
