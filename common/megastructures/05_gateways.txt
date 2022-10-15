@@ -113,6 +113,19 @@ gateway_0 = {
 				}
 			}
 		}
+		# Restrict AI gateway to capital or sector capital system only.
+		modifier = {
+			factor = 0
+			count_system_colony = {
+				count = 0
+				limit = {
+					OR = {
+						is_capital = yes
+						is_sector_capital = yes
+					}
+				}
+			}
+		}
 	}
 
 	on_build_start = {}
