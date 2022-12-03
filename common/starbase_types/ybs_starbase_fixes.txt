@@ -74,6 +74,9 @@ sshipyard = {
 		}
 		# token followed by priority
 		buildings = {
+			cordyceptic_reanimation_facility = {
+				base = 3
+			}
 			fleet_academy = {
 				base = 3
 			}
@@ -174,6 +177,9 @@ sanchorage = {
 		}
 		# token followed by priority
 		buildings = {
+			cordyceptic_reanimation_facility = {
+				base = 3
+			}
 			naval_logistics_office = {
 				base = 3
 			}
@@ -649,6 +655,9 @@ sfortress = {
 		}
 		# token followed by priority
 		buildings = {
+			cordyceptic_reanimation_facility = {
+				base = 3
+			}
 			offspring_outlook = {
 				base = 3
 			}

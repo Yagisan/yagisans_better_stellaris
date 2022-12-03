@@ -85,6 +85,9 @@ sstarpatrolbase = {
 			ybs_star_patrol = {
 				base = 5
 			}
+			cordyceptic_reanimation_facility = {
+				base = 3
+			}
 			offspring_outlook = {
 				base = 3
 			}
@@ -298,6 +301,9 @@ slisteningpost = {
 		buildings = {
 			listening_post = {
 				base = 5
+			}
+			cordyceptic_reanimation_facility = {
+				base = 3
 			}
 			offspring_outlook = {
 				base = 3
