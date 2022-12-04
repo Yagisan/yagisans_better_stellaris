@@ -48,6 +48,8 @@
     - [Fortress / Bastion Systems](#fortress--bastion-systems)
     - [Star Patrol Offices](#star-patrol-offices)
     - [Listening Posts](#listening-posts)
+  - [Megastructures](#megastructures)
+    - [Gateways](#gateways)
 
 ## Jobs
 
@@ -805,3 +807,13 @@ They will try to build themselves in chokepoints, and avoid building near other 
 ### Listening Posts
 
 They will build themselves next to neighbouring empires, prioritising hostile one, and avoid building near other Listening Posts. They will prioritise a Listening Posts, an Offspring Outlook, Communications Jammer, Command Centre and Target Uplink Computer. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
+
+## Megastructures
+
+### Gateways
+
+Once the AI learns to build gateways, they become very indiscriminate about it. This results in both gateway spam, and lag, as the AI needs to path find though many additional gateways.
+
+To lesson the spam, but still make gateways useful, we now limit AI gateways to 1 per sector. This limit will apply even if the gateway is disabled or ruined. If possible the AI will prefer to build the gateway over its sector capital, while respecting vanilla restriction (no gateway in an adjacent sector, starbase is the required level)
+
+It also attempts to show gateways on the map.
