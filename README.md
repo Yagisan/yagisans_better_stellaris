@@ -599,7 +599,7 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 
 ## Artifacts
 
-Without the Rubicator relic, artifacts are very difficult to acquire. Regular (Non-gestalt) empires now have a new option to buy artifacts from private collectors. These come at inflated prices, but do offer a way to continue acquiring them into the late game. If the AI has a surplus of resources, and less than 50 artifacts, they may purchase them as well.
+Without the Rubicator relic, artifacts are very difficult to acquire. Regular (Non-gestalt) empires now have a new option to buy artifacts from private collectors. These come at inflated prices, but do offer a way to continue acquiring them into the late game. Gestalts can attempt to make copies of existing artifacts, also at a significant cost. If the AI has a surplus of resources, and less than 50 artifacts, they may purchase them as well.
 
 ## Starbase Buildings
 
