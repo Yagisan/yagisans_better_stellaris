@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.txt": "stellaris"
+    },
+    "files.insertFinalNewline": true
+}
