@@ -118,11 +118,11 @@ The new space combat AI behaviour priority is:
 
 - Reclaim our occupied planets.
 - Reclaim allies occupied planets.
+- Prioritise attacks along conquered border.
 - Prioritise attacks along our border.
 - Prioritise attacks along allies border.
 - Defend our own invaded territory.
 - Defend our allies invaded territory.
-- Prioritise attacks along conquered border.
 - Defend our own territory.
 - Defend our allies territory.
 - Defend conquered territory.

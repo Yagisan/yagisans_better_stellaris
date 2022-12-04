@@ -18,9 +18,9 @@ NAI = {
 	WAR_ALLY_BORDER_PRIO = 10	# [5] Priority on targeting systems that are bordering allies
 	WAR_NO_BORDER_PRIO = 0.01	# [0.01] Priority on targeting systems that are in the middle of hostile space
 	# Defense seems to mean "defend even if no one is attacking"
-	WAR_DEFENSE_OWN_PRIO = 3	# [3] Priority on defending own borders
-	WAR_DEFENSE_CONTROLLED_PRIO = 5	# [5] Priority on defending conquered systems
-	WAR_DEFENSE_ALLY_PRIO = 3	# [3] Priority on defending allies
+	WAR_DEFENSE_OWN_PRIO = 1	# [3] Priority on defending own borders
+	WAR_DEFENSE_CONTROLLED_PRIO = 1.1	# [5] Priority on defending conquered systems
+	WAR_DEFENSE_ALLY_PRIO = 0.9	# [3] Priority on defending allies
 	# We really don't want them hunting space monsters while in a war
 	WAR_NEUTRAL_SPACE_PRIO = 0.01	# [0.5] Priority on targeting enemies in neutral space
 	# Multiplers ?
