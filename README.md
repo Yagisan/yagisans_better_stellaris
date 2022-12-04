@@ -69,7 +69,7 @@ Player empires will be checked on the 28th day of each year. There's no delay fo
 
 Habitability doesn't matter much in base Stellaris. I have tweaked it to matter much more in the early game. Habitability has been reduced on primary planets to 70%, on secondary planets to 50%, and on tertiary planets to 10%. This will all be eventually mitigated by vanilla habitability technologies.
 
-In addition, I have reduced the habitability spawn odds down to 30% to make habitable worlds much more valuable. Finally I have adjusted moon spawning sizes to always be smaller than planets, and to have a smaller overall size. The smallest moons will be size 8, and the largest size 12, while the smallest planets are size 12, and the largest are size 25.
+In addition, I have reduced the habitability spawn odds down to 30% to make habitable worlds much more valuable. Finally I have adjusted moon spawning sizes to always be smaller than planets, and to have a smaller overall size. The smallest moons will be size 8, and the largest size 12, while the smallest planets are size 13, and the largest are size 25.
 
 Finally, for the purposes of habitability, pops with a Relic world preference will consider an Ecumenopolis a primary planet, and vice versa.
 
@@ -749,11 +749,11 @@ With the addition of Orbital Rings, it's now possible to have more starbase buil
 
 #### Naval Logistics Offices
 
-### New Starbase Buildings
-
 **Changes**
 
 - AI can now build these on Orbital Rings.
+
+### New Starbase Buildings
 
 #### Star Patrol Office
 

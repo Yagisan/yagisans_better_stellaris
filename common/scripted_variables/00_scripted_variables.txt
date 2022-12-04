@@ -140,7 +140,7 @@
 # PLANET VARIABLES
 @planet_standard_scale = 11
 @habitable_planet_max_size = 25
-@habitable_planet_min_size = 12
+@habitable_planet_min_size = 13
 @habitable_moon_max_size = 12
 @habitable_moon_min_size = 8
 @habitable_min_distance = 60
@@ -221,7 +221,7 @@
 
 # "LEVIATHANS" ENCLAVE TRADE DEALS
 @traderDealDuration = 3600 #days
-# Opinion gained (annually — see leviathans.122)
+# Opinion gained (annually â€” see leviathans.122)
 @traderOpinion1 = 1
 @traderOpinion2 = 2
 @traderOpinion3 = 3
