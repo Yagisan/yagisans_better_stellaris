@@ -1,4 +1,5 @@
 ybs_anomaly_spawner = {
+	optimize_memory
 	random_list = {
 		15 = {
 		}
