@@ -1,4 +1,5 @@
 ybs_anomaly_possible = {
+	optimize_memory
 	has_anomaly = no
 	has_deposit = no
 	is_capital = no
