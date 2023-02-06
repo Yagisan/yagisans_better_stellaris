@@ -24,7 +24,7 @@ occupation_army = {
 		owner = {
 			OR = {
 				NOT = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 				}
 				has_valid_civic = civic_machine_assimilator
 			}
@@ -50,7 +50,7 @@ robotic_occupation_army = {
 		}
 		owner = {
 			NOT = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 	}
@@ -77,7 +77,7 @@ machine_occupation_army = {
 	has_species = yes
 	potential = {
 		owner = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 		}
 		from = {
 			has_trait = "trait_machine_unit"
