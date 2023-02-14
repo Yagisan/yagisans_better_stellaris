@@ -83,7 +83,7 @@ sstarpatrolbase = {
 		}
 		buildings = {
 			ybs_star_patrol = {
-				base = 5
+				base = 10
 			}
 			cordyceptic_reanimation_facility = {
 				base = 3
@@ -95,7 +95,7 @@ sstarpatrolbase = {
 				base = 3
 			}
 			command_center = {
-				base = 3
+				base = 5
 			}
 			deep_space_black_site = {
 				base = 2
@@ -181,7 +181,7 @@ slisteningpost = {
 		}
 		# Next to a neighbour
 		modifier = {
-			add = 300
+			add = 100
 			solar_system = {
 				any_neighbor_system = {
 					exists = owner
@@ -195,7 +195,7 @@ slisteningpost = {
 		}
 		# Next to a hostile neighbour
 		modifier = {
-			add = 300
+			add = 200
 			solar_system = {
 				any_neighbor_system = {
 					exists = owner
@@ -291,7 +291,7 @@ slisteningpost = {
 		# token followed by priority
 		buildings = {
 			listening_post = {
-				base = 5
+				base = 10
 			}
 			cordyceptic_reanimation_facility = {
 				base = 3

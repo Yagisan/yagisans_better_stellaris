@@ -721,7 +721,7 @@ sfortress = {
 				base = 1
 			}
 			command_center = {
-				base = 1
+				base = 5
 			}
 		}
 		modules = {
