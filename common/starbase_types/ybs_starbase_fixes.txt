@@ -665,7 +665,7 @@ sfortress = {
 				base = 3
 			}
 			disruption_field = {
-				base = 3
+				base = 2
 			}
 			deep_space_black_site = {
 				base = 2
@@ -702,7 +702,7 @@ sfortress = {
 			}
 			# First to shoot often wins.
 			target_uplink_computer = {
-				base = 1.5
+				base = 2.5
 			}
 			defense_grid = {
 				base = 1.5
