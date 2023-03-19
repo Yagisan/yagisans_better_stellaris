@@ -597,6 +597,36 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Morale                    |      1.0 |      1.0 |
 | Upkeep                    | 5 Energy | 5 Energy |
 
+| Crystal Kraken | Vanilla | Modded |
+| -------------- | ------: | -----: |
+| Army Damage    |    35.0 |   30.0 |
+| Morale Damage  |    50.0 |   50.0 |
+| Health         |    55.0 |   75.0 |
+| Morale         |  Immune | Immune |
+
+| Subterranean Invasion Defense Force | Vanilla | Modded |
+| ----------------------------------- | ------: | -----: |
+| Army Damage                         |     0.8 |    1.0 |
+| Morale Damage                       |         |    0.5 |
+| Health                              |     1.0 |    1.0 |
+| Morale                              |     1.0 |    1.0 |
+
+| New World Order Defense Force |  Vanilla |   Modded |
+| ----------------------------- | -------: | -------: |
+| Army Damage                   |      0.1 |      0.1 |
+| Morale Damage                 |      0.1 |      0.1 |
+| Health                        |     20.0 |     20.0 |
+| Morale                        |      6.0 |      6.0 |
+| Upkeep                        | 1 Energy | 1 Energy |
+
+| New World Order Offensive Army |  Vanilla |   Modded |
+| ------------------------------ | -------: | -------: |
+| Army Damage                    |      0.1 |      0.1 |
+| Morale Damage                  |      0.1 |      0.1 |
+| Health                         |     20.0 |     20.0 |
+| Morale                         |      6.0 |      6.0 |
+| Upkeep                         | 1 Energy | 1 Energy |
+
 ## Artifacts
 
 Without the Rubicator relic, artifacts are very difficult to acquire. Regular (Non-gestalt) empires now have a new option to buy artifacts from private collectors. These come at inflated prices, but do offer a way to continue acquiring them into the late game. Gestalts can attempt to make copies of existing artifacts, also at a significant cost. If the AI has a surplus of resources, and less than 50 artifacts, they may purchase them as well.

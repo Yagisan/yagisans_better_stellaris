@@ -628,13 +628,66 @@ mecha_army = {
 # Crystal Kraken
 crystal_kraken_army = {
 	defensive = yes
-	damage = 35
+	damage = 30
 	morale_damage = 50
-	health = 55
+	health = 75
 	has_morale = no
 	icon = GFX_army_type_undead
 	has_species = no
 	potential = {
+		always = no
+	}
+}
+
+# Subterranean Invasion Defense Force
+subterranean_defense_army = {
+	defensive = yes
+	damage = 1
+	morale_damage = 0.5
+	health = 1
+	morale = 1
+	icon = GFX_army_type_primitive
+	potential = {
+		always = no
+	}
+}
+
+new_world_order_defensive_army = {
+	defensive = yes
+	damage = 0.1
+	health = 20
+	morale = 6
+	morale_damage = 0.1
+	time = 5
+	icon = GFX_army_type_primitive
+	has_species = no
+	resources = {
+		category = armies
+		upkeep = {
+			energy = 1
+		}
+	}
+	potential_country = {
+		always = no
+	}
+}
+
+new_world_order_offensive_army = {
+	defensive = no
+	damage = 0.1
+	health = 20
+	morale = 6
+	morale_damage = 0.1
+	time = 5
+	icon = GFX_army_type_assault
+	has_species = no
+	resources = {
+		category = armies
+		upkeep = {
+			energy = 1
+		}
+	}
+	potential_country = {
 		always = no
 	}
 }
