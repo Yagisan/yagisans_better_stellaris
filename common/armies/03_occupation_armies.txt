@@ -23,10 +23,8 @@ occupation_army = {
 		}
 		owner = {
 			OR = {
-				NOT = {
-					is_machine_empire = yes
-				}
-				has_valid_civic = civic_machine_assimilator
+				is_machine_empire = no
+				is_machine_assimilator = yes
 			}
 		}
 	}

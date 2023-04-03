@@ -38,10 +38,8 @@ defense_army = {
 		owner = {
 			is_primitive = no
 			OR = {
-				NOT = {
-					is_machine_empire = yes
-				}
-				has_valid_civic = civic_machine_assimilator
+				is_machine_empire = no
+				is_machine_assimilator = yes
 			}
 		}
 	}
@@ -196,7 +194,7 @@ offspring_defense = {
 			}
 			AND = {
 				planet.owner = {
-					has_origin = origin_progenitor_hive
+					is_progenitor_hive_empire = yes
 				}
 				OR = {
 					AND = {

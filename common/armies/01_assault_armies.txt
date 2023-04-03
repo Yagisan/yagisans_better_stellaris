@@ -29,7 +29,7 @@ assault_army = {
 			NOT = {
 				is_machine_empire = yes
 			}
-			has_valid_civic = civic_machine_assimilator
+			is_machine_assimilator = yes
 		}
 	}
 	potential_country = {
@@ -37,7 +37,7 @@ assault_army = {
 			NOT = {
 				is_machine_empire = yes
 			}
-			has_valid_civic = civic_machine_assimilator
+			is_machine_assimilator = yes
 		}
 	}
 	potential = {
@@ -77,7 +77,7 @@ assault_army = {
 					has_ai_personality_behaviour = robot_liberator
 					has_technology = tech_droid_workers
 				}
-				has_valid_civic = civic_reanimated_armies
+				has_reanimated_armies = yes
 			}
 		}
 	}
@@ -201,7 +201,7 @@ clone_army = {
 			NOT = {
 				is_machine_empire = yes
 			}
-			has_civic = civic_machine_assimilator
+			is_machine_assimilator = yes
 		}
 	}
 	potential_country = {
@@ -209,7 +209,7 @@ clone_army = {
 			NOT = {
 				is_machine_empire = yes
 			}
-			has_civic = civic_machine_assimilator
+			is_machine_assimilator = yes
 		}
 	}
 	potential = {
@@ -240,7 +240,7 @@ clone_army = {
 		}
 		modifier = {
 			factor = 2
-			has_origin = origin_clone_army
+			is_clone_army_empire = yes
 		}
 	}
 }
@@ -607,10 +607,10 @@ undead_army = {
 		}
 	}
 	show_tech_unlock_if = {
-		has_valid_civic = civic_reanimated_armies
+		has_reanimated_armies = yes
 	}
 	potential_country = {
-		has_valid_civic = civic_reanimated_armies
+		has_reanimated_armies = yes
 	}
 	potential = {
 		from = {
