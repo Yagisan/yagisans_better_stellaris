@@ -9,7 +9,6 @@
 # Set primary habitability to 0.70 (was 0.80)
 # Set secondary habitability to 0.50 (was 0.60)
 # Set tertiary habitability to 0.10 (was 0.20)
-
 @primary = 0.6
 @secondary = 0.5
 @tertiary = 0.1
@@ -301,7 +300,7 @@ trait_pc_habitat_preference = {
 		exists = from
 		from = {
 			AND = {
-				has_origin = origin_void_dwellers
+				is_void_dwellers_empire = yes
 				has_tradition = tr_genetics_resequencing
 			}
 		}
@@ -444,7 +443,7 @@ trait_pc_gaia_preference_terraforming = {
 		potential = {
 			exists = planet
 			planet = {
-				is_planet_class = pc_gaia
+				is_gaia_world = yes
 			}
 		}
 		planet_jobs_produces_mult = 0.05
