@@ -758,9 +758,7 @@ deep_space_black_site = {
 		exists = owner
 		owner = {
 			has_technology = tech_living_state
-			NOT = {
-				has_ethic = ethic_gestalt_consciousness
-			}
+			is_gestalt = no
 		}
 		is_orbital_ring = no
 		or = {
@@ -1990,7 +1988,7 @@ offspring_outlook = {
 	potential = {
 		exists = owner
 		owner = {
-			has_origin = origin_progenitor_hive
+			is_progenitor_hive_empire = yes
 		}
 	}
 	possible = {
