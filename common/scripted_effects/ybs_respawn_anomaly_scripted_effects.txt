@@ -101,9 +101,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = object_gasgiant_category
@@ -112,9 +110,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = moon_gasgiant_category
@@ -123,9 +119,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = life_gasgiant_category
@@ -134,9 +128,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = storms_gasgiant_category
@@ -145,9 +137,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = aerostat_gasgiant_category
@@ -156,9 +146,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = cargo_gasgiant_category
@@ -167,9 +155,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = debris_gasgiant_category
@@ -178,9 +164,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = signal_gasgiant_category
@@ -189,9 +173,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = ship_gasgiant_category
@@ -200,9 +182,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 						is_moon = yes
 					}
 					add_anomaly = {
@@ -213,9 +193,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = life_toxic_category
@@ -224,9 +202,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = inhabited_toxic_category
@@ -236,9 +212,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_frozen
-						}
+						is_frozen_world = no
 					}
 					add_anomaly = {
 						category = life_frozen_category
@@ -248,9 +222,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_barren
-						}
+						is_barren_world = no
 					}
 					add_anomaly = {
 						category = fungal_emitters_category
@@ -370,8 +342,8 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_barren
-							is_planet_class = pc_barren_cold
+							is_barren_world = yes
+							is_barren_cold_world = yes
 						}
 					}
 					add_anomaly = {
@@ -384,8 +356,8 @@ ybs_anomaly_spawner = {
 						factor = 0
 						NOR = {
 							is_asteroid = yes
-							is_planet_class = pc_barren
-							is_planet_class = pc_barren_cold
+							is_barren_world = yes
+							is_barren_cold_world = yes
 						}
 					}
 					add_anomaly = {
@@ -452,9 +424,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = GAS_ZRO_ICE_CAT
@@ -463,9 +433,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = GAS_CLOUDY_CAT
@@ -475,9 +443,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = TOX_PURPLE_RAIN_CAT
@@ -486,9 +452,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = TOX_MAT_CAT
@@ -497,9 +461,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = TOX_STRUCTURES_CAT
@@ -509,9 +471,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_frozen
-						}
+						is_frozen_world = no
 					}
 					add_anomaly = {
 						category = FROZ_BASE_CAT
@@ -520,9 +480,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_frozen
-						}
+						is_frozen_world = no
 					}
 					add_anomaly = {
 						category = FROZ_ILLUMINATED_CAT
@@ -531,9 +489,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_frozen
-						}
+						is_frozen_world = no
 					}
 					add_anomaly = {
 						category = FROZ_BOX_CAT
@@ -543,9 +499,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_barren
-						}
+						is_barren_world = no
 					}
 					add_anomaly = {
 						category = BARR_BASE_CAT
@@ -554,9 +508,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_barren
-						}
+						is_barren_world = no
 					}
 					add_anomaly = {
 						category = BAR_COLONY_CAT
@@ -566,7 +518,7 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_barren
+							is_barren_world = yes
 							planet_size < 26
 							planet_size > 9
 						}
@@ -579,9 +531,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_molten
-						}
+						is_molten_world = no
 					}
 					add_anomaly = {
 						category = MOLTEN_BASE_CAT
@@ -591,9 +541,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_tropical
-						}
+						is_tropical_world = no
 					}
 					add_anomaly = {
 						category = TROP_PETS_CAT
@@ -602,9 +550,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_tropical
-						}
+						is_tropical_world = no
 					}
 					add_anomaly = {
 						category = TROP_WOODS_CAT
@@ -614,9 +560,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_ocean
-						}
+						is_ocean_world = no
 					}
 					add_anomaly = {
 						category = SEA_CAT
@@ -626,9 +570,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_arctic
-						}
+						is_arctic_world = no
 					}
 					add_anomaly = {
 						category = FROZ_BASE2_CAT
@@ -638,9 +580,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_desert
-						}
+						is_desert_world = no
 					}
 					add_anomaly = {
 						category = GEN_DESERT_CAT
@@ -650,9 +590,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gaia
-						}
+						is_gaia_world = no
 					}
 					add_anomaly = {
 						category = GAIA_MOVE_CAT
@@ -661,9 +599,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gaia
-						}
+						is_gaia_world = no
 					}
 					add_anomaly = {
 						category = GAEA_CHECKERED_CAT
@@ -694,7 +630,7 @@ ybs_anomaly_spawner = {
 						is_star = yes
 						is_asteroid = yes
 						is_ringworld = yes
-						is_planet_class = pc_gas_giant
+						is_gas_giant = yes
 					}
 					add_anomaly = {
 						category = GEN_PLAYGROUND_CAT
@@ -708,7 +644,7 @@ ybs_anomaly_spawner = {
 						is_asteroid = yes
 						is_ringworld = yes
 						habitable_planet = yes
-						is_planet_class = pc_gas_giant
+						is_gas_giant = yes
 					}
 					add_anomaly = {
 						category = UHB_ANCIENT_RUINS_1_CAT
@@ -721,7 +657,7 @@ ybs_anomaly_spawner = {
 						is_asteroid = yes
 						is_ringworld = yes
 						habitable_planet = yes
-						is_planet_class = pc_gas_giant
+						is_gas_giant = yes
 					}
 					add_anomaly = {
 						category = ATM_ANOMALY_CAT
@@ -732,9 +668,9 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_tropical
-							is_planet_class = pc_continental
-							is_planet_class = pc_ocean
+							is_tropical_world = yes
+							is_continental_world = yes
+							is_ocean_world = yes
 						}
 					}
 					add_anomaly = {
@@ -746,9 +682,9 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_tropical
-							is_planet_class = pc_continental
-							is_planet_class = pc_arid
+							is_tropical_world = yes
+							is_continental_world = yes
+							is_arid_world = yes
 						}
 					}
 					add_anomaly = {
@@ -760,9 +696,9 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_tropical
-							is_planet_class = pc_continental
-							is_planet_class = pc_tundra
+							is_tropical_world = yes
+							is_continental_world = yes
+							is_tundra_world = yes
 						}
 					}
 					add_anomaly = {
@@ -774,8 +710,8 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_arid
-							is_planet_class = pc_continental
+							is_arid_world = yes
+							is_continental_world = yes
 						}
 					}
 					add_anomaly = {
@@ -787,8 +723,8 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_gaia
-							is_planet_class = pc_continental
+							is_gaia_world = yes
+							is_continental_world = yes
 						}
 					}
 					add_anomaly = {
@@ -799,11 +735,11 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						is_planet_class = pc_toxic
-						is_planet_class = pc_barren_cold
-						is_planet_class = pc_barren
-						is_planet_class = pc_frozen
-						is_planet_class = pc_nuked
+						is_toxic_world = yes
+						is_barren_cold_world = yes
+						is_barren_world = yes
+						is_frozen_world = yes
+						is_nuked_world = yes
 					}
 					add_anomaly = {
 						category = UHB_BUOY_CAT
@@ -814,7 +750,7 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						is_star = yes
-						is_planet_class = pc_gas_giant
+						is_gas_giant = yes
 						has_moon = no
 						num_moons > 1
 					}
@@ -885,9 +821,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = TOX_PLANET_CAT
@@ -897,9 +831,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_ocean
-						}
+						is_ocean_world = no
 					}
 					add_anomaly = {
 						category = WAT_PLANET_CAT
@@ -909,9 +841,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_desert
-						}
+						is_desert_world = no
 					}
 					add_anomaly = {
 						category = DES_BURIED_CAT
@@ -920,9 +850,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_desert
-						}
+						is_desert_world = no
 					}
 					add_anomaly = {
 						category = DES_PLANET_CAT
@@ -932,9 +860,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_tropical
-						}
+						is_tropical_world = no
 					}
 					add_anomaly = {
 						category = TROP_BIOLOGY_CAT
@@ -943,9 +869,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_tropical
-						}
+						is_tropical_world = no
 					}
 					add_anomaly = {
 						category = TROP_CONDITIONS_CAT
@@ -955,9 +879,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_arid
-						}
+						is_arid_world = no
 					}
 					add_anomaly = {
 						category = ARID_SENSOR_CAT
@@ -966,9 +888,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_arid
-						}
+						is_arid_world = no
 					}
 					add_anomaly = {
 						category = ARID_PLANET_CAT
@@ -978,9 +898,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_continental
-						}
+						is_continental_world = no
 					}
 					add_anomaly = {
 						category = CON_BIOLOGY_CAT
@@ -990,9 +908,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_nuked
-						}
+						is_nuked_world = no
 					}
 					add_anomaly = {
 						category = NUKE_PLANET_CAT
@@ -1003,8 +919,8 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_tundra
-							is_planet_class = pc_barren_cold
+							is_tundra_world = yes
+							is_barren_cold_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1016,8 +932,8 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_desert
-							is_planet_class = pc_arid
+							is_desert_world = yes
+							is_arid_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1029,9 +945,9 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_tundra
-							is_planet_class = pc_nuked
-							is_planet_class = pc_toxic
+							is_tundra_world = yes
+							is_nuked_world = yes
+							is_toxic_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1043,9 +959,9 @@ ybs_anomaly_spawner = {
 					modifier = {
 						factor = 0
 						NOR = {
-							is_planet_class = pc_tundra
-							is_planet_class = pc_frozen
-							is_planet_class = pc_barren_cold
+							is_tundra_world = yes
+							is_frozen_world = yes
+							is_barren_cold_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1171,9 +1087,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = DISTAR_LOST_CAT
@@ -1185,9 +1099,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 					}
 					add_anomaly = {
 						category = debris_gasgiant_category_temp
@@ -1199,9 +1111,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_gas_giant
-						}
+						is_gas_giant = no
 						years_passed < 5
 					}
 					add_anomaly = {
@@ -1215,7 +1125,7 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_gas_giant
+							is_gas_giant = yes
 							is_inside_nebula = yes
 						}
 					}
@@ -1230,9 +1140,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_frozen
-						}
+						is_frozen_world = no
 					}
 					add_anomaly = {
 						category = DISTAR_ICE_CAT
@@ -1245,9 +1153,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_molten
-						}
+						is_molten_world = no
 					}
 					add_anomaly = {
 						category = DISTAR_MOLTEN_CAT
@@ -1260,9 +1166,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = DISTAR_METAL_CAT
@@ -1274,9 +1178,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = DISTAR_WARFORM_CAT
@@ -1288,9 +1190,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_toxic
-						}
+						is_toxic_world = no
 					}
 					add_anomaly = {
 						category = disco_impossible_organism_cat
@@ -1303,9 +1203,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_barren
-						}
+						is_barren_world = no
 					}
 					add_anomaly = {
 						category = DISTAR_THIRSTY_CAT
@@ -1318,9 +1216,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_ocean
-						}
+						is_ocean_world = no
 					}
 					add_anomaly = {
 						category = DISTAR_OCEAN_CAT
@@ -1333,9 +1229,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
-						NOT = {
-							is_planet_class = pc_gaia
-						}
+						is_gaia_world = no
 					}
 					add_anomaly = {
 						category = gaia_planet_cat
@@ -1349,8 +1243,8 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_barren_cold
-							is_planet_class = pc_frozen
+							is_barren_cold_world = yes
+							is_frozen_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1364,8 +1258,8 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_barren_cold
-							is_planet_class = pc_frozen
+							is_barren_cold_world = yes
+							is_frozen_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1380,9 +1274,9 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_desert
-							is_planet_class = pc_barren
-							is_planet_class = pc_gaia
+							is_desert_world = yes
+							is_barren_world = yes
+							is_gaia_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1397,9 +1291,9 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_desert
-							is_planet_class = pc_arid
-							is_planet_class = pc_savannah
+							is_desert_world = yes
+							is_arid_world = yes
+							is_savannah_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1415,11 +1309,11 @@ ybs_anomaly_spawner = {
 						}
 						NOR = {
 							is_asteroid = yes
-							is_planet_class = pc_barren_cold
-							is_planet_class = pc_molten
-							is_planet_class = pc_barren
-							is_planet_class = pc_toxic
-							is_planet_class = pc_frozen
+							is_barren_cold_world = yes
+							is_molten_world = yes
+							is_barren_world = yes
+							is_toxic_world = yes
+							is_frozen_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1434,11 +1328,11 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_barren_cold
-							is_planet_class = pc_molten
-							is_planet_class = pc_barren
-							is_planet_class = pc_toxic
-							is_planet_class = pc_frozen
+							is_barren_cold_world = yes
+							is_molten_world = yes
+							is_barren_world = yes
+							is_toxic_world = yes
+							is_frozen_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1453,12 +1347,12 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_tropical
-							is_planet_class = pc_continental
-							is_planet_class = pc_savannah
-							is_planet_class = pc_alpine
-							is_planet_class = pc_ocean
-							is_planet_class = pc_gaia
+							is_tropical_world = yes
+							is_continental_world = yes
+							is_savannah_world = yes
+							is_alpine_world = yes
+							is_ocean_world = yes
+							is_gaia_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1473,11 +1367,11 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_tropical
-							is_planet_class = pc_continental
-							is_planet_class = pc_savannah
-							is_planet_class = pc_ocean
-							is_planet_class = pc_gaia
+							is_tropical_world = yes
+							is_continental_world = yes
+							is_savannah_world = yes
+							is_ocean_world = yes
+							is_gaia_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1492,10 +1386,10 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Distant Stars Story Pack"
 						}
 						NOR = {
-							is_planet_class = pc_barren
-							is_planet_class = pc_toxic
-							is_planet_class = pc_barren_cold
-							is_planet_class = pc_nuked
+							is_barren_world = yes
+							is_toxic_world = yes
+							is_barren_cold_world = yes
+							is_nuked_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1600,8 +1494,8 @@ ybs_anomaly_spawner = {
 						}
 						habitable_planet = no
 						OR = {
-							is_planet_class = pc_desert
-							is_planet_class = pc_arctic
+							is_desert_world = yes
+							is_arctic_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1753,8 +1647,8 @@ ybs_anomaly_spawner = {
 							host_has_dlc = "Federations"
 						}
 						NOR = {
-							is_planet_class = pc_barren_cold
-							is_planet_class = pc_barren
+							is_barren_cold_world = yes
+							is_barren_world = yes
 						}
 					}
 					add_anomaly = {
@@ -1768,9 +1662,7 @@ ybs_anomaly_spawner = {
 						NOT = {
 							host_has_dlc = "Federations"
 						}
-						NOT = {
-							is_planet_class = pc_ocean
-						}
+						is_ocean_world = no
 					}
 					add_anomaly = {
 						category = SEA_CRYSTAL_CAT
@@ -1781,9 +1673,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_ocean
-						}
+						is_ocean_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_OCEAN_CAT
@@ -1792,9 +1682,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_arctic
-						}
+						is_arctic_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_ARCTIC_CAT
@@ -1803,9 +1691,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_desert
-						}
+						is_desert_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_SNAKEOID_CAT
@@ -1814,9 +1700,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_desert
-						}
+						is_desert_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_DESERT_CAT
@@ -1825,9 +1709,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_tropical
-						}
+						is_tropical_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_TROPICAL_CAT
@@ -1836,9 +1718,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_arid
-						}
+						is_arid_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_ARID_CAT
@@ -1847,9 +1727,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_continental
-						}
+						is_continental_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_CONTINENTAL_CAT
@@ -1858,9 +1736,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_tundra
-						}
+						is_tundra_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_TUNDRA_CAT
@@ -1869,9 +1745,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_nuked
-						}
+						is_nuked_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_ROACHOID_CAT
@@ -1880,9 +1754,7 @@ ybs_anomaly_spawner = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							is_planet_class = pc_gaia
-						}
+						is_gaia_world = no
 					}
 					add_anomaly = {
 						category = UPLIFT_GENERIC_CAT
