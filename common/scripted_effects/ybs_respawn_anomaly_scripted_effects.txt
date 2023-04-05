@@ -1670,96 +1670,98 @@ ybs_anomaly_spawner = {
 				}
 				## Uplift anomalies. These should be rather rare. Weighted at 1/5 of a normal event.
 				## 97_anomaly_categories_Uplifts.txt
-				1 = {
-					modifier = {
-						factor = 0
-						is_ocean_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_OCEAN_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_arctic_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_ARCTIC_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_desert_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_SNAKEOID_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_desert_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_DESERT_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_tropical_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_TROPICAL_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_arid_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_ARID_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_continental_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_CONTINENTAL_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_tundra_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_TUNDRA_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_nuked_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_ROACHOID_CAT
-					}
-				}
-				1 = {
-					modifier = {
-						factor = 0
-						is_gaia_world = no
-					}
-					add_anomaly = {
-						category = UPLIFT_GENERIC_CAT
-					}
-				}
+				##
+				## These were removed in Stellaris 3.7
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_ocean_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_OCEAN_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_arctic_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_ARCTIC_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_desert_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_SNAKEOID_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_desert_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_DESERT_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_tropical_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_TROPICAL_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_arid_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_ARID_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_continental_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_CONTINENTAL_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_tundra_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_TUNDRA_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_nuked_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_ROACHOID_CAT
+				# 	}
+				# }
+				# 1 = {
+				# 	modifier = {
+				# 		factor = 0
+				# 		is_gaia_world = no
+				# 	}
+				# 	add_anomaly = {
+				# 		category = UPLIFT_GENERIC_CAT
+				# 	}
+				# }
 			}
 		}
 	}
