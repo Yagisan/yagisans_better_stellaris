@@ -21,7 +21,6 @@
     - [Assault Armies](#assault-armies)
     - [Occupation Armies](#occupation-armies)
     - [Event Armies](#event-armies)
-  - [Artifacts](#artifacts)
   - [Starbase Buildings](#starbase-buildings)
     - [Changed Starbase Buildings](#changed-starbase-buildings)
       - [Crew Quarters / Crew Gestation Chambers / Service Umbilicals](#crew-quarters--crew-gestation-chambers--service-umbilicals)
@@ -626,10 +625,6 @@ In vanilla Stellaris, Generals are functionally useless. Their traits are lacklu
 | Health                         |     20.0 |     20.0 |
 | Morale                         |      6.0 |      6.0 |
 | Upkeep                         | 1 Energy | 1 Energy |
-
-## Artifacts
-
-Without the Rubicator relic, artifacts are very difficult to acquire. Regular (Non-gestalt) empires now have a new option to buy artifacts from private collectors. These come at inflated prices, but do offer a way to continue acquiring them into the late game. Gestalts can attempt to make copies of existing artifacts, also at a significant cost. If the AI has a surplus of resources, and less than 50 artifacts, they may purchase them as well.
 
 ## Starbase Buildings
 
