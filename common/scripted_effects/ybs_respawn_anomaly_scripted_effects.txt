@@ -987,9 +987,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -999,9 +997,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1011,9 +1007,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1023,9 +1017,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1035,9 +1027,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1047,9 +1037,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1059,9 +1047,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1071,9 +1057,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_asteroid = no
 					}
 					add_anomaly = {
@@ -1084,9 +1068,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_gas_giant = no
 					}
 					add_anomaly = {
@@ -1096,9 +1078,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_gas_giant = no
 					}
 					add_anomaly = {
@@ -1108,9 +1088,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_gas_giant = no
 						years_passed < 5
 					}
@@ -1121,9 +1099,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_gas_giant = yes
 							is_inside_nebula = yes
@@ -1137,9 +1113,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_frozen_world = no
 					}
 					add_anomaly = {
@@ -1150,9 +1124,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_molten_world = no
 					}
 					add_anomaly = {
@@ -1163,9 +1135,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_toxic_world = no
 					}
 					add_anomaly = {
@@ -1175,9 +1145,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_toxic_world = no
 					}
 					add_anomaly = {
@@ -1187,9 +1155,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_toxic_world = no
 					}
 					add_anomaly = {
@@ -1200,9 +1166,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_barren_world = no
 					}
 					add_anomaly = {
@@ -1213,9 +1177,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_ocean_world = no
 					}
 					add_anomaly = {
@@ -1226,9 +1188,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_gaia_world = no
 					}
 					add_anomaly = {
@@ -1239,9 +1199,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_barren_cold_world = yes
 							is_frozen_world = yes
@@ -1254,9 +1212,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_barren_cold_world = yes
 							is_frozen_world = yes
@@ -1270,9 +1226,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_desert_world = yes
 							is_barren_world = yes
@@ -1287,9 +1241,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_desert_world = yes
 							is_arid_world = yes
@@ -1304,9 +1256,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_asteroid = yes
 							is_barren_cold_world = yes
@@ -1324,9 +1274,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_barren_cold_world = yes
 							is_molten_world = yes
@@ -1343,9 +1291,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_tropical_world = yes
 							is_continental_world = yes
@@ -1363,9 +1309,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_tropical_world = yes
 							is_continental_world = yes
@@ -1382,9 +1326,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						NOR = {
 							is_barren_world = yes
 							is_toxic_world = yes
@@ -1400,9 +1342,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 					}
 					add_anomaly = {
@@ -1412,9 +1352,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 					}
 					add_anomaly = {
@@ -1424,9 +1362,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 					}
 					add_anomaly = {
@@ -1436,9 +1372,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 					}
 					add_anomaly = {
@@ -1448,9 +1382,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 					}
 					add_anomaly = {
@@ -1460,9 +1392,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 						planet_size < 15
 					}
@@ -1473,9 +1403,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 						NOT = {
 							has_planet_modifier = pm_dangerous_wildlife
@@ -1489,9 +1417,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						habitable_planet = no
 						OR = {
 							is_desert_world = yes
@@ -1506,9 +1432,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_moon = no
 						habitable_planet = yes
 					}
@@ -1520,9 +1444,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = yes
 						years_passed < 5
 					}
@@ -1534,9 +1456,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 					}
 					add_anomaly = {
@@ -1546,9 +1466,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 					}
 					add_anomaly = {
@@ -1559,9 +1477,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 						NOT = {
 							is_star_class = sc_black_hole
@@ -1574,9 +1490,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 						NOT = {
 							is_star_class = sc_black_hole
@@ -1590,9 +1504,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 						NOR = {
 							is_star_class = sc_neutron_star
@@ -1607,9 +1519,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 						NOR = {
 							is_star_class = sc_black_hole
@@ -1625,9 +1535,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Distant Stars Story Pack"
-						}
+						has_distar = no
 						is_star = no
 						NOT = {
 							is_star_class = sc_f
@@ -1643,9 +1551,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Federations"
-						}
+						has_federations_dlc = no
 						NOR = {
 							is_barren_cold_world = yes
 							is_barren_world = yes
@@ -1659,9 +1565,7 @@ ybs_anomaly_spawner = {
 				5 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							host_has_dlc = "Federations"
-						}
+						has_federations_dlc = no
 						is_ocean_world = no
 					}
 					add_anomaly = {
