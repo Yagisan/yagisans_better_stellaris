@@ -38,7 +38,6 @@ sorbital_ring = {
 			}
 			orbital_ring_hangar_bay = {
 				base = 0
-				}
 			}
 		}
 		# Generic Buildings
