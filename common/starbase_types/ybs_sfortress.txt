@@ -17,6 +17,7 @@ sfortress = {
 					limit = {
 						exists = owner
 						owner = {
+							is_country_type = default
 							NOR = {
 								is_same_value = root.owner
 								is_in_federation_with = root.owner
@@ -172,14 +173,14 @@ sfortress = {
 		ratio = {
 			base = 0.1
 			modifier = {
-				add = 0.05
+				add = 0.1
 				exists = owner
 				owner = {
 					has_ethic = ethic_pacifist
 				}
 			}
 			modifier = {
-				add = 0.05
+				add = 0.1
 				exists = owner
 				owner = {
 					has_ethic = ethic_fanatic_pacifist
@@ -189,22 +190,36 @@ sfortress = {
 		# token followed by priority
 		buildings = {
 			cordyceptic_reanimation_facility = {
-				base = 3
+				base = 5
 			}
-			offspring_outlook = {
-				base = 3
-			}
-			communications_jammer = {
-				base = 3
-			}
-			disruption_field = {
-				base = 2
-			}
-			deep_space_black_site = {
-				base = 2
+			command_center = {
+				base = 5
 			}
 			transit_hub = {
-				base = 2
+				base = 4
+			}
+			deep_space_black_site = {
+				base = 3
+			}
+			# First to shoot often wins.
+			target_uplink_computer = {
+				base = 3
+			}
+			zroni_storm_caster = {
+				base = 2.5
+				modifier = {
+					factor = 0
+					exists = owner
+					owner = {
+						has_monthly_income = {
+							resource = sr_zro
+							value < 2
+						}
+					}
+				}
+			}
+			defense_grid = {
+				base = 2.5
 			}
 			curator_think_tank = {
 				base = 2
@@ -227,17 +242,19 @@ sfortress = {
 			ice_mining_station = {
 				base = 2
 			}
+			offspring_outlook = {
+				base = 2
+			}
 			dragon_hatchery = {
 				base = 2
 			}
 			mercenary_garrison = {
 				base = 1.5
 			}
-			# First to shoot often wins.
-			target_uplink_computer = {
-				base = 2.5
+			communications_jammer = {
+				base = 1.5
 			}
-			defense_grid = {
+			disruption_field = {
 				base = 1.5
 			}
 			resource_silo = {
@@ -250,12 +267,6 @@ sfortress = {
 			warp_fluctuator = {
 				base = 1
 			}
-			shroud_beacon = {
-				base = 1
-			}
-			command_center = {
-				base = 5
-			}
 		}
 		modules = {
 			hangar_bay = {
@@ -266,6 +277,9 @@ sfortress = {
 			}
 			gun_battery = {
 				base = 1
+			}
+			archaeo_rampart = {
+				base = 1.25
 			}
 		}
 	}
