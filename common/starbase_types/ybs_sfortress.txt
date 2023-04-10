@@ -98,9 +98,12 @@ sfortress = {
 							is_hostile = root.owner
 							is_hostile_to = root.owner
 							is_domineering_to = root.owner
+							is_disloyal_to = root.owner
 							is_unfriendly_to = root.owner
+							# Fallen empire
 							is_angry_to = root.owner
 							# Awakened Empire with low opinion
+							# Double up because they are likely coming for us
 							is_belligerent_to = root.owner
 							root.owner = {
 								is_threatened_to = prev
