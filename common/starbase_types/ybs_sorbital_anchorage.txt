@@ -36,18 +36,21 @@ sorbital_anchorage = {
 				base = 10
 			}
 			command_center = {
-				base = 3
+				base = 5
 			}
-			defense_grid = {
-				base = 0.25
-			}
-			communications_jammer = {
-				base = 0.25
+			black_hole_observatory = {
+				base = 2
 			}
 			nebula_refinery = {
 				base = 2
 			}
 			hydroponics_bay = {
+				base = 1
+			}
+			defense_grid = {
+				base = 1
+			}
+			communications_jammer = {
 				base = 1
 			}
 		}
