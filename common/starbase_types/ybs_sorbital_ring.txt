@@ -13,7 +13,7 @@ sorbital_ring = {
 		}
 		modules = {
 			orbital_ring_habitation = {
-				base = 2
+				base = 20
 				modifier = {
 					factor = 2
 					planet = {
@@ -25,49 +25,30 @@ sorbital_ring = {
 				}
 			}
 			orbital_ring_shipyard = {
-				base = 0.1				# Generally better to use normal starbases for this
+				base = 0				# Generally better to use normal starbases for this
 			}
 			orbital_ring_anchorage = {
-				base = 0.1				# Generally better to use normal starbases for this
+				base = 0				# Generally better to use normal starbases for this
 			}
 			orbital_ring_gun_battery = {
-				base = 0.25
-				modifier = {
-					factor = 3
-					owner = {
-						OR = {
-							is_preferred_weapons = weapon_type_energy
-							is_preferred_weapons = weapon_type_kinetic
-						}
-					}
-				}
+				base = 0
 			}
 			orbital_ring_missile_battery = {
-				base = 0.25
-				modifier = {
-					factor = 3
-					owner = {
-						is_preferred_weapons = weapon_type_explosive
-					}
-				}
+				base = 0
 			}
 			orbital_ring_hangar_bay = {
-				base = 0.25
-				modifier = {
-					factor = 3
-					owner = {
-						is_preferred_weapons = weapon_type_strike_craft
-					}
+				base = 0
 				}
 			}
 		}
 		# Generic Buildings
 		buildings = {
-			# Popless production is best production
-			nebula_refinery = {
-				base = 1
+			black_hole_observatory = {
+				base = 2
 			}
-			# Popless production is best production
+			nebula_refinery = {
+				base = 2
+			}
 			hydroponics_bay = {
 				base = 1
 			}
@@ -86,8 +67,7 @@ sorbital_ring = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_bureau
-							has_designation = col_bureau_spiritualist
+							has_unity_designation = yes
 							has_building = building_sensorium_1
 							has_building = building_autochthon_monument
 							has_building = building_corporate_monument
@@ -118,7 +98,7 @@ sorbital_ring = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_mining
+							has_mining_designation = yes
 							has_building = building_mineral_purification_plant
 							has_building = building_mineral_purification_hub
 						}
@@ -132,7 +112,7 @@ sorbital_ring = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_generator
+							has_generator_designation = yes
 							has_building = building_energy_grid
 							has_building = building_energy_nexus
 						}
@@ -146,7 +126,7 @@ sorbital_ring = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_farming
+							has_farming_designation = yes
 							has_building = building_food_processing_facility
 							has_building = building_food_processing_center
 						}
@@ -160,14 +140,11 @@ sorbital_ring = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_industrial
-							has_designation = col_factory
+							has_factory_designation = yes
+							has_industrial_designation = yes
 							has_building = building_factory_1
 							has_building = building_factory_2
 							has_building = building_factory_3
-							has_designation = col_ecu_industrial
-							has_designation = col_ecu_factory
-							has_designation = col_mac_factory
 						}
 					}
 				}
@@ -179,15 +156,11 @@ sorbital_ring = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_industrial
-							has_designation = col_foundry
+							has_factory_designation = yes
+							has_industrial_designation = yes
 							has_building = building_foundry_1
 							has_building = building_foundry_2
 							has_building = building_foundry_3
-							has_designation = col_ecu_industrial
-							has_designation = col_ecu_foundry
-							has_designation = col_mac_foundry
-							has_designation = col_hiv_foundry
 						}
 					}
 				}
@@ -199,7 +172,7 @@ sorbital_ring = {
 					add = 2
 					planet = {
 						OR = {
-							has_designation = col_city
+							has_trade_designation = yes
 							has_building = building_galactic_stock_exchange
 						}
 					}
