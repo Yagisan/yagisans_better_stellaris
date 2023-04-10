@@ -55,20 +55,26 @@ sorbital_fortress = {
 		}
 		# token followed by priority
 		buildings = {
-			target_uplink_computer = {
+			command_center = {
+				base = 5
+			}
+			black_hole_observatory = {
 				base = 2
 			}
-			command_center = {
-				base = 3
+			nebula_refinery = {
+				base = 2
+			}
+			target_uplink_computer = {
+				base = 2
 			}
 			defense_grid = {
 				base = 1
 			}
 			communications_jammer = {
-				base = 0.9
+				base = 1
 			}
 			disruption_field = {
-				base = 0.9
+				base = 1
 			}
 		}
 		modules = {
