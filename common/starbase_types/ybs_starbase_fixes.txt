@@ -578,10 +578,14 @@ sfortress = {
 							# They want our land!
 							has_claim = root.owner
 							# Better safe than sorry
-							has_valid_civic = civic_fanatic_purifiers
-							has_valid_civic = civic_hive_devouring_swarm
+							# has_valid_civic = civic_fanatic_purifiers
+							# has_valid_civic = civic_hive_devouring_swarm
+							# has_valid_civic = civic_machine_terminator
+							is_homicidal = yes
+							# has_valid_civic = civic_barbaric_despoilers
+							is_unfriendly = yes
 							has_valid_civic = civic_machine_assimilator
-							has_valid_civic = civic_machine_terminator
+							has_valid_civic = civic_malfunctioning_custodian
 						}
 						exists = this
 					}
