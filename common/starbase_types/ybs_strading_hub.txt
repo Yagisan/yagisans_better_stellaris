@@ -132,36 +132,68 @@ strading_hub = {
 			base = 0
 		}
 		ratio = {
-			base = 0.15
+			base = 0.1
 			modifier = {
 				add = 0.05
 				exists = owner
 				owner = {
-					has_ethic = ethic_materialist
+					OR = {
+						has_ethic = ethic_xenophile
+						is_megacorp = yes
+					}
 				}
 			}
 			modifier = {
 				add = 0.1
 				exists = owner
 				owner = {
-					has_ethic = ethic_fanatic_materialist
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						is_megacorp = yes
+					}
 				}
 			}
 		}
 		# token followed by priority
 		buildings = {
-			offworld_trading_company = {
-				base = 3
+			command_center = {
+				base = 5
 			}
-			# Hyperlane Registrar
-			warp_fluctuator = {
-				base = 3
+			offworld_trading_company = {
+				base = 4
+			}
+			transit_hub = {
+				base = 4
 			}
 			deep_space_black_site = {
 				base = 3
 			}
-			transit_hub = {
+			yuht_detection_array = {
 				base = 3
+				modifier = {
+					factor = 0
+					exists = owner
+					owner = {
+						OR = {
+							has_megastructure = spy_orb_1
+							has_megastructure = spy_orb_2
+							has_megastructure = spy_orb_3
+							has_megastructure = spy_orb_4
+						}
+					}
+				}
+				modifier = {
+					factor = 0.1
+					exists = owner
+					owner = {
+						any_owned_starbase = {
+							count_starbase_buildings = {
+								type = yuht_detection_array
+								count > 0
+							}
+						}
+					}
+				}
 			}
 			curator_think_tank = {
 				base = 2
@@ -190,10 +222,14 @@ strading_hub = {
 			dragon_hatchery = {
 				base = 2
 			}
+			hydroponics_bay = {
+				base = 2
+			}
 			resource_silo = {
 				base = 1
 			}
-			hydroponics_bay = {
+			# Hyperlane Registrar
+			warp_fluctuator = {
 				base = 1
 			}
 			communications_jammer = {
@@ -203,9 +239,6 @@ strading_hub = {
 				base = 1
 			}
 			shroud_beacon = {
-				base = 1
-			}
-			command_center = {
 				base = 1
 			}
 		}
