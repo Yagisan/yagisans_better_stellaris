@@ -62,7 +62,13 @@ sshipyard = {
 		# token followed by priority
 		buildings = {
 			cordyceptic_reanimation_facility = {
-				base = 3
+				base = 5
+			}
+			transit_hub = {
+				base = 4
+			}
+			irassian_naval_yards = {
+				base = 4
 			}
 			fleet_academy = {
 				base = 3
@@ -76,14 +82,8 @@ sshipyard = {
 			colossus_yards = {
 				base = 3
 			}
-			dragon_hatchery = {
-				base = 3
-			}
 			deep_space_black_site = {
-				base = 2
-			}
-			transit_hub = {
-				base = 2
+				base = 3
 			}
 			curator_think_tank = {
 				base = 2
@@ -106,13 +106,26 @@ sshipyard = {
 			ice_mining_station = {
 				base = 2
 			}
-			shroud_beacon = {
-				base = 1.5
+			offspring_outlook = {
+				base = 2
+			}
+			dragon_hatchery = {
+				base = 2
+			}
+			hydroponics_bay = {
+				base = 2
 			}
 			resource_silo = {
 				base = 1
 			}
-			hydroponics_bay = {
+			# Hyperlane Registrar
+			warp_fluctuator = {
+				base = 1
+			}
+			communications_jammer = {
+				base = 1
+			}
+			defense_grid = {
 				base = 1
 			}
 		}
