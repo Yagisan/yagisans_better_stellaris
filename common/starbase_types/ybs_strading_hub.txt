@@ -93,7 +93,7 @@ strading_hub = {
 				OR = {
 					# No trade routes?
 					has_trade_route = no
-					# We have a starbase in very system? (really?)
+					# We have a starbase in every system? (really?)
 					owner = {
 						num_starbases >= trigger:controlled_systems
 					}

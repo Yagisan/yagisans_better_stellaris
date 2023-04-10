@@ -116,7 +116,7 @@ slisteningpost = {
 							OR = {
 								has_starbase_building = listening_post
 								has_starbase_building = yuht_detection_array
-							}	
+							}
 						}
 					}
 				}
