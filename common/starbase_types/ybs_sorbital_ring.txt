@@ -1,0 +1,210 @@
+# Generic Orbital Ring
+sorbital_ring = {
+	# generic
+	potential = {
+		is_orbital_ring = yes
+	}
+	weight_modifier = {
+		base = 10
+	}
+	ai_design = {
+		min = {
+			base = 0
+		}
+		modules = {
+			orbital_ring_habitation = {
+				base = 2
+				modifier = {
+					factor = 2
+					planet = {
+						num_free_districts = {
+							type = any
+							value <= 2
+						}
+					}
+				}
+			}
+			orbital_ring_shipyard = {
+				base = 0.1				# Generally better to use normal starbases for this
+			}
+			orbital_ring_anchorage = {
+				base = 0.1				# Generally better to use normal starbases for this
+			}
+			orbital_ring_gun_battery = {
+				base = 0.25
+				modifier = {
+					factor = 3
+					owner = {
+						OR = {
+							is_preferred_weapons = weapon_type_energy
+							is_preferred_weapons = weapon_type_kinetic
+						}
+					}
+				}
+			}
+			orbital_ring_missile_battery = {
+				base = 0.25
+				modifier = {
+					factor = 3
+					owner = {
+						is_preferred_weapons = weapon_type_explosive
+					}
+				}
+			}
+			orbital_ring_hangar_bay = {
+				base = 0.25
+				modifier = {
+					factor = 3
+					owner = {
+						is_preferred_weapons = weapon_type_strike_craft
+					}
+				}
+			}
+		}
+		# Generic Buildings
+		buildings = {
+			# Popless production is best production
+			nebula_refinery = {
+				base = 1
+			}
+			# Popless production is best production
+			hydroponics_bay = {
+				base = 1
+			}
+			# +1 Amenities from Maintenance Drones (machine only)
+			ring_maintenance_hub = {
+				base = 1
+			}
+			# +1 Amenities from Synapse Drones
+			ring_synapse_hub = {
+				base = 1
+			}
+			# +1 Unity from Administrator, Manager, Priest, and Telepath jobs
+			ring_bureaucracy_hub = {
+				base = 0
+				modifier = {
+					add = 3
+					planet = {
+						OR = {
+							has_designation = col_bureau
+							has_designation = col_bureau_spiritualist
+							has_building = building_sensorium_1
+							has_building = building_autochthon_monument
+							has_building = building_corporate_monument
+							has_building = building_galactic_memorial_1
+							has_building = building_simulation_1
+							has_building = building_heritage_site
+							has_building = building_hypercomms_forum
+							has_building = building_galactic_memorial_2
+							has_building = building_galactic_memorial_3
+							has_building = building_simulation_2
+							has_building = building_simulation_3
+							has_building = building_corporate_site
+							has_building = building_corporate_forum
+							has_building = building_sensorium_2
+							has_building = building_sensorium_3
+							has_building = building_autocurating_vault
+							has_building = building_citadel_of_faith
+							has_building = building_corporate_vault
+							has_building = building_alpha_hub
+						}
+					}
+				}
+			}
+			# +2 Minerals from miners
+			ring_minerals_hub = {
+				base = 0
+				modifier = {
+					add = 3
+					planet = {
+						OR = {
+							has_designation = col_mining
+							has_building = building_mineral_purification_plant
+							has_building = building_mineral_purification_hub
+						}
+					}
+				}
+			}
+			# +2 Energy from Technicians
+			ring_energy_hub = {
+				base = 0
+				modifier = {
+					add = 3
+					planet = {
+						OR = {
+							has_designation = col_generator
+							has_building = building_energy_grid
+							has_building = building_energy_nexus
+						}
+					}
+				}
+			}
+			# +2 Food from Farmers
+			ring_food_hub = {
+				base = 0
+				modifier = {
+					add = 3
+					planet = {
+						OR = {
+							has_designation = col_farming
+							has_building = building_food_processing_facility
+							has_building = building_food_processing_center
+						}
+					}
+				}
+			}
+			# +1 Consumer Goods & -2 Minerals from Artisians
+			ring_consumer_goods_hub = {
+				base = 0
+				modifier = {
+					add = 3
+					planet = {
+						OR = {
+							has_designation = col_industrial
+							has_designation = col_factory
+							has_building = building_factory_1
+							has_building = building_factory_2
+							has_building = building_factory_3
+							has_designation = col_ecu_industrial
+							has_designation = col_ecu_factory
+							has_designation = col_mac_factory
+						}
+					}
+				}
+			}
+			# +1 Alloys & -2 Minerals from Metallurgists
+			ring_alloys_hub = {
+				base = 0
+				modifier = {
+					add = 3
+					planet = {
+						OR = {
+							has_designation = col_industrial
+							has_designation = col_foundry
+							has_building = building_foundry_1
+							has_building = building_foundry_2
+							has_building = building_foundry_3
+							has_designation = col_ecu_industrial
+							has_designation = col_ecu_foundry
+							has_designation = col_mac_foundry
+							has_designation = col_hiv_foundry
+						}
+					}
+				}
+			}
+			# +5% Trade value, +1 Amenities from Clerks
+			ring_trade_hub = {
+				base = 1
+				modifier = {
+					add = 2
+					planet = {
+						OR = {
+							has_designation = col_city
+							has_building = building_galactic_stock_exchange
+						}
+					}
+				}
+			}
+		}
+	}
+}
