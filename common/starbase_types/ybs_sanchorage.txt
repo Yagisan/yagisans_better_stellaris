@@ -39,18 +39,18 @@ sanchorage = {
 		# token followed by priority
 		buildings = {
 			cordyceptic_reanimation_facility = {
-				base = 3
-			}
-			naval_logistics_office = {
-				base = 3
+				base = 5
 			}
 			command_center = {
-				base = 3
+				base = 5
 			}
-			deep_space_black_site = {
-				base = 3
+			naval_logistics_office = {
+				base = 4
 			}
 			transit_hub = {
+				base = 4
+			}
+			deep_space_black_site = {
 				base = 3
 			}
 			curator_think_tank = {
@@ -77,13 +77,13 @@ sanchorage = {
 			offspring_outlook = {
 				base = 2
 			}
-			resource_silo = {
+			dragon_hatchery = {
 				base = 2
 			}
 			hydroponics_bay = {
 				base = 2
 			}
-			dragon_hatchery = {
+			resource_silo = {
 				base = 1
 			}
 			# Hyperlane Registrar
@@ -96,15 +96,9 @@ sanchorage = {
 			defense_grid = {
 				base = 1
 			}
-			shroud_beacon = {
-				base = 1
-			}
 		}
 		modules = {
 			anchorage = {
-				base = 1
-			}
-			solar_panel_network = {
 				base = 1
 			}
 		}
