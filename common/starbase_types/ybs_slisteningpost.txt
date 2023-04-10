@@ -2,8 +2,24 @@
 slisteningpost = {
 	potential = {
 		has_starbase_size > starbase_outpost
-		has_starbase_building = listening_post
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			solar_system = {
+				any_neighbor_system = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_value = root.owner
+						}
+					}
+				}
+			}
+		}
 	}
+	ai_use_defense_platforms = yes	#AI will not build defense platforms otherwise, except in the capital system
 	weight_modifier = {
 		base = 0
 		modifier = {
@@ -34,11 +50,13 @@ slisteningpost = {
 						NOT = {
 							is_same_value = root.owner
 						}
+						# Not pathetic?
 						relative_power = {
 							who = root.owner
 							category = all
 							value > pathetic
 						}
+						# Doesn't trust us?
 						OR = {
 							NOT = {
 								has_established_contact = root.owner
@@ -49,8 +67,8 @@ slisteningpost = {
 							}
 							is_rival = root.owner
 							is_hostile = root.owner
-							is_domineering_to = root.owner
 							is_hostile_to = root.owner
+							is_domineering_to = root.owner
 							is_disloyal_to = root.owner
 							is_unfriendly_to = root.owner
 							# Fallen empire
@@ -64,11 +82,16 @@ slisteningpost = {
 							# They want our land!
 							has_claim = root.owner
 							# Better safe than sorry
-							has_valid_civic = civic_fanatic_purifiers
-							has_valid_civic = civic_hive_devouring_swarm
+							# has_valid_civic = civic_fanatic_purifiers
+							# has_valid_civic = civic_hive_devouring_swarm
+							# has_valid_civic = civic_machine_terminator
+							is_homicidal = yes
+							# has_valid_civic = civic_barbaric_despoilers
+							is_unfriendly = yes
 							has_valid_civic = civic_machine_assimilator
-							has_valid_civic = civic_machine_terminator
+							has_valid_civic = civic_malfunctioning_custodian
 						}
+						exists = this
 					}
 				}
 			}
@@ -82,7 +105,7 @@ slisteningpost = {
 			solar_system = {
 				closest_system = {
 					min_steps = 0
-					max_steps = 2
+					max_steps = 3
 					limit = {
 						exists = starbase
 						exists = owner
@@ -90,14 +113,16 @@ slisteningpost = {
 							is_same_value = root.owner
 						}
 						starbase = {
-							has_starbase_building = listening_post
+							OR = {
+								has_starbase_building = listening_post
+								has_starbase_building = yuht_detection_array
+							}	
 						}
 					}
 				}
 			}
 		}
 	}
-	ai_use_defense_platforms = yes	#AI will not build defense platforms otherwise, except in the capital system
 	ai_design = {
 		min = {
 			base = 0
@@ -140,6 +165,9 @@ slisteningpost = {
 			target_uplink_computer = {
 				base = 3
 			}
+			defense_grid = {
+				base = 2.5
+			}
 			deep_space_black_site = {
 				base = 2
 			}
@@ -176,9 +204,6 @@ slisteningpost = {
 			mercenary_garrison = {
 				base = 1.5
 			}
-			defense_grid = {
-				base = 1.5
-			}
 			resource_silo = {
 				base = 1
 			}
@@ -199,6 +224,9 @@ slisteningpost = {
 			}
 			missile_battery = {
 				base = 0.8
+			}
+			archaeo_rampart = {
+				base = 1.25
 			}
 		}
 	}
