@@ -74,6 +74,36 @@ sstarpatrolbase = {
 				}
 			}
 		}
+		# want to be near center of empire, not borders
+		# has_trade_route = yes
+		# num_trade_routes - Counts the number trade routes in the empire.
+		modifier = {
+			# Useless if cut off or if every owned system has a starbase
+			factor = 0
+			owner = {
+				is_ai = yes
+				is_same_value = root.owner
+			}
+			solar_system = {
+				OR = {
+					# No trade routes?
+					has_trade_route = no
+					# We have a starbase in every system? (really?)
+					owner = {
+						num_starbases >= trigger:controlled_systems
+					}
+					# We're isolated. An exclave?
+					NOT = {
+						any_neighbor_system = {
+							exists = owner
+							owner = {
+								is_same_value = root.owner
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	ai_design = {
 		min = {
@@ -86,6 +116,36 @@ sstarpatrolbase = {
 			ybs_star_patrol = {
 				base = 10
 			}
+			command_center = {
+				base = 5
+			}
+			yuht_detection_array = {
+				base = 3
+				modifier = {
+					factor = 0
+					exists = owner
+					owner = {
+						OR = {
+							has_megastructure = spy_orb_1
+							has_megastructure = spy_orb_2
+							has_megastructure = spy_orb_3
+							has_megastructure = spy_orb_4
+						}
+					}
+				}
+				modifier = {
+					factor = 0.1
+					exists = owner
+					owner = {
+						any_owned_starbase = {
+							count_starbase_buildings = {
+								type = yuht_detection_array
+								count > 0
+							}
+						}
+					}
+				}
+			}
 			cordyceptic_reanimation_facility = {
 				base = 3
 			}
@@ -95,8 +155,9 @@ sstarpatrolbase = {
 			communications_jammer = {
 				base = 3
 			}
-			command_center = {
-				base = 5
+			# First to shoot often wins.
+			target_uplink_computer = {
+				base = 2.5
 			}
 			deep_space_black_site = {
 				base = 2
@@ -133,10 +194,6 @@ sstarpatrolbase = {
 			}
 			mercenary_garrison = {
 				base = 1.5
-			}
-			# First to shoot often wins.
-			target_uplink_computer = {
-				base = 2.5
 			}
 			defense_grid = {
 				base = 1.5
