@@ -42,17 +42,18 @@ sorbital_shipyard = {
 		}
 		# token followed by priority
 		buildings = {
-			crew_quarters = {
-				base = 1
-			}
 			fleet_academy = {
-				base = 1
+				base = 10
 			}
-			# Popless production is best production
+			crew_quarters = {
+				base = 5
+			}
+			black_hole_observatory = {
+				base = 2
+			}
 			nebula_refinery = {
-				base = 1
+				base = 2
 			}
-			# Popless production is best production
 			hydroponics_bay = {
 				base = 1
 			}
