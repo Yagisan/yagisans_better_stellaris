@@ -30,8 +30,18 @@ sorbital_habitation = {
 				}
 			}
 		}
-		# token followed by priority
+		# Generic Buildings
 		buildings = {
+			black_hole_observatory = {
+				base = 2
+			}
+			nebula_refinery = {
+				base = 2
+			}
+			hydroponics_bay = {
+				base = 1
+			}
+			# +1 Amenities from Maintenance Drones (machine only)
 			ring_maintenance_hub = {
 				base = 1
 			}
@@ -46,8 +56,7 @@ sorbital_habitation = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_bureau
-							has_designation = col_bureau_spiritualist
+							has_unity_designation = yes
 							has_building = building_sensorium_1
 							has_building = building_autochthon_monument
 							has_building = building_corporate_monument
@@ -78,7 +87,7 @@ sorbital_habitation = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_mining
+							has_mining_designation = yes
 							has_building = building_mineral_purification_plant
 							has_building = building_mineral_purification_hub
 						}
@@ -92,7 +101,7 @@ sorbital_habitation = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_generator
+							has_generator_designation = yes
 							has_building = building_energy_grid
 							has_building = building_energy_nexus
 						}
@@ -106,7 +115,7 @@ sorbital_habitation = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_farming
+							has_farming_designation = yes
 							has_building = building_food_processing_facility
 							has_building = building_food_processing_center
 						}
@@ -120,14 +129,11 @@ sorbital_habitation = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_industrial
-							has_designation = col_factory
+							has_factory_designation = yes
+							has_industrial_designation = yes
 							has_building = building_factory_1
 							has_building = building_factory_2
 							has_building = building_factory_3
-							has_designation = col_ecu_industrial
-							has_designation = col_ecu_factory
-							has_designation = col_mac_factory
 						}
 					}
 				}
@@ -139,15 +145,11 @@ sorbital_habitation = {
 					add = 3
 					planet = {
 						OR = {
-							has_designation = col_industrial
-							has_designation = col_foundry
+							has_factory_designation = yes
+							has_industrial_designation = yes
 							has_building = building_foundry_1
 							has_building = building_foundry_2
 							has_building = building_foundry_3
-							has_designation = col_ecu_industrial
-							has_designation = col_ecu_foundry
-							has_designation = col_mac_foundry
-							has_designation = col_hiv_foundry
 						}
 					}
 				}
@@ -159,7 +161,7 @@ sorbital_habitation = {
 					add = 2
 					planet = {
 						OR = {
-							has_designation = col_city
+							has_trade_designation = yes
 							has_building = building_galactic_stock_exchange
 						}
 					}
