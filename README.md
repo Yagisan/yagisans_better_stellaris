@@ -82,7 +82,7 @@ In the base game, you eventually run out of anomalies, and your science ships be
 
 Each year the game will now attempt to respawn anomalies, provided their spawn conditions are met. These can respawn anywhere in the galaxy, in both player and AI controlled space.
 
-The respawn system will attempt to respawn all Vanilla anomalies, and if you own the respective DLC, All Distant Stars Story Pack and Federations anomalies. The vanilla uplift anomalies will respawn too, but have been configured to have 1/5 the chance of regular anomalies.
+The respawn system will attempt to respawn all Vanilla anomalies, and if you own the respective DLC, All Distant Stars Story Pack and Federations anomalies.
 
 Each attempt at respawning an anomaly has an 85% chance of success.
 
@@ -827,11 +827,11 @@ They will try to build themselves in chokepoints near threats. Threat logic is c
 
 ### Star Patrol Offices
 
-They will try to build themselves in chokepoints, and avoid building near other Star Patrol Offices. Being an anti-piracy base, they will build exclusively hanger bays, and they will avoid building near threats, and will not build in systems with Colonies. They will prioritise a Star Patrol Office an Offspring Outlook, Communications Jammer, and Command Centre. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
+They will try to build themselves in chokepoints, on a trade route, and avoid building near other Star Patrol Offices. Being an anti-piracy base, they will build exclusively hanger bays, and they will avoid building near threats, and will not build in systems with Colonies. They will prioritise a Star Patrol Office, an Offspring Outlook, Communications Jammer, and Command Centre. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
 
 ### Listening Posts
 
-They will build themselves next to neighbouring empires, prioritising hostile one, and avoid building near other Listening Posts. They will prioritise a Listening Posts, an Offspring Outlook, Communications Jammer, Command Centre and Target Uplink Computer. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
+They will build themselves next to neighbouring empires, prioritising hostile one, and avoid building near other Listening Posts. They will prioritise a Listening Post, an Offspring Outlook, Communications Jammer, Command Centre and Target Uplink Computer. Once all priority buildings are built they will attempt to exploit all special buildings before falling back to generic defence buildings.
 
 ## Megastructures
 
