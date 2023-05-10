@@ -14,7 +14,7 @@ event = {
 	}
 }
 
-# Attempt to spawn 1 anomaly
+# Attempt to spawn 1 anomaly.
 event = {
 	id = yagisans_better_stellaris.10
 	hide_window = yes
@@ -26,14 +26,14 @@ event = {
 				limit = {
 					ybs_anomaly_possible = yes
 				}
-				log = "Yagisan - Attempting to spawn anomaly at [This.Planet.GetName]"
+				log = "Yagisan - Attempting To Spawn Anomaly at [This.Planet.GetName]"
 				ybs_anomaly_spawner = yes
 			}
 		}
 	}
 }
 
-# Attempt to spawn 4 anomalies
+# Attempt to spawn 4 anomalies.
 event = {
 	id = yagisans_better_stellaris.11
 	hide_window = yes
@@ -45,14 +45,14 @@ event = {
 				limit = {
 					ybs_anomaly_possible = yes
 				}
-				log = "Yagisan - Attempting to spawn anomaly at [This.Planet.GetName]"
+				log = "Yagisan - Attempting To Spawn Anomaly at [This.Planet.GetName]"
 				ybs_anomaly_spawner = yes
 			}
 		}
 	}
 }
 
-# Attempt to spawn 10 anomalies
+# Attempt to spawn 10 anomalies.
 event = {
 	id = yagisans_better_stellaris.12
 	hide_window = yes
@@ -64,7 +64,7 @@ event = {
 				limit = {
 					ybs_anomaly_possible = yes
 				}
-				log = "Yagisan - Attempting to spawn anomaly at [This.Planet.GetName]"
+				log = "Yagisan - Attempting To Spawn Anomaly at [This.Planet.GetName]"
 				ybs_anomaly_spawner = yes
 			}
 		}
@@ -308,6 +308,25 @@ event = {
 			remove_planet_flag = ybs_archaeological_site_complete
 			archaeological_site = {
 				destroy_archaeological_site = this
+			}
+		}
+	}
+}
+
+# Attempt to spawn 1 archaeological site.
+event = {
+	id = yagisans_better_stellaris.50
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 1
+			random_galaxy_planet = {
+				limit = {
+					ybs_archaeological_site_possible = yes
+				}
+				log = "Yagisan - Spawning Archaeological Site on [This.Planet.GetName]"
+				create_archaeological_site = random
 			}
 		}
 	}
