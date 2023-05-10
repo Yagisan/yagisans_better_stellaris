@@ -33,6 +33,13 @@ on_yearly_pulse = {
 	}
 }
 
+# Each year, try remove completed archaeological sites.
+on_yearly_pulse = {
+	events = {
+		yagisans_better_stellaris.40
+	}
+}
+
 # Every second year, try to respawn 4 anomalies.
 on_bi_yearly_pulse = {
 	events = {
