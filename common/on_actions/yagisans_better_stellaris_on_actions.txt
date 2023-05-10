@@ -60,3 +60,10 @@ on_five_year_pulse = {
 		yagisans_better_stellaris.12
 	}
 }
+
+# Every fifth year, try to respawn 1 archaeological site.
+on_five_year_pulse = {
+	events = {
+		yagisans_better_stellaris.50
+	}
+}
