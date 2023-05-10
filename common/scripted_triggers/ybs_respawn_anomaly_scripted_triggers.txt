@@ -6,4 +6,21 @@ ybs_anomaly_possible = {
 	is_colony = no
 	has_owner = no
 	num_pops = 0
+	exists = archaeological_site
+}
+
+ybs_archaeological_site_possible = {
+	optimize_memory
+	has_anomaly = no
+	has_deposit = no
+	habitable_planet = no
+	is_artificial = no
+	NOR = {
+		is_planet_class = pc_ringworld_habitable_damaged
+		is_planet_class = pc_ringworld_tech_damaged
+		is_planet_class = pc_ringworld_tech
+		is_planet_class = pc_ringworld_seam
+		is_planet_class = pc_ringworld_seam_damaged
+		exists = archaeological_site
+	}
 }
