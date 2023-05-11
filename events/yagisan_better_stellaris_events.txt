@@ -313,20 +313,20 @@ event = {
 	}
 }
 
-# Attempt to spawn 1 archaeological site.
+# Attempt to spawn up to 3 archaeological sites.
 event = {
 	id = yagisans_better_stellaris.50
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		while = {
-			count = 1
+			count = 3
 			random_galaxy_planet = {
 				limit = {
 					ybs_archaeological_site_possible = yes
 				}
-				log = "Yagisan - Spawning Archaeological Site on [This.Planet.GetName]"
-				create_archaeological_site = random
+				log = "Yagisan - Attempting To Spawn Archaeological Site on [This.Planet.GetName]"
+				ybs_digsite_spawner = yes
 			}
 		}
 	}
