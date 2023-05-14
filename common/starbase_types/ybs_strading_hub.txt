@@ -35,7 +35,7 @@ strading_hub = {
 						exists = starbase
 						starbase = {
 							owner = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 							}
 							has_starbase_module = trading_hub
 						}
@@ -70,7 +70,7 @@ strading_hub = {
 									is_same_value = root
 								}
 								owner = {
-									is_same_value = root.owner
+									is_same_empire = root.owner
 								}
 								has_starbase_module = trading_hub
 							}
@@ -87,7 +87,7 @@ strading_hub = {
 			factor = 0
 			owner = {
 				is_ai = yes
-				is_same_value = root.owner
+				is_same_empire = root.owner
 			}
 			solar_system = {
 				OR = {
@@ -102,7 +102,7 @@ strading_hub = {
 						any_neighbor_system = {
 							exists = owner
 							owner = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 							}
 						}
 					}
