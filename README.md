@@ -12,6 +12,8 @@
   - [Habitability](#habitability)
   - [Anomalies](#anomalies)
     - [Respawning](#respawning)
+  - [Archaeological Sites](#archaeological-sites)
+    - [Respawning](#respawning-1)
   - [Warfare](#warfare)
     - [War Exhaustion](#war-exhaustion)
   - [Space Combat](#space-combat)
@@ -91,6 +93,24 @@ The specific spawn rates are:
 - Every year, try to respawn 1 anomaly.
 - Every second year, try to respawn 4 anomalies.
 - Every fifth year, try to respawn 10 anomalies.
+
+## Archaeological Sites
+
+In the base game, completed archaeological sites remain on the map. This causes accessibility issue when there are multiple archaeological sites in the same system. Now, 2 years after any site is fully excavated, the archaeological site will be removed.
+
+In the base game, you eventually run out of archaeological sites, and your science ships become much less useful. By respawning archaeological sites scientists can continue to level up, and science ships can continue to be useful, throughout the game.
+
+### Respawning
+
+Every 5 years the game will now attempt to respawn archaeological sites, provided their spawn conditions are met. These can respawn anywhere in the galaxy, in both player and AI controlled space.
+
+The respawn system will attempt to respawn all archaeological sites that indicate that they can exist multiple times. This includes DLC and mod added archaeological sites.
+
+Each attempt at respawning an archaeological sites has an 85% chance of success.
+
+The specific spawn rate is:
+
+- Every fifth year, try to respawn 3 archaeological sites.
 
 ## Warfare
 
