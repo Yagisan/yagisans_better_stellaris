@@ -34,7 +34,7 @@ on_yearly_pulse = {
 }
 
 # Each year, try remove completed archaeological sites.
-on_yearly_pulse = {
+on_yearly_pulse_country = {
 	events = {
 		yagisans_better_stellaris.40
 	}

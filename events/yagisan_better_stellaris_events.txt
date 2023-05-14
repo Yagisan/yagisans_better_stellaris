@@ -269,22 +269,27 @@ event = {
 		every_planet_within_border = {
 			limit = {
 				exists = archaeological_site
-				archaeological_site = {
-					is_site_completed = yes
-				}
-				NOT = {
-					has_planet_flag = ybs_archaeological_site_complete
-				}
 			}
-			# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
-			set_timed_planet_flag = {
-				flag = ybs_archaeological_site_complete
-				years = 3
-			}
-			# Trigger in about 2 years. This gives plenty of time for final events to fire.
-			planet_event = {
-				id = yagisans_better_stellaris.41
-				days = 720
+			if = {
+				limit = {
+					archaeological_site = {
+						is_site_completed = yes
+					}
+				}
+				if = {
+					limit = {
+						has_planet_flag = ybs_archaeological_site_complete
+					}
+					log = "Yagisan - Removing Completed Archaeological Site on [This.Planet.GetName]"
+					remove_planet_flag = ybs_archaeological_site_complete
+					archaeological_site = {
+						destroy_archaeological_site = this
+					}
+				}
+				else = {
+					log = "Yagisan - Tagging Completed Archaeological Site on [This.Planet.GetName]"
+					set_planet_flag = ybs_archaeological_site_complete
+				}
 			}
 		}
 	}
