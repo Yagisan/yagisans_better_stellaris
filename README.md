@@ -96,7 +96,7 @@ The specific spawn rates are:
 
 ## Archaeological Sites
 
-In the base game, completed archaeological sites remain on the map. This causes accessibility issue when there are multiple archaeological sites in the same system. Now, 2 years after any site is fully excavated, the archaeological site will be removed.
+In the base game, completed archaeological sites remain on the map. This causes accessibility issue when there are multiple archaeological sites in the same system. Now, 1 year after any site is fully excavated, the archaeological site will be removed.
 
 In the base game, you eventually run out of archaeological sites, and your science ships become much less useful. By respawning archaeological sites scientists can continue to level up, and science ships can continue to be useful, throughout the game.
 
