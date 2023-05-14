@@ -12,7 +12,7 @@ slisteningpost = {
 					exists = owner
 					owner = {
 						NOT = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 					}
 				}
@@ -34,7 +34,7 @@ slisteningpost = {
 					exists = owner
 					owner = {
 						NOT = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 					}
 				}
@@ -48,7 +48,7 @@ slisteningpost = {
 					exists = owner
 					owner = {
 						NOT = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 						# Not pathetic?
 						relative_power = {
@@ -110,7 +110,7 @@ slisteningpost = {
 						exists = starbase
 						exists = owner
 						owner = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 						starbase = {
 							OR = {
