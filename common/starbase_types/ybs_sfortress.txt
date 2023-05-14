@@ -19,7 +19,7 @@ sfortress = {
 						owner = {
 							is_country_type = default
 							NOR = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 								is_in_federation_with = root.owner
 								has_association_status = root.owner
 								has_defensive_pact = root.owner
@@ -80,7 +80,7 @@ sfortress = {
 					exists = owner
 					owner = {
 						NOT = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 						# Not pathetic?
 						relative_power = {
@@ -134,7 +134,7 @@ sfortress = {
 					exists = owner
 					owner = {
 						NOT = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 						relative_power = {
 							who = root.owner
