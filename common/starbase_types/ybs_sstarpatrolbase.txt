@@ -10,8 +10,7 @@ sstarpatrolbase = {
 		# Not in colony systems
 		not = {
 			solar_system = {
-				any_system_planet = {
-					is_colony = yes
+				any_system_colony = {
 				}
 			}
 		}
@@ -22,7 +21,7 @@ sstarpatrolbase = {
 					exists = space_owner
 					space_owner = {
 						not = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 					}
 				}
@@ -65,7 +64,7 @@ sstarpatrolbase = {
 						exists = starbase
 						exists = owner
 						owner = {
-							is_same_value = root.owner
+							is_same_empire = root.owner
 						}
 						starbase = {
 							has_starbase_building = ybs_star_patrol
@@ -82,7 +81,7 @@ sstarpatrolbase = {
 			factor = 0
 			owner = {
 				is_ai = yes
-				is_same_value = root.owner
+				is_same_empire = root.owner
 			}
 			solar_system = {
 				OR = {
@@ -97,7 +96,7 @@ sstarpatrolbase = {
 						any_neighbor_system = {
 							exists = owner
 							owner = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 							}
 						}
 					}
