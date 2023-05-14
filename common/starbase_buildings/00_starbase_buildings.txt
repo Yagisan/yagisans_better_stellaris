@@ -97,8 +97,7 @@ resource_silo = {
 				# Don't build in colony systems. Better to build something else here.
 				not = {
 					solar_system = {
-						any_system_planet = {
-							is_colony = yes
+						any_system_colony = {
 						}
 					}
 				}
@@ -770,8 +769,7 @@ deep_space_black_site = {
 					is_ai = yes
 				}
 				solar_system = {
-					any_system_planet = {
-						is_colony = yes
+					any_system_colony = {
 					}
 				}
 			}
