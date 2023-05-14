@@ -13,7 +13,7 @@ ybs_archaeological_site_possible = {
 	optimize_memory
 	has_anomaly = no
 	has_deposit = no
-	habitable_planet = no
+	is_colony = no
 	is_artificial = no
 	NOR = {
 		is_planet_class = pc_ringworld_habitable_damaged
