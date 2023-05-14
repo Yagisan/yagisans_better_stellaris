@@ -279,12 +279,12 @@ event = {
 			# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
 			set_timed_planet_flag = {
 				flag = ybs_archaeological_site_complete
-				days = 900
+				years = 3
 			}
-			# Trigger in 700 days (about 2 years). This gives plenty of time for final events to fire.
+			# Trigger in about 2 years. This gives plenty of time for final events to fire.
 			planet_event = {
 				id = yagisans_better_stellaris.41
-				days = 700
+				years = 2
 			}
 		}
 	}
