@@ -2,10 +2,10 @@ version="1.1.0"
 dependencies={
 	"~~Scripted Trigger Undercoat"
 }
+name="Yagisan's Better Stellaris"
 tags={
 	"Gameplay"
 	"Military"
 	"Balance"
 }
-name="Yagisan's Better Stellaris"
-supported_version="3.7.4"
+supported_version="3.8.3"
