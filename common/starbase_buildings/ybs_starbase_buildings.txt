@@ -7,7 +7,7 @@ ybs_star_patrol = {
 			has_technology = tech_strike_craft_1
 			is_gestalt = no
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		OR = {
