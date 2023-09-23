@@ -85,7 +85,7 @@ resource_silo = {
 	construction_days = 180
 	potential = {
 		exists = owner
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		or = {
 			owner = {
 				is_ai = no
@@ -225,7 +225,7 @@ listening_post = {
 		owner = {
 			has_technology = tech_sensors_2
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		NOR = {
@@ -303,7 +303,7 @@ offworld_trading_company = {
 			has_technology = tech_space_trading
 			is_gestalt = no
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		not = {
 			has_starbase_building = offworld_trading_company
 		}
@@ -367,7 +367,7 @@ fleet_academy = {
 		owner = {
 			has_technology = tech_interstellar_fleet_traditions
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		OR = {
@@ -479,7 +479,7 @@ titan_yards = {
 		owner = {
 			has_technology = tech_titans
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -541,7 +541,7 @@ colossus_yards = {
 				has_technology = tech_btc_1				# star-eater
 			}
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -759,7 +759,7 @@ deep_space_black_site = {
 			has_technology = tech_living_state
 			is_gestalt = no
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		or = {
 			owner = {
 				is_ai = no
@@ -827,7 +827,7 @@ curator_think_tank = {
 			is_homicidal = no
 			has_country_flag = curator_intro
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -906,7 +906,7 @@ art_college = {
 			is_homicidal = no
 			has_country_flag = enclave_artist_encountered
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -981,7 +981,7 @@ salvager_workshop = {
 			is_homicidal = no
 			has_country_flag = salvager_enclave_diplomacy_engaged
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -1059,7 +1059,7 @@ shroud_beacon = {
 			has_country_flag = shroudwalker_enclave_diplomacy_engaged
 			has_country_flag = shroudwalker_enclave_bought_shroud_beacon
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -1212,7 +1212,7 @@ cybrex_mining_hub = {
 		owner = {
 			has_technology = tech_secrets_cybrex
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	resources = {
 		category = starbase_buildings
@@ -1257,7 +1257,7 @@ irassian_naval_yards = {
 		owner = {
 			has_technology = tech_secrets_irassian
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -1321,7 +1321,7 @@ yuht_detection_array = {
 		owner = {
 			has_technology = tech_secrets_yuht
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	resources = {
 		category = starbase_buildings
@@ -1368,7 +1368,7 @@ zroni_storm_caster = {
 		owner = {
 			has_technology = tech_secrets_zroni
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	resources = {
 		category = starbase_buildings
@@ -1420,7 +1420,7 @@ archaeo_overcharger = {
 		owner = {
 			has_technology = tech_archaeo_overcharger
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	triggered_station_modifier = {
 		potential = {
@@ -1602,7 +1602,7 @@ warp_fluctuator = {
 			has_technology = tech_interstellar_economics
 			is_gestalt = no
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		not = {
 			has_starbase_building = warp_fluctuator
 		}
@@ -1793,7 +1793,7 @@ trader_proxy_office = {
 				has_fleet_flag = trader_enclave_station
 			}
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		not = {
 			has_starbase_building = trader_proxy_office
 		}
@@ -2021,7 +2021,7 @@ mercenary_garrison = {
 			is_homicidal = no
 			has_country_flag = mercenary_enclave_diplomacy_engaged
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -2137,7 +2137,7 @@ dark_matter_detector = {
 		owner = {
 			has_technology = tech_dark_matter_detection
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		custom_tooltip = {
@@ -2210,7 +2210,7 @@ dark_matter_listening_post = {
 		owner = {
 			is_fallen_empire = yes
 		}
-		is_orbital_ring = no
+		is_normal_starbase = yes
 	}
 	possible = {
 		NOR = {
