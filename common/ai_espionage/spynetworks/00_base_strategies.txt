@@ -35,6 +35,16 @@ default_empire = {
 			factor = 10
 		}
 		modifier = {
+			# Hostile Empires are worth keeping an eye on
+			owner = {
+				opinion_level = {
+					who = root
+					level = terrible
+				}
+			}
+			weight = 5
+		}
+		modifier = {
 			or = {
 				# If we're an overlord and our subject is not loyal to us - spy on them
 				and = {
