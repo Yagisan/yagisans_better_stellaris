@@ -74,6 +74,24 @@ default_empire = {
 			}
 			factor = 0
 		}
+		# We are superior to this empire. Save our envoys for better uses.
+		modifier = {
+			# Wait until any operations are finished to prevent stuck and broken operations.
+			is_running_espionage_operation = no
+			owner = {
+				relative_power = {
+					who = root.target
+					value >= superior
+				}
+				or = {
+					is_galactic_community_member = yes
+					has_federation = yes
+					# If you are homicidal, maybe we should keep an eye on you anyway.
+					is_homicidal = no
+				}
+			}
+			factor = 0
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
