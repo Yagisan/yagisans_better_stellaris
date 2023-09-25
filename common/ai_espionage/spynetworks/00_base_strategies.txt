@@ -114,6 +114,28 @@ default_empire = {
 			is_spynetwork_max_level < 20
 			factor = 0
 		}
+		# Do not deploy a new envoy if one is present.
+		modifier = {
+			owner = {
+				any_envoy = {
+					# If any non-spy-network envoy is not on cooldown
+					has_envoy_cooldown = no
+					not = {
+						has_envoy_task = {
+							task = spy_network
+						}
+					}
+				}
+				any_envoy = {
+					# And we have an envoy here, we'll set this weight to zero
+					has_envoy_task = {
+						task = spy_network
+						target = root.target
+					}
+				}
+			}
+			factor = 0
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
