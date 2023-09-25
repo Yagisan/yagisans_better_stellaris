@@ -28,6 +28,13 @@ default_empire = {
 			factor = 2
 		}
 		modifier = {
+			# Being at war makes them a threat worth spying on.
+			owner = {
+				is_at_war_with = root.target
+			}
+			factor = 10
+		}
+		modifier = {
 			or = {
 				# If we're an overlord and our subject is not loyal to us - spy on them
 				and = {
