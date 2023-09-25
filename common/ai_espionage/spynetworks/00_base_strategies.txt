@@ -7,18 +7,21 @@ default_empire = {
 	}
 	network_weight = {
 		modifier = {
+			weight = 100
+		}
+		modifier = {
 			target = {
 				# Using second level here just to get some delay for getting targeted.
 				has_crisis_level = crisis_level_2
 			}
-			weight = 9
+			factor = 9
 		}
 		modifier = {
 			# Rivals are considered more of a threat than crisis empires, however it is likely that crisis empires will eventually become rivals anyway.
 			owner = {
 				has_rival = root.target
 			}
-			weight = 10
+			factor = 10
 		}
 		modifier = {
 			# Proximity is the key - double the score if the target is a neighbor.
