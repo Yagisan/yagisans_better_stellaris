@@ -30,6 +30,27 @@ default_empire = {
 			}
 			factor = 2
 		}
+		modifier = {
+			or = {
+				# If we're an overlord and our subject is not loyal to us - spy on them
+				and = {
+					owner = {
+						is_overlord_to = root.target
+					}
+					target = {
+						has_loyalty <= 0
+					}
+				}
+				# If we're a subject and we are not loyal to our overlord - spy on them
+				and = {
+					target = {
+						is_overlord_to = root.owner
+						has_loyalty <= 0
+					}
+				}
+			}
+			factor = 5
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
