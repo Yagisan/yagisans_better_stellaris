@@ -51,6 +51,29 @@ default_empire = {
 			}
 			factor = 5
 		}
+		modifier = {
+			# Wait until any operations are finished to prevent stuck and broken operations.
+			is_running_espionage_operation = no
+			or = {
+				# If we're an overlord and our subject is loyal to us - don't spy on them
+				and = {
+					owner = {
+						is_overlord_to = root.target
+					}
+					target = {
+						has_loyalty >= 30
+					}
+				}
+				# If we're a subject and we are loyal to our overlord - don't spy on them
+				and = {
+					target = {
+						is_overlord_to = root.owner
+						has_loyalty >= 30
+					}
+				}
+			}
+			factor = 0
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
