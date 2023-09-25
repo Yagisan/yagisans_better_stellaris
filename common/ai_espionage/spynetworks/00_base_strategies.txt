@@ -92,6 +92,14 @@ default_empire = {
 			}
 			factor = 0
 		}
+		# Intel cap is currently to low for us. Save our envoys for better uses.
+		modifier = {
+			# Wait until any operations are finished to prevent stuck and broken operations.
+			is_running_espionage_operation = no
+			# At 20, requires 2 succesful gather information operations, before an aquire asset operation is possible.
+			is_spynetwork_max_level < 20
+			factor = 0
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
