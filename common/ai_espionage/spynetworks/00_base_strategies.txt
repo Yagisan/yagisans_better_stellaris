@@ -7,6 +7,10 @@ default_empire = {
 	}
 	network_weight = {
 		modifier = {
+			# Explicitly set the base weighting to 1. Probably not necessary.
+			weight = 1
+		}
+		modifier = {
 			target = {
 				# Using second level here just to get some delay for getting targeted.
 				has_crisis_level = crisis_level_2
