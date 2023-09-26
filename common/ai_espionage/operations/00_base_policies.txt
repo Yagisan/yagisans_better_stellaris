@@ -118,6 +118,53 @@ spy_policy_diplomatic_incident = {
 	}
 }
 
+spy_policy_smear_campaign = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				# We are OK with someone that doesn't really like us
+				opinion_level = {
+					who = root.target
+					level < neutral
+				}
+			}
+			root.target = {
+				not = {
+					# But not if the are a crisis - they don't care anyway
+					has_crisis_level = crisis_level_2
+				}
+				# And not homicidals. They also don't care.
+				is_homicidal = no
+			}
+			# Don't even attempt this until we have at least 40 intel.
+			is_spynetwork_level >= 50
+			weight = 20
+		}
+		modifier = {
+			owner = {
+				or = {
+					# But we want our rival
+					has_rival = root.target
+					# Or someone we are at war with
+					is_at_war_with = root.target
+				}
+			}
+			root.target = {
+				not = {
+					# But not if the are a crisis - they don't care anyway
+					has_crisis_level = crisis_level_2
+				}
+				# And not homicidals. They also don't care.
+				is_homicidal = no
+			}
+			# Don't even attempt this until we have at least 50 intel.
+			is_spynetwork_level >= 50
+			weight = 40
+		}
+	}
+}
+
 ### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {
