@@ -65,6 +65,17 @@ spy_policy_steal_technology = {
 	}
 }
 
+spy_policy_gather_information = {
+	weight = {
+		base = 0
+		modifier = {
+			# Only if we can't infiltrate enough to get an asset.
+			is_spynetwork_max_level <= 30
+			weight = 10
+		}
+	}
+}
+
 ### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {

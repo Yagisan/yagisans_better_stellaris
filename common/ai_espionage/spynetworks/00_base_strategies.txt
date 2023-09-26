@@ -158,7 +158,8 @@ default_empire = {
 			}
 		}
 		operation_gather_information = {
-			operation_policy = fix_chance_10
+			# Vanilla is fix_chance_10
+			operation_policy = spy_policy_gather_information
 			target_value = {
 				min = 1
 			}
