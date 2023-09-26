@@ -170,6 +170,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_sleeper_cells = {
+			operation_policy = spy_policy_sleeper_cells
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 

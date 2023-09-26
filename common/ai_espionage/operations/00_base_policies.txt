@@ -76,6 +76,16 @@ spy_policy_gather_information = {
 	}
 }
 
+spy_policy_sleeper_cells = {
+	weight = {
+		base = 0
+		modifier = {
+			# This lasts 15 years. It gives a buff and prevents decay if we have to reassign the envoy.
+			weight = 10
+		}
+	}
+}
+
 ### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {
