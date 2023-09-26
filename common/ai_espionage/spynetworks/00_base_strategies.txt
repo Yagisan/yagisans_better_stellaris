@@ -206,6 +206,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_crisis_beacon = {
+			operation_policy = spy_policy_crisis_beacon
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 
