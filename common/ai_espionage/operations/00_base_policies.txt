@@ -337,6 +337,36 @@ spy_policy_consume_star = {
 	}
 }
 
+spy_policy_seditionists_empire = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				or = {
+					# We are need some rebel scum that don't really like the Galactic Imperium
+					opinion_level = {
+						who = root.target
+						level < neutral
+					}
+					# Or our rival as a valid target,
+					has_rival = root.target
+				}
+				nor = {
+					# Not homicidals.
+					is_homicidal = yes
+					# Not the crisis either.
+					has_crisis_level = crisis_level_2
+					# Not anyone we are at war with.
+					is_at_war_with = root.target
+				}
+			}
+			# Don't even attempt this until we have at least 60 intel.
+			is_spynetwork_level >= 60
+			weight = 3000
+		}
+	}
+}
+
 ### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {

@@ -218,6 +218,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_target_seditionists = {
+			operation_policy = spy_policy_seditionists_empire
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 
