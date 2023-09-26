@@ -200,6 +200,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_arm_privateers = {
+			operation_policy = spy_policy_arm_privateers
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 
