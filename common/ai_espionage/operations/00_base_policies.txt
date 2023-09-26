@@ -1,5 +1,4 @@
 ### REGULAR ESPIONAGE
-
 until_max_network_cap_policy = {
 	weight = {
 		modifier = {
@@ -27,8 +26,17 @@ kaleidoscope_policy = {
 	}
 }
 
-### PRE-FTL ESPIONAGE
+spy_policy_acquire_asset = {
+	weight = {
+		base = 0
+		modifier = {
+			is_spynetwork_max_level < 100
+			weight = 50
+		}
+	}
+}
 
+### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {
 		modifier = {
@@ -45,7 +53,9 @@ pre_ftl_uplifting_policy = {
 				}
 			}
 			target = {
-				NOT = { has_country_flag = early_space_age }
+				NOT = {
+					has_country_flag = early_space_age
+				}
 			}
 			weight = 10
 		}
