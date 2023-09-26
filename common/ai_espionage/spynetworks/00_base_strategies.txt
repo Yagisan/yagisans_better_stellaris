@@ -194,6 +194,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_sabotage_starbase = {
+			operation_policy = spy_policy_sabotage_starbase
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 

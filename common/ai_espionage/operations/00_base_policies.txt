@@ -137,7 +137,7 @@ spy_policy_smear_campaign = {
 				# And not homicidals. They also don't care.
 				is_homicidal = no
 			}
-			# Don't even attempt this until we have at least 40 intel.
+			# Don't even attempt this until we have at least 50 intel.
 			is_spynetwork_level >= 50
 			weight = 20
 		}
@@ -183,6 +183,48 @@ spy_policy_extort_favors = {
 			# Don't even attempt this until we have at least 50 intel.
 			is_spynetwork_level >= 50
 			weight = 10
+		}
+	}
+}
+
+spy_policy_sabotage_starbase = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				# We are OK with someone that doesn't really like us
+				opinion_level = {
+					who = root.target
+					level < neutral
+				}
+			}
+			# Don't even attempt this until we have at least 60 intel.
+			is_spynetwork_level >= 60
+			weight = 250
+		}
+		modifier = {
+			owner = {
+				or = {
+					# But we the crisis is better
+					has_crisis_level = crisis_level_2
+					# Or homicidals
+					is_homicidal = yes
+					# Or even our rival
+					has_rival = root.target
+				}
+			}
+			# Don't even attempt this until we have at least 60 intel.
+			is_spynetwork_level >= 60
+			weight = 300
+		}
+		modifier = {
+			owner = {
+				# But first choice is someone we are at war with
+				is_at_war_with = root.target
+			}
+			# Don't even attempt this until we have at least 60 intel.
+			is_spynetwork_level >= 60
+			weight = 350
 		}
 	}
 }
