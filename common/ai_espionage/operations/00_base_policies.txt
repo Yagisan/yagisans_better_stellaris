@@ -165,6 +165,28 @@ spy_policy_smear_campaign = {
 	}
 }
 
+spy_policy_extort_favors = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				# Blackmail is such an ugly word. We prefer it as "seeing things our way"
+				nor = {
+					# Not homicidals. They only understand the stick.
+					is_homicidal = yes
+					# Not the crisis either. They also only understand the stick.
+					has_crisis_level = crisis_level_2
+					# Not anyone we are at war with. They are getting the stick.
+					is_at_war_with = root.target
+				}
+			}
+			# Don't even attempt this until we have at least 50 intel.
+			is_spynetwork_level >= 50
+			weight = 10
+		}
+	}
+}
+
 ### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {
