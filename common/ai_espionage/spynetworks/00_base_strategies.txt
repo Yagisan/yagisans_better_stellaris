@@ -176,6 +176,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_diplomatic_incident = {
+			operation_policy = spy_policy_diplomatic_incident
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 

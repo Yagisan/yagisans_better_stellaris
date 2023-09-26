@@ -86,6 +86,38 @@ spy_policy_sleeper_cells = {
 	}
 }
 
+spy_policy_diplomatic_incident = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				or = {
+					# We want someone that doesn't really like us
+					opinion_level = {
+						who = root.target
+						level < neutral
+					}
+					# Or our rival
+					has_rival = root.target
+					# Or someone we are at war with
+					is_at_war_with = root.target
+				}
+			}
+			root.target = {
+				not = {
+					# But not if the are a crisis - they don't care anyway
+					has_crisis_level = crisis_level_2
+				}
+				# And not homicidals. They also don't care.
+				is_homicidal = no
+			}
+			# Don't even attempt this until we have at least 40 intel.
+			is_spynetwork_level >= 40
+			weight = 20
+		}
+	}
+}
+
 ### PRE-FTL ESPIONAGE
 pre_ftl_uplifting_policy = {
 	weight = {
