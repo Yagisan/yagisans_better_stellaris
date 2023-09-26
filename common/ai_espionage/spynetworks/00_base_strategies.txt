@@ -151,7 +151,8 @@ default_empire = {
 			}
 		}
 		operation_steal_technology = {
-			operation_policy = fix_chance_10
+			# Vanilla is fix_chance_10
+			operation_policy = spy_policy_steal_technology
 			target_value = {
 				min = 1
 			}

@@ -30,8 +30,37 @@ spy_policy_acquire_asset = {
 	weight = {
 		base = 0
 		modifier = {
+			# If we haven't fully infiltrated them, get another asset.
 			is_spynetwork_max_level < 100
 			weight = 50
+		}
+	}
+}
+
+spy_policy_steal_technology = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				relative_power = {
+					# If they are equivalent to us in technology, they are a valid target.
+					who = root.target
+					category = technology
+					value <= equivalent
+				}
+			}
+			weight = 20
+		}
+		modifier = {
+			owner = {
+				relative_power = {
+					# If they are superior to us in technology, increase priority.
+					who = root.target
+					category = technology
+					value <= inferior
+				}
+			}
+			factor = 2
 		}
 	}
 }
