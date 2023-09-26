@@ -224,6 +224,12 @@ default_empire = {
 				min = 1
 			}
 		}
+		operation_weaken_galactic_empire = {
+			operation_policy = spy_policy_seditionists_empire
+			target_value = {
+				min = 1
+			}
+		}
 	}
 }
 
