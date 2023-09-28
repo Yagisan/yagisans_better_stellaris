@@ -337,6 +337,18 @@ spy_policy_consume_star = {
 	}
 }
 
+spy_policy_lure_kaleidoscope = {
+	weight = {
+		base = 0
+		modifier = {
+			owner = {
+				has_deficit = energy
+			}
+			weight = 350
+		}
+	}
+}
+
 spy_policy_seditionists_empire = {
 	weight = {
 		base = 0

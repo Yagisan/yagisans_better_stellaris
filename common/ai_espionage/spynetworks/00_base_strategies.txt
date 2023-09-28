@@ -165,7 +165,8 @@ default_empire = {
 			}
 		}
 		operation_kaleidoscope = {
-			operation_policy = kaleidoscope_policy
+			# Vanilla is kaleidoscope_policy
+			operation_policy = spy_policy_lure_kaleidoscope
 			target_value = {
 				min = 1
 			}
