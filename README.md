@@ -6,10 +6,12 @@
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 - [Yagisan's Better Stellaris](#yagisans-better-stellaris)
+  - [Required DLC.](#required-dlc)
   - [Jobs](#jobs)
     - [AI Empires](#ai-empires)
     - [Player Empires](#player-empires)
   - [Habitability](#habitability)
+  - [Space Expansion](#space-expansion)
   - [Anomalies](#anomalies)
     - [Respawning](#respawning)
   - [Archaeological Sites](#archaeological-sites)
@@ -52,6 +54,20 @@
   - [Megastructures](#megastructures)
     - [Gateways](#gateways)
 
+## Required DLC.
+
+As the Project has grown, and begun to utilise more and more new systems, introduced with DLC, Paradox Policy requires that those feature remain behind a DLC gate. Where possible features that require DLC are gated to simply not run if you are missing that DLC.
+
+- Distant Stars Story Pack
+  - Anomalies - Will disable these if not available
+- Federations Expansion
+  - Anomalies - Will disable these if not available
+- Nemesis Expansion
+  - AI Espionage - General
+- First Contact Story Pack
+  - AI Espionage - Primitives
+  - Starbase Types - Cloaking
+
 ## Jobs
 
 The Stellaris AI appears to be somewhat lazy in making sure it's pops are in the most efficient job. To give it a helping hand we force it to re-evaluate jobs a bit more often. Once every two years **or** when loading a save game, we will scan for all AI empires, and flag them to be checked.
@@ -76,9 +92,20 @@ In addition, I have reduced the habitability spawn odds down to 30% to make habi
 
 Finally, for the purposes of habitability, pops with a Relic world preference will consider an Ecumenopolis a primary planet, and vice versa.
 
+## Space Expansion
+
+In vanilla, the AI can jump multiple systems when building starbases. This can result in a lot of exclaves and the AI potentially being unable to defend or reinforce them. The AI has now been prevented from building exclaves outside of war.
+
+| Space Expansion Related Defines | Vanilla | Modded |
+| ------------------------------- | ------: | -----: |
+| MAX_EXPANSION_DISTANCE          |       2 |      1 |
+| MAX_EXPANSION_DISTANCE_SUBJECT  |       2 |      1 |
+
 ## Anomalies
 
 In the base game, you eventually run out of anomalies, and your science ships become much less useful. By respawning anomalies scientists can continue to level up, and science ships can continue to be useful, throughout the game.
+
+**These can respawn from the Base Game, Distant Stars Story Pack, and the Federations Expansion. Missing DLC will be skipped.**
 
 ### Respawning
 
@@ -99,6 +126,8 @@ The specific spawn rates are:
 In the base game, completed archaeological sites remain on the map. This causes accessibility issue when there are multiple archaeological sites in the same system. Now, 1 year after any site is fully excavated, the archaeological site will be removed.
 
 In the base game, you eventually run out of archaeological sites, and your science ships become much less useful. By respawning archaeological sites scientists can continue to level up, and science ships can continue to be useful, throughout the game.
+
+**These can respawn from the Base Game, all DLC, and any mods that add archaeological sites.**
 
 ### Respawning
 
