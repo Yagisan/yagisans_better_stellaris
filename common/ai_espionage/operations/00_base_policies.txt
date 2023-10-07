@@ -192,20 +192,8 @@ spy_policy_sabotage_starbase = {
 		base = 0
 		modifier = {
 			owner = {
-				# We are OK with someone that doesn't really like us
-				opinion_level = {
-					who = root.target
-					level < neutral
-				}
-			}
-			# Don't even attempt this until we have at least 60 intel.
-			is_spynetwork_level >= 60
-			weight = 1100
-		}
-		modifier = {
-			owner = {
 				or = {
-					# But the crisis is better
+					# We should target the crisis
 					has_crisis_level = crisis_level_2
 					# Or homicidals
 					is_homicidal = yes
@@ -234,20 +222,8 @@ spy_policy_arm_privateers = {
 		base = 0
 		modifier = {
 			owner = {
-				# We are OK with someone that doesn't really like us
-				opinion_level = {
-					who = root.target
-					level < neutral
-				}
-			}
-			# Don't even attempt this until we have at least 60 intel.
-			is_spynetwork_level >= 60
-			weight = 1600
-		}
-		modifier = {
-			owner = {
 				or = {
-					# But the crisis is better
+					# We should target the crisis
 					has_crisis_level = crisis_level_2
 					# Or homicidals
 					is_homicidal = yes
@@ -309,20 +285,8 @@ spy_policy_consume_star = {
 		base = 0
 		modifier = {
 			owner = {
-				# We are OK with someone that doesn't really like us
-				opinion_level = {
-					who = root.target
-					level < neutral
-				}
-			}
-			# Don't even attempt this until we have at least 60 intel.
-			is_spynetwork_level >= 60
-			weight = 2000
-		}
-		modifier = {
-			owner = {
 				or = {
-					# But the crisis is better
+					# We should target the crisis
 					has_crisis_level = crisis_level_2
 					# Or homicidals
 					is_homicidal = yes
