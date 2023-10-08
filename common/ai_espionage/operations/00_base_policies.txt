@@ -434,12 +434,23 @@ pre_ftl_infiltrating_policy = {
 	weight = {
 		modifier = {
 			owner = {
+				# These empires insist you join them. Or else.
 				OR = {
 					has_ai_personality_behaviour = infiltrator
 					has_ai_personality_behaviour = dominator
 				}
 			}
 			weight = 30
+		}
+		modifier = {
+			owner = {
+				# Compliance is mandatory.
+				OR = {
+					has_ai_personality_behaviour = assimilators
+					has_ai_personality = servitors
+				}
+			}
+			weight = 50
 		}
 	}
 }
