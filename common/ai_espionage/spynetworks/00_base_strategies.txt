@@ -265,6 +265,18 @@ pre_ftl_empire = {
 			}
 			factor = 0.1
 		}
+		modifier = {
+			target = {
+				owner = {
+					# These empires consider Pre-FTL as bugs. Don't waste the envoys.
+					OR = {
+						has_ascension_perk = ap_become_the_crisis
+						is_homicidal = yes
+					}
+				}
+			}
+			factor = 0
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
