@@ -476,6 +476,17 @@ pre_ftl_indoctrinate_policy = {
 				# These empires like to convert you to their way of thinking.
 				OR = {
 					has_ai_personality_behaviour = infiltrator
+				}
+			}
+			target = {
+				current_awareness_level > low
+			}
+			weight = 30
+		}
+		modifier = {
+			owner = {
+				# These empires insist you convert to their way of thinking.
+				OR = {
 					has_ai_personality = evangelising_zealots
 					has_ai_personality = democratic_crusaders
 				}
@@ -483,7 +494,7 @@ pre_ftl_indoctrinate_policy = {
 			target = {
 				current_awareness_level > low
 			}
-			weight = 30
+			weight = 50
 		}
 	}
 }
