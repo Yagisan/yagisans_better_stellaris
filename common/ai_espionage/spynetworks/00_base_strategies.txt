@@ -256,6 +256,15 @@ pre_ftl_empire = {
 			}
 			weight = 2
 		}
+		modifier = {
+			target = {
+				owner = {
+					# Dominators prefer to invade
+					has_ai_personality_behaviour = dominator
+				}
+			}
+			factor = 0.1
+		}
 	}
 	operation_selector = weighted_random_available
 	operations = {
