@@ -448,6 +448,20 @@ pre_ftl_subtlety_policy = {
 	weight = {
 		modifier = {
 			owner = {
+				has_ai_personality_behaviour = infiltrator
+			}
+		}
+		target = {
+			current_awareness_level > low
+		}
+		weight = 30
+	}
+}
+
+pre_ftl_indoctrinate_policy = {
+	weight = {
+		modifier = {
+			owner = {
 				# These empires like to convert you to their way of thinking.
 				OR = {
 					has_ai_personality_behaviour = infiltrator
