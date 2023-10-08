@@ -119,6 +119,7 @@ federation_empire = {
 			factor = 0
 		}
 		# Do not deploy a new envoy if one is present.
+		# YAGI - This may break in the 3.10.0 leader rework!
 		modifier = {
 			owner = {
 				any_envoy = {
@@ -149,6 +150,20 @@ federation_empire = {
 			}
 			factor = 0
 		}
+		# Don't spy until at least one envoy is working in federation
+		# YAGI - This may break in the 3.10.0 leader rework!
+		modifier = {
+			is_running_espionage_operation = no
+			owner = {
+				not = {
+					any_envoy = {
+						has_envoy_task = {
+							task = federation
+						}
+					}
+				}
+			}
+			factor = 0
 		}
 	}
 	operation_selector = weighted_random_available
