@@ -478,7 +478,6 @@ pre_ftl_indoctrinate_policy = {
 					has_ai_personality_behaviour = infiltrator
 					has_ai_personality = evangelising_zealots
 					has_ai_personality = democratic_crusaders
-					has_ai_personality = servitors
 				}
 			}
 			target = {
