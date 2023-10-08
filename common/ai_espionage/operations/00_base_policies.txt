@@ -461,11 +461,11 @@ pre_ftl_subtlety_policy = {
 			owner = {
 				has_ai_personality_behaviour = infiltrator
 			}
+			target = {
+				current_awareness_level > low
+			}
+			weight = 30
 		}
-		target = {
-			current_awareness_level > low
-		}
-		weight = 30
 	}
 }
 
