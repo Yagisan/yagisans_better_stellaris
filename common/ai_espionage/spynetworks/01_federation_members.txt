@@ -140,16 +140,15 @@ federation_empire = {
 			}
 			factor = 0
 		}
+		# Wait until any operations are finished to prevent stuck and broken operations.
 		modifier = {
+			is_running_espionage_operation = no
 			owner = {
-				OR = {
-					NOT = {
-						is_neighbor_of = root.target
-					}
-					is_in_federation_with = root.target
-				}
+				# Don't spy on federation members.
+				is_in_federation_with = root.target
 			}
-			factor = -1			# Only spy on neighbours and not own federation members. Conserve envoys for federation duty!
+			factor = 0
+		}
 		}
 	}
 	operation_selector = weighted_random_available
