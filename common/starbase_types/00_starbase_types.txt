@@ -103,13 +103,13 @@ sshipyard = {
 				base = 10
 			}
 			titan_yards = {
-				base = 2
+				base = 3
 			}
 			colossus_yards = {
-				base = 2
+				base = 3
 			}
 			ice_mining_station = {
-				base = 1
+				base = 2
 			}
 			dragon_hatchery = {
 				base = 2
@@ -118,10 +118,37 @@ sshipyard = {
 				base = 0
 			}
 			irassian_naval_yards = {
-				base = 3
+				base = 4
 			}
 			cordyceptic_reanimation_facility = {
-				base = 3
+				base = 5
+			}
+			transit_hub = {
+				base = 4
+			}
+			deep_space_black_site = {
+				base = 2
+			}
+			curator_think_tank = {
+				base = 2
+			}
+			art_college = {
+				base = 2
+			}
+			trader_proxy_office = {
+				base = 2
+			}
+			salvager_workshop = {
+				base = 2
+			}
+			black_hole_observatory = {
+				base = 2
+			}
+			nebula_refinery = {
+				base = 2
+			}
+			offspring_outlook = {
+				base = 2
 			}
 		}
 		modules = {
