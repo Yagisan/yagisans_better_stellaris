@@ -1,3 +1,53 @@
+#Remember to update operation_sabotage_starbase if you add any new buildings.
+# You will need to update the description, espionage_sabotage_starbase_building, remove_sabotage_starbase_flag, and has_nonshipyard_starbase_buildings
+recruitment_office = {
+	icon = "GFX_starbase_recruitment_office"
+	construction_days = 720
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = "tech_xeno_linguistics"
+			is_homicidal = no
+		}
+	}
+	possible = {
+		owner = {
+			count_starbase_buildings = {
+				type = recruitment_office
+				count < 1
+				include_being_constructed = yes
+			}
+		}
+	}
+	abort_construction_trigger = {
+		owner = {
+			count_starbase_buildings = {
+				type = recruitment_office
+				count > 1
+				include_being_constructed = yes
+			}
+		}
+	}
+	country_modifier = {
+		external_leader_pool_add = 1
+		species_leader_exp_gain = 0.1
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	show_in_tech = "tech_xeno_linguistics"
+	custom_tooltip = sm_recruitment_office_tooltip
+	ai_weight = {
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+
 crew_quarters = {
 	icon = "GFX_spaceport_module_crew_quarters"
 	construction_days = 180
@@ -21,6 +71,53 @@ crew_quarters = {
 	}
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+
+mining_bay = {
+	icon = "GFX_spaceport_mining_bay"
+	construction_days = 180
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_space_mining_1
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport_or_ring"
+			OR = {
+				has_starbase_size >= starbase_starport
+				is_orbital_ring = yes
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_shattered_world"
+			solar_system = {
+				any_system_planet = {
+					OR = {
+						is_planet_class = pc_shattered
+						is_planet_class = pc_shattered_2
+					}
+				}
+			}
+		}
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+		produces = {
+			minerals = 5
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	show_in_tech = "tech_space_mining_1"
 	ai_weight = {
 		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
@@ -1464,6 +1561,38 @@ archaeo_overcharger = {
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
 		weight = 100
+	}
+}
+
+feeder = {
+	icon = "GFX_starbase_feeder"
+	construction_days = 180
+	potential = {
+		is_orbital_ring = no
+		exists = owner
+		owner = {
+			has_technology = tech_critter_feeder
+		}
+	}
+	possible = {
+		exists = owner
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+		produces = {
+			food = 5
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	custom_tooltip = sm_feeder_tt
+	show_in_tech = "tech_critter_feeder"
+	ai_weight = {
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
