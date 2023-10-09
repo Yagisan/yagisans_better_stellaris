@@ -14,6 +14,17 @@ sstarpatrolbase = {
 				}
 			}
 		}
+		# 1 per sector
+		exists = sector
+		sector = {
+			any_system_within_border = {
+				starbase = {
+					NOT = {
+						is_starbase_type = sstarpatrolbase
+					}
+				}
+			}
+		}
 		# Not bordering another empire
 		not = {
 			solar_system = {
@@ -118,51 +129,24 @@ sstarpatrolbase = {
 			command_center = {
 				base = 5
 			}
-			yuht_detection_array = {
-				base = 3
-				modifier = {
-					factor = 0
-					exists = owner
-					owner = {
-						OR = {
-							has_megastructure = spy_orb_1
-							has_megastructure = spy_orb_2
-							has_megastructure = spy_orb_3
-							has_megastructure = spy_orb_4
-						}
-					}
-				}
-				modifier = {
-					factor = 0.1
-					exists = owner
-					owner = {
-						any_owned_starbase = {
-							count_starbase_buildings = {
-								type = yuht_detection_array
-								count > 0
-							}
-						}
-					}
-				}
-			}
 			cordyceptic_reanimation_facility = {
 				base = 3
 			}
 			offspring_outlook = {
-				base = 3
+				base = 4
 			}
 			communications_jammer = {
-				base = 3
-			}
+				base = 1
+				modifier = {
+					add = 3
+					exists = solar_system
+					solar_system = {
+						is_star_class = sc_black_hole
+					}
+				}
 			# First to shoot often wins.
 			target_uplink_computer = {
-				base = 2.5
-			}
-			deep_space_black_site = {
-				base = 2
-			}
-			transit_hub = {
-				base = 2
+				base = 3
 			}
 			curator_think_tank = {
 				base = 2
