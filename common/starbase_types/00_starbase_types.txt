@@ -1279,9 +1279,9 @@ sorbital_ring = {
 				}
 			}
 			ring_trade_hub = {
-				base = 1
+				base = 0
 				modifier = {
-					add = 2
+					add = 3
 					planet = {
 						OR = {
 							has_trade_designation = yes
@@ -1687,9 +1687,9 @@ sorbital_habitation = {
 				}
 			}
 			ring_trade_hub = {
-				base = 1
+				base = 0
 				modifier = {
-					add = 2
+					add = 3
 					planet = {
 						OR = {
 							has_trade_designation = yes
@@ -1885,9 +1885,9 @@ sorbital_seeder = {
 				}
 			}
 			ring_trade_hub = {
-				base = 1
+				base = 0
 				modifier = {
-					add = 2
+					add = 3
 					planet = {
 						OR = {
 							has_trade_designation = yes
