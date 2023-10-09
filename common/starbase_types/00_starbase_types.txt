@@ -752,23 +752,31 @@ sfortress = {
 		}
 		# token followed by priority
 		buildings = {
+			# First to shoot often wins.
 			target_uplink_computer = {
-				base = 1
+				base = 3
 			}
 			command_center = {
-				base = 1
+				base = 5
 			}
 			defense_grid = {
-				base = 1
+				base = 2.5
 			}
 			communications_jammer = {
 				base = 0.9
+				modifier = {
+					add = 3.1
+					exists = solar_system
+					solar_system = {
+						is_star_class = sc_black_hole
+					}
+				}
 			}
 			disruption_field = {
-				base = 0.9
+				base = 1.5
 			}
 			ice_mining_station = {
-				base = 3
+				base = 2
 			}
 			dragon_hatchery = {
 				base = 0
@@ -777,7 +785,7 @@ sfortress = {
 				base = 0
 			}
 			zroni_storm_caster = {
-				base = 1.5
+				base = 2.5
 				modifier = {
 					factor = 0
 					exists = owner
@@ -790,7 +798,40 @@ sfortress = {
 				}
 			}
 			offspring_outlook = {
-				base = 10
+				base = 5
+			}
+			cordyceptic_reanimation_facility = {
+				base = 5
+			}
+			transit_hub = {
+				base = 4
+			}
+			deep_space_black_site = {
+				base = 2
+			}
+			curator_think_tank = {
+				base = 2
+			}
+			art_college = {
+				base = 2
+			}
+			trader_proxy_office = {
+				base = 2
+			}
+			salvager_workshop = {
+				base = 2
+			}
+			black_hole_observatory = {
+				base = 2
+			}
+			nebula_refinery = {
+				base = 2
+			}
+			mercenary_garrison = {
+				base = 1.5
+			}
+			resource_silo = {
+				base = 1
 			}
 		}
 		modules = {
