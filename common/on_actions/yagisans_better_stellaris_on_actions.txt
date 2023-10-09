@@ -36,7 +36,7 @@ on_yearly_pulse = {
 # Each year, try remove completed archaeological sites.
 on_yearly_pulse_country = {
 	events = {
-		yagisans_better_stellaris.40
+		ybs_archaeology.1
 	}
 }
 
@@ -64,7 +64,7 @@ on_five_year_pulse = {
 # Every fifth year, try to respawn 1 archaeological site.
 on_five_year_pulse = {
 	events = {
-		yagisans_better_stellaris.50
+		ybs_archaeology.2
 	}
 }
 

@@ -1,7 +1,7 @@
 namespace = yagisans_better_stellaris
 # Attempt to find completed archaeological sites.
 event = {
-	id = yagisans_better_stellaris.40
+	id = ybs_archaeology.1
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
@@ -39,7 +39,7 @@ event = {
 
 # Attempt to spawn up to 3 archaeological sites.
 event = {
-	id = yagisans_better_stellaris.50
+	id = ybs_archaeology.2
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
