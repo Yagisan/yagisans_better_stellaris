@@ -7,7 +7,7 @@ namespace = yagisans_better_stellaris
 # This will allow all countries to complete re-evaluating jobs within 270 days of the initial event,
 # and if the rng is suitably random, not at the same time, so there won't be a noticeable lag spike.
 event = {
-	id = yagisans_better_stellaris.20
+	id = ybs_employment.1
 	title = OK
 	desc = OK
 	hide_window = yes
@@ -33,7 +33,7 @@ event = {
 			}
 			# Trigger randomly between 10 and 180 (days + random) days from now.
 			country_event = {
-				id = yagisans_better_stellaris.21
+				id = ybs_employment.2
 				days = 10
 				random = 170
 			}
@@ -43,7 +43,7 @@ event = {
 
 # Now limit to every planet with 1 or more pops.
 country_event = {
-	id = yagisans_better_stellaris.21
+	id = ybs_employment.2
 	title = OK
 	desc = OK
 	hide_window = yes
@@ -64,7 +64,7 @@ country_event = {
 			}
 			# Trigger randomly between 0 and 90 days from now.
 			planet_event = {
-				id = yagisans_better_stellaris.22
+				id = ybs_employment.3
 				random = 90
 			}
 		}
@@ -73,7 +73,7 @@ country_event = {
 
 # If nothing special is happening, force an employment check.
 planet_event = {
-	id = yagisans_better_stellaris.22
+	id = ybs_employment.3
 	title = OK
 	desc = OK
 	hide_window = yes
@@ -104,7 +104,7 @@ planet_event = {
 # That's because the game will update the UI as soon as the pops are fired, BUT
 # will wait until the end of the month, when they are hired.
 event = {
-	id = yagisans_better_stellaris.30
+	id = ybs_employment.10
 	title = OK
 	desc = OK
 	hide_window = yes
@@ -124,7 +124,7 @@ event = {
 			}
 			# Trigger after 27 days. Should be the 28th day of each year.
 			country_event = {
-				id = yagisans_better_stellaris.31
+				id = ybs_employment.11
 				days = 27
 			}
 		}
@@ -133,7 +133,7 @@ event = {
 
 # Now limit to every planet with 1 or more pops.
 country_event = {
-	id = yagisans_better_stellaris.31
+	id = ybs_employment.11
 	title = OK
 	desc = OK
 	hide_window = yes
@@ -154,7 +154,7 @@ country_event = {
 			}
 			# Trigger now.
 			planet_event = {
-				id = yagisans_better_stellaris.32
+				id = ybs_employment.12
 			}
 		}
 	}
@@ -162,7 +162,7 @@ country_event = {
 
 # If nothing special is happening, force an employment check.
 planet_event = {
-	id = yagisans_better_stellaris.32
+	id = ybs_employment.12
 	title = OK
 	desc = OK
 	hide_window = yes
