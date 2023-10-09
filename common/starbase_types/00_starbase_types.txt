@@ -1498,7 +1498,7 @@ sorbital_fortress = {
 				base = 2
 			}
 			command_center = {
-				base = 2
+				base = 5
 			}
 			defense_grid = {
 				base = 1
@@ -1508,6 +1508,9 @@ sorbital_fortress = {
 			}
 			disruption_field = {
 				base = 0.9
+			}
+			nebula_refinery = {
+				base = 1
 			}
 		}
 		modules = {
