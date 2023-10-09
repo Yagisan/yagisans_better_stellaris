@@ -1,0 +1,5 @@
+NAI = {
+	# How far in space should we expand?
+	MAX_EXPANSION_DISTANCE = 1	# [2] Max number of jumps away AI will build starbases
+	MAX_EXPANSION_DISTANCE_SUBJECT = 1 # [2] Max number of jumps away AI subjects will build starbases
+}

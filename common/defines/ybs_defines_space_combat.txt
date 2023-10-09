@@ -1,14 +1,3 @@
-NGameplay = {
-	# Army General Buffs
-	LEADER_GENERAL_GROUND_COMBAT_BASE_EXPERIENCE = 200	# Leader General base experience from ground combat
-	LEADER_GENERAL_GROUND_COMBAT_EXPERIENCE_SCALE = 4	# Scale factor used when calculating experience gain for General
-	LEADER_GENERAL_GROUND_COMBAT_ARMIES_KILLED_CONVERSION = 0.5	# Scale factor for total number of armies killed after combat when calculating experience gain for General
-	GENERAL_DEATH_CHANCE = 0.01	# Chance that general dies when an army under command is destroyed (scaled to number of armies)
-	# War Exhaustion Related Buffs
-	WAR_EXHAUSTION_ARMY_KILLED_MULT = 0.5	# Multiplier of war exhaustion gained from land battles (armies)
-	OCCUPATION_POP_VALUE = 0.3	# Per pop in system
-}
-
 NAI = {
 	# AI Dev Diary
 	# https://forum.paradoxplaza.com/forum/developer-diary/stellaris-dev-diary-172-reworking-the-ai.1348837/?prdxDevPosts=1
@@ -58,26 +47,4 @@ NAI = {
 	# If no objective is found, the backup AI will send it to the closest objective available, or back to base.
 	FLEET_MAX_DISTANCE_LOOKUP_LARGE = 16	# [30] Maximum number of hops the fleet AI should consider when assigning mission on a large map (800 systems or more).
 	FLEET_MAX_DISTANCE_LOOKUP_HUGE = 32	# [50] Maximum number of hops the fleet AI should consider when assigning mission on a large map (1000 systems or more)
-	# How many armies should we have?
-	MIN_ASSAULT_ARMIES = 20	# [20]
-	MAX_ASSAULT_ARMIES = 200	# [60]
-	# How far in space should we expand?
-	MAX_EXPANSION_DISTANCE = 1	# [2] Max number of jumps away AI will build starbases
-	MAX_EXPANSION_DISTANCE_SUBJECT = 1 # [2] Max number of jumps away AI subjects will build starbases
-
-	# 3.9.2 - Planetary Automation is not producing enough amenities when set to autobuild.
-	# Try to tweak it into building and using them.
-	AI_UPPER_AMENITIES_LIMIT = 100 			# [5] AI will try to reduce the amount of amenities on a planet if it's above this number by downprioritizing amenity jobs
-	AI_LOWER_AMENITIES_LIMIT = 5 			# [2] AI will try to increase amenities on a planet if it's below this number by increasing priority of amenity jobs
-	AI_MINIMUM_AMENITY_PER_JOB_LIMIT = 2	# [3] Jobs need to produce at least this many amenities to be considered for the AI amenity shuffling
-
-	# Broaden the range for espionage
-	SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MIN = -80		# [-40] Lower bounds on the infiltration level modifier value
-	SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MAX = 80		# [40] Upper bounds on the infiltration level modifier value
-	SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MIN = -0.8	# [-0.4] Lower bounds to encryption vs decryption (bad for attacker)
-	SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MAX = 0.8	# [0.4] Upper bounds to encryption vs decryption (good for attacker)
-	SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MIN = -8		# [-4] How low can excess Codebreaking drop the difficulty of operations? Negative numbers good for the spy.
-	SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MAX = 8		# [4] How high can excess Encryption increase the difficulty of operations? Positive numbers good for the defender.
-	SPY_NETWORK_RELATIVE_ENCRYPTION_MIN = -8	# [-4] Lower bounds for relative encryption
-	SPY_NETWORK_RELATIVE_ENCRYPTION_MAX = 8	# [4] Upper bounds for relative encryption
 }

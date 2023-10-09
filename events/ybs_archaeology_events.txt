@@ -1,0 +1,67 @@
+namespace = yagisans_better_stellaris
+# Attempt to find completed archaeological sites.
+event = {
+	id = yagisans_better_stellaris.40
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_planet_within_border = {
+			limit = {
+				exists = archaeological_site
+			}
+			if = {
+				limit = {
+					archaeological_site = {
+						is_site_completed = yes
+					}
+				}
+				if = {
+					limit = {
+						has_planet_flag = ybs_archaeological_site_complete
+					}
+					log = "Yagisan - Removing Completed Archaeological Site on [This.Planet.GetName]"
+					remove_planet_flag = ybs_archaeological_site_complete
+					archaeological_site = {
+						destroy_archaeological_site = this
+					}
+				}
+				else = {
+					# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
+					set_timed_planet_flag = {
+						flag = ybs_archaeological_site_complete
+						months = 24
+					}
+				}
+			}
+		}
+	}
+}
+
+# Attempt to spawn up to 3 archaeological sites.
+event = {
+	id = yagisans_better_stellaris.50
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 3
+			random_galaxy_planet = {
+				limit = {
+					ybs_archaeological_site_possible = yes
+				}
+				log = "Yagisan - Attempting To Spawn Archaeological Site on [This.Planet.GetName]"
+				ybs_digsite_spawner = yes
+			}
+		}
+	}
+}
+
+# Try to log espionage operations
+espionage_operation_event = {
+	id = yagisans_better_stellaris.100
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "Yagisan - Espionage Operation Targeting [From.GetName] by [Root.Owner.GetName] - [This.GetName] Successful"
+	}
+}

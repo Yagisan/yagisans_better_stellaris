@@ -1,0 +1,57 @@
+namespace = yagisans_better_stellaris
+# Attempt to spawn 1 anomaly.
+event = {
+	id = yagisans_better_stellaris.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 1
+			random_galaxy_planet = {
+				limit = {
+					ybs_anomaly_possible = yes
+				}
+				log = "Yagisan - Attempting To Spawn Anomaly at [This.Planet.GetName]"
+				ybs_anomaly_spawner = yes
+			}
+		}
+	}
+}
+
+# Attempt to spawn 4 anomalies.
+event = {
+	id = yagisans_better_stellaris.11
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 4
+			random_galaxy_planet = {
+				limit = {
+					ybs_anomaly_possible = yes
+				}
+				log = "Yagisan - Attempting To Spawn Anomaly at [This.Planet.GetName]"
+				ybs_anomaly_spawner = yes
+			}
+		}
+	}
+}
+
+# Attempt to spawn 10 anomalies.
+event = {
+	id = yagisans_better_stellaris.12
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 10
+			random_galaxy_planet = {
+				limit = {
+					ybs_anomaly_possible = yes
+				}
+				log = "Yagisan - Attempting To Spawn Anomaly at [This.Planet.GetName]"
+				ybs_anomaly_spawner = yes
+			}
+		}
+	}
+}

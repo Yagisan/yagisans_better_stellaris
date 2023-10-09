@@ -1,0 +1,189 @@
+namespace = yagisans_better_stellaris
+# The AI appears to be somewhat lazy in making sure it's pops are in the most efficient job.
+# We are going to give it a helping hand, by forcing it to re-evaluate jobs a bit more often.
+# Let's optimise some pops. First Limit to just the AI countries.
+# Each country will be checked between 10 and 180 days from the event firing.
+# Each planet in the selected country will be checked between 0 and 90 days from the event firing.
+# This will allow all countries to complete re-evaluating jobs within 270 days of the initial event,
+# and if the rng is suitably random, not at the same time, so there won't be a noticeable lag spike.
+event = {
+	id = yagisans_better_stellaris.20
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = yes
+				# Check regular empires, awakened fallen empires, and the great khan only.
+				OR = {
+					is_country_type = default
+					is_country_type = awakened_fallen_empire
+					is_country_type = awakened_marauders
+				}
+				NOT = {
+					has_country_flag = ybs_job_reevaluation_queued
+				}
+			}
+			# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
+			set_timed_country_flag = {
+				flag = ybs_job_reevaluation_queued
+				months = 7
+			}
+			# Trigger randomly between 10 and 180 (days + random) days from now.
+			country_event = {
+				id = yagisans_better_stellaris.21
+				days = 10
+				random = 170
+			}
+		}
+	}
+}
+
+# Now limit to every planet with 1 or more pops.
+country_event = {
+	id = yagisans_better_stellaris.21
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = ybs_job_reevaluation_queued
+		every_owned_planet = {
+			limit = {
+				NOT = {
+					has_planet_flag = ybs_job_reevaluation_queued
+				}
+				num_pops >= 1
+			}
+			# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
+			set_timed_planet_flag = {
+				flag = ybs_job_reevaluation_queued
+				months = 4
+			}
+			# Trigger randomly between 0 and 90 days from now.
+			planet_event = {
+				id = yagisans_better_stellaris.22
+				random = 90
+			}
+		}
+	}
+}
+
+# If nothing special is happening, force an employment check.
+planet_event = {
+	id = yagisans_better_stellaris.22
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	# Only trigger if owned by an AI, and not occupied or under attack.
+	pre_triggers = {
+		has_owner = yes
+		is_ai = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	immediate = {
+		log = "Yagisan - Checking AI Employment for [From.GetName] on [This.Planet.GetName]"
+		remove_planet_flag = ybs_job_reevaluation_queued
+		check_planet_employment = yes
+		# Fix accidently unemployed pops.
+		every_owned_pop = {
+			limit = {
+				is_unemployed = yes
+			}
+			clear_pop_category = yes
+		}
+	}
+}
+
+# Let's optimise some pops. This time the human players.
+# We'll do this once a year, and we'll time it for right before the end of the month.
+# That's because the game will update the UI as soon as the pops are fired, BUT
+# will wait until the end of the month, when they are hired.
+event = {
+	id = yagisans_better_stellaris.30
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				NOT = {
+					has_country_flag = ybs_job_reevaluation_queued
+				}
+			}
+			# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
+			set_timed_country_flag = {
+				flag = ybs_job_reevaluation_queued
+				months = 1
+			}
+			# Trigger after 27 days. Should be the 28th day of each year.
+			country_event = {
+				id = yagisans_better_stellaris.31
+				days = 27
+			}
+		}
+	}
+}
+
+# Now limit to every planet with 1 or more pops.
+country_event = {
+	id = yagisans_better_stellaris.31
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = ybs_job_reevaluation_queued
+		every_owned_planet = {
+			limit = {
+				NOT = {
+					has_planet_flag = ybs_job_reevaluation_queued
+				}
+				num_pops >= 1
+			}
+			# Set a timed flag, so we don't try to process it twice, and don't lock it out if the event doesn't trigger.
+			set_timed_planet_flag = {
+				flag = ybs_job_reevaluation_queued
+				months = 1
+			}
+			# Trigger now.
+			planet_event = {
+				id = yagisans_better_stellaris.32
+			}
+		}
+	}
+}
+
+# If nothing special is happening, force an employment check.
+planet_event = {
+	id = yagisans_better_stellaris.32
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+	# Only trigger if owned by a human, and not occupied or under attack.
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+	immediate = {
+		log = "Yagisan - Checking Player Employment for [From.GetName] on [This.Planet.GetName]"
+		remove_planet_flag = ybs_job_reevaluation_queued
+		check_planet_employment = yes
+		# Fix accidently unemployed pops.
+		every_owned_pop = {
+			limit = {
+				is_unemployed = yes
+			}
+			clear_pop_category = yes
+		}
+	}
+}

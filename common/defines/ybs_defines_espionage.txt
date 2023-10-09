@@ -1,0 +1,11 @@
+NAI = {
+	# Broaden the range for espionage
+	SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MIN = -80		# [-40] Lower bounds on the infiltration level modifier value
+	SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MAX = 80		# [40] Upper bounds on the infiltration level modifier value
+	SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MIN = -0.8	# [-0.4] Lower bounds to encryption vs decryption (bad for attacker)
+	SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MAX = 0.8	# [0.4] Upper bounds to encryption vs decryption (good for attacker)
+	SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MIN = -8		# [-4] How low can excess Codebreaking drop the difficulty of operations? Negative numbers good for the spy.
+	SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MAX = 8		# [4] How high can excess Encryption increase the difficulty of operations? Positive numbers good for the defender.
+	SPY_NETWORK_RELATIVE_ENCRYPTION_MIN = -8	# [-4] Lower bounds for relative encryption
+	SPY_NETWORK_RELATIVE_ENCRYPTION_MAX = 8	# [4] Upper bounds for relative encryption
+}
