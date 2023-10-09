@@ -1413,6 +1413,9 @@ sorbital_anchorage = {
 			mining_bay = {
 				base = 1
 			}
+			command_center = {
+				base = 5
+			}
 		}
 		modules = {
 			orbital_ring_anchorage = {
