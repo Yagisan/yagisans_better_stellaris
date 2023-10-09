@@ -1290,6 +1290,9 @@ sorbital_ring = {
 					}
 				}
 			}
+			nebula_refinery = {
+				base = 2
+			}
 		}
 	}
 }
