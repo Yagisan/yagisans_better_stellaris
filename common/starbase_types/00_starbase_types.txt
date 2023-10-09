@@ -280,9 +280,7 @@ strading_hub = {
 		has_starbase_size > starbase_outpost
 		exists = owner
 		owner = {
-			NOT = {
-				has_ethic = ethic_gestalt_consciousness
-			}
+			is_gestalt = no
 		}
 		# If we are AI only build this in sector capitals
 		if = {
@@ -358,7 +356,7 @@ strading_hub = {
 					is_capital_system = yes
 					exists = starbase
 					NOR = {
-						# ...if capital isn't already a trade hub
+						# Captial is a trade hub - so we don't want to be one.
 						starbase = {
 							count_starbase_modules = {
 								type = trading_hub
@@ -366,7 +364,7 @@ strading_hub = {
 							}
 						}
 						# Have to check for 2 because it always starts with 1.
-						# ...and no other system neighboring capital is a trade hub
+						# Neighbouring Captial is a trade hub - so we don't want to be one.
 						any_neighbor_system = {
 							exists = starbase
 							starbase = {
@@ -387,24 +385,26 @@ strading_hub = {
 		# has_trade_route = yes
 		# num_trade_routes - Counts the number trade routes in the empire.
 		modifier = {
-			factor = 0			# Useless if cut off or if every owned system has a starbase
+			# Useless if cut off or if every owned system has a starbase
+			factor = 0
 			owner = {
 				is_ai = yes
 				is_same_value = root.owner
 			}
 			solar_system = {
 				OR = {
-					has_trade_route = no					# assuming this include the trade route it generates
-					# don't want to count other empire's trade routes; no good trigger exists for excluding them though.
+					# No trade routes?
+					has_trade_route = no
+					# We have a starbase in every system? (really?)
 					owner = {
 						num_starbases >= trigger:controlled_systems
 					}
-					# does this include orbital rings?
+					# We're isolated. An exclave?
 					NOT = {
 						any_neighbor_system = {
 							exists = owner
 							owner = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 							}
 						}
 					}
@@ -424,11 +424,6 @@ strading_hub = {
 				owner = {
 					any_system_within_border = {
 						has_uncollected_system_trade_value > 0
-						# distance = {
-						# 	source = root
-						# 	max_jumps = 6 # technically 8 is possible w/ registrar & mercantile tradition
-						# 	# doesn't account for jumping thru borders
-						# }
 					}
 				}
 			}
@@ -464,44 +459,37 @@ strading_hub = {
 		# token followed by priority
 		buildings = {
 			offworld_trading_company = {
-				base = 2
+				base = 4
 			}
 			nebula_refinery = {
-				base = 1
+				base = 2
 			}
 			mining_bay = {
 				base = 1
 			}
 			resource_silo = {
-				base = 0.25
+				base = 1
 			}
 			art_college = {
-				base = 1
+				base = 2
 			}
 			curator_think_tank = {
-				base = 1
+				base = 2
 			}
 			ice_mining_station = {
-				base = 1
+				base = 2
 			}
 			dragon_hatchery = {
-				base = 1
+				base = 2
 			}
 			hydroponics_bay = {
-				base = 1
+				base = 2
 			}
 			defense_grid = {
-				base = 0.05
+				base = 1
 			}
 			communications_jammer = {
 				base = 0
-				modifier = {
-					add = 3
-					exists = solar_system
-					solar_system = {
-						is_star_class = sc_black_hole
-					}
-				}
 			}
 			yuht_detection_array = {
 				base = 1.25
@@ -529,6 +517,30 @@ strading_hub = {
 						}
 					}
 				}
+			}
+			command_center = {
+				base = 5
+			}
+			transit_hub = {
+				base = 4
+			}
+			deep_space_black_site = {
+				base = 3
+			}
+			trader_proxy_office = {
+				base = 2
+			}
+			salvager_workshop = {
+				base = 2
+			}
+			black_hole_observatory = {
+				base = 2
+			}
+			offspring_outlook = {
+				base = 2
+			}
+			shroud_beacon = {
+				base = 1
 			}
 		}
 		modules = {
