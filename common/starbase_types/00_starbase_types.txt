@@ -209,20 +209,13 @@ sanchorage = {
 		# token followed by priority
 		buildings = {
 			naval_logistics_office = {
-				base = 5
+				base = 4
 			}
 			defense_grid = {
-				base = 0.05
+				base = 0
 			}
 			communications_jammer = {
 				base = 0
-				modifier = {
-					add = 3
-					exists = solar_system
-					solar_system = {
-						is_star_class = sc_black_hole
-					}
-				}
 			}
 			curator_think_tank = {
 				base = 2
@@ -231,7 +224,7 @@ sanchorage = {
 				base = 2
 			}
 			nebula_refinery = {
-				base = 1
+				base = 2
 			}
 			ice_mining_station = {
 				base = 2
@@ -246,7 +239,31 @@ sanchorage = {
 				base = 1
 			}
 			cordyceptic_reanimation_facility = {
-				base = 3
+				base = 5
+			}
+			command_center = {
+				base = 5
+			}
+			transit_hub = {
+				base = 4
+			}
+			deep_space_black_site = {
+				base = 2
+			}
+			trader_proxy_office = {
+				base = 2
+			}
+			salvager_workshop = {
+				base = 2
+			}
+			black_hole_observatory = {
+				base = 2
+			}
+			offspring_outlook = {
+				base = 2
+			}
+			resource_silo = {
+				base = 1
 			}
 		}
 		modules = {
