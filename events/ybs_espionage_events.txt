@@ -1,7 +1,7 @@
 namespace = yagisans_better_stellaris
 # Try to log espionage operations
 espionage_operation_event = {
-	id = yagisans_better_stellaris.100
+	id = ybs_espionage.1
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {

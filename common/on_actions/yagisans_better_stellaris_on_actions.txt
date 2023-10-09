@@ -72,6 +72,6 @@ on_five_year_pulse = {
 # FROM = Operation target
 on_operation_finished = {
 	events = {
-		yagisans_better_stellaris.100
+		ybs_espionage.1
 	}
 }
