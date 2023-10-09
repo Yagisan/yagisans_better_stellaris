@@ -1028,13 +1028,43 @@ sdetection_array = {
 				base = 5
 			}
 			target_uplink_computer = {
-				base = 1
+				base = 3
 			}
 			defense_grid = {
 				base = 1
 			}
 			cybrex_mining_hub = {
 				base = 1
+			}
+			command_center = {
+				base = 5
+			}
+			deep_space_black_site = {
+				base = 2
+			}
+			transit_hub = {
+				base = 2
+			}
+			curator_think_tank = {
+				base = 2
+			}
+			art_college = {
+				base = 2
+			}
+			trader_proxy_office = {
+				base = 2
+			}
+			salvager_workshop = {
+				base = 2
+			}
+			black_hole_observatory = {
+				base = 2
+			}
+			nebula_refinery = {
+				base = 2
+			}
+			ice_mining_station = {
+				base = 2
 			}
 		}
 		modules = {
