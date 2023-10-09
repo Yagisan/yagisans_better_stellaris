@@ -1698,6 +1698,9 @@ sorbital_habitation = {
 					}
 				}
 			}
+			nebula_refinery = {
+				base = 2
+			}
 		}
 		modules = {
 			orbital_ring_habitation = {
