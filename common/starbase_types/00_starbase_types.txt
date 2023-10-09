@@ -1341,10 +1341,16 @@ sorbital_shipyard = {
 		# token followed by priority
 		buildings = {
 			crew_quarters = {
-				base = 1
+				base = 5
 			}
 			hydroponics_bay = {
 				base = 0.25
+			}
+			fleet_academy = {
+				base = 10
+			}
+			nebula_refinery = {
+				base = 2
 			}
 		}
 		modules = {
