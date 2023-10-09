@@ -55,13 +55,3 @@ event = {
 		}
 	}
 }
-
-# Try to log espionage operations
-espionage_operation_event = {
-	id = yagisans_better_stellaris.100
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		log = "Yagisan - Espionage Operation Targeting [From.GetName] by [Root.Owner.GetName] - [This.GetName] Successful"
-	}
-}
