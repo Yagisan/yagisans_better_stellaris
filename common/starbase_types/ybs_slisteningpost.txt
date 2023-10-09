@@ -25,6 +25,9 @@ slisteningpost = {
 		modifier = {
 			add = 1000
 			has_starbase_building = listening_post
+			NOT = {
+				has_starbase_module = detection_array
+			}
 		}
 		# Next to a neighbour
 		modifier = {
@@ -116,6 +119,7 @@ slisteningpost = {
 							OR = {
 								has_starbase_building = listening_post
 								has_starbase_building = yuht_detection_array
+								has_starbase_module = detection_array
 							}
 						}
 					}
@@ -156,10 +160,17 @@ slisteningpost = {
 				base = 3
 			}
 			communications_jammer = {
-				base = 3
+				base = 1
+				modifier = {
+					add = 3
+					exists = solar_system
+					solar_system = {
+						is_star_class = sc_black_hole
+					}
+				}
 			}
 			command_center = {
-				base = 3
+				base = 5
 			}
 			# First to shoot often wins.
 			target_uplink_computer = {
