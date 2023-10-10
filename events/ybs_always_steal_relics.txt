@@ -1,0 +1,103 @@
+namespace = ancrel
+
+### RELIC THEFT
+
+# Relic Acquired (HIDDEN)
+country_event = {
+	id = ancrel.6499
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		From = {
+			# is_country_type = default
+			is_playable = yes
+			num_owned_relics > 0
+		}
+		FromFrom = { is_capital = yes }
+		any_war = {
+			any_attacker = { is_same_value = root }
+			any_defender = { is_same_value = from }
+			NOT = {
+				using_war_goal = {
+					type = wg_take_galatron
+					owner = attacker
+				}
+			}
+		}
+	}
+
+	immediate = {
+		FromFrom = { save_event_target_as = planet }
+		From = { save_event_target_as = victim }
+		random_list = {
+			0 = {}
+			100 = {
+				modifier = {
+					factor = 15
+					has_valid_civic = civic_barbaric_despoilers
+				}
+				modifier = {
+					factor = 6.67 # 50% chance of success
+					any_war = {
+						any_attacker = { is_same_value = root }
+						any_defender = { is_same_value = from }
+						using_war_goal = {
+							type = wg_plunder
+							owner = attacker
+						}
+					}
+				}
+				country_event = { id = ancrel.6500 }
+			}
+		}
+	}
+}
+
+# Relic Acquired
+country_event = {
+	id = ancrel.6500
+	title = "ancrel.6500.name"
+	desc = "ancrel.6500.desc"
+	picture = GFX_evt_victorious_army
+	show_sound = event_ground_battle
+	location = event_target:planet
+
+	is_triggered_only = yes
+
+	immediate = {
+		steal_relic = {
+			target = event_target:victim
+			relic = all
+		}
+		if = {
+			limit = {
+				has_relic = r_war_forge
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = cybrex_count
+						}
+					}
+					set_variable = {
+						which = cybrex_count
+						value = 1
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ancrel.6500.a
+		custom_tooltip = stole_relic
+		hidden_effect = {
+			event_target:victim = {
+				country_event = { id = ancrel.6505 }
+			}
+		}
+	}
+}
