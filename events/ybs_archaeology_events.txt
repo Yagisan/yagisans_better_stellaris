@@ -1,4 +1,4 @@
-namespace = yagisans_better_stellaris
+namespace = ybs_archaeology
 # Attempt to find completed archaeological sites.
 event = {
 	id = ybs_archaeology.1

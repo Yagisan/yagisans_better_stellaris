@@ -1,4 +1,4 @@
-namespace = yagisans_better_stellaris
+namespace = ybs_employment
 # The AI appears to be somewhat lazy in making sure it's pops are in the most efficient job.
 # We are going to give it a helping hand, by forcing it to re-evaluate jobs a bit more often.
 # Let's optimise some pops. First Limit to just the AI countries.

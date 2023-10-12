@@ -1,4 +1,4 @@
-namespace = yagisans_better_stellaris
+namespace = ybs_anomaly
 # Attempt to spawn 1 anomaly.
 event = {
 	id = ybs_anomaly.1

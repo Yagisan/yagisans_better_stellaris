@@ -1,4 +1,4 @@
-namespace = yagisans_better_stellaris
+namespace = ybs_espionage
 # Try to log espionage operations
 espionage_operation_event = {
 	id = ybs_espionage.1
