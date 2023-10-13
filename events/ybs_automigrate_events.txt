@@ -27,12 +27,33 @@ event = {
 	}
 }
 
-event = {
+country_event = {
 	# Migrate unemployed organics to planets with jobs.
 	id = ybs_automigrate.1
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		set_variable = {
+			# Max out at 10 unemployed migrations per month.
+			# Without a counter, and with enough money, it will
+			# overshoot and move more pops in than jobs available ...
+			which = unemployment_migration_counter
+			value = 0
+		}
+		if = {
+			limit = {
+				is_variable_set = unemployment_migration_counter
+			}
+			log = "1 Variable Check: unemployment_migration_counter exists, value: [This.unemployment_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = unemployment_migration_counter
+				}
+			}
+			log = "1 Variable Check: unemployment_migration_counter doesnt exist"
+		}
 		every_owned_planet = {
 			limit = {
 				count_owned_pop = {
@@ -79,7 +100,26 @@ event = {
 					}
 				}
 				log = "Yagisan - Found Unemployed [This.GetName]"
+				set_variable = {
+					# Copy unemployment_migration_counter into this pop scope so we don't overshoot.
+					which = inprogress_migration_counter
+					value = PREVPREV.unemployment_migration_counter
+				}
 				if = {
+					if = {
+						limit = {
+							is_variable_set = inprogress_migration_counter
+						}
+						log = "Variable Check: Pre ybs_automigrate_unemployed = yes - inprogress_migration_counter exists, value: [This.inprogress_migration_counter]"
+					}
+					if = {
+						limit = {
+							NOT = {
+								is_variable_set = inprogress_migration_counter
+							}
+						}
+						log = "Variable Check: Pre ybs_automigrate_unemployed = yes - inprogress_migration_counter doesnt exist"
+					}
 					limit = {
 						# minimum of 1K energy to move pops
 						owner = {
@@ -88,19 +128,65 @@ event = {
 								amount > 1000
 							}
 						}
+						# at most 10 pops per month
+						check_variable = {
+							which = inprogress_migration_counter
+							value < 10
+						}
 					}
 					# PREV is the pop
 					# PREVPREV is planet it is from
 					PREVPREV = {
 						ybs_automigrate_unemployed = yes
+						if = {
+							limit = {
+								check_variable = {
+									which = ybs_planet_found
+									value = 1
+								}
+							}
+							change_variable = {
+								which = unemployment_migration_counter
+								value = 1
+							}
+						}
 					}
 				}
+				if = {
+					limit = {
+						is_variable_set = unemployment_migration_counter
+					}
+					log = "Variable Check: Post ybs_automigrate_unemployed = yes - unemployment_migration_counter exists, value: [This.unemployment_migration_counter]"
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = unemployment_migration_counter
+						}
+					}
+					log = "Variable Check: Post ybs_automigrate_unemployed = yes -unemployment_migration_counter doesnt exist"
+				}
+				log = "Yagisan - 1 - unemployment_migration_counter [This.unemployment_migration_counter]"
 			}
+		}
+		if = {
+			limit = {
+				is_variable_set = unemployment_migration_counter
+			}
+			log = "Variable Check: Loop end - unemployment_migration_counter exists, value: [This.unemployment_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = unemployment_migration_counter
+				}
+			}
+			log = "Variable Check: Loop end - unemployment_migration_counter doesnt exist"
 		}
 	}
 }
 
-event = {
+country_event = {
 	# Migrate toilers on thrall to planets with jobs.
 	id = ybs_automigrate.2
 	hide_window = yes
@@ -111,6 +197,7 @@ event = {
 				count_owned_pop = {
 					limit = {
 						any_owned_pop = {
+							#Invalid Scope type for trigger any_owned_pop in events/ybs_automigrate_events.txt line : 152. Got pop
 							OR = {
 								has_job = slave_toiler
 								has_job = servant
@@ -163,19 +250,37 @@ event = {
 								amount > 1000
 							}
 						}
+						# at most 10 pops per month
+						check_variable = {
+							which = unemployment_migration_counter
+							value < 10
+						}
 					}
 					# PREV is the pop
 					# PREVPREV is planet it is from
 					PREVPREV = {
 						ybs_automigrate_unemployed = yes
+						if = {
+							limit = {
+								check_variable = {
+									which = ybs_planet_found
+									value = 1
+								}
+							}
+							change_variable = {
+								which = unemployment_migration_counter
+								value = 1
+							}
+						}
 					}
 				}
+				log = "Yagisan - 2 - unemployment_migration_counter [This.unemployment_migration_counter]"
 			}
 		}
 	}
 }
 
-event = {
+country_event = {
 	# Migrate unemployed robots to planets with jobs.
 	id = ybs_automigrate.3
 	hide_window = yes
@@ -238,13 +343,32 @@ event = {
 								amount > 1000
 							}
 						}
+						# at most 10 pops per month
+						check_variable = {
+							which = unemployment_migration_counter
+							value < 10
+						}
+						log = "Yagisan - 4 - unemployment_migration_counter [This.unemployment_migration_counter]"
 					}
 					# PREV is the pop
 					# PREVPREV is planet it is from
 					PREVPREV = {
 						ybs_automigrate_unemployed = yes
+						if = {
+							limit = {
+								check_variable = {
+									which = ybs_planet_found
+									value = 1
+								}
+							}
+							change_variable = {
+								which = unemployment_migration_counter
+								value = 1
+							}
+						}
 					}
 				}
+				log = "Yagisan - 3 - unemployment_migration_counter [This.unemployment_migration_counter]"
 			}
 		}
 	}
