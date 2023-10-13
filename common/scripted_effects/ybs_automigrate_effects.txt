@@ -1,0 +1,386 @@
+# THIS - Country
+# PREV - Pop
+# We are going to look for a new home for the unemployed pop based on its traits.
+# Where possible we will try to match them to a planet that they would be most
+# producive one. If that's not possible, then to a random planet that has jobs
+# and housing available.
+#
+# We are going to search in this order:
+# - Research
+# - Unity
+# - Mining
+# - Energy
+# - Farming
+# - 80% or better habitablity
+# - 60% or better habitablity
+# - 40% or better habitablity
+# - any free jobs
+ybs_automigrate_unemployed = {
+	set_variable = {
+		which = ybs_planet_found
+		value = -1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_research = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_unity = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at mining ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_mining = yes
+				}
+			}
+			# Try to find a mining world with free jobs.
+			ybs_move_pop_mining = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at energy ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_energy = yes
+				}
+			}
+			# Try to find an energy world with free jobs.
+			ybs_move_pop_energy = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at farming ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_farming = yes
+				}
+			}
+			# Try to find a farming world with free jobs.
+			ybs_move_pop_farming = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is there at least 80% habitablity ?
+		# Try to find a world with free jobs.
+		ybs_move_pop_hab80 = yes
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is there at least 60% habitablity ?
+		# Try to find a world with free jobs.
+		ybs_move_pop_hab60 = yes
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is there at least 40% habitablity ?
+		# Try to find a world with free jobs.
+		ybs_move_pop_hab40 = yes
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Try to find any world with free jobs.
+		ybs_move_pop_habany = yes
+	}
+	# If we found a new home, deduct cost.
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+		PREV = {
+			ybs_automigrate_charge_resettlement_cost = yes
+		}
+	}
+	# Could not find a suitable location.
+	else = {
+		log = "Yagisan - No Employment found."
+	}
+}
+
+ybs_move_pop_research = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a research planet
+			# designation is probably a good choice.
+			has_research_designation = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Research). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_unity = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a unity planet
+			# designation is probably a good choice.
+			has_unity_designation = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Unity). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_mining = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a mining planet
+			# designation is probably a good choice.
+			has_mining_designation = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Mining). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_energy = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this an energy planet
+			# designation is probably a good choice.
+			has_generator_designation = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Energy). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_farming = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a farming planet
+			# designation is probably a good choice.
+			has_farming_designation = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Farming). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_hab80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Hab 80). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_hab60 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# Do we have at least 60% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.6
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Hab 60). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_hab40 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# Do we have at least 40% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.4
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Hab 40). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_habany = {
+	random_owned_planet = {
+		limit = {
+			# Is there at least a job here ?
+			ybs_planet_is_resettlement_target = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Any). Resettling to [This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_automigrate_charge_resettlement_cost = {
+	# We really should take into account traits for this cost.
+	# Nomadic, Starborn, Stargazer, Double Jointed should be 25% cheaper.
+	# Sedentary, Bulky should be 25% more expensive.
+	# Instead we'll bill them 150 credits.
+	owner = {
+		add_resource = {
+			energy = -150
+		}
+	}
+}

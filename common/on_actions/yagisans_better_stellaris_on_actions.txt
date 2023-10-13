@@ -75,3 +75,10 @@ on_operation_finished = {
 		ybs_espionage.1
 	}
 }
+
+# Each month, try to migrate unemployed pops
+on_monthly_pulse = {
+	events = {
+		ybs_automigrate.0
+	}
+}

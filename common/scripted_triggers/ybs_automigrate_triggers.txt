@@ -1,0 +1,86 @@
+ybs_planet_is_resettlement_target = {
+	optimize_memory
+	free_housing >= 1
+	free_jobs >= 1
+	is_under_colonization = no
+}
+
+# Traits that give a bonus to everything like Efficient Processors or Excessive Endurance
+# are ignored as those pops, by design, work well anywhere.
+ybs_pop_is_good_for_research = {
+	optimize_memory
+	OR = {
+		has_trait = trait_intelligent
+		has_trait = trait_natural_engineers
+		has_trait = trait_natural_physicists
+		has_trait = trait_natural_sociologists
+		has_trait = trait_latent_psionic
+		has_trait = trait_psionic
+		has_trait = trait_erudite
+		has_trait = trait_enigmatic_intelligence
+		has_trait = trait_enigmatic_intelligence_poor
+		has_trait = trait_robot_logic_engines
+		has_trait = trait_brainslug
+		has_trait = trait_artificial_intelligence
+		has_trait = trait_elevated_synapses
+		has_trait = trait_cyborg_logic_engines
+		has_trait = trait_necrophage
+	}
+}
+
+ybs_pop_is_good_for_unity = {
+	optimize_memory
+	OR = {
+		has_trait = trait_traditional
+		has_trait = trait_latent_psionic
+		has_trait = trait_psionic
+		has_trait = trait_brainslug
+		has_trait = trait_robot_propaganda_machines
+		has_trait = trait_expressed_tradition
+		has_trait = trait_necrophage
+	}
+}
+
+ybs_pop_is_good_for_mining = {
+	optimize_memory
+	OR = {
+		has_trait = trait_industrious
+		has_trait = trait_very_strong
+		has_trait = trait_strong
+		has_trait = trait_robot_power_drills
+		has_trait = trait_juiced_power
+		has_trait = trait_crack_miner
+		has_trait = trait_cyborg_power_drills
+		has_trait = trait_syncretic_proles
+		has_trait = trait_cave_dweller
+	}
+}
+
+ybs_pop_is_good_for_energy = {
+	optimize_memory
+	OR = {
+		has_trait = trait_ingenious
+		has_trait = trait_very_strong
+		has_trait = trait_strong
+		has_trait = trait_robot_superconductive
+		has_trait = trait_juiced_power
+		has_trait = trait_technical_skill
+		has_trait = trait_cyborg_superconductive
+		has_trait = trait_syncretic_proles
+	}
+}
+
+ybs_pop_is_good_for_farming = {
+	optimize_memory
+	OR = {
+		has_trait = trait_agrarian
+		has_trait = trait_very_strong
+		has_trait = trait_strong
+		has_trait = trait_robot_harvesters
+		has_trait = trait_juiced_power
+		has_trait = trait_farm_hands
+		has_trait = trait_excessive_endurance
+		has_trait = trait_cyborg_harvesters
+		has_trait = trait_syncretic_proles
+	}
+}
