@@ -8,10 +8,17 @@ event = {
 			limit = {
 				is_ai = no
 			}
+			# Unemployed Organics
 			country_event = {
 				id = ybs_automigrate.1
 				days = 7
 			}
+			# Toilers / Servants
+			country_event = {
+				id = ybs_automigrate.2
+				days = 8
+			}
+			# Unemployed Robots
 			country_event = {
 				id = ybs_automigrate.3
 				days = 9
@@ -71,7 +78,81 @@ event = {
 						}
 					}
 				}
-				#log = "Yagisan - Found Unemployed [This.GetName] on [PREV.GetName]"
+				log = "Yagisan - Found Unemployed [This.GetName]"
+				if = {
+					limit = {
+						# minimum of 1K energy to move pops
+						owner = {
+							has_country_resource = {
+								type = energy
+								amount > 1000
+							}
+						}
+					}
+					# PREV is the pop
+					# PREVPREV is planet it is from
+					PREVPREV = {
+						ybs_automigrate_unemployed = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+event = {
+	# Migrate toilers on thrall to planets with jobs.
+	id = ybs_automigrate.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						any_owned_pop = {
+							OR = {
+								has_job = slave_toiler
+								has_job = servant
+							}
+						}
+					}
+					count > 0
+				}
+				# Don't try to migrate off planets under attack
+				has_orbital_bombardment = no
+			}
+			log = "Yagisan - Checking Toiler/Servant Unemployment for [ROOT.GetName] on [This.Planet.GetName]"
+			every_owned_pop = {
+				limit = {
+					OR = {
+						has_job = slave_toiler
+						has_job = servant
+					}
+					# Ignore assimilating pops
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_assimilation
+						}
+					}
+					# minimum of 1K energy to move pops
+					owner = {
+						has_country_resource = {
+							type = energy
+							amount > 1000
+						}
+					}
+					# Must be allowed to migrate
+					has_migration_control = {
+						type = no
+					}
+					# Must not be the last pop
+					planet = {
+						count_owned_pop = {
+							count > 1
+						}
+					}
+				}
 				log = "Yagisan - Found Unemployed [This.GetName]"
 				if = {
 					limit = {
@@ -147,7 +228,6 @@ event = {
 						}
 					}
 				}
-				#log = "Yagisan - Found Unemployed [This.GetName] on [PREV.GetName]"
 				log = "Yagisan - Found Unemployed [This.GetName]"
 				if = {
 					limit = {
