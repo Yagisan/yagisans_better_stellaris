@@ -144,6 +144,7 @@ sstarpatrolbase = {
 						is_star_class = sc_black_hole
 					}
 				}
+			}
 			# First to shoot often wins.
 			target_uplink_computer = {
 				base = 3
