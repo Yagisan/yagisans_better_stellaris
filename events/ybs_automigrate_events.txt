@@ -4,6 +4,7 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		# unemployed_migration_counter is set/reset in ybs_automigrate.1
 		every_country = {
 			limit = {
 				is_ai = no
@@ -13,15 +14,57 @@ event = {
 				id = ybs_automigrate.1
 				days = 7
 			}
+			if = {
+				limit = {
+					is_variable_set = unemployed_migration_counter
+				}
+				log = "Variable Check: Post Organics unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = unemployed_migration_counter
+					}
+				}
+				log = "Variable Check: Post Organics unemployed_migration_counter doesnt exist"
+			}
 			# Toilers / Servants
 			country_event = {
 				id = ybs_automigrate.2
 				days = 8
 			}
+			if = {
+				limit = {
+					is_variable_set = unemployed_migration_counter
+				}
+				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = unemployed_migration_counter
+					}
+				}
+				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter doesnt exist"
+			}
 			# Unemployed Robots
 			country_event = {
 				id = ybs_automigrate.3
 				days = 9
+			}
+			if = {
+				limit = {
+					is_variable_set = unemployed_migration_counter
+				}
+				log = "Variable Check: Post Robots unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = unemployed_migration_counter
+					}
+				}
+				log = "Variable Check: Post Robots unemployed_migration_counter doesnt exist"
 			}
 		}
 	}
@@ -36,26 +79,37 @@ country_event = {
 		set_variable = {
 			# Max out at 10 unemployed migrations per month.
 			# Without a counter, and with enough money, it will
-			# overshoot and move more pops in than jobs available ...
-			which = unemployment_migration_counter
+			# overshoot and move more pops in than jobs available.
+			which = unemployed_migration_counter
+			value = 0
+		}
+		set_variable = {
+			# Free organics are highest priority with unemployed migration each month.
+			which = organic_migration_counter
 			value = 0
 		}
 		if = {
 			limit = {
-				is_variable_set = unemployment_migration_counter
+				is_variable_set = organic_migration_counter
 			}
-			log = "1 Variable Check: unemployment_migration_counter exists, value: [This.unemployment_migration_counter]"
+			log = "Variable Check: organic_migration_counter exists, value: [This.organic_migration_counter]"
 		}
 		if = {
 			limit = {
 				NOT = {
-					is_variable_set = unemployment_migration_counter
+					is_variable_set = organic_migration_counter
 				}
 			}
-			log = "1 Variable Check: unemployment_migration_counter doesnt exist"
+			log = "Variable Check: organic_migration_counter doesnt exist"
 		}
+		log = "Yagisan - Checking Organic Unemployment for [ROOT.GetName]"
 		every_owned_planet = {
 			limit = {
+				# at most 10 pops per month
+				check_variable = {
+					which = organic_migration_counter
+					value < 10
+				}
 				count_owned_pop = {
 					limit = {
 						is_unemployed = yes
@@ -68,7 +122,6 @@ country_event = {
 				# Don't try to migrate off planets under attack
 				has_orbital_bombardment = no
 			}
-			log = "Yagisan - Checking Organic Unemployment for [ROOT.GetName] on [This.Planet.GetName]"
 			every_owned_pop = {
 				limit = {
 					is_unemployed = yes
@@ -101,25 +154,11 @@ country_event = {
 				}
 				log = "Yagisan - Found Unemployed [This.GetName]"
 				set_variable = {
-					# Copy unemployment_migration_counter into this pop scope so we don't overshoot.
+					# Copy organic_migration_counter into this pop scope so we don't overshoot.
 					which = inprogress_migration_counter
-					value = PREVPREV.unemployment_migration_counter
+					value = PREVPREV.organic_migration_counter
 				}
 				if = {
-					if = {
-						limit = {
-							is_variable_set = inprogress_migration_counter
-						}
-						log = "Variable Check: Pre ybs_automigrate_unemployed = yes - inprogress_migration_counter exists, value: [This.inprogress_migration_counter]"
-					}
-					if = {
-						limit = {
-							NOT = {
-								is_variable_set = inprogress_migration_counter
-							}
-						}
-						log = "Variable Check: Pre ybs_automigrate_unemployed = yes - inprogress_migration_counter doesnt exist"
-					}
 					limit = {
 						# minimum of 1K energy to move pops
 						owner = {
@@ -146,42 +185,32 @@ country_event = {
 								}
 							}
 							change_variable = {
-								which = unemployment_migration_counter
+								which = organic_migration_counter
 								value = 1
 							}
 						}
 					}
 				}
-				if = {
-					limit = {
-						is_variable_set = unemployment_migration_counter
-					}
-					log = "Variable Check: Post ybs_automigrate_unemployed = yes - unemployment_migration_counter exists, value: [This.unemployment_migration_counter]"
-				}
-				if = {
-					limit = {
-						NOT = {
-							is_variable_set = unemployment_migration_counter
-						}
-					}
-					log = "Variable Check: Post ybs_automigrate_unemployed = yes -unemployment_migration_counter doesnt exist"
-				}
-				log = "Yagisan - 1 - unemployment_migration_counter [This.unemployment_migration_counter]"
 			}
 		}
 		if = {
 			limit = {
-				is_variable_set = unemployment_migration_counter
+				is_variable_set = organic_migration_counter
 			}
-			log = "Variable Check: Loop end - unemployment_migration_counter exists, value: [This.unemployment_migration_counter]"
+			log = "Variable Check: Loop end - organic_migration_counter exists, value: [This.organic_migration_counter]"
 		}
 		if = {
 			limit = {
 				NOT = {
-					is_variable_set = unemployment_migration_counter
+					is_variable_set = organic_migration_counter
 				}
 			}
-			log = "Variable Check: Loop end - unemployment_migration_counter doesnt exist"
+			log = "Variable Check: Loop end - organic_migration_counter doesnt exist"
+		}
+		set_variable = {
+			# Copy organic_migration_counter into the previous scope so we can allocate the leftovers to other classes.
+			which = unemployed_migration_counter
+			value = organic_migration_counter
 		}
 	}
 }
@@ -192,6 +221,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		log = "Yagisan - Checking Toiler/Servant Unemployment for [ROOT.GetName]"
 		every_owned_planet = {
 			limit = {
 				count_owned_pop = {
@@ -209,7 +239,6 @@ country_event = {
 				# Don't try to migrate off planets under attack
 				has_orbital_bombardment = no
 			}
-			log = "Yagisan - Checking Toiler/Servant Unemployment for [ROOT.GetName] on [This.Planet.GetName]"
 			every_owned_pop = {
 				limit = {
 					OR = {
@@ -252,7 +281,7 @@ country_event = {
 						}
 						# at most 10 pops per month
 						check_variable = {
-							which = unemployment_migration_counter
+							which = organic_migration_counter
 							value < 10
 						}
 					}
@@ -268,13 +297,12 @@ country_event = {
 								}
 							}
 							change_variable = {
-								which = unemployment_migration_counter
+								which = organic_migration_counter
 								value = 1
 							}
 						}
 					}
 				}
-				log = "Yagisan - 2 - unemployment_migration_counter [This.unemployment_migration_counter]"
 			}
 		}
 	}
@@ -286,8 +314,33 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		set_variable = {
+			# Robots are lowest priority with unemployed migration each month.
+			which = robotic_migration_counter
+			value = unemployed_migration_counter
+		}
+		if = {
+			limit = {
+				is_variable_set = robotic_migration_counter
+			}
+			log = "Variable Check: robotic_migration_counter exists, value: [This.robotic_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = robotic_migration_counter
+				}
+			}
+			log = "Variable Check: robotic_migration_counter doesnt exist"
+		}
+		log = "Yagisan - Checking Robotic Unemployment for [ROOT.GetName]"
 		every_owned_planet = {
 			limit = {
+				# at most 10 pops per month
+				check_variable = {
+					which = robotic_migration_counter
+					value < 10
+				}
 				count_owned_pop = {
 					limit = {
 						is_unemployed = yes
@@ -300,7 +353,6 @@ country_event = {
 				# Don't try to migrate off planets under attack
 				has_orbital_bombardment = no
 			}
-			log = "Yagisan - Checking Robotic Unemployment for [ROOT.GetName] on [This.Planet.GetName]"
 			every_owned_pop = {
 				limit = {
 					is_unemployed = yes
@@ -334,6 +386,11 @@ country_event = {
 					}
 				}
 				log = "Yagisan - Found Unemployed [This.GetName]"
+				set_variable = {
+					# Copy robotic_migration_counter into this pop scope so we don't overshoot.
+					which = inprogress_migration_counter
+					value = PREVPREV.robotic_migration_counter
+				}
 				if = {
 					limit = {
 						# minimum of 1K energy to move pops
@@ -345,10 +402,9 @@ country_event = {
 						}
 						# at most 10 pops per month
 						check_variable = {
-							which = unemployment_migration_counter
+							which = inprogress_migration_counter
 							value < 10
 						}
-						log = "Yagisan - 4 - unemployment_migration_counter [This.unemployment_migration_counter]"
 					}
 					# PREV is the pop
 					# PREVPREV is planet it is from
@@ -362,14 +418,32 @@ country_event = {
 								}
 							}
 							change_variable = {
-								which = unemployment_migration_counter
+								which = robotic_migration_counter
 								value = 1
 							}
 						}
 					}
 				}
-				log = "Yagisan - 3 - unemployment_migration_counter [This.unemployment_migration_counter]"
 			}
+		}
+		if = {
+			limit = {
+				is_variable_set = robotic_migration_counter
+			}
+			log = "Variable Check: Loop end - robotic_migration_counter exists, value: [This.robotic_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = robotic_migration_counter
+				}
+			}
+			log = "Variable Check: Loop end - robotic_migration_counter doesnt exist"
+		}
+		set_variable = {
+			# Copy robotic_migration_counter into the previous scope so we can allocate the leftovers to other classes.
+			which = unemployed_migration_counter
+			value = robotic_migration_counter
 		}
 	}
 }
