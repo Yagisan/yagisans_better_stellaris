@@ -183,7 +183,7 @@ ybs_move_pop_research = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Research). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Research). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -205,7 +205,7 @@ ybs_move_pop_unity = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Unity). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Unity). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -227,7 +227,7 @@ ybs_move_pop_mining = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Mining). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Mining). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -249,7 +249,7 @@ ybs_move_pop_energy = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Energy). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Energy). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -271,7 +271,7 @@ ybs_move_pop_farming = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Farming). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Farming). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -295,7 +295,7 @@ ybs_move_pop_hab80 = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Hab 80). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Hab 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -319,7 +319,7 @@ ybs_move_pop_hab60 = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Hab 60). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Hab 60). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -343,7 +343,7 @@ ybs_move_pop_hab40 = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Hab 40). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Hab 40). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -363,7 +363,7 @@ ybs_move_pop_habany = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Any). Resettling to [This.GetName]"
+		log = "Yagisan - Employment found (Any). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
