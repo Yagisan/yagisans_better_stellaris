@@ -35,7 +35,7 @@ ybs_automigrate_unemployed = {
 				}
 			}
 			# Try to find a research world with free jobs.
-			ybs_move_pop_research = yes
+			ybs_move_pop_research_80 = yes
 		}
 	}
 	if = {
@@ -53,7 +53,7 @@ ybs_automigrate_unemployed = {
 				}
 			}
 			# Try to find a research world with free jobs.
-			ybs_move_pop_unity = yes
+			ybs_move_pop_unity_80 = yes
 		}
 	}
 	if = {
@@ -71,7 +71,7 @@ ybs_automigrate_unemployed = {
 				}
 			}
 			# Try to find a mining world with free jobs.
-			ybs_move_pop_mining = yes
+			ybs_move_pop_mining_80 = yes
 		}
 	}
 	if = {
@@ -89,7 +89,7 @@ ybs_automigrate_unemployed = {
 				}
 			}
 			# Try to find an energy world with free jobs.
-			ybs_move_pop_energy = yes
+			ybs_move_pop_energy_80 = yes
 		}
 	}
 	if = {
@@ -107,7 +107,7 @@ ybs_automigrate_unemployed = {
 				}
 			}
 			# Try to find a farming world with free jobs.
-			ybs_move_pop_farming = yes
+			ybs_move_pop_farming_80 = yes
 		}
 	}
 	if = {
@@ -119,7 +119,7 @@ ybs_automigrate_unemployed = {
 		}
 		# Is there at least 80% habitablity ?
 		# Try to find a world with free jobs.
-		ybs_move_pop_hab80 = yes
+		ybs_move_pop_hab_80 = yes
 	}
 	if = {
 		limit = {
@@ -130,7 +130,7 @@ ybs_automigrate_unemployed = {
 		}
 		# Is there at least 60% habitablity ?
 		# Try to find a world with free jobs.
-		ybs_move_pop_hab60 = yes
+		ybs_move_pop_hab_60 = yes
 	}
 	if = {
 		limit = {
@@ -141,7 +141,7 @@ ybs_automigrate_unemployed = {
 		}
 		# Is there at least 40% habitablity ?
 		# Try to find a world with free jobs.
-		ybs_move_pop_hab40 = yes
+		ybs_move_pop_hab_40 = yes
 	}
 	if = {
 		limit = {
@@ -151,7 +151,7 @@ ybs_automigrate_unemployed = {
 			}
 		}
 		# Try to find any world with free jobs.
-		ybs_move_pop_habany = yes
+		ybs_move_pop_hab_any = yes
 	}
 	# If we found a new home, deduct cost.
 	if = {
@@ -171,19 +171,24 @@ ybs_automigrate_unemployed = {
 	}
 }
 
-ybs_move_pop_research = {
+ybs_move_pop_research_80 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a research planet
 			# designation is probably a good choice.
 			has_research_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
 		}
 		resettle_pop = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Research). Resettling to \\[This.GetName]"
+		log = "Yagisan - Employment found (Research - 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -193,19 +198,24 @@ ybs_move_pop_research = {
 	}
 }
 
-ybs_move_pop_unity = {
+ybs_move_pop_unity_80 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a unity planet
 			# designation is probably a good choice.
 			has_unity_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
 		}
 		resettle_pop = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Unity). Resettling to \\[This.GetName]"
+		log = "Yagisan - Employment found (Unity - 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -215,19 +225,24 @@ ybs_move_pop_unity = {
 	}
 }
 
-ybs_move_pop_mining = {
+ybs_move_pop_mining_80 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a mining planet
 			# designation is probably a good choice.
 			has_mining_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
 		}
 		resettle_pop = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Mining). Resettling to \\[This.GetName]"
+		log = "Yagisan - Employment found (Mining - 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -237,19 +252,24 @@ ybs_move_pop_mining = {
 	}
 }
 
-ybs_move_pop_energy = {
+ybs_move_pop_energy_80 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this an energy planet
 			# designation is probably a good choice.
 			has_generator_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
 		}
 		resettle_pop = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Energy). Resettling to \\[This.GetName]"
+		log = "Yagisan - Employment found (Energy - 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -259,19 +279,24 @@ ybs_move_pop_energy = {
 	}
 }
 
-ybs_move_pop_farming = {
+ybs_move_pop_farming_80 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a farming planet
 			# designation is probably a good choice.
 			has_farming_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
 		}
 		resettle_pop = {
 			pop = PREVPREV
 			planet = this
 		}
-		log = "Yagisan - Employment found (Farming). Resettling to \\[This.GetName]"
+		log = "Yagisan - Employment found (Farming - 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
@@ -281,7 +306,7 @@ ybs_move_pop_farming = {
 	}
 }
 
-ybs_move_pop_hab80 = {
+ybs_move_pop_hab_80 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
@@ -305,7 +330,7 @@ ybs_move_pop_hab80 = {
 	}
 }
 
-ybs_move_pop_hab60 = {
+ybs_move_pop_hab_60 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
@@ -329,7 +354,7 @@ ybs_move_pop_hab60 = {
 	}
 }
 
-ybs_move_pop_hab40 = {
+ybs_move_pop_hab_40 = {
 	random_owned_planet = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
@@ -353,7 +378,7 @@ ybs_move_pop_hab40 = {
 	}
 }
 
-ybs_move_pop_habany = {
+ybs_move_pop_hab_any = {
 	random_owned_planet = {
 		limit = {
 			# Is there at least a job here ?
