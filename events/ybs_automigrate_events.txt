@@ -215,24 +215,36 @@ country_event = {
 }
 
 country_event = {
-	# Migrate toilers on thrall to planets with jobs.
+	# Migrate toilers / servants to planets with jobs.
 	id = ybs_automigrate.2
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		set_variable = {
+			# Toilers / Servants are next highest priority with unemployed migration each month.
+			which = toiler_migration_counter
+			value = unemployed_migration_counter
+		}
+		if = {
+			limit = {
+				is_variable_set = toiler_migration_counter
+			}
+			log = "Variable Check: toiler_migration_counter exists, value: [This.toiler_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = toiler_migration_counter
+				}
+			}
+			log = "Variable Check: toiler_migration_counter doesnt exist"
+		}
 		every_owned_planet = {
 			limit = {
-				count_owned_pop = {
-					limit = {
-						any_owned_pop = {
-							#Invalid Scope type for trigger any_owned_pop in events/ybs_automigrate_events.txt line : 152. Got pop
-							OR = {
-								has_job = slave_toiler
-								has_job = servant
-							}
-						}
-					}
-					count > 0
+				# at most 10 pops per month
+				check_variable = {
+					which = toiler_migration_counter
+					value < 10
 				}
 				# Don't try to migrate off planets under attack
 				has_orbital_bombardment = no
@@ -243,6 +255,7 @@ country_event = {
 						has_job = slave_toiler
 						has_job = servant
 					}
+					is_being_purged = no
 					# Ignore assimilating pops
 					NOT = {
 						has_citizenship_type = {
@@ -267,6 +280,11 @@ country_event = {
 						}
 					}
 				}
+				set_variable = {
+					# Copy organic_migration_counter into this pop scope so we don't overshoot.
+					which = inprogress_migration_counter
+					value = PREVPREV.toiler_migration_counter
+				}
 				if = {
 					limit = {
 						# minimum of 1K energy to move pops
@@ -278,7 +296,7 @@ country_event = {
 						}
 						# at most 10 pops per month
 						check_variable = {
-							which = organic_migration_counter
+							which = inprogress_migration_counter
 							value < 10
 						}
 					}
@@ -294,13 +312,32 @@ country_event = {
 								}
 							}
 							change_variable = {
-								which = organic_migration_counter
+								which = toiler_migration_counter
 								value = 1
 							}
 						}
 					}
 				}
 			}
+		}
+		if = {
+			limit = {
+				is_variable_set = toiler_migration_counter
+			}
+			log = "Variable Check: Loop end - toiler_migration_counter exists, value: [This.toiler_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = toiler_migration_counter
+				}
+			}
+			log = "Variable Check: Loop end - toiler_migration_counter doesnt exist"
+		}
+		set_variable = {
+			# Copy toiler_migration_counter into the previous scope so we can allocate the leftovers to other classes.
+			which = unemployed_migration_counter
+			value = toiler_migration_counter
 		}
 	}
 }
