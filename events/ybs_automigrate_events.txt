@@ -4,6 +4,15 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		# Unemployment migration logic is as follows:
+		# First migrate unemployed organics to planets with jobs.
+		# Next migrate unemployed robots to planets with jobs.
+		# Finally migrate toilers / servants to planets with jobs.
+		# Migration is limited both by a maximum counter and the ablity
+		# to pay for the migration. Migration prefers the planet with
+		# the highest habitablity that matches the best attributes of
+		# the pop. Eg Smarter pops will prefer research worlds.
+		# Ultimatly it will fall through to any world with a free job.
 		# unemployed_migration_counter is set/reset in ybs_automigrate.1
 		every_country = {
 			limit = {
@@ -28,28 +37,9 @@ event = {
 				}
 				log = "Variable Check: Post Organics unemployed_migration_counter doesnt exist"
 			}
-			# Toilers / Servants
-			country_event = {
-				id = ybs_automigrate.2
-				days = 8
-			}
-			if = {
-				limit = {
-					is_variable_set = unemployed_migration_counter
-				}
-				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
-			}
-			if = {
-				limit = {
-					NOT = {
-						is_variable_set = unemployed_migration_counter
-					}
-				}
-				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter doesnt exist"
-			}
 			# Unemployed Robots
 			country_event = {
-				id = ybs_automigrate.3
+				id = ybs_automigrate.2
 				days = 9
 			}
 			if = {
@@ -65,6 +55,25 @@ event = {
 					}
 				}
 				log = "Variable Check: Post Robots unemployed_migration_counter doesnt exist"
+			}
+			# Toilers / Servants
+			country_event = {
+				id = ybs_automigrate.3
+				days = 8
+			}
+			if = {
+				limit = {
+					is_variable_set = unemployed_migration_counter
+				}
+				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = unemployed_migration_counter
+					}
+				}
+				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter doesnt exist"
 			}
 		}
 	}
@@ -215,141 +224,13 @@ country_event = {
 }
 
 country_event = {
-	# Migrate toilers / servants to planets with jobs.
+	# Migrate unemployed robots to planets with jobs.
 	id = ybs_automigrate.2
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		set_variable = {
-			# Toilers / Servants are next highest priority with unemployed migration each month.
-			which = toiler_migration_counter
-			value = unemployed_migration_counter
-		}
-		if = {
-			limit = {
-				is_variable_set = toiler_migration_counter
-			}
-			log = "Variable Check: toiler_migration_counter exists, value: [This.toiler_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = toiler_migration_counter
-				}
-			}
-			log = "Variable Check: toiler_migration_counter doesnt exist"
-		}
-		every_owned_planet = {
-			limit = {
-				# at most 10 pops per month
-				check_variable = {
-					which = toiler_migration_counter
-					value < 10
-				}
-				# Don't try to migrate off planets under attack
-				has_orbital_bombardment = no
-			}
-			every_owned_pop = {
-				limit = {
-					OR = {
-						has_job = slave_toiler
-						has_job = servant
-					}
-					is_being_purged = no
-					# Ignore assimilating pops
-					NOT = {
-						has_citizenship_type = {
-							type = citizenship_assimilation
-						}
-					}
-					# minimum of 1K energy to move pops
-					owner = {
-						has_country_resource = {
-							type = energy
-							amount > 1000
-						}
-					}
-					# Must be allowed to migrate
-					has_migration_control = {
-						type = no
-					}
-					# Must not be the last pop
-					planet = {
-						count_owned_pop = {
-							count > 1
-						}
-					}
-				}
-				set_variable = {
-					# Copy organic_migration_counter into this pop scope so we don't overshoot.
-					which = inprogress_migration_counter
-					value = PREVPREV.toiler_migration_counter
-				}
-				if = {
-					limit = {
-						# minimum of 1K energy to move pops
-						owner = {
-							has_country_resource = {
-								type = energy
-								amount > 1000
-							}
-						}
-						# at most 10 pops per month
-						check_variable = {
-							which = inprogress_migration_counter
-							value < 10
-						}
-					}
-					# PREV is the pop
-					# PREVPREV is planet it is from
-					PREVPREV = {
-						ybs_automigrate_unemployed = yes
-						if = {
-							limit = {
-								check_variable = {
-									which = ybs_planet_found
-									value = 1
-								}
-							}
-							change_variable = {
-								which = toiler_migration_counter
-								value = 1
-							}
-						}
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				is_variable_set = toiler_migration_counter
-			}
-			log = "Variable Check: Loop end - toiler_migration_counter exists, value: [This.toiler_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = toiler_migration_counter
-				}
-			}
-			log = "Variable Check: Loop end - toiler_migration_counter doesnt exist"
-		}
-		set_variable = {
-			# Copy toiler_migration_counter into the previous scope so we can allocate the leftovers to other classes.
-			which = unemployed_migration_counter
-			value = toiler_migration_counter
-		}
-	}
-}
-
-country_event = {
-	# Migrate unemployed robots to planets with jobs.
-	id = ybs_automigrate.3
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		set_variable = {
-			# Robots are lowest priority with unemployed migration each month.
+			# Robots are next highest priority with unemployed migration each month.
 			which = robotic_migration_counter
 			value = unemployed_migration_counter
 		}
@@ -476,6 +357,134 @@ country_event = {
 			# Copy robotic_migration_counter into the previous scope so we can allocate the leftovers to other classes.
 			which = unemployed_migration_counter
 			value = robotic_migration_counter
+		}
+	}
+}
+
+country_event = {
+	# Migrate toilers / servants to planets with jobs.
+	id = ybs_automigrate.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = {
+			# Toilers / Servants are lowest priority with unemployed migration each month.
+			which = toiler_migration_counter
+			value = unemployed_migration_counter
+		}
+		if = {
+			limit = {
+				is_variable_set = toiler_migration_counter
+			}
+			log = "Variable Check: toiler_migration_counter exists, value: [This.toiler_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = toiler_migration_counter
+				}
+			}
+			log = "Variable Check: toiler_migration_counter doesnt exist"
+		}
+		every_owned_planet = {
+			limit = {
+				# at most 10 pops per month
+				check_variable = {
+					which = toiler_migration_counter
+					value < 10
+				}
+				# Don't try to migrate off planets under attack
+				has_orbital_bombardment = no
+			}
+			every_owned_pop = {
+				limit = {
+					OR = {
+						has_job = slave_toiler
+						has_job = servant
+					}
+					is_being_purged = no
+					# Ignore assimilating pops
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_assimilation
+						}
+					}
+					# minimum of 1K energy to move pops
+					owner = {
+						has_country_resource = {
+							type = energy
+							amount > 1000
+						}
+					}
+					# Must be allowed to migrate
+					has_migration_control = {
+						type = no
+					}
+					# Must not be the last pop
+					planet = {
+						count_owned_pop = {
+							count > 1
+						}
+					}
+				}
+				set_variable = {
+					# Copy organic_migration_counter into this pop scope so we don't overshoot.
+					which = inprogress_migration_counter
+					value = PREVPREV.toiler_migration_counter
+				}
+				if = {
+					limit = {
+						# minimum of 1K energy to move pops
+						owner = {
+							has_country_resource = {
+								type = energy
+								amount > 1000
+							}
+						}
+						# at most 10 pops per month
+						check_variable = {
+							which = inprogress_migration_counter
+							value < 10
+						}
+					}
+					# PREV is the pop
+					# PREVPREV is planet it is from
+					PREVPREV = {
+						ybs_automigrate_unemployed = yes
+						if = {
+							limit = {
+								check_variable = {
+									which = ybs_planet_found
+									value = 1
+								}
+							}
+							change_variable = {
+								which = toiler_migration_counter
+								value = 1
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_set = toiler_migration_counter
+			}
+			log = "Variable Check: Loop end - toiler_migration_counter exists, value: [This.toiler_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = toiler_migration_counter
+				}
+			}
+			log = "Variable Check: Loop end - toiler_migration_counter doesnt exist"
+		}
+		set_variable = {
+			# Copy toiler_migration_counter into the previous scope so we can allocate the leftovers to other classes.
+			which = unemployed_migration_counter
+			value = toiler_migration_counter
 		}
 		log = "Yagisan - Unemployment Migration Complete for [ROOT.GetName]. [This.unemployed_migration_counter] migrations completed."
 	}
