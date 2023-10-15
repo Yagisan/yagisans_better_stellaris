@@ -25,6 +25,11 @@ event = {
 			limit = {
 				is_ai = no
 			}
+			# Greener Pastures
+			country_event = {
+				id = ybs_automigrate.4
+				days = 5
+			}
 			# Unemployed Organics
 			country_event = {
 				id = ybs_automigrate.1
@@ -508,5 +513,154 @@ country_event = {
 			value = toiler_migration_counter
 		}
 		log = "Yagisan - Unemployment Migration Complete for [ROOT.GetName]. [This.unemployed_migration_counter] migrations completed."
+	}
+}
+
+country_event = {
+	# Migrate EMPLOYED organics to planets with better habitability jobs.
+	id = ybs_automigrate.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = {
+			# Max out at 3 greener pastures migrations per month.
+			# Without a counter, and with enough money, it will
+			# overshoot and move more pops in than jobs available.
+			which = greener_pastures_migration_counter
+			value = 0
+		}
+		if = {
+			limit = {
+				is_variable_set = greener_pastures_migration_counter
+			}
+			log = "Variable Check: greener_pastures_migration_counter exists, value: [This.greener_pastures_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = greener_pastures_migration_counter
+				}
+			}
+			log = "Variable Check: greener_pastures_migration_counter doesnt exist"
+		}
+		log = "Yagisan - Checking Greener Pastures for [ROOT.GetName]."
+		every_owned_planet = {
+			limit = {
+				# at most 3 pops per month
+				check_variable = {
+					which = greener_pastures_migration_counter
+					value < 3
+				}
+				count_owned_pop = {
+					limit = {
+						is_unemployed = no
+						is_being_purged = no
+						# Must not be a robot
+						is_robot_pop = no
+					}
+					count > 0
+				}
+				# Under 60% Habitability only
+				planet = {
+					habitability = {
+						who = PREV
+						value < 0.6
+					}
+				}
+				# Don't try to migrate off planets under attack
+				has_orbital_bombardment = no
+			}
+			every_owned_pop = {
+				limit = {
+					is_unemployed = no
+					is_being_purged = no
+					# Ignore assimilating pops
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_assimilation
+						}
+					}
+					# minimum of 1K energy to move pops
+					owner = {
+						has_country_resource = {
+							type = energy
+							amount > 1000
+						}
+					}
+					# Must be allowed to migrate
+					has_migration_control = {
+						type = no
+					}
+					# Must not be a robot
+					is_robot_pop = no
+					# Under 60% Habitability only
+					planet = {
+						habitability = {
+							who = PREV
+							value < 0.6
+						}
+					}
+					# Must not be the last 3 pops
+					planet = {
+						count_owned_pop = {
+							count > 3
+						}
+					}
+				}
+				set_variable = {
+					# Copy greener_pastures_migration_counter into this pop scope so we don't overshoot.
+					which = inprogress_migration_counter
+					value = PREVPREV.greener_pastures_migration_counter
+				}
+				if = {
+					limit = {
+						# minimum of 1K energy to move pops
+						owner = {
+							has_country_resource = {
+								type = energy
+								amount > 1000
+							}
+						}
+						# at most 3 pops per month
+						check_variable = {
+							which = inprogress_migration_counter
+							value < 3
+						}
+					}
+					# PREV is the pop
+					# PREVPREV is planet it is from
+					PREVPREV = {
+						ybs_automigrate_greener_pastures = yes
+						if = {
+							limit = {
+								check_variable = {
+									which = ybs_planet_found
+									value = 1
+								}
+							}
+							change_variable = {
+								which = greener_pastures_migration_counter
+								value = 1
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_set = greener_pastures_migration_counter
+			}
+			log = "Variable Check: Loop end - greener_pastures_migration_counter exists, value: [This.greener_pastures_migration_counter]"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = greener_pastures_migration_counter
+				}
+			}
+			log = "Variable Check: Loop end - greener_pastures_migration_counter doesnt exist"
+		}
+		log = "Yagisan - Greener Pastures Migration Complete for [ROOT.GetName]. [This.greener_pastures_migration_counter] migrations completed."
 	}
 }
