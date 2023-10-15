@@ -535,6 +535,8 @@ ybs_automigrate_unemployed = {
 		}
 		PREV = {
 			ybs_automigrate_charge_resettlement_cost = yes
+			# Clear category so they will take any available jobs.
+			clear_pop_category = yes
 		}
 	}
 	# Could not find a suitable location.
@@ -904,6 +906,8 @@ ybs_automigrate_greener_pastures = {
 		}
 		PREV = {
 			ybs_automigrate_charge_resettlement_cost = yes
+			# Clear category so they will take any available jobs.
+			clear_pop_category = yes
 		}
 	}
 	# Could not find a suitable location.
