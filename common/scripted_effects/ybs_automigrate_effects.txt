@@ -1613,13 +1613,814 @@ ybs_move_pop_hab_any = {
 }
 
 ybs_automigrate_charge_resettlement_cost = {
+	# Because we resettled the pops, it was done for free. We need to
+	# account for this cost now. We'll have to approximate it though.
+	# Because we are only migrating to a location with free jobs, I have
+	# elected to only bill energy, and waive the unity fee that would occur
+	# from manual resettlement. I consider the pops willing to move.
 	# We really should take into account traits for this cost.
 	# Nomadic, Starborn, Stargazer, Double Jointed should be 25% cheaper.
 	# Sedentary, Bulky should be 25% more expensive.
-	# Instead we'll bill them 150 credits.
-	owner = {
-		add_resource = {
-			energy = -150
+	planet = {
+		set_variable = {
+			which = migration_modifier_counter
+			value = 0
+		}
+	}
+	# Nomadic / Sedentary are exclusive traits.
+	# Double Jointed / Bulky are exclusive traits.
+	# Stargazer is hive only. No opposite trait.
+	if = {
+		limit = {
+			has_trait = trait_nomadic
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = trait_robot_double_jointed
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = trait_stargazer
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = trait_sedentary
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = -1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = trait_robot_bulky
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = -1
+			}
+		}
+	}
+	# Starborn is pre-sapient only. It will be kept when uplift so can stack.
+	# No opposite trait.
+	if = {
+		limit = {
+			has_trait = trait_stargazer
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	# If they have the adaptability tradition, and appropriation it should
+	# be a 33% discount.
+	if = {
+		limit = {
+			owner = {
+				has_active_tradition = tr_adaptability_appropriation
+			}
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	# If they have the versatility tradition, and operational proxies it should
+	# be a 33% discount.
+	if = {
+		limit = {
+			owner = {
+				has_active_tradition = tr_versatility_operational_proxies
+			}
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	# Corvee System should waive unity costs. I'll instead add a 25% discount
+	# to the energy costs.
+	if = {
+		limit = {
+			owner = {
+				has_civic = civic_corvee_system
+			}
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	# Subsumed Will should waive unity costs. I'll instead add a 25% discount
+	# to the energy costs.
+	if = {
+		limit = {
+			owner = {
+				has_civic = civic_hive_subsumed_will
+			}
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	# OTA Updates should waive unity costs. I'll instead add a 25% discount
+	# to the energy costs.
+	if = {
+		limit = {
+			owner = {
+				has_civic = civic_machine_ota_updates
+			}
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 1
+			}
+		}
+	}
+	# Billing logic
+	# migration_modifier_counter = -1 - 125% cost
+	# migration_modifier_counter =  0 - 100% cost
+	# migration_modifier_counter =  1 -  75% cost
+	# migration_modifier_counter =  2 -  50% cost
+	# migration_modifier_counter =  3 -  25% cost
+	# migration_modifier_counter =  4 -   0% cost
+	switch = {
+		trigger = is_pop_category
+		ruler = {
+			# Ruler base is 500
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -625
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -500
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -375
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -250
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		specialist = {
+			# Specialist base is 250
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -321.5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -250
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -187.5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -62.5
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		worker = {
+			# Worker base is 100
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -75
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -50
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -25
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		complex_drone = {
+			# Complex Drone base is 100
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -75
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -50
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -25
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		simple_drone = {
+			# Simple Drone base is 100
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -75
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -50
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -25
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		robot_servant = {
+			# Robotic servitude base is 100
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -75
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -50
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -25
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		bio_trophy = {
+			# Bio-Trophy base is 100
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -125
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -75
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -50
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -25
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		slave = {
+			# Slave base is 50
+			if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = -1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -62.5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 0
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -50
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 1
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -37.5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 2
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -25
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					planet = {
+						check_variable = {
+							which = migration_modifier_counter
+							value = 3
+						}
+					}
+				}
+				owner = {
+					add_resource = {
+						energy = -12.5
+					}
+				}
+			}
+			# If by chance migration_modifier_counter is 4 or higher, it's a free migration.
+		}
+		default = {
+			# I have no idea what this is. Probably mod added. Bill them 250.
+			owner = {
+				add_resource = {
+					energy = -250
+				}
+			}
 		}
 	}
 }
