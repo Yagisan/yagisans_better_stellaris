@@ -13,7 +13,7 @@ event = {
 		# to pay for the migration. Migration prefers the planet with
 		# the highest habitablity that matches the best attributes of
 		# the pop. Eg Smarter pops will prefer research worlds.
-		# Ultimatly it will fall through to any world with a free job.
+		# Ultimately it will fall through to any world with a free job.
 		# Currently this is hard coded to 10 migrations maximum per month.
 		# The last pop on a planet will never migrate.
 		# Toilers and servants have further limitations. It is assumed
