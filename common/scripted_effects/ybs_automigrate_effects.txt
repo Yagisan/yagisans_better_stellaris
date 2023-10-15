@@ -8,9 +8,12 @@
 # We are going to search in this order:
 # - Research
 # - Unity
+# - Trade
+# - Fortess
 # - Mining
 # - Energy
 # - Farming
+# - Rural
 # - 80% or better habitablity
 # - 60% or better habitablity
 # - 40% or better habitablity
@@ -52,8 +55,44 @@ ybs_automigrate_unemployed = {
 					ybs_pop_is_good_for_unity = yes
 				}
 			}
-			# Try to find a research world with free jobs.
+			# Try to find a unity world with free jobs.
 			ybs_move_pop_unity_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+				}
+			}
+			# Try to find a trade world with free jobs.
+			ybs_move_pop_trade_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+				}
+			}
+			# Try to find a fortress world with free jobs.
+			ybs_move_pop_fortess_80 = yes
 		}
 	}
 	if = {
@@ -108,6 +147,28 @@ ybs_automigrate_unemployed = {
 			}
 			# Try to find a farming world with free jobs.
 			ybs_move_pop_farming_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at mining/energy/farming ?
+		if = {
+			limit = {
+				PREV = {
+					OR = {
+						ybs_pop_is_good_for_mining = yes
+						ybs_pop_is_good_for_energy = yes
+						ybs_pop_is_good_for_farming = yes
+					}
+				}
+			}
+			# Try to find a rural world with free jobs.
+			ybs_move_pop_rural_80 = yes
 		}
 	}
 	if = {
@@ -225,6 +286,60 @@ ybs_move_pop_unity_80 = {
 	}
 }
 
+ybs_move_pop_trade_80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a trade planet
+			# designation is probably a good choice.
+			has_trade_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Trade - 80). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_fortress_80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a fortress planet
+			# designation is probably a good choice.
+			has_fortress_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Fortress - 80). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
 ybs_move_pop_mining_80 = {
 	random_owned_planet = {
 		limit = {
@@ -297,6 +412,33 @@ ybs_move_pop_farming_80 = {
 			planet = this
 		}
 		log = "Yagisan - Employment found (Farming - 80). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_rural_80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a rural planet
+			# designation is probably a good choice.
+			has_rural_designation = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Rural - 80). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found

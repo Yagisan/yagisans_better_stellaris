@@ -84,3 +84,25 @@ ybs_pop_is_good_for_farming = {
 		has_trait = trait_syncretic_proles
 	}
 }
+
+ybs_pop_is_good_for_trade = {
+	optimize_memory
+	OR = {
+		has_trait = trait_thrifty
+		has_trait = trait_nuumismatic_administration
+		has_trait = trait_robot_trading_algorithms
+	}
+}
+
+ybs_pop_is_good_for_fortress = {
+	optimize_memory
+	OR = {
+		has_trait = trait_resilient
+		has_trait = trait_very_strong
+		has_trait = trait_strong
+		has_trait = trait_juiced_power
+		has_trait = trait_lithoid
+		has_trait = trait_cybernetic
+		has_trait = trait_limited_regeneration
+	}
+}
