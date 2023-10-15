@@ -2,7 +2,7 @@
 # PREV - Pop
 # We are going to look for a new home for the unemployed pop based on its traits.
 # Where possible we will try to match them to a planet that they would be most
-# producive one. If that's not possible, then to a random planet that has jobs
+# productive one. If that's not possible, then to a random planet that has jobs
 # and housing available.
 #
 # We are going to search in this order:
@@ -545,6 +545,25 @@ ybs_automigrate_unemployed = {
 
 # This is for an employed pop, looking for a world with better habitablity.
 # It still requires a free job available.
+# We are going to look for a new home for the employed pop based on its traits.
+# Where possible we will try to match them to a planet that they would be most
+# productive one. If that's not possible, then to a random planet that has jobs
+# and housing available.
+#
+# We are going to search in this order:
+# - We'll do 2 passes of the specalised types.
+# - First at 80%, then 60%.
+# - Research
+# - Unity
+# - Trade
+# - Fortess
+# - Mining
+# - Energy
+# - Farming
+# - Rural
+# - Then we'll check based on habitablity only.
+# - 80% or better habitablity
+# - 60% or better habitablity
 ybs_automigrate_greener_pastures = {
 	# 80% habitablity specalised migration now.
 	set_variable = {
