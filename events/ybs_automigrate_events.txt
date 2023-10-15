@@ -102,7 +102,7 @@ country_event = {
 			}
 			log = "Variable Check: organic_migration_counter doesnt exist"
 		}
-		log = "Yagisan - Checking Organic Unemployment for [ROOT.GetName]"
+		log = "Yagisan - Checking Unemployment for [ROOT.GetName]."
 		every_owned_planet = {
 			limit = {
 				# at most 10 pops per month
@@ -152,7 +152,6 @@ country_event = {
 						}
 					}
 				}
-				log = "Yagisan - Found Unemployed [This.GetName]"
 				set_variable = {
 					# Copy organic_migration_counter into this pop scope so we don't overshoot.
 					which = inprogress_migration_counter
@@ -221,7 +220,6 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "Yagisan - Checking Toiler/Servant Unemployment for [ROOT.GetName]"
 		every_owned_planet = {
 			limit = {
 				count_owned_pop = {
@@ -269,7 +267,6 @@ country_event = {
 						}
 					}
 				}
-				log = "Yagisan - Found Unemployed [This.GetName]"
 				if = {
 					limit = {
 						# minimum of 1K energy to move pops
@@ -333,7 +330,6 @@ country_event = {
 			}
 			log = "Variable Check: robotic_migration_counter doesnt exist"
 		}
-		log = "Yagisan - Checking Robotic Unemployment for [ROOT.GetName]"
 		every_owned_planet = {
 			limit = {
 				# at most 10 pops per month
@@ -385,7 +381,6 @@ country_event = {
 						}
 					}
 				}
-				log = "Yagisan - Found Unemployed [This.GetName]"
 				set_variable = {
 					# Copy robotic_migration_counter into this pop scope so we don't overshoot.
 					which = inprogress_migration_counter
@@ -445,5 +440,6 @@ country_event = {
 			which = unemployed_migration_counter
 			value = robotic_migration_counter
 		}
+		log = "Yagisan - Unemployment Migration Complete for [ROOT.GetName]. [This.unemployed_migration_counter] migrations completed."
 	}
 }
