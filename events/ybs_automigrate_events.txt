@@ -8,11 +8,18 @@ event = {
 		# First migrate unemployed organics to planets with jobs.
 		# Next migrate unemployed robots to planets with jobs.
 		# Finally migrate toilers / servants to planets with jobs.
+		# Pops are selected randomly from planets.
 		# Migration is limited both by a maximum counter and the ablity
 		# to pay for the migration. Migration prefers the planet with
 		# the highest habitablity that matches the best attributes of
 		# the pop. Eg Smarter pops will prefer research worlds.
 		# Ultimatly it will fall through to any world with a free job.
+		# Currently this is hard coded to 10 migrations maximum per month.
+		# The last pop on a planet will never migrate.
+		# Toilers and servants have further limitations. It is assumed
+		# that they are needed for amenities, so the last 10 toilers
+		# and last 5 sevants will not be migrated, to ensure at least 20
+		# amenities from their jobs are created.
 		# unemployed_migration_counter is set/reset in ybs_automigrate.1
 		every_country = {
 			limit = {
@@ -398,9 +405,23 @@ country_event = {
 			}
 			every_owned_pop = {
 				limit = {
-					OR = {
-						has_job = slave_toiler
-						has_job = servant
+					planet = {
+						OR = {
+							# Leave the last 10 toilers ( 20 Amenities )
+							count_owned_pop = {
+								limit = {
+									has_job = slave_toiler
+								}
+								count > 10
+							}
+							# Leave the last 5 servants ( 20 Amenities )
+							count_owned_pop = {
+								limit = {
+									has_job = servant
+								}
+								count > 5
+							}
+						}
 					}
 					is_being_purged = no
 					# Ignore assimilating pops
