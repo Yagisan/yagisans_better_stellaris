@@ -139,6 +139,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		log = "Yagisan - Checking Player Jobs for [This.GetName]"
 		remove_country_flag = ybs_job_reevaluation_queued
 		every_owned_planet = {
 			limit = {
@@ -175,7 +176,6 @@ planet_event = {
 		is_occupied_flag = no
 	}
 	immediate = {
-		log = "Yagisan - Checking Player Employment for [From.GetName] on [This.Planet.GetName]"
 		remove_planet_flag = ybs_job_reevaluation_queued
 		check_planet_employment = yes
 		# Fix accidently unemployed pops.
