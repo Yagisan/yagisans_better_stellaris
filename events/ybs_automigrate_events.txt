@@ -454,10 +454,17 @@ country_event = {
 							value < 0.6
 						}
 					}
-					# Must not be the last 3 pops
+					# Must not be the last 2 organic pops.
+					# This avoids having all rulers migrate away,
+					# but does allow for the organics to turn over
+					# and eventually escape to a better location.
 					planet = {
 						count_owned_pop = {
-							count > 3
+							limit = {
+								# Must not be a robot
+								is_robot_pop = no
+							}
+							count > 2
 						}
 					}
 				}
