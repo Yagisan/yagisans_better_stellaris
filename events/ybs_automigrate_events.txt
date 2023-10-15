@@ -35,57 +35,15 @@ event = {
 				id = ybs_automigrate.1
 				days = 7
 			}
-			if = {
-				limit = {
-					is_variable_set = unemployed_migration_counter
-				}
-				log = "Variable Check: Post Organics unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
-			}
-			if = {
-				limit = {
-					NOT = {
-						is_variable_set = unemployed_migration_counter
-					}
-				}
-				log = "Variable Check: Post Organics unemployed_migration_counter doesnt exist"
-			}
 			# Unemployed Robots
 			country_event = {
 				id = ybs_automigrate.2
 				days = 9
 			}
-			if = {
-				limit = {
-					is_variable_set = unemployed_migration_counter
-				}
-				log = "Variable Check: Post Robots unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
-			}
-			if = {
-				limit = {
-					NOT = {
-						is_variable_set = unemployed_migration_counter
-					}
-				}
-				log = "Variable Check: Post Robots unemployed_migration_counter doesnt exist"
-			}
 			# Toilers / Servants
 			country_event = {
 				id = ybs_automigrate.3
 				days = 8
-			}
-			if = {
-				limit = {
-					is_variable_set = unemployed_migration_counter
-				}
-				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter exists, value: [This.unemployed_migration_counter]"
-			}
-			if = {
-				limit = {
-					NOT = {
-						is_variable_set = unemployed_migration_counter
-					}
-				}
-				log = "Variable Check: Post Toilers/Servants unemployed_migration_counter doesnt exist"
 			}
 		}
 	}
@@ -108,20 +66,6 @@ country_event = {
 			# Free organics are highest priority with unemployed migration each month.
 			which = organic_migration_counter
 			value = 0
-		}
-		if = {
-			limit = {
-				is_variable_set = organic_migration_counter
-			}
-			log = "Variable Check: organic_migration_counter exists, value: [This.organic_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = organic_migration_counter
-				}
-			}
-			log = "Variable Check: organic_migration_counter doesnt exist"
 		}
 		log = "Yagisan - Checking Unemployment for [ROOT.GetName]."
 		every_owned_planet = {
@@ -213,20 +157,6 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				is_variable_set = organic_migration_counter
-			}
-			log = "Variable Check: Loop end - organic_migration_counter exists, value: [This.organic_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = organic_migration_counter
-				}
-			}
-			log = "Variable Check: Loop end - organic_migration_counter doesnt exist"
-		}
 		set_variable = {
 			# Copy organic_migration_counter into the previous scope so we can allocate the leftovers to other classes.
 			which = unemployed_migration_counter
@@ -245,20 +175,6 @@ country_event = {
 			# Robots are next highest priority with unemployed migration each month.
 			which = robotic_migration_counter
 			value = unemployed_migration_counter
-		}
-		if = {
-			limit = {
-				is_variable_set = robotic_migration_counter
-			}
-			log = "Variable Check: robotic_migration_counter exists, value: [This.robotic_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = robotic_migration_counter
-				}
-			}
-			log = "Variable Check: robotic_migration_counter doesnt exist"
 		}
 		every_owned_planet = {
 			limit = {
@@ -351,20 +267,6 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				is_variable_set = robotic_migration_counter
-			}
-			log = "Variable Check: Loop end - robotic_migration_counter exists, value: [This.robotic_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = robotic_migration_counter
-				}
-			}
-			log = "Variable Check: Loop end - robotic_migration_counter doesnt exist"
-		}
 		set_variable = {
 			# Copy robotic_migration_counter into the previous scope so we can allocate the leftovers to other classes.
 			which = unemployed_migration_counter
@@ -383,20 +285,6 @@ country_event = {
 			# Toilers / Servants are lowest priority with unemployed migration each month.
 			which = toiler_migration_counter
 			value = unemployed_migration_counter
-		}
-		if = {
-			limit = {
-				is_variable_set = toiler_migration_counter
-			}
-			log = "Variable Check: toiler_migration_counter exists, value: [This.toiler_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = toiler_migration_counter
-				}
-			}
-			log = "Variable Check: toiler_migration_counter doesnt exist"
 		}
 		every_owned_planet = {
 			limit = {
@@ -493,20 +381,6 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				is_variable_set = toiler_migration_counter
-			}
-			log = "Variable Check: Loop end - toiler_migration_counter exists, value: [This.toiler_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = toiler_migration_counter
-				}
-			}
-			log = "Variable Check: Loop end - toiler_migration_counter doesnt exist"
-		}
 		set_variable = {
 			# Copy toiler_migration_counter into the previous scope so we can allocate the leftovers to other classes.
 			which = unemployed_migration_counter
@@ -528,20 +402,6 @@ country_event = {
 			# overshoot and move more pops in than jobs available.
 			which = greener_pastures_migration_counter
 			value = 0
-		}
-		if = {
-			limit = {
-				is_variable_set = greener_pastures_migration_counter
-			}
-			log = "Variable Check: greener_pastures_migration_counter exists, value: [This.greener_pastures_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = greener_pastures_migration_counter
-				}
-			}
-			log = "Variable Check: greener_pastures_migration_counter doesnt exist"
 		}
 		log = "Yagisan - Checking Greener Pastures for [ROOT.GetName]."
 		every_owned_planet = {
@@ -646,20 +506,6 @@ country_event = {
 					}
 				}
 			}
-		}
-		if = {
-			limit = {
-				is_variable_set = greener_pastures_migration_counter
-			}
-			log = "Variable Check: Loop end - greener_pastures_migration_counter exists, value: [This.greener_pastures_migration_counter]"
-		}
-		if = {
-			limit = {
-				NOT = {
-					is_variable_set = greener_pastures_migration_counter
-				}
-			}
-			log = "Variable Check: Loop end - greener_pastures_migration_counter doesnt exist"
 		}
 		log = "Yagisan - Greener Pastures Migration Complete for [ROOT.GetName]. [This.greener_pastures_migration_counter] migrations completed."
 	}
