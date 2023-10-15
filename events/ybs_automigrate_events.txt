@@ -212,14 +212,8 @@ country_event = {
 							amount > 1000
 						}
 					}
-					# Must be allowed to migrate
-					OR = {
-						has_migration_control = {
-							type = no
-						}
-						# Or be a Robot
-						is_robot_pop = yes
-					}
+					# Must be a Robot
+					is_robot_pop = yes
 					# Must not be the last pop
 					planet = {
 						count_owned_pop = {
