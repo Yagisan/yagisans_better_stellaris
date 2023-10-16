@@ -21,7 +21,7 @@ event = {
 		# and last 5 sevants will not be migrated, to ensure at least 20
 		# amenities from their jobs are created.
 		# unemployed_migration_counter is set/reset in ybs_automigrate.1
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
 			}
