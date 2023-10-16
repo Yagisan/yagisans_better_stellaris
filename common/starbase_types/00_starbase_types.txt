@@ -337,7 +337,7 @@ strading_hub = {
 						exists = starbase
 						starbase = {
 							owner = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 							}
 							has_starbase_module = trading_hub
 						}
@@ -372,7 +372,7 @@ strading_hub = {
 									is_same_value = root
 								}
 								owner = {
-									is_same_value = root.owner
+									is_same_empire = root.owner
 								}
 								has_starbase_module = trading_hub
 							}
@@ -389,7 +389,7 @@ strading_hub = {
 			factor = 0
 			owner = {
 				is_ai = yes
-				is_same_value = root.owner
+				is_same_empire = root.owner
 			}
 			solar_system = {
 				OR = {
@@ -572,7 +572,7 @@ sfortress = {
 						owner = {
 							is_country_type = default
 							NOR = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 								is_in_federation_with = root.owner
 								has_association_status = root.owner
 								has_defensive_pact = root.owner
@@ -926,7 +926,7 @@ sdetection_array = {
 						owner = {
 							is_country_type = default
 							NOR = {
-								is_same_value = root.owner
+								is_same_empire = root.owner
 								is_in_federation_with = root.owner
 								has_association_status = root.owner
 								has_defensive_pact = root.owner
