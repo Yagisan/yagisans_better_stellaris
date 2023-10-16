@@ -629,7 +629,7 @@ ybs_anomaly_spawner = {
 						factor = 0
 						is_star = yes
 						is_asteroid = yes
-						is_ringworld = yes
+						has_ringworld_output_boost = yes
 						is_gas_giant = yes
 					}
 					add_anomaly = {
@@ -642,7 +642,7 @@ ybs_anomaly_spawner = {
 						factor = 0
 						is_star = yes
 						is_asteroid = yes
-						is_ringworld = yes
+						has_ringworld_output_boost = yes
 						habitable_planet = yes
 						is_gas_giant = yes
 					}
@@ -655,7 +655,7 @@ ybs_anomaly_spawner = {
 						factor = 0
 						is_star = yes
 						is_asteroid = yes
-						is_ringworld = yes
+						has_ringworld_output_boost = yes
 						habitable_planet = yes
 						is_gas_giant = yes
 					}
