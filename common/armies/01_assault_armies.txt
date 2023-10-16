@@ -58,10 +58,7 @@ assault_army = {
 				has_technology = tech_telepathy
 				has_technology = tech_gene_seed_purification
 				AND = {
-					OR = {
-						has_ethic = ethic_militarist
-						has_ethic = ethic_fanatic_militarist
-					}
+					is_militarist = yes
 					has_technology = tech_gene_banks
 				}
 			}
@@ -158,10 +155,7 @@ slave_army = {
 				has_technology = tech_telepathy
 				has_technology = tech_gene_seed_purification
 				AND = {
-					OR = {
-						has_ethic = ethic_militarist
-						has_ethic = ethic_fanatic_militarist
-					}
+					is_militarist = yes
 					has_technology = tech_gene_banks
 				}
 				AND = {
@@ -230,10 +224,7 @@ clone_army = {
 				has_technology = tech_telepathy
 				has_technology = tech_gene_seed_purification
 				NAND = {
-					OR = {
-						has_ethic = ethic_militarist
-						has_ethic = ethic_fanatic_militarist
-					}
+					is_militarist = yes
 					has_technology = tech_gene_banks
 				}
 			}
