@@ -537,6 +537,11 @@ ybs_automigrate_unemployed = {
 			ybs_automigrate_charge_resettlement_cost = yes
 			# Clear category so they will take any available jobs.
 			clear_pop_category = yes
+			# Set a timed flag, so we don't try to move them again soon.
+			set_timed_pop_flag = {
+				flag = ybs_recently_migrated
+				years = 1
+			}
 		}
 	}
 	# Could not find a suitable location.
@@ -908,6 +913,11 @@ ybs_automigrate_greener_pastures = {
 			ybs_automigrate_charge_resettlement_cost = yes
 			# Clear category so they will take any available jobs.
 			clear_pop_category = yes
+			# Set a timed flag, so we don't try to move them again soon.
+			set_timed_pop_flag = {
+				flag = ybs_recently_migrated
+				years = 1
+			}
 		}
 	}
 	# Could not find a suitable location.

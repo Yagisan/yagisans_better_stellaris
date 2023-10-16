@@ -97,6 +97,10 @@ country_event = {
 							type = citizenship_assimilation
 						}
 					}
+					# Don't migrate pops that migrated recently.
+					NOT = {
+						has_pop_flag = ybs_recently_migrated
+					}
 					# minimum of 1K energy to move pops
 					owner = {
 						has_country_resource = {
@@ -317,6 +321,10 @@ country_event = {
 							type = citizenship_assimilation
 						}
 					}
+					# Don't migrate pops that migrated recently.
+					NOT = {
+						has_pop_flag = ybs_recently_migrated
+					}
 					# minimum of 1K energy to move pops
 					owner = {
 						has_country_resource = {
@@ -433,6 +441,10 @@ country_event = {
 						has_citizenship_type = {
 							type = citizenship_assimilation
 						}
+					}
+					# Don't migrate pops that migrated recently.
+					NOT = {
+						has_pop_flag = ybs_recently_migrated
 					}
 					# minimum of 1K energy to move pops
 					owner = {
