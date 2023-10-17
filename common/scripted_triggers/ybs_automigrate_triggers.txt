@@ -148,9 +148,9 @@ ybs_planet_is_good_for_research = {
 	}
 }
 
-	# A naive search would only check planet designation
-	# but not every job on that world will be one of those types.
-	# has_unity_designation = yes
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_unity_designation = yes
 ybs_planet_is_good_for_unity = {
 	optimize_memory
 	# Check for forbidden jobs first. Not suitable if any of these are found.
@@ -193,9 +193,9 @@ ybs_planet_is_good_for_unity = {
 	}
 }
 
-	# A naive search would only check planet designation
-	# but not every job on that world will be one of those types.
-	# has_trade_designation = yes
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_trade_designation = yes
 ybs_planet_is_good_for_trade = {
 	optimize_memory
 	# Check for forbidden jobs first. Not suitable if any of these are found.
@@ -222,9 +222,9 @@ ybs_planet_is_good_for_trade = {
 	}
 }
 
-	# A naive search would only check planet designation
-	# but not every job on that world will be one of those types.
-	# has_fortress_designation = yes
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_fortress_designation = yes
 ybs_planet_is_good_for_fortress = {
 	optimize_memory
 	# Check for forbidden jobs first. Not suitable if any of these are found.
@@ -249,9 +249,9 @@ ybs_planet_is_good_for_fortress = {
 	}
 }
 
-	# A naive search would only check planet designation
-	# but not every job on that world will be one of those types.
-	# has_mining_designation = yes
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_mining_designation = yes
 ybs_planet_is_good_for_mining = {
 	optimize_memory
 	# Check for forbidden jobs first. Not suitable if any of these are found.
@@ -288,9 +288,9 @@ ybs_planet_is_good_for_mining = {
 	}
 }
 
-	# A naive search would only check planet designation
-	# but not every job on that world will be one of those types.
-	# has_generator_designation = yes
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_generator_designation = yes
 ybs_planet_is_good_for_energy = {
 	optimize_memory
 	# Check for forbidden jobs first. Not suitable if any of these are found.
@@ -313,9 +313,9 @@ ybs_planet_is_good_for_energy = {
 	}
 }
 
-	# A naive search would only check planet designation
-	# but not every job on that world will be one of those types.
-	# has_farming_designation = yes
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_farming_designation = yes
 ybs_planet_is_good_for_farming = {
 	optimize_memory
 	# Check for forbidden jobs first. Not suitable if any of these are found.
