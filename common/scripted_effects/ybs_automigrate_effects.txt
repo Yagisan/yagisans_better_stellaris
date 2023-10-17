@@ -152,28 +152,6 @@ ybs_automigrate_unemployed = {
 			ybs_move_pop_farming_80 = yes
 		}
 	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining/energy/farming ?
-		if = {
-			limit = {
-				PREV = {
-					OR = {
-						ybs_pop_is_good_for_mining = yes
-						ybs_pop_is_good_for_energy = yes
-						ybs_pop_is_good_for_farming = yes
-					}
-				}
-			}
-			# Try to find a rural world with free jobs.
-			ybs_move_pop_rural_80 = yes
-		}
-	}
 	# 60% habitablity specalised migration now.
 	set_variable = {
 		which = ybs_planet_found
@@ -303,28 +281,6 @@ ybs_automigrate_unemployed = {
 			}
 			# Try to find a farming world with free jobs.
 			ybs_move_pop_farming_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining/energy/farming ?
-		if = {
-			limit = {
-				PREV = {
-					OR = {
-						ybs_pop_is_good_for_mining = yes
-						ybs_pop_is_good_for_energy = yes
-						ybs_pop_is_good_for_farming = yes
-					}
-				}
-			}
-			# Try to find a rural world with free jobs.
-			ybs_move_pop_rural_60 = yes
 		}
 	}
 	# any% habitablity specalised migration now.
@@ -458,28 +414,6 @@ ybs_automigrate_unemployed = {
 			ybs_move_pop_farming_any = yes
 		}
 	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining/energy/farming ?
-		if = {
-			limit = {
-				PREV = {
-					OR = {
-						ybs_pop_is_good_for_mining = yes
-						ybs_pop_is_good_for_energy = yes
-						ybs_pop_is_good_for_farming = yes
-					}
-				}
-			}
-			# Try to find a rural world with free jobs.
-			ybs_move_pop_rural_any = yes
-		}
-	}
 	# This is non-specalised migration now. Habitablity is key.
 	if = {
 		limit = {
@@ -557,7 +491,7 @@ ybs_automigrate_unemployed = {
 # and housing available.
 #
 # We are going to search in this order:
-# - We'll do 2 passes of the specalised types.
+# - We'll do 2 passes of the targeted job types.
 # - First at 80%, then 60%.
 # - Research
 # - Unity
@@ -566,7 +500,6 @@ ybs_automigrate_unemployed = {
 # - Mining
 # - Energy
 # - Farming
-# - Rural
 # - Then we'll check based on habitablity only.
 # - 80% or better habitablity
 # - 60% or better habitablity
@@ -702,28 +635,6 @@ ybs_automigrate_greener_pastures = {
 			ybs_move_pop_farming_80 = yes
 		}
 	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining/energy/farming ?
-		if = {
-			limit = {
-				PREV = {
-					OR = {
-						ybs_pop_is_good_for_mining = yes
-						ybs_pop_is_good_for_energy = yes
-						ybs_pop_is_good_for_farming = yes
-					}
-				}
-			}
-			# Try to find a rural world with free jobs.
-			ybs_move_pop_rural_80 = yes
-		}
-	}
 	# 60% habitablity specalised migration now.
 	set_variable = {
 		which = ybs_planet_found
@@ -853,28 +764,6 @@ ybs_automigrate_greener_pastures = {
 			}
 			# Try to find a farming world with free jobs.
 			ybs_move_pop_farming_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining/energy/farming ?
-		if = {
-			limit = {
-				PREV = {
-					OR = {
-						ybs_pop_is_good_for_mining = yes
-						ybs_pop_is_good_for_energy = yes
-						ybs_pop_is_good_for_farming = yes
-					}
-				}
-			}
-			# Try to find a rural world with free jobs.
-			ybs_move_pop_rural_60 = yes
 		}
 	}
 	# This is non-specalised migration now. Habitablity is key.
@@ -1107,32 +996,6 @@ ybs_move_pop_farming_80 = {
 	}
 }
 
-ybs_move_pop_rural_80 = {
-	random_owned_planet = {
-		limit = {
-			ybs_planet_is_resettlement_target = yes
-			# I need to check for something that makes this a rural planet
-			has_rural_designation = yes
-			# Do we have at least 80% habitablity ?
-			habitability = {
-				who = PREVPREV
-				value >= 0.8
-			}
-		}
-		resettle_pop = {
-			pop = PREVPREV
-			planet = this
-		}
-		log = "Yagisan - Employment found (Rural - 80). Resettling to \\[This.GetName]"
-		prev = {
-			set_variable = {
-				which = ybs_planet_found
-				value = 1
-			}
-		}
-	}
-}
-
 ybs_move_pop_research_60 = {
 	random_owned_planet = {
 		limit = {
@@ -1315,32 +1178,6 @@ ybs_move_pop_farming_60 = {
 	}
 }
 
-ybs_move_pop_rural_60 = {
-	random_owned_planet = {
-		limit = {
-			ybs_planet_is_resettlement_target = yes
-			# I need to check for something that makes this a rural planet
-			has_rural_designation = yes
-			# Do we have at least 60% habitablity ?
-			habitability = {
-				who = PREVPREV
-				value >= 0.6
-			}
-		}
-		resettle_pop = {
-			pop = PREVPREV
-			planet = this
-		}
-		log = "Yagisan - Employment found (Rural - 60). Resettling to \\[This.GetName]"
-		prev = {
-			set_variable = {
-				which = ybs_planet_found
-				value = 1
-			}
-		}
-	}
-}
-
 ybs_move_pop_research_any = {
 	random_owned_planet = {
 		limit = {
@@ -1479,27 +1316,6 @@ ybs_move_pop_farming_any = {
 			planet = this
 		}
 		log = "Yagisan - Employment found (Farming - Any). Resettling to \\[This.GetName]"
-		prev = {
-			set_variable = {
-				which = ybs_planet_found
-				value = 1
-			}
-		}
-	}
-}
-
-ybs_move_pop_rural_any = {
-	random_owned_planet = {
-		limit = {
-			ybs_planet_is_resettlement_target = yes
-			# I need to check for something that makes this a rural planet
-			has_rural_designation = yes
-		}
-		resettle_pop = {
-			pop = PREVPREV
-			planet = this
-		}
-		log = "Yagisan - Employment found (Rural - Any). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
