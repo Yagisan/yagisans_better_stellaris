@@ -6,7 +6,7 @@
 # and housing available.
 #
 # We are going to search in this order:
-# - We'll do 3 passes of the specalised types.
+# - We'll do 3 passes of the targeted job types.
 # - First at 80%, then 60%, then any%.
 # - Research
 # - Unity
@@ -15,7 +15,6 @@
 # - Mining
 # - Energy
 # - Farming
-# - Rural
 # - Then we'll check based on habitablity only.
 # - 80% or better habitablity
 # - 60% or better habitablity
@@ -931,8 +930,7 @@ ybs_move_pop_research_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a research planet
-			# designation is probably a good choice.
-			has_research_designation = yes
+			ybs_planet_is_good_for_research = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -958,8 +956,7 @@ ybs_move_pop_unity_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a unity planet
-			# designation is probably a good choice.
-			has_unity_designation = yes
+			ybs_planet_is_good_for_unity = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -985,8 +982,7 @@ ybs_move_pop_trade_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a trade planet
-			# designation is probably a good choice.
-			has_trade_designation = yes
+			ybs_planet_is_good_for_trade = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1012,8 +1008,7 @@ ybs_move_pop_fortress_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a fortress planet
-			# designation is probably a good choice.
-			has_fortress_designation = yes
+			ybs_planet_is_good_for_fortress = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1039,8 +1034,7 @@ ybs_move_pop_mining_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a mining planet
-			# designation is probably a good choice.
-			has_mining_designation = yes
+			ybs_planet_is_good_for_mining = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1066,8 +1060,7 @@ ybs_move_pop_energy_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this an energy planet
-			# designation is probably a good choice.
-			has_generator_designation = yes
+			ybs_planet_is_good_for_energy = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1093,8 +1086,7 @@ ybs_move_pop_farming_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a farming planet
-			# designation is probably a good choice.
-			has_farming_designation = yes
+			ybs_planet_is_good_for_farming = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1120,7 +1112,6 @@ ybs_move_pop_rural_80 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a rural planet
-			# designation is probably a good choice.
 			has_rural_designation = yes
 			# Do we have at least 80% habitablity ?
 			habitability = {
@@ -1147,8 +1138,7 @@ ybs_move_pop_research_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a research planet
-			# designation is probably a good choice.
-			has_research_designation = yes
+			ybs_planet_is_good_for_research = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1174,8 +1164,7 @@ ybs_move_pop_unity_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a unity planet
-			# designation is probably a good choice.
-			has_unity_designation = yes
+			ybs_planet_is_good_for_unity = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1201,8 +1190,7 @@ ybs_move_pop_trade_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a trade planet
-			# designation is probably a good choice.
-			has_trade_designation = yes
+			ybs_planet_is_good_for_trade = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1228,8 +1216,7 @@ ybs_move_pop_fortress_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a fortress planet
-			# designation is probably a good choice.
-			has_fortress_designation = yes
+			ybs_planet_is_good_for_fortress = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1255,8 +1242,7 @@ ybs_move_pop_mining_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a mining planet
-			# designation is probably a good choice.
-			has_mining_designation = yes
+			ybs_planet_is_good_for_mining = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1282,8 +1268,7 @@ ybs_move_pop_energy_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this an energy planet
-			# designation is probably a good choice.
-			has_generator_designation = yes
+			ybs_planet_is_good_for_energy = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1309,8 +1294,7 @@ ybs_move_pop_farming_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a farming planet
-			# designation is probably a good choice.
-			has_farming_designation = yes
+			ybs_planet_is_good_for_farming = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
 				who = PREVPREV
@@ -1336,7 +1320,6 @@ ybs_move_pop_rural_60 = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a rural planet
-			# designation is probably a good choice.
 			has_rural_designation = yes
 			# Do we have at least 60% habitablity ?
 			habitability = {
@@ -1363,8 +1346,7 @@ ybs_move_pop_research_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a research planet
-			# designation is probably a good choice.
-			has_research_designation = yes
+			ybs_planet_is_good_for_research = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1385,8 +1367,7 @@ ybs_move_pop_unity_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a unity planet
-			# designation is probably a good choice.
-			has_unity_designation = yes
+			ybs_planet_is_good_for_unity = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1407,8 +1388,7 @@ ybs_move_pop_trade_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a trade planet
-			# designation is probably a good choice.
-			has_trade_designation = yes
+			ybs_planet_is_good_for_trade = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1429,8 +1409,7 @@ ybs_move_pop_fortress_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a fortress planet
-			# designation is probably a good choice.
-			has_fortress_designation = yes
+			ybs_planet_is_good_for_fortress = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1451,8 +1430,7 @@ ybs_move_pop_mining_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a mining planet
-			# designation is probably a good choice.
-			has_mining_designation = yes
+			ybs_planet_is_good_for_mining = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1473,8 +1451,7 @@ ybs_move_pop_energy_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this an energy planet
-			# designation is probably a good choice.
-			has_generator_designation = yes
+			ybs_planet_is_good_for_energy = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1495,8 +1472,7 @@ ybs_move_pop_farming_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a farming planet
-			# designation is probably a good choice.
-			has_farming_designation = yes
+			ybs_planet_is_good_for_farming = yes
 		}
 		resettle_pop = {
 			pop = PREVPREV
@@ -1517,7 +1493,6 @@ ybs_move_pop_rural_any = {
 		limit = {
 			ybs_planet_is_resettlement_target = yes
 			# I need to check for something that makes this a rural planet
-			# designation is probably a good choice.
 			has_rural_designation = yes
 		}
 		resettle_pop = {

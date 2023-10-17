@@ -106,3 +106,234 @@ ybs_pop_is_good_for_fortress = {
 		has_trait = trait_limited_regeneration
 	}
 }
+
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_research_designation = yes
+ybs_planet_is_good_for_research = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = head_researcher
+		has_forbidden_jobs = researcher
+		has_forbidden_jobs = xeno_zoo_keeper
+		has_forbidden_jobs = archaeoengineers
+		has_forbidden_jobs = brain_drone
+		has_forbidden_jobs = calculator
+		has_forbidden_jobs = archaeo_drone
+		has_forbidden_jobs = archaeo_unit
+		has_forbidden_jobs = dimensional_portal_researcher
+		has_forbidden_jobs = dimensional_portal_researcher_gestalt
+		has_forbidden_jobs = space_time_anomaly_researcher
+		has_forbidden_jobs = space_time_anomaly_researcher_gestalt
+		has_forbidden_jobs = archivist
+		has_forbidden_jobs = stratovent_researcher
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = head_researcher
+		has_available_jobs = researcher
+		has_available_jobs = xeno_zoo_keeper
+		has_available_jobs = archaeoengineers
+		has_available_jobs = brain_drone
+		has_available_jobs = calculator
+		has_available_jobs = archaeo_drone
+		has_available_jobs = archaeo_unit
+		has_available_jobs = dimensional_portal_researcher
+		has_available_jobs = dimensional_portal_researcher_gestalt
+		has_available_jobs = space_time_anomaly_researcher
+		has_available_jobs = space_time_anomaly_researcher_gestalt
+		has_available_jobs = archivist
+		has_available_jobs = stratovent_researcher
+	}
+}
+
+	# A naive search would only check planet designation
+	# but not every job on that world will be one of those types.
+	# has_unity_designation = yes
+ybs_planet_is_good_for_unity = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = politician
+		has_forbidden_jobs = executive
+		has_forbidden_jobs = high_priest
+		has_forbidden_jobs = noble
+		has_forbidden_jobs = priest
+		has_forbidden_jobs = death_priest
+		has_forbidden_jobs = culture_worker
+		has_forbidden_jobs = bureaucrat
+		has_forbidden_jobs = unifier
+		has_forbidden_jobs = manager
+		has_forbidden_jobs = steward
+		has_forbidden_jobs = death_chronicler
+		has_forbidden_jobs = coordinator
+		has_forbidden_jobs = evaluator
+		has_forbidden_jobs = synapse_drone
+		has_forbidden_jobs = chronicle_drone
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = politician
+		has_available_jobs = executive
+		has_available_jobs = high_priest
+		has_available_jobs = noble
+		has_available_jobs = priest
+		has_available_jobs = death_priest
+		has_available_jobs = culture_worker
+		has_available_jobs = bureaucrat
+		has_available_jobs = unifier
+		has_available_jobs = manager
+		has_available_jobs = steward
+		has_available_jobs = death_chronicler
+		has_available_jobs = coordinator
+		has_available_jobs = evaluator
+		has_available_jobs = synapse_drone
+		has_available_jobs = chronicle_drone
+	}
+}
+
+	# A naive search would only check planet designation
+	# but not every job on that world will be one of those types.
+	# has_trade_designation = yes
+ybs_planet_is_good_for_trade = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = merchant
+		has_forbidden_jobs = executive
+		has_forbidden_jobs = trader
+		has_forbidden_jobs = numistic_priest
+		has_forbidden_jobs = preacher
+		has_forbidden_jobs = underground_trade_worker
+		has_forbidden_jobs = titan_hunter
+		has_forbidden_jobs = stratovent_researcher
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = merchant
+		has_available_jobs = executive
+		has_available_jobs = trader
+		has_available_jobs = numistic_priest
+		has_available_jobs = preacher
+		has_available_jobs = underground_trade_worker
+		has_available_jobs = titan_hunter
+		has_available_jobs = stratovent_researcher
+	}
+}
+
+	# A naive search would only check planet designation
+	# but not every job on that world will be one of those types.
+	# has_fortress_designation = yes
+ybs_planet_is_good_for_fortress = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = enforcer
+		has_forbidden_jobs = necromancer
+		has_forbidden_jobs = soldier
+		has_forbidden_jobs = patrol_drone
+		has_forbidden_jobs = warrior_drone
+		has_forbidden_jobs = stasis_warden
+		has_forbidden_jobs = stasis_warden_drone
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = enforcer
+		has_available_jobs = necromancer
+		has_available_jobs = soldier
+		has_available_jobs = patrol_drone
+		has_available_jobs = warrior_drone
+		has_available_jobs = stasis_warden
+		has_available_jobs = stasis_warden_drone
+	}
+}
+
+	# A naive search would only check planet designation
+	# but not every job on that world will be one of those types.
+	# has_mining_designation = yes
+ybs_planet_is_good_for_mining = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = miner
+		has_forbidden_jobs = scrap_miner
+		has_forbidden_jobs = mining_drone
+		has_forbidden_jobs = scrap_miner_drone
+		has_forbidden_jobs = cave_cleaner
+		has_forbidden_jobs = cave_cleaner_gestalt
+		has_forbidden_jobs = turtle_miner
+		has_forbidden_jobs = turtle_miner_gestalt
+		has_forbidden_jobs = manufactorium_scraper
+		has_forbidden_jobs = manufactorium_scraper_drone
+		has_forbidden_jobs = astrogarbage_collector
+		has_forbidden_jobs = astrogarbage_collector_gestalt
+		has_forbidden_jobs = stratovent_refiner_minerals
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = miner
+		has_available_jobs = scrap_miner
+		has_available_jobs = mining_drone
+		has_available_jobs = scrap_miner_drone
+		has_available_jobs = cave_cleaner
+		has_available_jobs = cave_cleaner_gestalt
+		has_available_jobs = turtle_miner
+		has_available_jobs = turtle_miner_gestalt
+		has_available_jobs = manufactorium_scraper
+		has_available_jobs = manufactorium_scraper_drone
+		has_available_jobs = astrogarbage_collector
+		has_available_jobs = astrogarbage_collector_gestalt
+		has_available_jobs = stratovent_refiner_minerals
+	}
+}
+
+	# A naive search would only check planet designation
+	# but not every job on that world will be one of those types.
+	# has_generator_designation = yes
+ybs_planet_is_good_for_energy = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = technician
+		has_forbidden_jobs = technician_drone
+		has_forbidden_jobs = underground_contact_drone
+		has_forbidden_jobs = space_time_anomaly_researcher_gestalt
+		has_forbidden_jobs = myrmeku_power_farmer
+		has_forbidden_jobs = myrmeku_power_farmer_gestalt
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = technician
+		has_available_jobs = technician_drone
+		has_available_jobs = underground_contact_drone
+		has_available_jobs = space_time_anomaly_researcher_gestalt
+		has_available_jobs = myrmeku_power_farmer
+		has_available_jobs = myrmeku_power_farmer_gestalt
+	}
+}
+
+	# A naive search would only check planet designation
+	# but not every job on that world will be one of those types.
+	# has_farming_designation = yes
+ybs_planet_is_good_for_farming = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = farmer
+		has_forbidden_jobs = angler
+		has_forbidden_jobs = agri_drone
+		has_forbidden_jobs = titan_hunter
+		has_forbidden_jobs = puddle_technician
+		has_forbidden_jobs = puddle_technician_drone
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = farmer
+		has_available_jobs = angler
+		has_available_jobs = agri_drone
+		has_available_jobs = titan_hunter
+		has_available_jobs = puddle_technician
+		has_available_jobs = puddle_technician_drone
+	}
+}
