@@ -475,6 +475,17 @@ ybs_automigrate_unemployed = {
 				flag = ybs_recently_migrated
 				years = 1
 			}
+			if = {
+				limit = {
+					is_robot_pop = yes
+				}
+				# Set a timed flag, we don't charge for ping ponging.
+				set_timed_pop_flag = {
+					flag = ybs_robot_ping_pong
+					# 3 years ought to be enough to build a suitable job.
+					years = 3
+				}
+			}
 		}
 	}
 	# Could not find a suitable location.
@@ -1430,6 +1441,19 @@ ybs_automigrate_charge_resettlement_cost = {
 		set_variable = {
 			which = migration_modifier_counter
 			value = 0
+		}
+	}
+	# Robotic pops are vulnerable to migration ping-pong when only ruler
+	# jobs are avaiable, but they can't take them. Give them a free migration.
+	if = {
+		limit = {
+			has_pop_flag = ybs_robot_ping_pong
+		}
+		planet = {
+			change_variable = {
+				which = migration_modifier_counter
+				value = 5
+			}
 		}
 	}
 	# Nomadic / Sedentary are exclusive traits.
