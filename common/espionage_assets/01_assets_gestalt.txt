@@ -7,39 +7,52 @@
 #	 potential = {} # trigger
 #	 categories = {} # primary category always goes first!
 # }
-
 # Gov, Dip, Eco, Tec, Mil
-
 @category_mod = 4
 @asset_spy_network_max = 5
-
+@asset_spy_assistance = 0.1
 ## Hive Assets
-
 ## Subterfuge Assets
 asset_synapse_drone = {
 	appearance = {
 		name_generation_method = random_person
 		portrait_generation_method = random_person
 	}
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_government_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_government }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_government
+	}
 }
 
 asset_ephapse_relay = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_diplomacy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_diplomacy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_diplomacy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -52,14 +65,22 @@ asset_labor_drone = {
 		name_generation_method = random_person
 		portrait_generation_method = random_person
 	}
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_economy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_economy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_economy
+	}
 }
 
 asset_research_drone = {
@@ -67,14 +88,22 @@ asset_research_drone = {
 		name_generation_method = random_person
 		portrait_generation_method = random_person
 	}
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_technology_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_technology }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_technology
+	}
 }
 
 asset_warrior_drone = {
@@ -82,28 +111,43 @@ asset_warrior_drone = {
 		name_generation_method = random_person
 		portrait_generation_method = random_person
 	}
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_military_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_military }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_military
+	}
 }
 
 ## Hives do not have Sabotage Assets
-
 ## Manipulation Assets
 asset_behavioral_regulator = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_manipulation_skill_add = @category_mod
 		op_cat_government_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_manipulation op_cat_government }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_manipulation
+		op_cat_government
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -112,14 +156,22 @@ asset_behavioral_regulator = {
 }
 
 asset_pheromone_emitter = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_manipulation_skill_add = @category_mod
 		op_cat_diplomacy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_manipulation op_cat_diplomacy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_manipulation
+		op_cat_diplomacy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -128,14 +180,22 @@ asset_pheromone_emitter = {
 }
 
 asset_resource_distribution_node = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_manipulation_skill_add = @category_mod
 		op_cat_economy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_manipulation op_cat_economy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_manipulation
+		op_cat_economy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -144,14 +204,22 @@ asset_resource_distribution_node = {
 }
 
 asset_cortex_node = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_manipulation_skill_add = @category_mod
 		op_cat_technology_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_manipulation op_cat_technology }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_manipulation
+		op_cat_technology
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -160,14 +228,22 @@ asset_cortex_node = {
 }
 
 asset_subspace_tendril = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_manipulation_skill_add = @category_mod
 		op_cat_military_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_manipulation op_cat_military }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_manipulation
+		op_cat_military
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -176,17 +252,24 @@ asset_subspace_tendril = {
 }
 
 ## Machine Assets
-
 ## Subterfuge Assets
 asset_coordination_system = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_government_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_government }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_government
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -195,14 +278,22 @@ asset_coordination_system = {
 }
 
 asset_engagement_protocol = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_diplomacy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_diplomacy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_diplomacy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -211,14 +302,22 @@ asset_engagement_protocol = {
 }
 
 asset_logistics_system = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_economy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_economy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_economy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -227,14 +326,22 @@ asset_logistics_system = {
 }
 
 asset_research_database = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_technology_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_technology }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_technology
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -243,14 +350,22 @@ asset_research_database = {
 }
 
 asset_war_algorithm = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_subterfuge_skill_add = @category_mod
 		op_cat_military_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_subterfuge op_cat_military }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_subterfuge
+		op_cat_military
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -260,14 +375,22 @@ asset_war_algorithm = {
 
 ## Sabotage Assets
 asset_command_relay = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_sabotage_skill_add = @category_mod
 		op_cat_government_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_sabotage op_cat_government }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_sabotage
+		op_cat_government
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -276,14 +399,22 @@ asset_command_relay = {
 }
 
 asset_dispatch_uplink = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_sabotage_skill_add = @category_mod
 		op_cat_diplomacy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_sabotage op_cat_diplomacy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_sabotage
+		op_cat_diplomacy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -292,14 +423,22 @@ asset_dispatch_uplink = {
 }
 
 asset_resource_pylon = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_sabotage_skill_add = @category_mod
 		op_cat_economy_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_sabotage op_cat_economy }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_sabotage
+		op_cat_economy
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -308,14 +447,22 @@ asset_resource_pylon = {
 }
 
 asset_memory_cache = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_sabotage_skill_add = @category_mod
 		op_cat_technology_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_sabotage op_cat_technology }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_sabotage
+		op_cat_technology
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
@@ -324,14 +471,22 @@ asset_memory_cache = {
 }
 
 asset_weapons_platform = {
-	passive = { spy_network_levels_add = @asset_spy_network_max }
+	passive = {
+		spy_network_levels_add = @asset_spy_network_max
+		spy_network_daily_value_add = @asset_spy_assistance
+	}
 	active = {
 		op_cat_sabotage_skill_add = @category_mod
 		op_cat_military_skill_add = @category_mod
 	}
-	possible = {}
-	potential = {}
-	categories = { op_cat_sabotage op_cat_military }
+	possible = {
+	}
+	potential = {
+	}
+	categories = {
+		op_cat_sabotage
+		op_cat_military
+	}
 	appearance = {
 		portrait_generation_method = nongenerated
 		name_generation_method = nongenerated
