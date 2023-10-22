@@ -17,9 +17,11 @@
   - [Archaeological Sites](#archaeological-sites)
     - [Respawning](#respawning-1)
   - [Warfare](#warfare)
+    - [Espionage](#espionage)
     - [War Exhaustion](#war-exhaustion)
   - [Space Combat](#space-combat)
   - [Ground Combat](#ground-combat)
+    - [Relic Capture](#relic-capture)
     - [Generals](#generals)
     - [Defence Armies](#defence-armies)
     - [Assault Armies](#assault-armies)
@@ -143,6 +145,44 @@ The specific spawn rate is:
 
 ## Warfare
 
+### Espionage
+
+This system is underutilised in vanilla, and seems to have a few bugs still in it (The AI likes to re-assign envoys a bit too often). Only a few espionage options are in vanilla (most require the Nemesis DLC).
+
+Espionage targeting has now been completely reworked. The new targeting system for the AI is:
+
+- It will prioritise rivals, crisis, and neighbouring empires.
+- It will spy on an overlord or subject when loyalty is negative.
+- It will **not** spy on an overlord or subject when loyalty is high.
+- It will deprioritise inferior or pathetic empires, if there are better options.
+- It will prevent deployment if the maximum possible infiltration level is too low.
+- It will aggressively prioritise empires at war with it.
+- It will aggressively prioritise empires that have terrible relations with it.
+- It will not deploy an envoy if it already has one located there. (This prevents the AI from shuffling its envoys and making them useless.)
+
+In vanilla Stellaris, the AI does actually attempt some espionage, but it's very unfocused, and only does a limited selection of operations. These are, in order of highest priority, to lowest:
+
+- Lure the Kaleidoscope
+- Acquire Asset
+- Steal Technology
+- Gather Information
+
+Lure the Kaleidoscope is its highest weighted pick, followed by Acquire Asset. Gather Information and Steal Technology are unfocused, and are basically wasted picks, if the AI picks them. It would happily steal technology from someone that is technologically inferior to it.
+
+In Yagisan's Better Stellaris, I have refined targeting of operations, increased the number of available operation options, and set about weighting them from highest priority, to lowest, as follows:
+
+- Consume Star / Crisis Beacon / Lure the Kaleidoscope
+- Arm Privateers
+- Imperium: Target Seditionists / Imperium: Weaken Imperial Authority / Imperium: - Spark Rebellion
+- Sabotage Starbase / Acquire Asset*
+- Steal Technology
+- Smear Campaign
+- Spark Diplomatic Incident / Extort Favors / Sleeper Cells
+- Gather Information
+- These operations do have additional conditions involved, such as being rivals, or at war, depending on which operations being used. Acquire Asset is automatically deprioritised when infiltration is at maximum level.
+
+Acquire Asset has also been buffed. Now each asset also adds 0.1 infiltration speed. This results in more frequent use the various operations.
+
 ### War Exhaustion
 
 Overall, War Exhaustion is an interesting mechanic. However some aspects of warfare, don't seem to impact it as much as I feel they should, and it does grow slowly, making reduction bonuses not really useful. The rate of war exhaustion grows has been buffed, with defensive armies now contributing towards it, and overall armies losses now being worth more. Planetary occupation is worth more, so now taking planets is worth it.
@@ -190,6 +230,12 @@ Space Combat AI is a mixture of decision weights (I can tweak those) and hardcod
 ## Ground Combat
 
 Ground combat in Stellaris is rather lacking by default. In theory it should be a vital part of conquest, but instead feels inconsequential. These changes seek to make ground combat a more strategic, and useful part of the game.
+
+### Relic Capture
+
+In vanilla Stellaris, if you have the Ancient Relics DLC there is a chance that, if you have a specific civic, when you conquer the capital world of an empire, you will take a random relic from them. Unfortunately, this event is actually broken and does not work. As a result, when empires are conquered, the relics they have are lost from the game.
+
+Now, in Yagisan's Better Stellaris, if a playable empire (including the AI) successfully conquers the capital world of an empire, they will capture all relics that empire has. Notably this does not include Fallen Empires, Awakened Empires, or the Crisis. Relics can still be lost if an empire is conquered by one of these empires. Yes, this does mean the AI can loot your relics.
 
 ### Generals
 
