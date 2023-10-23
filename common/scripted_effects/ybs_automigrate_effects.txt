@@ -6,7 +6,9 @@
 # and housing available.
 #
 # We are going to search in this order:
-# - We'll do 3 passes of the targeted job types.
+# - Likes Tomb Worlds (targeted job types first)
+# - Needs Habitats (targeted job types first)
+# - Then we'll do 3 passes of the targeted job types.
 # - First at 80%, then 60%, then any%.
 # - Research
 # - Unity
