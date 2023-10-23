@@ -710,6 +710,8 @@ ybs_automigrate_unemployed = {
 # and housing available.
 #
 # We are going to search in this order:
+# - Likes Tomb Worlds (targeted job types first)
+# - Needs Habitats (targeted job types first)
 # - We'll do 2 passes of the targeted job types.
 # - First at 80%, then 60%.
 # - Research
@@ -728,6 +730,212 @@ ybs_automigrate_greener_pastures = {
 		which = ybs_planet_found
 		value = -1
 	}
+	# Check for Tomb Worlds first
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_research_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a unity world with free jobs.
+			ybs_move_pop_unity_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a trade world with free jobs.
+			ybs_move_pop_trade_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a fortress world with free jobs.
+			ybs_move_pop_fortress_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Can this pop handle any jobs on a Tomb world ?
+		if = {
+			limit = {
+				PREV = {
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find any world with free jobs.
+			ybs_move_pop_any_tomb = yes
+		}
+	}
+	# Check for Habitats for Void Dwellers second
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a research habitat with free jobs.
+			ybs_move_pop_research_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a unity habitat with free jobs.
+			ybs_move_pop_unity_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a trade habitat with free jobs.
+			ybs_move_pop_trade_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a fortress habitat with free jobs.
+			ybs_move_pop_fortress_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Can this pop handle any jobs on a habitat ?
+		if = {
+			limit = {
+				PREV = {
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find any world with free jobs.
+			ybs_move_pop_any_void = yes
+		}
+	}
+	# Check other worlds now
 	if = {
 		limit = {
 			check_variable = {
