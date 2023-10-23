@@ -117,8 +117,103 @@ ybs_automigrate_unemployed = {
 					empire_has_good_habitability_on_tomb_worlds = yes
 				}
 			}
-			# Try to find a fortress world with free jobs.
+			# Try to find any world with free jobs.
 			ybs_move_pop_any_tomb = yes
+		}
+	}
+	# Check for Habitats for Void Dwellers second
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a research habitat with free jobs.
+			ybs_move_pop_research_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a unity habitat with free jobs.
+			ybs_move_pop_unity_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a trade habitat with free jobs.
+			ybs_move_pop_trade_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a fortress habitat with free jobs.
+			ybs_move_pop_fortress_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Can this pop handle any jobs on a habitat ?
+		if = {
+			limit = {
+				PREV = {
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find any world with free jobs.
+			ybs_move_pop_any_void = yes
 		}
 	}
 	# Check other worlds now
@@ -1697,6 +1792,188 @@ ybs_move_pop_any_tomb = {
 			planet = this
 		}
 		log = "Yagisan - Employment found (Any - Tomb). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_research_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a research planet
+			ybs_planet_is_good_for_research = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Research - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_unity_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a unity planet
+			ybs_planet_is_good_for_unity = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Unity - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_trade_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a trade planet
+			ybs_planet_is_good_for_trade = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Trade - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_fortress_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a fortress planet
+			ybs_planet_is_good_for_fortress = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Fortress - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_mining_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a mining planet
+			ybs_planet_is_good_for_mining = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Mining - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_energy_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this an energy planet
+			ybs_planet_is_good_for_energy = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Energy - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_farming_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a farming planet
+			ybs_planet_is_good_for_farming = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Farming - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_any_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Any - Habitat). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
