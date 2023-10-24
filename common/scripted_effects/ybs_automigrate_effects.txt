@@ -1227,6 +1227,7 @@ ybs_automigrate_greener_pastures = {
 		PREV = {
 			ybs_automigrate_charge_resettlement_cost = yes
 			# Clear category so they will take any available jobs.
+			unemploy_pop = yes
 			clear_pop_category = yes
 			# Set a timed flag, so we don't try to move them again soon.
 			set_timed_pop_flag = {
