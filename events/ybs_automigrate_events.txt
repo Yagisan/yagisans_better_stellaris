@@ -43,7 +43,7 @@ event = {
 			# Toilers / Servants
 			country_event = {
 				id = ybs_automigrate.3
-				days = 8
+				days = 11
 			}
 		}
 	}
