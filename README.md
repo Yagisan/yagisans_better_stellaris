@@ -248,7 +248,8 @@ In Yagisan's Better Stellaris, I have refined targeting of operations, increased
 - Smear Campaign
 - Spark Diplomatic Incident / Extort Favors / Sleeper Cells
 - Gather Information
-- These operations do have additional conditions involved, such as being rivals, or at war, depending on which operations being used. Acquire Asset is automatically deprioritised when infiltration is at maximum level.
+  
+These operations do have additional conditions involved, such as being rivals, or at war, depending on which operations being used. Acquire Asset is automatically deprioritised when infiltration is at maximum level.
 
 Acquire Asset has also been buffed. Now each asset also adds 0.1 infiltration speed. This results in more frequent use the various operations.
 
