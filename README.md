@@ -7,9 +7,13 @@
 
 - [Yagisan's Better Stellaris](#yagisans-better-stellaris)
   - [Required DLC.](#required-dlc)
-  - [Jobs](#jobs)
-    - [AI Empires](#ai-empires)
-    - [Player Empires](#player-empires)
+  - [Economy](#economy)
+    - [Migration](#migration)
+      - [Unemployed Migration](#unemployed-migration)
+      - [Greener Pastures](#greener-pastures)
+    - [Jobs](#jobs)
+      - [AI Empires](#ai-empires)
+      - [Player Empires](#player-empires)
   - [Habitability](#habitability)
   - [Space Expansion](#space-expansion)
   - [Anomalies](#anomalies)
@@ -70,19 +74,84 @@ As the Project has grown, and begun to utilise more and more new systems, introd
   - AI Espionage - Primitives
   - Starbase Types - Cloaking
 
-## Jobs
+## Economy
+
+The easiest way to improve the economy, for both players, and the AI, is to put the right pop, in the right job. Yagisan's Better Stellaris has a few ways we try to do this.
+
+### Migration
+
+Stellaris does have an automatic pop migration feature. It has a 5% chance, per unemployed pop, to maybe move to a better planet. A Transit Hub does improve this chance to 10%, but it still takes a long time, and isn't really smart about where it places the pops. Yagisan's Better Stellaris tries to be smarter about this.
+
+I have automated the manual migration system. Currently it is turned on for humans only, as the AI should be capable of using the manual migration system itself. Only less smart.
+
+#### Unemployed Migration
+
+This new automatic unemployment migration system runs once a month, and can not be disabled. Provided you can pay for it, it will migrate at most 10 unemployed pops to a planet that has free jobs.
+
+The migration logic is as follows:
+
+- First migrate unemployed organics with migration rights to planets with jobs.
+- Next migrate unemployed robots to planets with jobs.
+- Finally migrate toilers / servants with migration rights to planets with jobs.
+- Migrations are capped at 10 per month.
+- If 10 organics migrate, no other classes can migrate that month. If 6 organics migrate, then the remaining 4 slots will pass down to robots.
+Any leftover will finally go to toilers and servants.
+- Migration will prioritise Habitats for void dwellers, regardless of job suitability.
+- Migration will prioritise Tomb Worlds for pops that can live there easily (robots, lithoids, tomb world preference etc), regardless of job suitability.
+- Migration will try for a planet with 80% or better habitability, and a job that the pop is good at. This means smarter pops will prefer tech jobs. Mining focussed pops to mining jobs. And finally school bullies to enforcer and soldier jobs.
+- If no match is found, migration will try for a planet with 60% or better habitability, and a job that matches what the pop is good at.
+- If no match is found, migration will try for a planet with 40% or better habitability, and a job that matches what the pop is good at.
+- If no match is found, migration will try for a planet with a job that matches what the pop is good at.
+- If no match is found, migration will try for a planet with 80% or better habitability.
+- If no match is found, migration will try for a planet with 60% or better habitability.
+- If no match is found, migration will try for any planet with a job.
+- Migration requires at least 1000 energy credits to migrate.
+- Migration requires a free job and housing on the target planet.
+- Migration requires target planet to not be under attack.
+- Migration will not migrate the last pop off a planet.
+- Migration will not migrate the last 10 toilers off a planet.
+- Migration will not migrate the last 5 domestic servants off a planet.
+- Pop must not be under a migration cool down timer.
+- Toilers and Servants are special cased as those are jobs created when certain types of pops are unemployed, and you do want some of those.
+
+As a result, gradually unemployed pops spread out to planets that have better habitability and more suitable jobs for them. These new pops, will push less suitable pops out of their jobs, when the next job reshuffle comes along.
+
+#### Greener Pastures
+
+What about those pops employed in jobs, but living on planets they have poor habitability on? That is covered by a variant of the unemployed migration system, I call "Greener Pastures".
+
+This new automatic greener pastures migration system runs once a month, and can not be disabled. Provided you can pay for it, it will migrate at most 3 organic pops to a planet that has free jobs.  It will never migrate robots. The migration logic is as follows:
+
+- Migrate organics with migration rights, and under 60% habitability to planets with jobs.
+- Migrations are capped at 3 per month.
+- Migration will prioritise Habitats for void dwellers, regardless of job suitability.
+- Migration will prioritise Tomb Worlds for pops that can live there easily (robots, lithoids, tomb world preference etc), regardless of job suitability.
+- Migration will try for a planet with 80% or better habitability, and a job that matches what the pop is good at.
+- If no match is found, migration will try for a planet with 60% or better habitability, and a job that matches what the pop is good at.
+- If no match is found, migration will try for a planet with 80% or better habitability.
+- If no match is found, migration will try for a planet with 60% or better habitability.
+- Migration requires at least 1000 energy credits to migrate.
+- Migration requires a free job and housing on the target planet.
+- Migration requires target planet to not be under attack.
+- Migration will not migrate the last five organic pops off a planet.
+- Greener Pastures must run before any unemployment migration.
+- Pop must not be under a migration cool down timer.
+
+As a result of "Greener Pastures" there will be a constant flow of organics to better habitability planets, leaving the poor ones for robots (who don't care at all where they go).
+
+### Jobs
 
 The Stellaris AI appears to be somewhat lazy in making sure it's pops are in the most efficient job. To give it a helping hand we force it to re-evaluate jobs a bit more often. Once every two years **or** when loading a save game, we will scan for all AI empires, and flag them to be checked.
 
 As a result pops tend to gradually end up in the most "optimal" job for them based on Stellaris or mod weightings. This does rely on Stellaris and/or the mod added job to have correctly set up their weightings.
 
-### AI Empires
+#### AI Empires
 
 Each empire will be scheduled randomly between 10 and 180 days from the event firing. Already scheduled empires will be skipped. Once it is time to check the empire, each planet will be scheduled randomly between 0 and 90 days from the event firing.
 
 This will allow all AI empires to complete re-evaluating jobs within 270 days of the initial event, and if the Stellaris random number generator is suitably random, not at the same time, so there won't be a noticeable lag spike.
 
-### Player Empires
+#### Player Empires
 
 Player empires will be checked on the 28th day of each year. There's no delay for checking a player empire, as even in multiplayer, there's usually far less of them - and I want to minimise a confusing UI issue that occurs when moving pops around. Stellaris updates the UI instantly when firing pops. It updates at the end of the month when hiring pops.
 
