@@ -117,6 +117,9 @@ sshipyard = {
 			hydroponics_bay = {
 				base = 0
 			}
+			dimensional_shrine = {
+				base = 0
+			}
 			irassian_naval_yards = {
 				base = 4
 			}
@@ -237,6 +240,9 @@ sanchorage = {
 			}
 			mining_bay = {
 				base = 1
+			}
+			dimensional_shrine = {
+				base = 2
 			}
 			cordyceptic_reanimation_facility = {
 				base = 5
@@ -484,6 +490,9 @@ strading_hub = {
 			}
 			hydroponics_bay = {
 				base = 2
+			}
+			dimensional_shrine = {
+				base = 1
 			}
 			defense_grid = {
 				base = 1
@@ -783,6 +792,9 @@ sfortress = {
 			}
 			hydroponics_bay = {
 				base = 0
+			}
+			reloading_bay = {
+				base = 2
 			}
 			zroni_storm_caster = {
 				base = 2.5
@@ -1529,6 +1541,9 @@ sorbital_fortress = {
 			}
 			command_center = {
 				base = 5
+			}
+			reloading_bay = {
+				base = 2
 			}
 			defense_grid = {
 				base = 1
