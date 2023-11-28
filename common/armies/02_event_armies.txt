@@ -109,6 +109,20 @@ postatomic_army = {
 	}
 }
 
+# Robot Uprising Armies
+robot_uprising_army = {
+	defensive = yes
+	damage = 2.2
+	morale_damage = 1
+	health = 1.5
+	has_morale = no
+	icon = GFX_army_type_robot
+	has_species = no
+	potential_country = {
+		always = no
+	}
+}
+
 # Subterranean Industrial Armies
 subterranean_industrial_army = {
 	defensive = yes
@@ -687,7 +701,6 @@ new_world_order_offensive_army = {
 			energy = 1
 		}
 	}
-
 	potential_country = {
 		always = no
 	}
@@ -697,15 +710,14 @@ new_world_order_offensive_army = {
 # Spawned by WEEDS_ARMY_PROJECT, (Fruitful Partnership Origin)
 fruitful_army = {
 	defensive = yes
-	damage = 2.0
-	morale_damage = 2.0
-	collateral_damage = 5.0
+	damage = 2
+	morale_damage = 2
+	collateral_damage = 5
 	war_exhaustion = 0.25
-	health = 2.0
+	health = 2
 	has_morale = no
 	icon = GFX_army_type_xenomorph
 	has_species = no
-
 	potential_country = {
 		always = no
 	}
