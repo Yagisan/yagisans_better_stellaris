@@ -150,13 +150,13 @@ federation_empire = {
 			}
 			factor = 0
 		}
-		# Don't spy until at least one envoy is working in federation
-		# YAGI - This may break in the 3.10.0 leader rework!
+		# Don't spy until at least one leader is working in federation
+		# YAGI - 3.10.0 changed this from an envoy to a leader, but the trigger emains the same.
 		modifier = {
 			is_running_espionage_operation = no
 			owner = {
 				not = {
-					any_envoy = {
+					any_owned_leader = {
 						has_envoy_task = {
 							task = federation
 						}
