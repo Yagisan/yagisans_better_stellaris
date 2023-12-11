@@ -1673,11 +1673,8 @@ ybs_anomaly_spawner = {
 
 ybs_digsite_spawner = {
 	optimize_memory
-	random_list = {
-		15 = {
-		}
-		85 = {
-			create_archaeological_site = random
-		}
+	random = {
+		chance = 85
+		create_archaeological_site = random
 	}
 }
