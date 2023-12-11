@@ -1,7 +1,7 @@
 default_empire = {
 	strategy_weight = {
 		modifier = {
-			is_country_type = default
+			is_playable = yes
 			weight = 1
 		}
 	}
