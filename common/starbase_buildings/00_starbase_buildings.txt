@@ -97,10 +97,7 @@ mining_bay = {
 			fail_text = "requires_shattered_world"
 			solar_system = {
 				any_system_planet = {
-					OR = {
-						is_planet_class = pc_shattered
-						is_planet_class = pc_shattered_2
-					}
+					is_shattered_world = yes
 				}
 			}
 		}
@@ -1844,8 +1841,9 @@ transit_hub = {
 			NOT = {
 				solar_system = {
 					any_system_colony = {
+						exists = owner
 						owner = {
-							is_country_type = default
+							is_playable = yes
 						}
 						OR = {
 							free_jobs <= 0
@@ -1954,8 +1952,9 @@ trader_proxy_office = {
 			solar_system = {
 				OR = {
 					any_system_colony = {
+						exists = owner
 						owner = {
-							is_country_type = default
+							is_playable = yes
 						}
 					}
 					AND = {
@@ -2233,7 +2232,7 @@ cordyceptic_reanimation_facility = {
 	potential = {
 		exists = owner
 		owner = {
-			has_valid_civic = civic_hive_cordyceptic_drones
+			is_cordyceptic_empire = yes
 		}
 	}
 	possible = {
@@ -2396,10 +2395,7 @@ dimensional_shrine = {
 	potential = {
 		exists = owner
 		owner = {
-			OR = {
-				has_valid_civic = civic_dimensional_worship
-				has_valid_civic = civic_corporate_dimensional_worship
-			}
+			is_dimensional_worship_empire = yes
 		}
 	}
 	possible = {
@@ -2417,6 +2413,7 @@ dimensional_shrine = {
 					has_natural_wormhole = yes
 					has_astral_rift = yes
 					has_star_flag = lgate
+					has_star_flag = lcluster_lgate
 					has_star_flag = spawned_shroud_tunnel
 					has_star_flag = shroudwalker_enclave_system
 					any_system_planet = {
@@ -2439,5 +2436,40 @@ dimensional_shrine = {
 		ai_weight = {
 			weight = 100			#use same weight here - ai weighting is done in starbase_types.txt
 		}
+}
+
+reloading_bay = {
+	icon = "GFX_spaceport_module_reloading_bay"
+	construction_days = 360
+	potential = {
+		exists = owner
+		owner = {
+			is_sovereign_guardianship_empire = yes
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport_or_ring"
+			OR = {
+				has_starbase_size >= starbase_starport
+				is_orbital_ring = yes
+			}
+		}
+	}
+	station_modifier = {
+		ship_fire_rate_mult = 0.25
+		starbase_defense_platform_capacity_add = 2
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	ai_weight = {
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
