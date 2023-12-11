@@ -2434,6 +2434,7 @@ dimensional_shrine = {
 		ai_weight = {
 			weight = 100			#use same weight here - ai weighting is done in starbase_types.txt
 		}
+	}
 }
 
 reloading_bay = {
