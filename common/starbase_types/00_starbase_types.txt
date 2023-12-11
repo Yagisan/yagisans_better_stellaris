@@ -579,7 +579,7 @@ sfortress = {
 					limit = {
 						exists = owner
 						owner = {
-							is_country_type = default
+							is_playable = yes
 							NOR = {
 								is_same_empire = root.owner
 								is_in_federation_with = root.owner
@@ -869,7 +869,7 @@ strading_hub_gestalt = {
 		has_starbase_size > starbase_outpost
 		exists = owner
 		owner = {
-			has_ethic = ethic_gestalt_consciousness
+			is_gestalt = yes
 		}
 	}
 	weight_modifier = {
@@ -936,7 +936,7 @@ sdetection_array = {
 					limit = {
 						exists = owner
 						owner = {
-							is_country_type = default
+							is_playable = yes
 							NOR = {
 								is_same_empire = root.owner
 								is_in_federation_with = root.owner
@@ -1092,7 +1092,7 @@ sseeder = {
 		has_starbase_size > starbase_outpost
 		exists = owner
 		owner = {
-			has_origin = origin_fruitful
+			is_fruitful_empire = yes
 		}
 		NOT = {
 			has_global_flag = tiyanki_extinct
@@ -1760,7 +1760,7 @@ sorbital_seeder = {
 		is_orbital_ring = yes
 		exists = owner
 		owner = {
-			has_origin = origin_fruitful
+			is_fruitful_empire = yes
 		}
 		NOT = {
 			has_global_flag = tiyanki_extinct
