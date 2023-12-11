@@ -47,9 +47,7 @@ robotic_occupation_army = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = {
-				is_machine_empire = yes
-			}
+			is_machine_empire = no
 		}
 	}
 	allow = {

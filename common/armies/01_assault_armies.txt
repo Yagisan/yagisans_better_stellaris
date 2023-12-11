@@ -26,17 +26,13 @@ assault_army = {
 	}
 	show_tech_unlock_if = {
 		OR = {
-			NOT = {
-				is_machine_empire = yes
-			}
+			is_machine_empire = no
 			is_machine_assimilator = yes
 		}
 	}
 	potential_country = {
 		OR = {
-			NOT = {
-				is_machine_empire = yes
-			}
+			is_machine_empire = no
 			is_machine_assimilator = yes
 		}
 	}
@@ -124,9 +120,7 @@ slave_army = {
 	}
 	potential_country = {
 		has_policy_flag = slavery_allowed
-		NOT = {
-			is_machine_empire = yes
-		}
+		is_machine_empire = no
 	}
 	potential = {
 		owner = {
@@ -192,17 +186,13 @@ clone_army = {
 	}
 	show_tech_unlock_if = {
 		OR = {
-			NOT = {
-				is_machine_empire = yes
-			}
+			is_machine_empire = no
 			is_machine_assimilator = yes
 		}
 	}
 	potential_country = {
 		OR = {
-			NOT = {
-				is_machine_empire = yes
-			}
+			is_machine_empire = no
 			is_machine_assimilator = yes
 		}
 	}
@@ -257,9 +247,7 @@ robotic_army = {
 		}
 	}
 	potential_country = {
-		NOT = {
-			is_machine_empire = yes
-		}
+		is_machine_empire = no
 	}
 	potential = {
 		from = {
@@ -326,9 +314,7 @@ psionic_army = {
 		"tech_telepathy"
 	}
 	potential_country = {
-		NOT = {
-			is_machine_empire = yes
-		}
+		is_machine_empire = no
 	}
 	potential = {
 		from = {
@@ -387,9 +373,7 @@ xenomorph_army = {
 		}
 	}
 	potential_country = {
-		NOT = {
-			is_machine_empire = yes
-		}
+		is_machine_empire = no
 	}
 	prerequisites = {
 		"tech_morphogenetic_field_mastery"
@@ -434,9 +418,7 @@ gene_warrior_army = {
 		"tech_gene_seed_purification"
 	}
 	potential_country = {
-		NOT = {
-			is_machine_empire = yes
-		}
+		is_machine_empire = no
 	}
 	potential = {
 		from = {

@@ -112,11 +112,9 @@ robotic_defense_army = {
 			has_trait = "trait_mechanical"
 		}
 		owner = {
-			NOT = {
-				is_machine_empire = yes
+			is_machine_empire = no
 			}
 		}
-	}
 	resources = {
 		category = armies
 		produces = {
@@ -258,10 +256,8 @@ fanatic_guardian = {
 		owner = {
 			is_primitive = no
 			OR = {
-				NOT = {
-					has_authority = auth_machine_intelligence
-				}
-				has_valid_civic = civic_machine_assimilator
+				is_machine_empire = no
+				is_machine_assimilator = yes
 			}
 			is_sovereign_guardianship_empire = yes
 		}
@@ -285,7 +281,7 @@ machine_fanatic_guardian = {
 	potential = {
 		owner = {
 			OR = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				has_ascension_perk = ap_synthetic_evolution
 				any_owned_pop = {
 					is_species_class = "ROBOT"
