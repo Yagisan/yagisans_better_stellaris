@@ -1,0 +1,20 @@
+tradition_ybs_theoretical_sciences = {
+	tree_template = "tree_21_11"
+	adoption_bonus = "ybs_tr_theoretical_sciences_adopt"
+	finish_bonus = "ybs_tr_theoretical_sciences_finish"
+	traditions = {
+		"ybs_tr_theoretical_sciences_1"
+		"ybs_tr_theoretical_sciences_2"
+		"ybs_tr_theoretical_sciences_4"
+		"ybs_tr_theoretical_sciences_3"
+		"ybs_tr_theoretical_sciences_5"
+	}
+	ai_weight = {
+		factor = 100
+		# AI should not take this in the first 20 years.
+		modifier = {
+			factor = 0
+			years_passed < 20
+		}
+	}
+}

@@ -1,0 +1,82 @@
+ybs_tr_theoretical_sciences_adopt = {
+	#unlocks_agenda = ybs_agenda_theoretical_sciences
+	modifier = {
+		# Research Stations have 20% more output.
+		station_researchers_produces_mult = 0.2
+	}
+}
+
+ybs_tr_theoretical_sciences_finish = {
+	modifier = {
+		# Megastructure build cost is 15% cheaper.
+		megastructures_cost_mult = -0.15
+		# Anomaly research speed is 15% faster.
+		ship_anomaly_research_speed_mult = 0.15
+		# Astral Rift research speed is 15% faster.
+		country_astral_rift_speed_mult = 0.15
+		# Acension Perk
+		ascension_perks_add = 1
+	}
+}
+
+ybs_tr_theoretical_sciences_1 = {
+	modifier = {
+		# Researchers (and special versions of these) jobs have 20% more output.
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+ybs_tr_theoretical_sciences_2 = {
+	modifier = {
+		# Unity (and special versions of these) jobs have 20% more output.
+		planet_jobs_unity_produces_mult = 0.2
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+ybs_tr_theoretical_sciences_3 = {
+	modifier = {
+		# Observation stations produce +3 unity, +1 physics +1 society +1 engineering research.
+		station_observers_unity_produces_add = 3
+		station_observers_physics_research_produces_add = 1
+		station_observers_society_research_produces_add = 1
+		station_observers_engineering_research_produces_add = 1
+	}
+	possible = {
+		has_tradition = ybs_tr_theoretical_sciences_1
+		has_tradition = ybs_tr_theoretical_sciences_2
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+ybs_tr_theoretical_sciences_4 = {
+	modifier = {
+		# Ships have 15% more shields.
+		ship_shield_mult = 0.15
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+ybs_tr_theoretical_sciences_5 = {
+	modifier = {
+		# Ships have 15% more sublight speed.
+		ship_speed_mult = 0.15
+	}
+	possible = {
+		has_tradition = ybs_tr_theoretical_sciences_4
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}

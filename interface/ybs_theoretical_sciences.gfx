@@ -1,0 +1,45 @@
+spriteTypes = {
+	# Theoretical Sciences
+	# This reuses existing Stellaris sprites. TODO - make new sprites.
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_ybs_theoretical_sciences"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_ybs_theoretical_sciences"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_prosperity.dds"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_ybs_theoretical_sciences"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_discovery.dds"
+		borderSize = {
+			x = 140
+			y = 140
+		}
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_ybs_theoretical_sciences"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_discovery.dds"
+	}
+	spriteType = {
+		name = "GFX_ybs_tr_theoretical_sciences_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_discovery_to_boldly_go.dds"
+	}
+	spriteType = {
+		name = "GFX_ybs_tr_theoretical_sciences_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_discovery_to_boldly_go.dds"
+	}
+	spriteType = {
+		name = "GFX_ybs_tr_theoretical_sciences_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_discovery_to_boldly_go.dds"
+	}
+	spriteType = {
+		name = "GFX_ybs_tr_theoretical_sciences_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_prosperity_sct.dds"
+	}
+	spriteType = {
+		name = "GFX_ybs_tr_theoretical_sciences_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_prosperity_sct.dds"
+	}
+}

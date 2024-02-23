@@ -1,0 +1,86 @@
+ybs_tr_applied_sciences_adopt = {
+	#unlocks_agenda = ybs_agenda_applied_sciences
+	modifier = {
+		# Mining Stations have 20% more output.
+		station_gatherers_produces_mult = 0.2
+	}
+}
+
+ybs_tr_applied_sciences_finish = {
+	modifier = {
+		# Megastructure build speed is 15% faster.
+		megastructure_build_speed_mult = 0.15
+		# Astral Rift 33% less likely to fail.
+		country_astral_rift_fail_mult = -0.33
+		# Acension Perk
+		ascension_perks_add = 1
+	}
+}
+
+ybs_tr_applied_sciences_1 = {
+	modifier = {
+		# Miner/Farmer/Technician (and special versions of these) jobs have 20% more output.
+		planet_jobs_minerals_produces_mult = 0.2
+		planet_jobs_energy_produces_mult = 0.2
+		planet_jobs_food_produces_mult = 0.2
+		# planet_jobs_society_research_produces_mult = 0.025
+		# planet_jobs_physics_research_produces_mult = 0.2
+		# planet_jobs_engineering_research_produces_mult = 0.1
+		# planet_jobs_unity_produces_mult = 0.15
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+ybs_tr_applied_sciences_2 = {
+	modifier = {
+		# Metallurgist/Artisan (and special versions of these) jobs have 20% more output.
+		planet_jobs_consumer_goods_produces_mult = 0.2
+		planet_jobs_alloys_produces_mult = 0.2
+	}
+	possible = {
+		has_tradition = ybs_tr_applied_sciences_1
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+ybs_tr_applied_sciences_3 = {
+	modifier = {
+		# Refining (and special versions of these) jobs have 20% more output.
+		planet_jobs_exotic_gases_produces_mult = 0.2
+		planet_jobs_rare_crystals_produces_mult = 0.2
+		planet_jobs_volatile_motes_produces_mult = 0.2
+	}
+	possible = {
+		has_tradition = ybs_tr_applied_sciences_1
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+ybs_tr_applied_sciences_4 = {
+	modifier = {
+		# Ships have 15% more hull.
+		ship_hull_mult = 0.15
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+ybs_tr_applied_sciences_5 = {
+	modifier = {
+		# Ships have 15% more armour.
+		ship_armor_mult = 0.15
+	}
+	possible = {
+		has_tradition = ybs_tr_applied_sciences_4
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}
