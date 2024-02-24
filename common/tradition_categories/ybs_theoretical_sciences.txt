@@ -10,11 +10,27 @@ tradition_ybs_theoretical_sciences = {
 		"ybs_tr_theoretical_sciences_5"
 	}
 	ai_weight = {
-		factor = 100
+		factor = 5
 		# AI should not take this in the first 20 years.
 		modifier = {
 			factor = 0
 			years_passed < 20
+		}
+		# AI should really prioritise this if the neighbours are stronger.
+		modifier = {
+			factor = 5
+			any_neighbor_country = {
+				is_country_type = default
+				relative_power = {
+					who = prev
+					value >= superior
+				}
+			}
+		}
+		# AI gestalts should prioritise this too.
+		modifier = {
+			factor = 3
+			is_gestalt = yes
 		}
 	}
 }
