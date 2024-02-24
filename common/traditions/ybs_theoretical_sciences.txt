@@ -14,7 +14,7 @@ ybs_tr_theoretical_sciences_finish = {
 		ship_anomaly_research_speed_mult = 0.15
 		# Astral Rift research speed is 15% faster.
 		country_astral_rift_speed_mult = 0.15
-		# Acension Perk
+		# Ascension Perk
 		ascension_perks_add = 1
 	}
 }

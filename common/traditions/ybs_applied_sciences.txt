@@ -12,7 +12,7 @@ ybs_tr_applied_sciences_finish = {
 		megastructure_build_speed_mult = 0.15
 		# Astral Rift 33% less likely to fail.
 		country_astral_rift_fail_mult = -0.33
-		# Acension Perk
+		# Ascension Perk
 		ascension_perks_add = 1
 	}
 }
@@ -23,10 +23,6 @@ ybs_tr_applied_sciences_1 = {
 		planet_jobs_minerals_produces_mult = 0.2
 		planet_jobs_energy_produces_mult = 0.2
 		planet_jobs_food_produces_mult = 0.2
-		# planet_jobs_society_research_produces_mult = 0.025
-		# planet_jobs_physics_research_produces_mult = 0.2
-		# planet_jobs_engineering_research_produces_mult = 0.1
-		# planet_jobs_unity_produces_mult = 0.15
 	}
 	ai_weight = {
 		factor = 1000
