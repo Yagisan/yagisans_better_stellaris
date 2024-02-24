@@ -36,7 +36,7 @@ NAI = {
 	CAPITAL_TARGET_SCORE = 25	# [5] extra score for defending/invading a capital
 	# Misc changes
 	CHOKEPOINT_TARGET_MULT = 1.2	# [2] extra multiplier for defensive scoring of chokepoints
-	AI_NO_RETREAT_LIMIT = 10	# [3] At fewer owner/controlled planets than this, the AI will fight to the death in their home systems
+	AI_NO_RETREAT_LIMIT = 3	# [3] At fewer owner/controlled planets than this, the AI will fight to the death in their home systems
 	WAR_EXHAUSTION_TO_INTERVENE = 0.2	# [0.25] AI may want to intervene to help empires with this war exhaustion or higher
 	# How strong do we need to be to start or end a fight?
 	ENEMY_FLEET_POWER_MULT = 0.99	# [1.2] AI will need the fleet power of the enemy multiplied by this value to become offensive in an offensive war
