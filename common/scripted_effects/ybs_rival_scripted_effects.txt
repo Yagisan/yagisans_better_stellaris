@@ -1,0 +1,238 @@
+# THIS - Player Country
+# The rival is someone we want to go to war with, so we should eliminate
+# pacifists, federation members, vassals, and as many origins as possible
+# that acively give the AI a hard time being a rival.
+ybs_rival_list_eligible_country = {
+	# Our most restrictive check. 
+	every_playable_country = {
+		limit = {
+			is_country_type = default
+			is_ai = yes
+			nor = {
+				# Ethics that can't attack
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_pacifist
+				# Federation Origins
+				has_origin = origin_common_ground
+				has_origin = origin_common_ground_npc
+				has_origin = origin_hegemon
+				has_origin = origin_hegemon_npc
+				# Vassal Origins
+				has_origin = origin_imperial_vassal_overlord
+				has_origin = origin_imperial_vassal
+				# Difficult Origins
+				has_origin = origin_doomsday
+				has_origin = origin_life_seeded
+				has_origin = origin_life_seeded_habinte
+				# Low Tech Origins
+				has_origin = origin_broken_shackles
+				has_origin = origin_payback
+				has_origin = origin_fear_of_the_dark
+				is_eager_explorer_empire = yes
+			}
+		}
+		ybs_rival_measure_distance = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = ybs_rival_country_eligible
+			}
+		}
+		# Somehow - we did not find a suitable country.
+		every_playable_country = {
+			limit = {
+				is_country_type = default
+				is_ai = yes
+				nor = {
+					# Ethics that can't attack
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_pacifist
+					# Federation Origins - Subordinates Only
+					has_origin = origin_common_ground_npc
+					has_origin = origin_hegemon_npc
+					# Vassal Origins
+					has_origin = origin_imperial_vassal_overlord
+					has_origin = origin_imperial_vassal
+					# Difficult Origins
+					has_origin = origin_life_seeded_habinte
+					# Low Tech Origins
+					has_origin = origin_broken_shackles
+					has_origin = origin_payback
+					has_origin = origin_fear_of_the_dark
+					is_eager_explorer_empire = yes
+				}
+			}
+			ybs_rival_measure_distance = yes
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = ybs_rival_country_eligible
+			}
+		}
+		# Somehow - we still did not find a suitable country. Pacifists are now aceptable.
+		every_playable_country = {
+			limit = {
+				is_country_type = default
+				is_ai = yes
+				nor = {
+					# Federation Origins - Subordinates Only
+					has_origin = origin_common_ground_npc
+					has_origin = origin_hegemon_npc
+					# Vassal Origins
+					has_origin = origin_imperial_vassal_overlord
+					has_origin = origin_imperial_vassal
+					# Difficult Origins
+					has_origin = origin_life_seeded_habinte
+					# Low Tech Origins
+					has_origin = origin_broken_shackles
+					has_origin = origin_payback
+					has_origin = origin_fear_of_the_dark
+					is_eager_explorer_empire = yes
+				}
+			}
+			ybs_rival_measure_distance = yes
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = ybs_rival_country_eligible
+			}
+		}
+		# Somehow - we still did not find a suitable country. Anyone is now aceptable.
+		every_playable_country = {
+			limit = {
+				is_country_type = default
+				is_ai = yes
+			}
+			ybs_rival_measure_distance = yes
+		}
+	}
+}
+
+# THIS - Player Country
+ybs_rival_measure_distance = {
+	set_global_flag = ybs_rival_country_eligible
+	capital_scope = {
+		export_trigger_value_to_variable = {
+			trigger = distance
+			parameters = {
+				source = root
+				type = hyperlane
+				use_bypasses = no
+				bypass_empire = root
+			}
+			variable = ybs_rival_distance_to_player
+		}
+	}
+}
+
+# THIS - Player Country
+ybs_rival_find_furthest_eligible_country = {
+	ordered_playable_country = {
+		position = 0
+		order_by = capital_scope.ybs_rival_distance_to_player
+		limit = {
+			capital_scope = {
+				is_variable_set = ybs_rival_distance_to_player
+			}
+		}
+		save_event_target_as = ybs_rival
+	}
+}
+
+# THIS - Player Country
+ybs_rival_cleanup_eligible_country = {
+	every_playable_country = {
+		limit = {
+			is_country_type = default
+			is_ai = yes
+		}
+		capital_scope = {
+			clear_variable = ybs_rival_distance_to_player
+		}
+	}
+}
+
+# THIS - Player Country
+ybs_give_rival_buffs = {
+	event_target:ybs_rival = {
+		# Firstly, promote this to an Advanced AI start empire.
+		country_event = {
+			id = game_start.6
+		}
+		# When giving tech, also make sure to give all previous versions too.
+		# Fusion Power
+		give_technology = {
+			tech = tech_fission_power
+			message = no
+		}
+		give_technology = {
+			tech = tech_fusion_power
+			message = no
+		}
+		# Ion Thrusters
+		give_technology = {
+			tech = tech_thrusters_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_thrusters_2
+			message = no
+		}
+		# Improved Deflectors
+		give_technology = {
+			tech = tech_shields_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_shields_2
+			message = no
+		}
+		# Ceramo-Metal Materials
+		give_technology = {
+			tech = tech_ship_armor_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_ship_armor_2
+			message = no
+		}
+		# Fusion Missiles
+		give_technology = {
+			tech = tech_missiles_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_missiles_2
+			message = no
+		}
+		# Give enough influence that they can quickly buy the surrounding systems
+		add_resource = {
+			influence = 1000
+		}
+		# Trigger advance colony upgrades on their capital system.
+		capital_scope = {
+			# on_initialize_advanced_colony: remove tile blockers on capital
+			planet_event = {
+				id = game_start.20
+			}
+			# on_initialize_advanced_colony: upgrade colony shelter
+			planet_event = {
+				id = game_start.21
+			}
+			# on_initialize_advanced_colony: set up additional buildings (mines, farms, power plants)
+			planet_event = {
+				id = game_start.22
+			}
+			# on_initialize_advanced_colony: add additional pops
+			planet_event = {
+				id = game_start.23
+			}
+			log = "Yagisan - Selected Rival Capital Planet - [This.GetName]"
+		}
+	}
+}

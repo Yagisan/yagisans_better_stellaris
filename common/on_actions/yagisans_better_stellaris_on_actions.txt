@@ -1,70 +1,44 @@
-# Fired when the game starts
+# Fired when the game starts.
 on_game_start = {
 	events = {
-		yagisans_better_stellaris.1		# Flag mod as installed
+		yagisans_better_stellaris.1		# Flag mod as installed.
 	}
 }
 
-# Fired when loading a single-player game
+on_game_start_country = {
+	events = {
+		ybs_rival.1		# New game. Pick an empire to be a "rival".
+	}
+}
+
+# Fired when loading a single-player game.
 on_single_player_save_game_load = {
 	events = {
 		yagisans_better_stellaris.1		# Flag mod as installed
+		ybs_employment.1		# Loaded a save? Quickly check AI employment.
+		ybs_rival.1		# If one doesn't exist, pick an empire to be a "rival" 
 	}
 }
 
-# Loaded a save? Quickly check AI employment.
-on_single_player_save_game_load = {
-	events = {
-		ybs_employment.1
-	}
-}
-
-# Each year, try to respawn 1 anomaly.
 on_yearly_pulse = {
 	events = {
-		ybs_anomaly.1
+		ybs_anomaly.1		# Each year, try to respawn 1 anomaly.
+		ybs_employment.10		# Each year, Quickly check Player employment.
+		ybs_archaeology.1		# Each year, try remove completed archaeological sites.
 	}
 }
 
-# Each year, Quickly check Player employment.
-on_yearly_pulse = {
-	events = {
-		ybs_employment.10
-	}
-}
-
-# Each year, try remove completed archaeological sites.
-on_yearly_pulse_country = {
-	events = {
-		ybs_archaeology.1
-	}
-}
-
-# Every second year, try to respawn 4 anomalies.
 on_bi_yearly_pulse = {
 	events = {
-		ybs_anomaly.2
+		ybs_anomaly.2		# Every second year, try to respawn 4 anomalies.
+		ybs_employment.1		# Every second year AI employment check.
 	}
 }
 
-# Every second year AI employment check.
-on_bi_yearly_pulse = {
-	events = {
-		ybs_employment.1
-	}
-}
-
-# Every fifth year, try to respawn 10 anomalies.
 on_five_year_pulse = {
 	events = {
-		ybs_anomaly.3
-	}
-}
-
-# Every fifth year, try to respawn 1 archaeological site.
-on_five_year_pulse = {
-	events = {
-		ybs_archaeology.2
+		ybs_anomaly.3		# Every fifth year, try to respawn 10 anomalies.
+		ybs_archaeology.2		# Every fifth year, try to respawn 1 archaeological site.
 	}
 }
 
