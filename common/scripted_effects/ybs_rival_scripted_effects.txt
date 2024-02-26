@@ -198,15 +198,6 @@ ybs_give_rival_buffs = {
 			tech = tech_fusion_power
 			message = no
 		}
-		# Ion Thrusters
-		give_technology = {
-			tech = tech_thrusters_1
-			message = no
-		}
-		give_technology = {
-			tech = tech_thrusters_2
-			message = no
-		}
 		# Improved Deflectors
 		give_technology = {
 			tech = tech_shields_1
@@ -225,18 +216,9 @@ ybs_give_rival_buffs = {
 			tech = tech_ship_armor_2
 			message = no
 		}
-		# Fusion Missiles
-		give_technology = {
-			tech = tech_missiles_1
-			message = no
-		}
-		give_technology = {
-			tech = tech_missiles_2
-			message = no
-		}
-		# Give enough influence that they can quickly buy the surrounding systems
+		# Give some influence that they can quickly buy the surrounding systems
 		add_resource = {
-			influence = 1000
+			influence = 400
 		}
 		# Trigger advance colony upgrades on their capital system.
 		capital_scope = {
