@@ -10,8 +10,9 @@ ybs_rival_list_eligible_country = {
 			is_ai = yes
 			nor = {
 				# Ethics that can't attack
-				has_ethic = ethic_fanatic_pacifist
-				has_ethic = ethic_pacifist
+				is_pacifist = yes
+				#has_ethic = ethic_fanatic_pacifist
+				#has_ethic = ethic_pacifist
 				# Federation Origins
 				has_origin = origin_common_ground
 				has_origin = origin_common_ground_npc
@@ -46,8 +47,7 @@ ybs_rival_list_eligible_country = {
 				is_ai = yes
 				nor = {
 					# Ethics that can't attack
-					has_ethic = ethic_fanatic_pacifist
-					has_ethic = ethic_pacifist
+					is_pacifist = yes
 					# Federation Origins - Subordinates Only
 					has_origin = origin_common_ground_npc
 					has_origin = origin_hegemon_npc
