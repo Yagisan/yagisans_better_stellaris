@@ -25,6 +25,7 @@ ybs_rival_list_eligible_country = {
 				# Vassal Origins
 				has_origin = origin_imperial_vassal_overlord
 				has_origin = origin_imperial_vassal
+				has_origin = origin_scion
 				# Difficult Origins
 				has_origin = origin_doomsday
 				has_origin = origin_life_seeded
@@ -61,6 +62,7 @@ ybs_rival_list_eligible_country = {
 					# Vassal Origins
 					has_origin = origin_imperial_vassal_overlord
 					has_origin = origin_imperial_vassal
+					has_origin = origin_scion
 					# Difficult Origins
 					has_origin = origin_life_seeded_habinte
 					# Low Tech Origins
@@ -94,6 +96,7 @@ ybs_rival_list_eligible_country = {
 					# Vassal Origins
 					has_origin = origin_imperial_vassal_overlord
 					has_origin = origin_imperial_vassal
+					has_origin = origin_scion
 					# Difficult Origins
 					has_origin = origin_life_seeded_habinte
 					# Low Tech Origins
