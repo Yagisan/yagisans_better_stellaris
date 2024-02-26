@@ -3,6 +3,7 @@
 # pacifists, federation members, vassals, and as many origins as possible
 # that acively give the AI a hard time being a rival.
 ybs_rival_list_eligible_country = {
+	optimize_memory
 	# Our most restrictive check. 
 	every_playable_country = {
 		limit = {
@@ -115,6 +116,7 @@ ybs_rival_list_eligible_country = {
 
 # THIS - Player Country
 ybs_rival_measure_distance = {
+	optimize_memory
 	set_global_flag = ybs_rival_country_eligible
 	capital_scope = {
 		export_trigger_value_to_variable = {
@@ -132,6 +134,7 @@ ybs_rival_measure_distance = {
 
 # THIS - Player Country
 ybs_rival_find_furthest_eligible_country = {
+	optimize_memory
 	ordered_playable_country = {
 		position = 0
 		order_by = capital_scope.ybs_rival_distance_to_player
@@ -146,6 +149,7 @@ ybs_rival_find_furthest_eligible_country = {
 
 # THIS - Player Country
 ybs_rival_cleanup_eligible_country = {
+	optimize_memory
 	every_playable_country = {
 		limit = {
 			is_country_type = default
@@ -159,6 +163,7 @@ ybs_rival_cleanup_eligible_country = {
 
 # THIS - Player Country
 ybs_give_rival_buffs = {
+	optimize_memory
 	event_target:ybs_rival = {
 		# Firstly, promote this to an Advanced AI start empire.
 		country_event = {
