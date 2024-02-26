@@ -1,0 +1,31 @@
+# Base max age is 80, intended divisor for negative traits is 20. 80/20 = 4.
+# This should scale when negative traits occur, so longer lived races
+# get them at about the same point in the leader lifespan
+leader_max_age_divisor = {
+	base = 0
+	add = trigger:leader_lifespan
+	divide = 4
+}
+
+# Eligibility increases for every full 20 years of AGE, every LEVEL, and every PENDING Negative trait.
+# Eligibility decreases for every CURRENT negative trait.
+leader_eligible_for_negative_trait = {
+	# Eligibility = floor(AGE / 20) + LEVEL + PENDINGNegativeTraits - 8 - CURRENTNegativeTraitTiers * 2
+	add = trigger:leader_age
+	divide = value:leader_max_age_divisor
+	floor = yes
+	add = trigger:has_skill
+	add = value:leader_pending_negative_traits_modified
+	subtract = 8
+	# Subtract 2 for every Current Negative Trait tier.
+	divide = 2	# Temporary. Multiplied by 2 further down.
+	complex_trigger_modifier = {
+		trigger = num_leader_traits
+		parameters = {
+			negative = yes
+			count_tiers = yes
+		}
+		mode = subtract
+	}
+	mult = 2
+}
