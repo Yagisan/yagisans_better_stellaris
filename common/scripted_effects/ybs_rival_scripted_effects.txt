@@ -4,12 +4,15 @@
 # that acively give the AI a hard time being a rival.
 ybs_rival_list_eligible_country = {
 	optimize_memory
-	# Our most restrictive check. 
+	# Our most restrictive check.
+	log = "Yagisan - Rival scanning optimal candidates"
 	every_playable_country = {
 		limit = {
 			is_country_type = default
 			is_ai = yes
 			nor = {
+				# Not already an advanced AI start
+				has_country_flag = is_advanced_start_AI
 				# Ethics that can't attack
 				is_pacifist = yes
 				#has_ethic = ethic_fanatic_pacifist
@@ -42,11 +45,14 @@ ybs_rival_list_eligible_country = {
 			}
 		}
 		# Somehow - we did not find a suitable country.
+		log = "Yagisan - Rival scanning acceptable candidates"
 		every_playable_country = {
 			limit = {
 				is_country_type = default
 				is_ai = yes
 				nor = {
+					# Not already an advanced AI start
+					has_country_flag = is_advanced_start_AI
 					# Ethics that can't attack
 					is_pacifist = yes
 					# Federation Origins - Subordinates Only
@@ -74,11 +80,14 @@ ybs_rival_list_eligible_country = {
 			}
 		}
 		# Somehow - we still did not find a suitable country. Pacifists are now aceptable.
+		log = "Yagisan - Rival scanning poor candidates"
 		every_playable_country = {
 			limit = {
 				is_country_type = default
 				is_ai = yes
 				nor = {
+					# Not already an advanced AI start
+					has_country_flag = is_advanced_start_AI
 					# Federation Origins - Subordinates Only
 					has_origin = origin_common_ground_npc
 					has_origin = origin_hegemon_npc
@@ -104,6 +113,7 @@ ybs_rival_list_eligible_country = {
 			}
 		}
 		# Somehow - we still did not find a suitable country. Anyone is now aceptable.
+		log = "Yagisan - Rival scanning any candidates"
 		every_playable_country = {
 			limit = {
 				is_country_type = default
@@ -166,8 +176,17 @@ ybs_give_rival_buffs = {
 	optimize_memory
 	event_target:ybs_rival = {
 		# Firstly, promote this to an Advanced AI start empire.
-		country_event = {
-			id = game_start.6
+		if = {
+			limit = {
+				has_country_flag = is_advanced_start_AI
+			}
+			log = "Yagisan - Rival is already an advanced AI Start"
+		}
+		else = {
+			log = "Yagisan - Rival promoted to an advanced AI Start"
+			country_event = {
+				id = game_start.6
+			}
 		}
 		# When giving tech, also make sure to give all previous versions too.
 		# Fusion Power
@@ -237,7 +256,7 @@ ybs_give_rival_buffs = {
 			planet_event = {
 				id = game_start.23
 			}
-			log = "Yagisan - Selected Rival Capital Planet - [This.GetName]"
+			log = "Yagisan - Rival Capital Planet - [This.GetName]"
 		}
 	}
 }
