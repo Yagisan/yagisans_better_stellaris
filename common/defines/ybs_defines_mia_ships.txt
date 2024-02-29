@@ -1,0 +1,6 @@
+NGameplay = {
+	# Reinforcements will arrive 5 times faster
+	REINFORCE_MIA_TIME_MULT = 0.2	# [1.0] Used to customize the duration of reinforcement times. Expected to be > 0
+	# Ships will return from MIA 5 times faster
+	MIA_TIME_MULT = 0.2	# [1.0] Used to customize the duration of MIA times. Expected to be > 0
+}
