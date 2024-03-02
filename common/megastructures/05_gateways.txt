@@ -1,30 +1,26 @@
 # see README.txt for example
-
 gateway_0 = {
 	entity = "construction_platform_entity"
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes						# indicates this will use "free" placement between the system's inner and outer ring
-															# if this option is active, the placement_rules will be completely ignored
-	bypass_type = gateway
+	build_outside_gravity_well = yes	# indicates this will use "free" placement between the system's inner and outer ring
+	# if this option is active, the placement_rules will be completely ignored
 	show_galactic_map_icon = no
 	show_in_outliner = yes
 	overlord_can_upgrade = yes
 	build_time = 1080
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2500
 			influence = 75
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
-
 	potential = {
 		has_technology = tech_gateway_construction
 	}
-
 	possible = {
 		exists = starbase
 		custom_tooltip = {
@@ -35,13 +31,15 @@ gateway_0 = {
 					exists = owner
 					owner = {
 						is_subject = yes
-						overlord = { is_same_value = from }
+						overlord = {
+							is_same_value = from
+						}
 					}
 				}
 			}
 		}
 		custom_tooltip = {
-			fail_text = "requires_surveyed_system" # or is in my subject's territory
+			fail_text = "requires_surveyed_system"			# or is in my subject's territory
 			OR = {
 				NOT = {
 					any_system_planet = {
@@ -55,7 +53,9 @@ gateway_0 = {
 					exists = owner
 					owner = {
 						is_subject = yes
-						overlord = { is_same_value = from }
+						overlord = {
+							is_same_value = from
+						}
 					}
 				}
 			}
@@ -71,23 +71,26 @@ gateway_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_construction"
-			from = { has_technology = tech_gateway_construction }
+			from = {
+				has_technology = tech_gateway_construction
+			}
 		}
 	}
-
-	placement_rules = {			# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+	placement_rules = {
+		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
 	}
-
 	# root = system
 	# from = country
 	ai_weight = {
 		factor = 5
-
 		modifier = {
 			factor = 0
-			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+			starbase = {
+				NOT = {
+					has_starbase_size >= starbase_starfortress
+				}
+			}
 		}
-
 		modifier = {
 			factor = 0
 			any_neighbor_system = {
@@ -128,11 +131,16 @@ gateway_0 = {
 			}
 		}
 	}
-
-	on_build_start = {}
-	on_build_cancel = {}
+	on_build_start = {
+	}
+	on_build_cancel = {
+	}
 	on_build_complete = {
-		from = { country_event = { id = apoc.14 } }
+		from = {
+			country_event = {
+				id = apoc.14
+			}
+		}
 	}
 }
 
@@ -142,7 +150,7 @@ gateway_final = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	# build_outside_gravity_well = yes						# indicates this will use "free" placement between the system's inner and outer ring
-															# if this option is active, the placement_rules will be completely ignored
+	# if this option is active, the placement_rules will be completely ignored
 	show_galactic_map_icon = no
 	show_in_outliner = no
 	potential = {
@@ -151,7 +159,9 @@ gateway_final = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_construction"
-			from = { has_technology = tech_gateway_construction }
+			from = {
+				has_technology = tech_gateway_construction
+			}
 		}
 	}
 	upgrade_from = {
@@ -159,33 +169,43 @@ gateway_final = {
 	}
 	build_time = 1800
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2500
 			energy = 6000
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
-
-
 	bypass_type = gateway
 	on_build_complete = {
 		activate_gateway = fromfrom
 		if = {
-			limit = { num_active_gateways = 1 }
+			limit = {
+				num_active_gateways = 1
+			}
 			random_megastructure = {
-				limit = { is_megastructure_type = gateway_ruined }
+				limit = {
+					is_megastructure_type = gateway_ruined
+				}
 				if = {
-					limit = { exists = solar_system.starbase }
-					solar_system.starbase.owner = { set_country_flag = did_not_repair_gateway }
+					limit = {
+						exists = solar_system.starbase
+					}
+					solar_system.starbase.owner = {
+						set_country_flag = did_not_repair_gateway
+					}
 				}
 				upgrade_megastructure_to = gateway_restored
 				finish_upgrade = yes
 			}
 		}
 		from = {
-			country_event = { id = apoc.13 }
-			country_event = { id = apoc.11 }
+			country_event = {
+				id = apoc.13
+			}
+			country_event = {
+				id = apoc.11
+			}
 		}
 	}
 }
@@ -199,9 +219,7 @@ gateway_ruined = {
 	bypass_type = gateway
 	show_galactic_map_icon = no
 	show_in_outliner = yes
-
 	construction_blocks_and_blocked_by = self_type
-
 	potential = {
 		always = no
 	}
@@ -216,15 +234,15 @@ gateway_restored = {
 	# build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	show_in_outliner = no
-
 	potential = {
 		has_technology = tech_gateway_activation
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_activation"
-			from = { has_technology = tech_gateway_activation }
+			from = {
+				has_technology = tech_gateway_activation
+			}
 		}
 	}
 	upgrade_from = {
@@ -232,61 +250,91 @@ gateway_restored = {
 	}
 	build_time = 720
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2500
 			energy = 6000
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
-
 	bypass_type = gateway
 	on_build_complete = {
 		activate_gateway = fromfrom
 		if = {
-			limit = { num_active_gateways = 1 }
+			limit = {
+				num_active_gateways = 1
+			}
 			random_megastructure = {
-				limit = { is_megastructure_type = gateway_ruined }
+				limit = {
+					is_megastructure_type = gateway_ruined
+				}
 				if = {
-					limit = { exists = solar_system.starbase }
-					solar_system.starbase.owner = { set_country_flag = did_not_repair_gateway }
+					limit = {
+						exists = solar_system.starbase
+					}
+					solar_system.starbase.owner = {
+						set_country_flag = did_not_repair_gateway
+					}
 				}
 				upgrade_megastructure_to = gateway_restored
 				finish_upgrade = yes
 			}
 		}
 		if = {
-			limit = { exists = from } #does not always exist when upgraded from script via "finish_upgrade = yes"
+			limit = {
+				has_paragon_dlc = yes
+				exists = from				#does not always exist when upgraded from script via "finish_upgrade = yes"
+				from = {
+					is_ai = no
+				}
+				NOT = {
+					has_global_flag = gateway_dude_found
+				}
+			}
 			from = {
-				country_event = { id = origin.1050 }
+				country_event = {
+					id = origin.1050
+				}
 				random_list = {
-					20 = { #spawn chance
+					20 = {
+						#spawn chance
 						set_country_flag = sharpbeak_known
-						prev = { set_star_flag = sharpbeak_starsystem }
+						prev = {
+							set_star_flag = sharpbeak_starsystem
+						}
 						fromfrom = {
 							save_global_event_target_as = paragon_gateway_dude_homegate
 							set_megastructure_flag = paragon_gateway_dude_homegate_flag
 						}
-						country_event = { id = paragon.3000 }
+						country_event = {
+							id = paragon.3000
+							days = 5
+						}
 						set_global_flag = gateway_dude_found
 						set_global_flag = sharpbeak_recruit_phase
 						modifier = {
-							factor = 0
+							factor = 4
 							OR = {
-								has_paragon_dlc = no
-								is_ai = yes
-								has_global_flag = gateway_dude_found
-								NOR = {
-									has_country_flag = gateway_reactivated
-									has_country_flag = gateway_built
-								}
+								has_country_flag = gateway_reactivated
+								has_country_flag = gateway_built
+								has_country_flag = found_skravird
 							}
 						}
+						modifier = {
+							factor = 10
+							has_origin = origin_galactic_doorstep
+						}
 					}
-					80 = {} # no luck
+					80 = {
+					}
+					# no luck
 				}
-				country_event = { id = apoc.12 }
-				country_event = { id = apoc.10 }
+				country_event = {
+					id = apoc.12
+				}
+				country_event = {
+					id = apoc.10
+				}
 			}
 		}
 	}
@@ -300,16 +348,12 @@ gateway_derelict = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = yes
 	show_galactic_map_icon = no
-	show_in_outliner = no
-
+	show_in_outliner = yes
 	bypass_type = gateway
-
 	potential = {
 		always = no
 	}
-
 	construction_blocks_and_blocked_by = self_type
-
 	on_build_complete = {
 		activate_gateway = fromfrom
 	}
