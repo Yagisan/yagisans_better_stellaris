@@ -2084,9 +2084,14 @@ ice_mining_station = {
 		custom_tooltip = {
 			fail_text = requires_ice_source
 			solar_system = {
-				OR = {
-					has_planet_class = pc_ice_asteroid
-					has_planet_class = pc_frozen
+				any_system_planet = {
+					OR = {
+						is_planet_class = pc_ice_asteroid
+						is_planet_class = pc_frozen
+					}
+					NOT = {
+						has_planet_flag = mercenary_enclave_planet
+					}
 				}
 			}
 		}
@@ -2430,10 +2435,12 @@ dimensional_shrine = {
 			unity = @dimensional_shrine_unity_production
 		}
 		upkeep = {
+			energy = 3
 		}
-		ai_weight = {
-			weight = 100			#use same weight here - ai weighting is done in starbase_types.txt
-		}
+	}
+	show_in_tech = "tech_sensors_3"
+	ai_weight = {
+		weight = 100		#use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
