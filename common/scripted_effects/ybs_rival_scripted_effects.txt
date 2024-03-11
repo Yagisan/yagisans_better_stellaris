@@ -219,6 +219,21 @@ ybs_give_rival_buffs = {
 			tech = tech_ship_armor_2
 			message = no
 		}
+		# Automated Exploration Protocols
+		give_technology = {
+			tech = tech_automated_exploration
+			message = no
+		}
+		# Assembly Patterns
+		give_technology = {
+			tech = tech_assembly_pattern
+			message = no
+		}
+		# Ground Defense Planning
+		give_technology = {
+			tech = tech_ground_defense_planning
+			message = no
+		}
 		# Give some influence that they can quickly buy the surrounding systems
 		add_resource = {
 			influence = 400
