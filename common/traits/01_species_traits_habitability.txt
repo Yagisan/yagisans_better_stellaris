@@ -320,7 +320,7 @@ trait_pc_habitat_preference = {
 	}
 	sorting_priority = 30
 	modifier = {
-		pc_habitat_habitability = 1
+		pc_habitat_habitability = @primary
 	}
 	ai_weight = {
 		weight = 0
