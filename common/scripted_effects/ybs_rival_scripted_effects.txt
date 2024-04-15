@@ -192,29 +192,32 @@ ybs_give_rival_buffs = {
 			}
 		}
 		# When giving tech, also make sure to give all previous versions too.
-		# Fusion Power
+		# Fission Power
 		give_technology = {
 			tech = tech_fission_power
 			message = no
 		}
+		# Fusion Power
 		give_technology = {
 			tech = tech_fusion_power
 			message = no
 		}
-		# Improved Deflectors
+		# Deflectors
 		give_technology = {
 			tech = tech_shields_1
 			message = no
 		}
+		# Improved Deflectors
 		give_technology = {
 			tech = tech_shields_2
 			message = no
 		}
-		# Ceramo-Metal Materials
+		# Nanocomposite Materials
 		give_technology = {
 			tech = tech_ship_armor_1
 			message = no
 		}
+		# Ceramo-Metal Materials
 		give_technology = {
 			tech = tech_ship_armor_2
 			message = no
