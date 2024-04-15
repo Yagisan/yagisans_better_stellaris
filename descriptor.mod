@@ -1,4 +1,4 @@
-version="1.5.0"
+version="1.5.1"
 dependencies={
 	"~~Scripted Trigger Undercoat"
 }
@@ -8,4 +8,4 @@ tags={
 	"Military"
 	"Balance"
 }
-supported_version="3.11.1"
+supported_version="3.11.3"
