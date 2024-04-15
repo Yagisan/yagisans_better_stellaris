@@ -617,7 +617,11 @@ warpling_army = {
 	resources = {
 		category = armies
 		cost = {
-			astral_threads = 10
+			astral_threads = 100
+		}
+		upkeep = {
+			energy = 1
+			astral_threads = 0.1
 		}
 	}
 	potential_country = {
