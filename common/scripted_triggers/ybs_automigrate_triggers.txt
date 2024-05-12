@@ -25,6 +25,14 @@ ybs_pop_is_good_for_research = {
 		has_trait = trait_elevated_synapses
 		has_trait = trait_cyborg_logic_engines
 		has_trait = trait_necrophage
+		has_trait = trait_cyborg_bionic_engineers
+		has_trait = trait_cyborg_bionic_physicists
+		has_trait = trait_cyborg_bionic_sociologists
+		has_trait = trait_cyborg_creed_of_research
+		has_trait = trait_robot_artificial_engineers
+		has_trait = trait_robot_artificial_physicists
+		has_trait = trait_robot_artificial_sociologists
+		has_trait = trait_robot_inquisitative_axioms
 	}
 }
 
@@ -53,6 +61,7 @@ ybs_pop_is_good_for_mining = {
 		has_trait = trait_cyborg_power_drills
 		has_trait = trait_syncretic_proles
 		has_trait = trait_cave_dweller
+		has_trait = trait_cyborg_creed_of_labor
 	}
 }
 
@@ -67,6 +76,7 @@ ybs_pop_is_good_for_energy = {
 		has_trait = trait_technical_skill
 		has_trait = trait_cyborg_superconductive
 		has_trait = trait_syncretic_proles
+		has_trait = trait_cyborg_creed_of_labor
 	}
 }
 
@@ -82,6 +92,7 @@ ybs_pop_is_good_for_farming = {
 		has_trait = trait_excessive_endurance
 		has_trait = trait_cyborg_harvesters
 		has_trait = trait_syncretic_proles
+		has_trait = trait_cyborg_creed_of_labor
 	}
 }
 
@@ -91,6 +102,8 @@ ybs_pop_is_good_for_trade = {
 		has_trait = trait_thrifty
 		has_trait = trait_nuumismatic_administration
 		has_trait = trait_robot_trading_algorithms
+		has_trait = trait_cyborg_trading_algorithms
+		has_trait = trait_robot_matrix_trading
 	}
 }
 
@@ -104,6 +117,9 @@ ybs_pop_is_good_for_fortress = {
 		has_trait = trait_lithoid
 		has_trait = trait_cybernetic
 		has_trait = trait_limited_regeneration
+		has_trait = trait_cyborg_integrated_weaponry
+		has_trait = trait_cyborg_creed_of_war
+		has_trait = trait_robot_integrated_weaponry
 	}
 }
 
