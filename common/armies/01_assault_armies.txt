@@ -41,6 +41,7 @@ assault_army = {
 			NOR = {
 				has_trait = "trait_mechanical"
 				has_trait = "trait_machine_unit"
+				has_trait = "trait_limited_cybernetic"
 				is_sapient = no
 			}
 		}
@@ -133,6 +134,7 @@ slave_army = {
 			NOR = {
 				has_trait = "trait_mechanical"
 				has_trait = "trait_machine_unit"
+				has_trait = "trait_limited_cybernetic"
 				is_sapient = no
 			}
 		}
@@ -201,6 +203,7 @@ clone_army = {
 			NOR = {
 				has_trait = "trait_mechanical"
 				has_trait = "trait_machine_unit"
+				has_trait = "trait_limited_cybernetic"
 				is_sapient = no
 			}
 		}
@@ -327,6 +330,7 @@ psionic_army = {
 			NOR = {
 				has_trait = "trait_mechanical"
 				has_trait = "trait_machine_unit"
+				has_trait = "trait_limited_cybernetic"
 				is_sapient = no
 			}
 		}
@@ -425,6 +429,7 @@ gene_warrior_army = {
 			NOR = {
 				has_trait = "trait_mechanical"
 				has_trait = "trait_machine_unit"
+				has_trait = "trait_limited_cybernetic"
 				is_sapient = no
 			}
 		}
@@ -662,5 +667,116 @@ flamestorm_troopers_army = {
 			set = 0
 			is_fallen_empire = yes
 		}
+	}
+}
+
+### Machine Empire Armies
+# IM Armies
+individual_machine_assault_1 = {
+	damage = 2.2
+	health = 1.5
+	morale = 1
+	morale_damage = 1
+	collateral_damage = 0.75
+	war_exhaustion = 0.25
+	time = 90
+	has_species = yes
+	icon = GFX_army_type_machine_assault
+	resources = {
+		category = armies
+		cost = {
+			minerals = 100
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	potential_country = {
+		is_individual_machine = yes
+	}
+	potential = {
+		from = {
+			has_trait = "trait_machine_unit"
+		}
+	}
+	show_tech_unlock_if = {
+		is_individual_machine = yes
+	}
+	prerequisites = {
+		"tech_assault_armies"
+	}
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			has_technology = tech_adaptive_combat_algorithms
+		}
+	}
+}
+
+# IM Armies 2
+individual_machine_assault_2 = {
+	damage = 3
+	health = 2.2
+	morale = 1.25
+	morale_damage = 1.25
+	collateral_damage = 1.25
+	war_exhaustion = 0.75
+	time = 120
+	has_species = yes
+	icon = GFX_army_type_machine_assault
+	resources = {
+		category = armies
+		cost = {
+			minerals = 200
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	potential_country = {
+		is_individual_machine = yes
+	}
+	potential = {
+		from = {
+			has_trait = "trait_machine_unit"
+		}
+	}
+	prerequisites = {
+		"tech_adaptive_combat_algorithms"
+	}
+	ai_weight = {
+		base = 100
+	}
+}
+
+# IM Armies 3
+individual_machine_assault_3 = {
+	damage = 5
+	health = 6
+	morale = 2
+	morale_damage = 1.5
+	collateral_damage = 2
+	war_exhaustion = 1.5
+	time = 500
+	has_species = no
+	icon = GFX_army_type_machine_assault
+	resources = {
+		category = armies
+		cost = {
+			minerals = 800
+		}
+		upkeep = {
+			energy = 8
+		}
+	}
+	potential_country = {
+		is_individual_machine = yes
+	}
+	prerequisites = {
+		"tech_biomechanics"
+	}
+	ai_weight = {
+		base = 50
 	}
 }
