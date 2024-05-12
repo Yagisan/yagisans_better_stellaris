@@ -75,6 +75,28 @@ machine_occupation_army = {
 		owner = {
 			is_machine_empire = yes
 		}
+		# undercoat: moved to scripted trigger
+		from = {
+			has_trait = "trait_machine_unit"
+		}
+	}
+}
+
+individual_machine_occupation_army = {
+	defensive = yes
+	occupation = yes
+	health = 1.75
+	damage = 2.2
+	morale = 1.25
+	morale_damage = 1
+	collateral_damage = 0
+	war_exhaustion = 0.25
+	icon = GFX_army_type_machine_defensive
+	has_species = yes
+	potential = {
+		owner = {
+			is_individual_machine = yes
+		}
 		from = {
 			has_trait = "trait_machine_unit"
 		}
