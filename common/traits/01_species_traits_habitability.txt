@@ -323,7 +323,7 @@ trait_pc_habitat_preference = {
 	species_potential_add = {
 		can_change_habitability_preference = yes
 		hidden_trigger = {
-		exists = from
+			exists = from
 		}
 		from = {
 			can_add_organic_void_dweller_traits = yes			# undercoat: moved to scripted trigger
@@ -468,7 +468,8 @@ trait_pc_gaia_preference_terraforming = {
 			exists = planet
 			planet = {
 				is_gaia_world = yes
-			}			# undercoat: moved to scripted trigger
+			}
+			# undercoat: moved to scripted trigger
 		}
 		planet_jobs_produces_mult = 0.05
 	}
