@@ -22,7 +22,9 @@ gateway_0 = {
 		has_technology = tech_gateway_construction
 	}
 	possible = {
+		hidden_trigger = {
 		exists = starbase
+		}
 		custom_tooltip = {
 			fail_text = "requires_inside_border_or_subject"
 			OR = {
@@ -292,9 +294,6 @@ gateway_restored = {
 				}
 			}
 			from = {
-				country_event = {
-					id = origin.1050
-				}
 				random_list = {
 					20 = {
 						#spawn chance
@@ -321,13 +320,15 @@ gateway_restored = {
 							}
 						}
 						modifier = {
-							factor = 10
-							has_origin = origin_galactic_doorstep
+							factor = 2
+							is_galactic_doorstep_empire = yes							# undercoat: moved to scripted trigger
 						}
 					}
 					80 = {
+					}					# no luck
 					}
-					# no luck
+				country_event = {
+					id = origin.1050
 				}
 				country_event = {
 					id = apoc.12
