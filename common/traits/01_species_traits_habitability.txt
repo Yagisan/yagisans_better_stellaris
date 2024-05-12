@@ -2,7 +2,13 @@
 # NOTE FOR MODDERS #
 ####################
 # Matching to planet classes are done via name matching (trait_PLANET_CLASS_KEY_preference) or using setting ideal_planet_class.
-# ideal_planet_class = pc_desert # Must be set and match an existing planet class or it will not be treated as a habitability trait. Note that only one trait
+# ideal_planet_class = pc_desert # Must be set and match an existing planet class or the trait will not be treated as a habitability trait.
+# Those traits that create one to one relation between the trait and species ideal planet class can be considered as habitability traits.
+# Note that only one habitability trait can be assigned to a species because habitability traits are mutually exclusive.
+# Aside from having proper habitability traits, which define ideal_planet_class for species, there is also a posibility to define bound_to_planet_classes entry for a trait.
+# That entry can contain a list of planet classes and that will allow to create a logical connection between the trait and listed planet classes. So f.e. when in empire editor
+# a home planet is selected for the species that cannot have 'ideal planet class' an additional search for the trait that is bound to plannet classes happens. If such trait is
+# found it is added to the species. Bound to the planet classes traits works mostly the same way as habitability traits, but they don't set ideal_planet_class for species.
 ####################
 # Reduced planetary habitability to make preferred planets more valuable.
 # Eventually enough tech is discovered to make all planets habitable.
@@ -12,6 +18,8 @@
 @primary = 0.6
 @secondary = 0.5
 @tertiary = 0.1
+@machine_primary = 0.75
+@machine_secondary = 0.5
 @primary_extra = 0.1
 trait_pc_desert_preference = {
 	icon = "gfx/interface/icons/traits/trait_pc_desert_preference.dds"
@@ -21,12 +29,14 @@ trait_pc_desert_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_desert_habitability = @primary_extra
-		dry_habitability = @secondary
-		wet_habitability = @tertiary
-		cold_habitability = @tertiary
+		dry_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @tertiary		# undercoat: moved to static modifier
+		cold_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -41,12 +51,14 @@ trait_pc_arid_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_arid_habitability = @primary_extra
-		dry_habitability = @secondary
-		wet_habitability = @tertiary
-		cold_habitability = @tertiary
+		dry_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @tertiary		# undercoat: moved to static modifier
+		cold_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -61,12 +73,14 @@ trait_pc_savannah_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_savannah_habitability = @primary_extra
-		dry_habitability = @secondary
-		wet_habitability = @tertiary
-		cold_habitability = @tertiary
+		dry_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @tertiary		# undercoat: moved to static modifier
+		cold_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -81,12 +95,14 @@ trait_pc_tropical_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_tropical_habitability = @primary_extra
-		wet_habitability = @secondary
-		dry_habitability = @tertiary
-		cold_habitability = @tertiary
+		wet_habitability = @secondary		# undercoat: moved to static modifier
+		dry_habitability = @tertiary		# undercoat: moved to static modifier
+		cold_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -101,12 +117,14 @@ trait_pc_continental_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_continental_habitability = @primary_extra
-		wet_habitability = @secondary
-		dry_habitability = @tertiary
-		cold_habitability = @tertiary
+		wet_habitability = @secondary		# undercoat: moved to static modifier
+		dry_habitability = @tertiary		# undercoat: moved to static modifier
+		cold_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -121,12 +139,14 @@ trait_pc_ocean_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_ocean_habitability = @primary_extra
-		wet_habitability = @secondary
-		dry_habitability = @tertiary
-		cold_habitability = @tertiary
+		wet_habitability = @secondary		# undercoat: moved to static modifier
+		dry_habitability = @tertiary		# undercoat: moved to static modifier
+		cold_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	species_possible_remove = {
 		NOT = {
@@ -146,12 +166,14 @@ trait_pc_arctic_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_arctic_habitability = @primary_extra
-		cold_habitability = @secondary
-		dry_habitability = @tertiary
-		wet_habitability = @tertiary
+		cold_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @tertiary		# undercoat: moved to static modifier
+		dry_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -166,12 +188,14 @@ trait_pc_tundra_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_tundra_habitability = @primary_extra
-		cold_habitability = @secondary
-		dry_habitability = @tertiary
-		wet_habitability = @tertiary
+		cold_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @tertiary		# undercoat: moved to static modifier
+		dry_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -186,12 +210,14 @@ trait_pc_alpine_preference = {
 		LITHOID
 	}
 	sorting_priority = 30
+	species_potential_add = {
+		can_change_habitability_preference = yes
+	}
 	modifier = {
-		# Undercoat static modifiers
 		pc_alpine_habitability = @primary_extra
-		cold_habitability = @secondary
-		dry_habitability = @tertiary
-		wet_habitability = @tertiary
+		cold_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @tertiary		# undercoat: moved to static modifier
+		dry_habitability = @tertiary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -214,10 +240,9 @@ trait_pc_ai_preference = {
 	sorting_priority = 30
 	modifier = {
 		pc_ai_habitability = 1
-		# Undercoat static modifiers
-		dry_habitability = 0.01
-		cold_habitability = 0.01
-		wet_habitability = 0.01
+		dry_habitability = 0.01		# undercoat: moved to static modifier
+		wet_habitability = 0.01		# undercoat: moved to static modifier
+		cold_habitability = 0.01		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -240,10 +265,9 @@ trait_pc_nuked_preference = {
 	sorting_priority = 30
 	modifier = {
 		pc_nuked_habitability = @primary
-		# Undercoat static modifiers
-		dry_habitability = @secondary
-		cold_habitability = @secondary
-		wet_habitability = @secondary
+		dry_habitability = @secondary		# undercoat: moved to static modifier
+		wet_habitability = @secondary		# undercoat: moved to static modifier
+		cold_habitability = @secondary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
@@ -297,12 +321,12 @@ trait_pc_ringworld_habitable_preference = {
 trait_pc_habitat_preference = {
 	icon = "gfx/interface/icons/traits/trait_pc_habitat_preference.dds"
 	species_potential_add = {
+		can_change_habitability_preference = yes
+		hidden_trigger = {
 		exists = from
+		}
 		from = {
-			AND = {
-				is_void_dwellers_empire = yes
-				has_tradition = tr_genetics_resequencing
-			}
+			can_add_organic_void_dweller_traits = yes			# undercoat: moved to scripted trigger
 		}
 	}
 	species_possible_merge_add = {
@@ -444,7 +468,7 @@ trait_pc_gaia_preference_terraforming = {
 			exists = planet
 			planet = {
 				is_gaia_world = yes
-			}
+			}			# undercoat: moved to scripted trigger
 		}
 		planet_jobs_produces_mult = 0.05
 	}
@@ -467,6 +491,335 @@ trait_pc_city_preference = {
 	modifier = {
 		pc_city_habitability = @primary
 		pc_relic_habitability = @primary
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_dry_planet_preference = {
+	icon = "gfx/interface/icons/traits/trait_dry_planet_preference.dds"
+	allowed_archetypes = {
+		MACHINE
+		ROBOT
+	}
+	sorting_priority = 30
+	inline_script = traits/climate_bindings/dry
+	initial = no
+	randomized = no
+	species_possible_merge_add = {
+		always = yes
+	}
+	modifier = {
+		dry_habitability = @machine_primary		# undercoat: moved to static modifier
+		wet_habitability = @machine_secondary		# undercoat: moved to static modifier
+		cold_habitability = @machine_secondary		# undercoat: moved to static modifier
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_wet_planet_preference = {
+	icon = "gfx/interface/icons/traits/trait_wet_planet_preference.dds"
+	allowed_archetypes = {
+		MACHINE
+		ROBOT
+	}
+	sorting_priority = 30
+	inline_script = traits/climate_bindings/wet
+	initial = no
+	randomized = no
+	species_possible_merge_add = {
+		always = yes
+	}
+	species_possible_remove = {
+		NOT = {
+			has_trait = trait_robot_aquatic
+		}
+	}
+	modifier = {
+		wet_habitability = @machine_primary		# undercoat: moved to static modifier
+		dry_habitability = @machine_secondary		# undercoat: moved to static modifier
+		cold_habitability = @machine_secondary		# undercoat: moved to static modifier
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_frozen_planet_preference = {
+	icon = "gfx/interface/icons/traits/trait_frozen_planet_preference.dds"
+	allowed_archetypes = {
+		MACHINE
+		ROBOT
+	}
+	sorting_priority = 30
+	inline_script = traits/climate_bindings/cold
+	initial = no
+	randomized = no
+	species_possible_merge_add = {
+		always = yes
+	}
+	modifier = {
+		cold_habitability = @machine_primary		# undercoat: moved to static modifier
+		dry_habitability = @machine_secondary		# undercoat: moved to static modifier
+		wet_habitability = @machine_secondary		# undercoat: moved to static modifier
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_habitat_planet_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_habitat_preference.dds"
+	allowed_archetypes = {
+		MACHINE
+		ROBOT
+	}
+	sorting_priority = 30
+	bound_to_planet_classes = {
+		pc_habitat
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		hidden_trigger = {
+			exists = from
+		}
+		from = {
+			can_add_robotic_void_dweller_traits = yes			# undercoat: moved to scripted trigger
+		}
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	species_possible_remove = {
+		always = yes
+	}
+	modifier = {
+		pc_habitat_habitability = @primary
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_pc_cosmogenesis_world_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_machine_preference.dds"
+	allowed_archetypes = {
+		BIOLOGICAL
+		PRESAPIENT
+		LITHOID
+		MACHINE
+		ROBOT
+	}
+	sorting_priority = 30
+	bound_to_planet_classes = {
+		pc_cosmogenesis_world
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	modifier = {
+		pc_cosmogenesis_world_habitability = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_gaia_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_gaia_preference.dds"
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	bound_to_planet_classes = {
+		pc_gaia
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_gaia_habitability = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_machine_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_machine_preference.dds"
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	bound_to_planet_classes = {
+		pc_machine
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_machine_habitability = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_shattered_ring_habitable_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	bound_to_planet_classes = {
+		pc_shattered_ring_habitable
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_ringworld_habitable_habitability = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_ringworld_habitable_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	bound_to_planet_classes = {
+		pc_ringworld_habitable
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_ringworld_habitable_habitability = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_relic_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_relic_preference.dds"
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	bound_to_planet_classes = {
+		pc_relic
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_relic_habitability = @machine_primary
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_nuked_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_nuked_preference.dds"
+	bound_to_planet_classes = {
+		pc_nuked
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_nuked_habitability = @machine_primary
+		dry_habitability = @machine_secondary		# undercoat: moved to static modifier
+		wet_habitability = @machine_secondary		# undercoat: moved to static modifier
+		cold_habitability = @machine_secondary		# undercoat: moved to static modifier
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_machine_pc_nanotech_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_nuked_preference.dds"
+	bound_to_planet_classes = {
+		pc_nanotech
+	}
+	species_potential_add = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	sorting_priority = 30
+	modifier = {
+		pc_nanotech_habitability = @machine_primary
+		dry_habitability = @machine_secondary		# undercoat: moved to static modifier
+		wet_habitability = @machine_secondary		# undercoat: moved to static modifier
+		cold_habitability = @machine_secondary		# undercoat: moved to static modifier
 	}
 	ai_weight = {
 		weight = 0
