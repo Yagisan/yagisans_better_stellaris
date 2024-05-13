@@ -205,6 +205,10 @@ ybs_planet_is_good_for_unity = {
 		has_forbidden_jobs = evaluator
 		has_forbidden_jobs = synapse_drone
 		has_forbidden_jobs = chronicle_drone
+		has_forbidden_jobs = mortal_initiate
+		has_forbidden_jobs = haruspex
+		has_forbidden_jobs = technophant
+		has_forbidden_jobs = robot_caretaker
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -224,6 +228,10 @@ ybs_planet_is_good_for_unity = {
 		has_available_jobs = evaluator
 		has_available_jobs = synapse_drone
 		has_available_jobs = chronicle_drone
+		has_available_jobs = mortal_initiate
+		has_available_jobs = haruspex
+		has_available_jobs = technophant
+		has_available_jobs = robot_caretaker
 	}
 }
 
