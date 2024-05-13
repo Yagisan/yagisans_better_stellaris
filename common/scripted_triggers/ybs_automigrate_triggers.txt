@@ -211,6 +211,108 @@ ybs_planet_is_good_for_unity = {
 
 # A naive search would only check planet designation
 # but not every job on that world will be one of those types.
+# has_foundry_designation = yes
+ybs_planet_is_good_for_foundry = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = bluelotus_technician
+		has_forbidden_jobs = bluelotus_drone
+		has_forbidden_jobs = odd_factory_worker
+		has_forbidden_jobs = odd_factory_drone
+		has_forbidden_jobs = manufactorium_specialist
+		has_forbidden_jobs = manufactorium_complex_drone
+		has_forbidden_jobs = foundry
+		has_forbidden_jobs = fabricator
+		has_forbidden_jobs = alloy_drone
+		has_forbidden_jobs = catalytic_technician
+		has_forbidden_jobs = catalytic_drone
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = bluelotus_technician
+		has_available_jobs = bluelotus_drone
+		has_available_jobs = odd_factory_worker
+		has_available_jobs = odd_factory_drone
+		has_available_jobs = manufactorium_specialist
+		has_available_jobs = manufactorium_complex_drone
+		has_available_jobs = foundry
+		has_available_jobs = fabricator
+		has_available_jobs = alloy_drone
+		has_available_jobs = catalytic_technician
+		has_available_jobs = catalytic_drone
+		has_available_jobs = politician
+	}
+}
+
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_factory_designation = yes
+ybs_planet_is_good_for_factory = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = artisan
+		has_forbidden_jobs = artificer
+		has_forbidden_jobs = pearl_diver
+		has_forbidden_jobs = artisan_drone
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = artisan
+		has_available_jobs = artificer
+		has_available_jobs = pearl_diver
+		has_available_jobs = artisan_drone
+	}
+}
+
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
+# has_refinery_designation = yes
+ybs_planet_is_good_for_refinery = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = chemist
+		has_forbidden_jobs = chemist_drone
+		has_forbidden_jobs = translucer
+		has_forbidden_jobs = translucer_drone
+		has_forbidden_jobs = crystal_miner
+		has_forbidden_jobs = crystal_mining_drone
+		has_forbidden_jobs = gas_refiner
+		has_forbidden_jobs = gas_refiner_drone
+		has_forbidden_jobs = gas_extractor
+		has_forbidden_jobs = gas_extraction_drone
+		has_forbidden_jobs = gas_plant_engineer
+		has_forbidden_jobs = gas_plant_engineer_gestalt
+		has_forbidden_jobs = stratovent_refiner
+		has_forbidden_jobs = stratovent_refiner_upg
+		has_forbidden_jobs = mote_harvester
+		has_forbidden_jobs = mote_harvesting_drone
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = chemist
+		has_available_jobs = chemist_drone
+		has_available_jobs = translucer
+		has_available_jobs = translucer_drone
+		has_available_jobs = crystal_miner
+		has_available_jobs = crystal_mining_drone
+		has_available_jobs = gas_refiner
+		has_available_jobs = gas_refiner_drone
+		has_available_jobs = gas_extractor
+		has_available_jobs = gas_extraction_drone
+		has_available_jobs = gas_plant_engineer
+		has_available_jobs = gas_plant_engineer_gestalt
+		has_available_jobs = stratovent_refiner
+		has_available_jobs = stratovent_refiner_upg
+		has_available_jobs = mote_harvester
+		has_available_jobs = mote_harvesting_drone
+	}
+}
+
+# A naive search would only check planet designation
+# but not every job on that world will be one of those types.
 # has_trade_designation = yes
 ybs_planet_is_good_for_trade = {
 	optimize_memory
