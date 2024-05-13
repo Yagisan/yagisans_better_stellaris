@@ -33,6 +33,15 @@ ybs_pop_is_good_for_research = {
 		has_trait = trait_robot_artificial_physicists
 		has_trait = trait_robot_artificial_sociologists
 		has_trait = trait_robot_inquisitative_axioms
+		has_trait = trait_auto_mod_overtuned
+		has_trait = trait_auto_mod_cyborg
+		has_trait = trait_auto_mod_robotic
+		has_trait = trait_auto_mod_biological
+	}
+	NOT = {
+		has_trait = trait_zombie
+		has_trait = trait_syncretic_proles
+		has_trait = trait_enigmatic_intelligence_failed
 	}
 }
 
@@ -46,6 +55,14 @@ ybs_pop_is_good_for_unity = {
 		has_trait = trait_robot_propaganda_machines
 		has_trait = trait_expressed_tradition
 		has_trait = trait_necrophage
+		has_trait = trait_auto_mod_overtuned
+		has_trait = trait_auto_mod_cyborg
+		has_trait = trait_auto_mod_robotic
+		has_trait = trait_auto_mod_biological
+	}
+	NOT = {
+		has_trait = trait_zombie
+		has_trait = trait_syncretic_proles
 	}
 }
 
@@ -53,6 +70,11 @@ ybs_pop_is_good_for_foundry = {
 	optimize_memory
 	OR = {
 		has_trait = trait_cyborg_creed_of_construction
+		has_trait = trait_natural_machinist
+	}
+	NOT = {
+		has_trait = trait_zombie
+		has_trait = trait_syncretic_proles
 	}
 }
 
@@ -60,15 +82,25 @@ ybs_pop_is_good_for_factory = {
 	optimize_memory
 	OR = {
 		has_trait = trait_cyborg_creed_of_construction
+		has_trait = trait_natural_machinist
+	}
+	NOT = {
+		has_trait = trait_zombie
+		has_trait = trait_syncretic_proles
 	}
 }
 
 ybs_pop_is_good_for_refinery = {
 	optimize_memory
+	# No traits specfically boost the output of these, so grab the generic boosts like Efficient Processors or Excessive Endurance.
 	OR = {
-		has_trait = trait_lithoid_scintillating
-		has_trait = trait_lithoid_gaseous_byproducts
-		has_trait = trait_lithoid_volatile_excretions
+		has_trait = trait_robot_efficient_processors
+		has_trait = trait_cyborg_efficient_processors
+		has_trait = trait_excessive_endurance
+	}
+	NOT = {
+		has_trait = trait_zombie
+		has_trait = trait_syncretic_proles
 	}
 }
 
@@ -85,6 +117,11 @@ ybs_pop_is_good_for_mining = {
 		has_trait = trait_syncretic_proles
 		has_trait = trait_cave_dweller
 		has_trait = trait_cyborg_creed_of_labor
+		has_trait = trait_felsic
+		has_trait = trait_auto_mod_overtuned
+		has_trait = trait_auto_mod_cyborg
+		has_trait = trait_auto_mod_robotic
+		has_trait = trait_auto_mod_biological
 	}
 }
 
@@ -100,6 +137,10 @@ ybs_pop_is_good_for_energy = {
 		has_trait = trait_cyborg_superconductive
 		has_trait = trait_syncretic_proles
 		has_trait = trait_cyborg_creed_of_labor
+		has_trait = trait_auto_mod_overtuned
+		has_trait = trait_auto_mod_cyborg
+		has_trait = trait_auto_mod_robotic
+		has_trait = trait_auto_mod_biological
 	}
 }
 
@@ -116,6 +157,11 @@ ybs_pop_is_good_for_farming = {
 		has_trait = trait_cyborg_harvesters
 		has_trait = trait_syncretic_proles
 		has_trait = trait_cyborg_creed_of_labor
+		has_trait = trait_delicious
+		has_trait = trait_auto_mod_overtuned
+		has_trait = trait_auto_mod_cyborg
+		has_trait = trait_auto_mod_robotic
+		has_trait = trait_auto_mod_biological
 	}
 }
 
@@ -127,6 +173,10 @@ ybs_pop_is_good_for_trade = {
 		has_trait = trait_robot_trading_algorithms
 		has_trait = trait_cyborg_trading_algorithms
 		has_trait = trait_robot_matrix_trading
+		has_trait = trait_auto_mod_overtuned
+		has_trait = trait_auto_mod_cyborg
+		has_trait = trait_auto_mod_robotic
+		has_trait = trait_auto_mod_biological
 	}
 }
 
@@ -144,6 +194,7 @@ ybs_pop_is_good_for_fortress = {
 		has_trait = trait_cyborg_creed_of_war
 		has_trait = trait_robot_integrated_weaponry
 		has_trait = trait_cyborg_ancient_dreadnought
+		has_trait = trait_drake_scaled
 	}
 }
 
