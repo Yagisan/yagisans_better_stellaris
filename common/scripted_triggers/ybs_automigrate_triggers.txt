@@ -133,6 +133,7 @@ ybs_planet_is_good_for_research = {
 		has_forbidden_jobs = head_researcher
 		has_forbidden_jobs = researcher
 		has_forbidden_jobs = xeno_zoo_keeper
+		has_forbidden_jobs = necromancer
 		has_forbidden_jobs = archaeoengineers
 		has_forbidden_jobs = brain_drone
 		has_forbidden_jobs = calculator
@@ -144,12 +145,21 @@ ybs_planet_is_good_for_research = {
 		has_forbidden_jobs = space_time_anomaly_researcher_gestalt
 		has_forbidden_jobs = archivist
 		has_forbidden_jobs = stratovent_researcher
+		has_forbidden_jobs = munitions_decommissioner
+		has_forbidden_jobs = munitions_decommissioning_unit
+		has_forbidden_jobs = munitions_decommissioning_drone
+		has_forbidden_jobs = astral_researcher
+		has_forbidden_jobs = astral_drone
+		has_forbidden_jobs = astral_unit
+		has_forbidden_jobs = nanotech_research_unit
+		has_forbidden_jobs = nanotech_researcher
 	}
 	# Check for a free suitable job.
 	OR = {
 		has_available_jobs = head_researcher
 		has_available_jobs = researcher
 		has_available_jobs = xeno_zoo_keeper
+		has_available_jobs = necromancer
 		has_available_jobs = archaeoengineers
 		has_available_jobs = brain_drone
 		has_available_jobs = calculator
@@ -161,6 +171,14 @@ ybs_planet_is_good_for_research = {
 		has_available_jobs = space_time_anomaly_researcher_gestalt
 		has_available_jobs = archivist
 		has_available_jobs = stratovent_researcher
+		has_available_jobs = munitions_decommissioner
+		has_available_jobs = munitions_decommissioning_unit
+		has_available_jobs = munitions_decommissioning_drone
+		has_available_jobs = astral_researcher
+		has_available_jobs = astral_drone
+		has_available_jobs = astral_unit
+		has_available_jobs = nanotech_research_unit
+		has_available_jobs = nanotech_researcher
 	}
 }
 
@@ -348,7 +366,6 @@ ybs_planet_is_good_for_fortress = {
 	# Check for forbidden jobs first. Not suitable if any of these are found.
 	NOT = {
 		has_forbidden_jobs = enforcer
-		has_forbidden_jobs = necromancer
 		has_forbidden_jobs = soldier
 		has_forbidden_jobs = patrol_drone
 		has_forbidden_jobs = warrior_drone
@@ -358,7 +375,6 @@ ybs_planet_is_good_for_fortress = {
 	# Check for a free suitable job.
 	OR = {
 		has_available_jobs = enforcer
-		has_available_jobs = necromancer
 		has_available_jobs = soldier
 		has_available_jobs = patrol_drone
 		has_available_jobs = warrior_drone
