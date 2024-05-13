@@ -253,6 +253,63 @@ ybs_automigrate_unemployed = {
 				value = -1
 			}
 		}
+		# Is this pop good at foundry ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_foundry = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a foundry habitat with free jobs.
+			ybs_move_pop_foundry_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at factory ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_factory = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a factory habitat with free jobs.
+			ybs_move_pop_factory_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at refinery ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_refinery = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a refinery habitat with free jobs.
+			ybs_move_pop_refinery_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
 		# Is this pop good at trade ?
 		if = {
 			limit = {
