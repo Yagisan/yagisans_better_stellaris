@@ -1294,6 +1294,84 @@ ybs_move_pop_unity_80 = {
 	}
 }
 
+ybs_move_pop_foundry_80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a foundry planet
+			ybs_planet_is_good_for_foundry = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Foundry - 80). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_factory_80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a factory planet
+			ybs_planet_is_good_for_factory = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Factory - 80). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_refinery_80 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a refinery planet
+			ybs_planet_is_good_for_refinery = yes
+			# Do we have at least 80% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.8
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Refinery - 80). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
 ybs_move_pop_trade_80 = {
 	random_owned_planet = {
 		limit = {
@@ -1476,6 +1554,84 @@ ybs_move_pop_unity_60 = {
 	}
 }
 
+ybs_move_pop_foundry_60 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a foundry planet
+			ybs_planet_is_good_for_foundry = yes
+			# Do we have at least 60% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.6
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Foundry - 60). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_factory_60 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a factory planet
+			ybs_planet_is_good_for_factory = yes
+			# Do we have at least 60% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.6
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Factory - 60). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_refinery_60 = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a refinery planet
+			ybs_planet_is_good_for_refinery = yes
+			# Do we have at least 60% habitablity ?
+			habitability = {
+				who = PREVPREV
+				value >= 0.6
+			}
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Refinery - 60). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
 ybs_move_pop_trade_60 = {
 	random_owned_planet = {
 		limit = {
@@ -1639,6 +1795,69 @@ ybs_move_pop_unity_any = {
 			planet = this
 		}
 		log = "Yagisan - Employment found (Unity - Any). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_foundry_any = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a foundry planet
+			ybs_planet_is_good_for_foundry = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Foundry - Any). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_factory_any = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a factory planet
+			ybs_planet_is_good_for_factory = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Factory - Any). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_refinery_any = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a refinery planet
+			ybs_planet_is_good_for_refinery = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Refinery - Any). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
