@@ -49,6 +49,29 @@ ybs_pop_is_good_for_unity = {
 	}
 }
 
+ybs_pop_is_good_for_foundry = {
+	optimize_memory
+	OR = {
+		has_trait = trait_cyborg_creed_of_construction
+	}
+}
+
+ybs_pop_is_good_for_factory = {
+	optimize_memory
+	OR = {
+		has_trait = trait_cyborg_creed_of_construction
+	}
+}
+
+ybs_pop_is_good_for_refinery = {
+	optimize_memory
+	OR = {
+		has_trait = trait_lithoid_scintillating
+		has_trait = trait_lithoid_gaseous_byproducts
+		has_trait = trait_lithoid_volatile_excretions
+	}
+}
+
 ybs_pop_is_good_for_mining = {
 	optimize_memory
 	OR = {
@@ -120,6 +143,7 @@ ybs_pop_is_good_for_fortress = {
 		has_trait = trait_cyborg_integrated_weaponry
 		has_trait = trait_cyborg_creed_of_war
 		has_trait = trait_robot_integrated_weaponry
+		has_trait = trait_cyborg_ancient_dreadnought
 	}
 }
 
