@@ -2142,6 +2142,75 @@ ybs_move_pop_unity_void = {
 	}
 }
 
+ybs_move_pop_foundry_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a foundry planet
+			ybs_planet_is_good_for_foundry = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Foundry - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_factory_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a factory planet
+			ybs_planet_is_good_for_factory = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Factory - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_refinery_void = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# I need to check for something that makes this a refinery planet
+			ybs_planet_is_good_for_refinery = yes
+			# Habitat ?
+			is_planet_class = pc_habitat
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Refinery - Habitat). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
 ybs_move_pop_trade_void = {
 	random_owned_planet = {
 		limit = {
