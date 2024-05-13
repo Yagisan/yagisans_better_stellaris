@@ -32,928 +32,17 @@ ybs_automigrate_unemployed = {
 		value = -1
 	}
 	# Check for Tomb Worlds first
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at research ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_research = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a research world with free jobs.
-			ybs_move_pop_research_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at unity ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_unity = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a unity world with free jobs.
-			ybs_move_pop_unity_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at foundry ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_foundry = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a foundry world with free jobs.
-			ybs_move_pop_foundry_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at factory ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_factory = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a factory world with free jobs.
-			ybs_move_pop_factory_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at refinery ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_refinery = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a refinery world with free jobs.
-			ybs_move_pop_refinery_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at trade ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_trade = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a trade world with free jobs.
-			ybs_move_pop_trade_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at defense ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_fortress = yes
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find a fortress world with free jobs.
-			ybs_move_pop_fortress_tomb = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Can this pop handle any jobs on a Tomb world ?
-		if = {
-			limit = {
-				PREV = {
-					empire_has_good_habitability_on_tomb_worlds = yes
-					NOT = {
-						has_trait = trait_pc_habitat_preference
-					}
-				}
-			}
-			# Try to find any world with free jobs.
-			ybs_move_pop_any_tomb = yes
-		}
-	}
+	ybs_automigrate_tomb_world = yes
 	# Check for Habitats for Void Dwellers second
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at research ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_research = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a research habitat with free jobs.
-			ybs_move_pop_research_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at unity ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_unity = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a unity habitat with free jobs.
-			ybs_move_pop_unity_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at foundry ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_foundry = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a foundry habitat with free jobs.
-			ybs_move_pop_foundry_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at factory ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_factory = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a factory habitat with free jobs.
-			ybs_move_pop_factory_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at refinery ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_refinery = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a refinery habitat with free jobs.
-			ybs_move_pop_refinery_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at trade ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_trade = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a trade habitat with free jobs.
-			ybs_move_pop_trade_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at defense ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_fortress = yes
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find a fortress habitat with free jobs.
-			ybs_move_pop_fortress_void = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Can this pop handle any jobs on a habitat ?
-		if = {
-			limit = {
-				PREV = {
-					has_trait = trait_pc_habitat_preference
-				}
-			}
-			# Try to find any world with free jobs.
-			ybs_move_pop_any_void = yes
-		}
-	}
+	ybs_automigrate_habitat = yes
 	# Check other worlds now
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at research ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_research = yes
-				}
-			}
-			# Try to find a research world with free jobs.
-			ybs_move_pop_research_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at unity ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_unity = yes
-				}
-			}
-			# Try to find a unity world with free jobs.
-			ybs_move_pop_unity_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at foundry ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_foundry = yes
-				}
-			}
-			# Try to find a foundry world with free jobs.
-			ybs_move_pop_foundry_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at factory ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_factory = yes
-				}
-			}
-			# Try to find a factory world with free jobs.
-			ybs_move_pop_factory_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at refinery ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_refinery = yes
-				}
-			}
-			# Try to find a refinery world with free jobs.
-			ybs_move_pop_refinery_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at trade ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_trade = yes
-				}
-			}
-			# Try to find a trade world with free jobs.
-			ybs_move_pop_trade_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at defense ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_fortress = yes
-				}
-			}
-			# Try to find a fortress world with free jobs.
-			ybs_move_pop_fortress_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_mining = yes
-				}
-			}
-			# Try to find a mining world with free jobs.
-			ybs_move_pop_mining_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at energy ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_energy = yes
-				}
-			}
-			# Try to find an energy world with free jobs.
-			ybs_move_pop_energy_80 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at farming ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_farming = yes
-				}
-			}
-			# Try to find a farming world with free jobs.
-			ybs_move_pop_farming_80 = yes
-		}
-	}
+	ybs_automigrate_world_80 = yes
 	# 60% habitablity specalised migration now.
-	set_variable = {
-		which = ybs_planet_found
-		value = -1
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at research ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_research = yes
-				}
-			}
-			# Try to find a research world with free jobs.
-			ybs_move_pop_research_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at unity ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_unity = yes
-				}
-			}
-			# Try to find a unity world with free jobs.
-			ybs_move_pop_unity_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at foundry ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_foundry = yes
-				}
-			}
-			# Try to find a foundry world with free jobs.
-			ybs_move_pop_foundry_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at factory ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_factory = yes
-				}
-			}
-			# Try to find a factory world with free jobs.
-			ybs_move_pop_factory_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at refinery ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_refinery = yes
-				}
-			}
-			# Try to find a refinery world with free jobs.
-			ybs_move_pop_refinery_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at trade ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_trade = yes
-				}
-			}
-			# Try to find a trade world with free jobs.
-			ybs_move_pop_trade_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at defense ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_fortress = yes
-				}
-			}
-			# Try to find a fortress world with free jobs.
-			ybs_move_pop_fortress_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_mining = yes
-				}
-			}
-			# Try to find a mining world with free jobs.
-			ybs_move_pop_mining_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at energy ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_energy = yes
-				}
-			}
-			# Try to find an energy world with free jobs.
-			ybs_move_pop_energy_60 = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at farming ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_farming = yes
-				}
-			}
-			# Try to find a farming world with free jobs.
-			ybs_move_pop_farming_60 = yes
-		}
-	}
+	ybs_automigrate_world_60 = yes
 	# any% habitablity specalised migration now.
-	set_variable = {
-		which = ybs_planet_found
-		value = -1
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at research ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_research = yes
-				}
-			}
-			# Try to find a research world with free jobs.
-			ybs_move_pop_research_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at unity ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_unity = yes
-				}
-			}
-			# Try to find a unity world with free jobs.
-			ybs_move_pop_unity_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at foundry ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_foundry = yes
-				}
-			}
-			# Try to find a foundry world with free jobs.
-			ybs_move_pop_foundry_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at factory ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_factory = yes
-				}
-			}
-			# Try to find a factory world with free jobs.
-			ybs_move_pop_factory_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at refinery ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_refinery = yes
-				}
-			}
-			# Try to find a refinery world with free jobs.
-			ybs_move_pop_refinery_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at trade ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_trade = yes
-				}
-			}
-			# Try to find a trade world with free jobs.
-			ybs_move_pop_trade_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at defense ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_fortress = yes
-				}
-			}
-			# Try to find a fortress world with free jobs.
-			ybs_move_pop_fortress_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at mining ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_mining = yes
-				}
-			}
-			# Try to find a mining world with free jobs.
-			ybs_move_pop_mining_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at energy ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_energy = yes
-				}
-			}
-			# Try to find an energy world with free jobs.
-			ybs_move_pop_energy_any = yes
-		}
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is this pop good at farming ?
-		if = {
-			limit = {
-				PREV = {
-					ybs_pop_is_good_for_farming = yes
-				}
-			}
-			# Try to find a farming world with free jobs.
-			ybs_move_pop_farming_any = yes
-		}
-	}
+	ybs_automigrate_world_any = yes
 	# This is non-specalised migration now. Habitablity is key.
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is there at least 80% habitablity ?
-		# Try to find a world with free jobs.
-		ybs_move_pop_hab_80 = yes
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is there at least 60% habitablity ?
-		# Try to find a world with free jobs.
-		ybs_move_pop_hab_60 = yes
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Is there at least 40% habitablity ?
-		# Try to find a world with free jobs.
-		ybs_move_pop_hab_40 = yes
-	}
-	if = {
-		limit = {
-			check_variable = {
-				which = ybs_planet_found
-				value = -1
-			}
-		}
-		# Try to find any world with free jobs.
-		ybs_move_pop_hab_any = yes
-	}
+	ybs_automigrate_world_a_job = yes
 	# If we found a new home, deduct cost.
 	if = {
 		limit = {
@@ -1527,6 +616,933 @@ ybs_automigrate_greener_pastures = {
 	# Could not find a suitable location.
 	else = {
 		log = "Yagisan - No Greener Pastures found."
+	}
+}
+
+ybs_automigrate_tomb_world = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_research_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a unity world with free jobs.
+			ybs_move_pop_unity_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at foundry ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_foundry = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a foundry world with free jobs.
+			ybs_move_pop_foundry_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at factory ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_factory = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a factory world with free jobs.
+			ybs_move_pop_factory_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at refinery ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_refinery = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a refinery world with free jobs.
+			ybs_move_pop_refinery_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a trade world with free jobs.
+			ybs_move_pop_trade_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find a fortress world with free jobs.
+			ybs_move_pop_fortress_tomb = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Can this pop handle any jobs on a Tomb world ?
+		if = {
+			limit = {
+				PREV = {
+					empire_has_good_habitability_on_tomb_worlds = yes
+					NOT = {
+						has_trait = trait_pc_habitat_preference
+					}
+				}
+			}
+			# Try to find any world with free jobs.
+			ybs_move_pop_any_tomb = yes
+		}
+	}
+}
+
+ybs_automigrate_habitat = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a research habitat with free jobs.
+			ybs_move_pop_research_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a unity habitat with free jobs.
+			ybs_move_pop_unity_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at foundry ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_foundry = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a foundry habitat with free jobs.
+			ybs_move_pop_foundry_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at factory ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_factory = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a factory habitat with free jobs.
+			ybs_move_pop_factory_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at refinery ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_refinery = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a refinery habitat with free jobs.
+			ybs_move_pop_refinery_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a trade habitat with free jobs.
+			ybs_move_pop_trade_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find a fortress habitat with free jobs.
+			ybs_move_pop_fortress_void = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Can this pop handle any jobs on a habitat ?
+		if = {
+			limit = {
+				PREV = {
+					has_trait = trait_pc_habitat_preference
+				}
+			}
+			# Try to find any world with free jobs.
+			ybs_move_pop_any_void = yes
+		}
+	}
+}
+
+ybs_automigrate_world_80 = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_research_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+				}
+			}
+			# Try to find a unity world with free jobs.
+			ybs_move_pop_unity_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at foundry ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_foundry = yes
+				}
+			}
+			# Try to find a foundry world with free jobs.
+			ybs_move_pop_foundry_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at factory ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_factory = yes
+				}
+			}
+			# Try to find a factory world with free jobs.
+			ybs_move_pop_factory_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at refinery ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_refinery = yes
+				}
+			}
+			# Try to find a refinery world with free jobs.
+			ybs_move_pop_refinery_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+				}
+			}
+			# Try to find a trade world with free jobs.
+			ybs_move_pop_trade_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+				}
+			}
+			# Try to find a fortress world with free jobs.
+			ybs_move_pop_fortress_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at mining ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_mining = yes
+				}
+			}
+			# Try to find a mining world with free jobs.
+			ybs_move_pop_mining_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at energy ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_energy = yes
+				}
+			}
+			# Try to find an energy world with free jobs.
+			ybs_move_pop_energy_80 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at farming ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_farming = yes
+				}
+			}
+			# Try to find a farming world with free jobs.
+			ybs_move_pop_farming_80 = yes
+		}
+	}
+}
+
+ybs_automigrate_world_60 = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_research_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+				}
+			}
+			# Try to find a unity world with free jobs.
+			ybs_move_pop_unity_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at foundry ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_foundry = yes
+				}
+			}
+			# Try to find a foundry world with free jobs.
+			ybs_move_pop_foundry_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at factory ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_factory = yes
+				}
+			}
+			# Try to find a factory world with free jobs.
+			ybs_move_pop_factory_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at refinery ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_refinery = yes
+				}
+			}
+			# Try to find a refinery world with free jobs.
+			ybs_move_pop_refinery_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+				}
+			}
+			# Try to find a trade world with free jobs.
+			ybs_move_pop_trade_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+				}
+			}
+			# Try to find a fortress world with free jobs.
+			ybs_move_pop_fortress_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at mining ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_mining = yes
+				}
+			}
+			# Try to find a mining world with free jobs.
+			ybs_move_pop_mining_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at energy ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_energy = yes
+				}
+			}
+			# Try to find an energy world with free jobs.
+			ybs_move_pop_energy_60 = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at farming ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_farming = yes
+				}
+			}
+			# Try to find a farming world with free jobs.
+			ybs_move_pop_farming_60 = yes
+		}
+	}
+}
+
+ybs_automigrate_world_any = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at research ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_research = yes
+				}
+			}
+			# Try to find a research world with free jobs.
+			ybs_move_pop_research_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at unity ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_unity = yes
+				}
+			}
+			# Try to find a unity world with free jobs.
+			ybs_move_pop_unity_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at foundry ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_foundry = yes
+				}
+			}
+			# Try to find a foundry world with free jobs.
+			ybs_move_pop_foundry_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at factory ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_factory = yes
+				}
+			}
+			# Try to find a factory world with free jobs.
+			ybs_move_pop_factory_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at refinery ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_refinery = yes
+				}
+			}
+			# Try to find a refinery world with free jobs.
+			ybs_move_pop_refinery_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at trade ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_trade = yes
+				}
+			}
+			# Try to find a trade world with free jobs.
+			ybs_move_pop_trade_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at defense ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_fortress = yes
+				}
+			}
+			# Try to find a fortress world with free jobs.
+			ybs_move_pop_fortress_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at mining ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_mining = yes
+				}
+			}
+			# Try to find a mining world with free jobs.
+			ybs_move_pop_mining_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at energy ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_energy = yes
+				}
+			}
+			# Try to find an energy world with free jobs.
+			ybs_move_pop_energy_any = yes
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is this pop good at farming ?
+		if = {
+			limit = {
+				PREV = {
+					ybs_pop_is_good_for_farming = yes
+				}
+			}
+			# Try to find a farming world with free jobs.
+			ybs_move_pop_farming_any = yes
+		}
+	}
+}
+
+ybs_automigrate_world_a_job = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is there at least 80% habitablity ?
+		# Try to find a world with free jobs.
+		ybs_move_pop_hab_80 = yes
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is there at least 60% habitablity ?
+		# Try to find a world with free jobs.
+		ybs_move_pop_hab_60 = yes
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Is there at least 40% habitablity ?
+		# Try to find a world with free jobs.
+		ybs_move_pop_hab_40 = yes
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Try to find any world with free jobs.
+		ybs_move_pop_hab_any = yes
 	}
 }
 
