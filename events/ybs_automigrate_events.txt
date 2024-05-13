@@ -79,6 +79,7 @@ country_event = {
 					limit = {
 						is_unemployed = yes
 						is_being_purged = no
+						is_sapient = yes
 						# Must not be a robot
 						is_robot_pop = no
 					}
@@ -91,6 +92,7 @@ country_event = {
 				limit = {
 					is_unemployed = yes
 					is_being_purged = no
+					is_sapient = yes
 					# Ignore assimilating pops
 					NOT = {
 						has_citizenship_type = {
@@ -117,6 +119,7 @@ country_event = {
 					# Must not be the last pop
 					planet = {
 						count_owned_pop = {
+							is_sapient = yes
 							count > 1
 						}
 					}
@@ -191,6 +194,7 @@ country_event = {
 					limit = {
 						is_unemployed = yes
 						is_being_purged = no
+						is_sapient = yes
 						# Must be a robot
 						is_robot_pop = yes
 					}
@@ -203,6 +207,7 @@ country_event = {
 				limit = {
 					is_unemployed = yes
 					is_being_purged = no
+					is_sapient = yes
 					# Ignore assimilating pops
 					NOT = {
 						has_citizenship_type = {
@@ -221,6 +226,7 @@ country_event = {
 					# Must not be the last pop
 					planet = {
 						count_owned_pop = {
+							is_sapient = yes
 							count > 1
 						}
 					}
@@ -339,6 +345,7 @@ country_event = {
 					# Must not be the last pop
 					planet = {
 						count_owned_pop = {
+							is_sapient = yes
 							count > 1
 						}
 					}
@@ -393,7 +400,7 @@ country_event = {
 }
 
 country_event = {
-	# Migrate EMPLOYED organics to planets with better habitability jobs.
+	# Migrate EMPLOYED pops to planets with better habitability jobs.
 	id = ybs_automigrate.4
 	hide_window = yes
 	is_triggered_only = yes
@@ -417,8 +424,7 @@ country_event = {
 					limit = {
 						is_unemployed = no
 						is_being_purged = no
-						# Must not be a robot
-						is_robot_pop = no
+						is_sapient = yes
 					}
 					count > 0
 				}
@@ -457,8 +463,6 @@ country_event = {
 					has_migration_control = {
 						type = no
 					}
-					# Must not be a robot
-					is_robot_pop = no
 					# Under 60% Habitability only
 					planet = {
 						habitability = {
@@ -466,16 +470,20 @@ country_event = {
 							value < 0.6
 						}
 					}
-					# Must not be the last 5 organic pops.
+					# Must not be the last 5 ruler pops.
 					# This avoids having all rulers migrate away,
-					# but does allow for some organics to turn over
+					# but does allow for some to turn over
 					# and eventually escape to a better location.
-					# probably not the rulers though.
 					planet = {
 						count_owned_pop = {
 							limit = {
-								# Must not be a robot
-								is_robot_pop = no
+								is_sapient = yes
+								OR = {
+									# Must not be a ruler / specialist / complex_drone
+									is_pop_category = ruler
+									is_pop_category = specialist
+									is_pop_category = complex_drone
+								}
 							}
 							count >= 5
 						}
