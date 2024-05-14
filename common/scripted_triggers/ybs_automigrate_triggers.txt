@@ -3,6 +3,7 @@ ybs_planet_is_resettlement_target = {
 	free_housing >= 1
 	free_jobs >= 1
 	is_under_colonization = no
+	has_orbital_bombardment = no
 }
 
 # Traits that give a bonus to everything like Efficient Processors or Excessive Endurance
