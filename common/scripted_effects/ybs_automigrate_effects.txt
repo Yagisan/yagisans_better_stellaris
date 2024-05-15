@@ -1067,6 +1067,16 @@ ybs_automigrate_world_a_job = {
 		# Try to find any world with free jobs.
 		ybs_move_pop_hab_any = yes
 	}
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Last choice - is there a Cosmogenesis world ?
+		ybs_move_pop_cosmogenesis = yes
+	}
 }
 
 ybs_move_pop_research_80 = {
@@ -1816,6 +1826,27 @@ ybs_move_pop_hab_any = {
 			planet = this
 		}
 		log = "Yagisan - Employment found (Any). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_cosmogenesis = {
+	random_owned_planet = {
+		limit = {
+			# Is there at least a job here ?
+			ybs_planet_is_resettlement_target = yes
+			is_planet_class = pc_cosmogenesis_world
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Cosmogenesis). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
