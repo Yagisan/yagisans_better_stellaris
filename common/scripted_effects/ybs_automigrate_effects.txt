@@ -20,11 +20,13 @@
 # - Mining
 # - Energy
 # - Farming
+# - Popgrowth
 # - Then we'll check based on habitablity only.
 # - 80% or better habitablity
 # - 60% or better habitablity
 # - 40% or better habitablity
 # - any free jobs
+# - Cosmogenesis
 ybs_automigrate_unemployed = {
 	set_variable = {
 		which = ybs_planet_found
@@ -841,6 +843,16 @@ ybs_automigrate_world_60 = {
 }
 
 ybs_automigrate_world_any = {
+	if = {
+		limit = {
+			check_variable = {
+				which = ybs_planet_found
+				value = -1
+			}
+		}
+		# Try to find any popgrowth jobs.
+		ybs_move_pop_popgrowth_any = yes
+	}
 	if = {
 		limit = {
 			check_variable = {
@@ -1740,6 +1752,27 @@ ybs_move_pop_farming_any = {
 			planet = this
 		}
 		log = "Yagisan - Employment found (Farming - Any). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
+ybs_move_pop_popgrowth_any = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# Popgrowth is key - any free pop growth jobs should be filled
+			ybs_planet_is_good_for_popgrowth = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Pop Growth - Any). Resettling to \\[This.GetName]"
 		prev = {
 			set_variable = {
 				which = ybs_planet_found
