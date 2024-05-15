@@ -229,6 +229,8 @@ ybs_planet_is_good_for_research = {
 		has_forbidden_jobs = astral_unit
 		has_forbidden_jobs = nanotech_research_unit
 		has_forbidden_jobs = nanotech_researcher
+		has_forbidden_jobs = overlord_academic
+		has_forbidden_jobs = overlord_academic_drone
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -255,6 +257,8 @@ ybs_planet_is_good_for_research = {
 		has_available_jobs = astral_unit
 		has_available_jobs = nanotech_research_unit
 		has_available_jobs = nanotech_researcher
+		has_available_jobs = overlord_academic
+		has_available_jobs = overlord_academic_drone
 	}
 }
 
@@ -285,6 +289,7 @@ ybs_planet_is_good_for_unity = {
 		has_forbidden_jobs = haruspex
 		has_forbidden_jobs = technophant
 		has_forbidden_jobs = robot_caretaker
+		has_forbidden_jobs = overlord_manager
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -308,6 +313,7 @@ ybs_planet_is_good_for_unity = {
 		has_available_jobs = haruspex
 		has_available_jobs = technophant
 		has_available_jobs = robot_caretaker
+		has_available_jobs = overlord_manager
 	}
 }
 
@@ -455,6 +461,10 @@ ybs_planet_is_good_for_fortress = {
 		has_forbidden_jobs = warrior_drone
 		has_forbidden_jobs = stasis_warden
 		has_forbidden_jobs = stasis_warden_drone
+		has_forbidden_jobs = overlord_necromancer
+		has_forbidden_jobs = overlord_necromancer_drone
+		has_forbidden_jobs = overlord_recruiter
+		has_forbidden_jobs = overlord_recruiter_drone
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -464,6 +474,10 @@ ybs_planet_is_good_for_fortress = {
 		has_available_jobs = warrior_drone
 		has_available_jobs = stasis_warden
 		has_available_jobs = stasis_warden_drone
+		has_available_jobs = overlord_necromancer
+		has_available_jobs = overlord_necromancer_drone
+		has_available_jobs = overlord_recruiter
+		has_available_jobs = overlord_recruiter_drone
 	}
 }
 
@@ -571,6 +585,8 @@ ybs_planet_is_good_for_popgrowth = {
 		has_forbidden_jobs = gestation_drone
 		has_forbidden_jobs = overlord_healthcare
 		has_forbidden_jobs = reassigner
+		has_forbidden_jobs = overlord_reassigner
+		has_forbidden_jobs = overlord_reassigner_drone
 		has_forbidden_jobs = colonist
 		has_forbidden_jobs = overlord_spawning_drone
 		has_forbidden_jobs = bath_attendant
@@ -589,6 +605,8 @@ ybs_planet_is_good_for_popgrowth = {
 		has_available_jobs = gestation_drone
 		has_available_jobs = overlord_healthcare
 		has_available_jobs = reassigner
+		has_available_jobs = overlord_reassigner
+		has_available_jobs = overlord_reassigner_drone
 		has_available_jobs = colonist
 		has_available_jobs = overlord_spawning_drone
 		has_available_jobs = bath_attendant
