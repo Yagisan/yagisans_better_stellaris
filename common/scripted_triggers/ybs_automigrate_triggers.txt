@@ -555,3 +555,45 @@ ybs_planet_is_good_for_farming = {
 		has_available_jobs = puddle_technician_drone
 	}
 }
+
+# Specialised job search
+ybs_planet_is_good_for_popgrowth = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = roboticist
+		has_forbidden_jobs = spawning_drone
+		has_forbidden_jobs = offspring_drone
+		has_forbidden_jobs = replicator
+		has_forbidden_jobs = identity_designer
+		has_forbidden_jobs = overlord_replicator
+		has_forbidden_jobs = healthcare
+		has_forbidden_jobs = gestation_drone
+		has_forbidden_jobs = overlord_healthcare
+		has_forbidden_jobs = reassigner
+		has_forbidden_jobs = colonist
+		has_forbidden_jobs = overlord_spawning_drone
+		has_forbidden_jobs = bath_attendant
+		has_forbidden_jobs = bath_attendant_individual_machine
+		has_forbidden_jobs = bath_attendant_hive
+		has_forbidden_jobs = bath_attendant_machine		
+	}
+	# Check for a free suitable job.
+	OR = {
+		has_available_jobs = spawning_drone
+		has_available_jobs = offspring_drone
+		has_available_jobs = replicator
+		has_available_jobs = identity_designer
+		has_available_jobs = overlord_replicator
+		has_available_jobs = healthcare
+		has_available_jobs = gestation_drone
+		has_available_jobs = overlord_healthcare
+		has_available_jobs = reassigner
+		has_available_jobs = colonist
+		has_available_jobs = overlord_spawning_drone
+		has_available_jobs = bath_attendant
+		has_available_jobs = bath_attendant_individual_machine
+		has_available_jobs = bath_attendant_hive
+		has_available_jobs = bath_attendant_machine
+	}
+}
