@@ -8,6 +8,8 @@
 #
 # Next priority is, if arcane deciphering is researched, use it. (200 weight)
 #
+# Next priority is, if lgates are found, open them. (150 weight)
+#
 # Next priority is, if not a pacifist, and if at war, or a crisis exists, find military applications (125 weight)
 #
 # Next priority is, if spiritualist, proclaim a religious finding. (50 weight)
@@ -94,7 +96,34 @@ artifact_lgate_clue = {
 			minor_artifacts = 1000
 		}
 	}
+	ai_weight = {
+		weight = 150
+	}
 	potential = {
+		OR = {
+			is_ai = no
+			AND = {
+				OR = {
+					has_resource = {
+						type = minor_artifacts
+						amount >= 1000
+					}
+					has_monthly_income = {
+						resource = minor_artifacts
+						value >= 2
+					}
+				}
+				OR = {
+					is_gestalt = yes
+					is_materialist = yes
+					is_homicidal = yes
+					has_civic = civic_technocracy
+					has_civic = civic_individual_machine_predictive_analysis
+					has_civic = civic_hive_natural_neural_network
+					has_civic = civic_machine_predictive_analysis
+				}
+			}
+		}
 		has_country_flag = encountered_first_lgate
 		NOT = {
 			has_country_flag = completed_lcluster_chain
