@@ -2,9 +2,13 @@
 @minor_artifact_decision_duration = 3600
 @minor_artifact_ai_threshold = 200
 # Overall goal is to have the AI make use of more artifact actions where possible
+# 
 # If the AI has an energy deficit no energy income, and is a regular empire, or gestalt with galactic market access,
 # then first priority is to sell artifacts to escape the deficit. (1000 weight)
 #
+# Next priority is, if arcane deciphering is researched, use it. (200 weight)
+#
+
 artifact_arcane_deciphering = {
 	resources = {
 		category = artifact_actions
@@ -13,17 +17,29 @@ artifact_arcane_deciphering = {
 		}
 	}
 	ai_weight = {
-		weight = 100
+		weight = 0
 		modifier = {
-			factor = 1.5
-			has_ethic = ethic_materialist
-		}
-		modifier = {
-			factor = 2
-			has_ethic = ethic_fanatic_materialist
+			add = 200
+			NOT = {
+				has_modifier = arcane_deciphering_cooldown
+			}
+			OR = {
+				has_resource = {
+					type = minor_artifacts
+					amount >= 500
+				}
+				has_monthly_income = {
+					resource = minor_artifacts
+					value > 0
+				}
+			}
 		}
 	}
 	potential = {
+		has_resource = {
+			type = minor_artifacts
+			amount >= @minor_artifact_ai_threshold
+		}
 		has_technology = tech_arcane_deciphering
 	}
 	allow = {
