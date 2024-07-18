@@ -98,6 +98,7 @@ ybs_pop_is_good_for_refinery = {
 		has_trait = trait_robot_efficient_processors
 		has_trait = trait_cyborg_efficient_processors
 		has_trait = trait_excessive_endurance
+		has_trait = trait_limited_cybernetic
 	}
 	NOT = {
 		has_trait = trait_zombie
