@@ -747,6 +747,7 @@ trait_machine_pc_relic_preference = {
 	}
 	bound_to_planet_classes = {
 		pc_relic
+		pc_city
 	}
 	initial = no
 	randomized = no
@@ -763,6 +764,7 @@ trait_machine_pc_relic_preference = {
 	sorting_priority = 30
 	modifier = {
 		pc_relic_habitability = @machine_primary
+		pc_city_habitability = @machine_primary
 	}
 	ai_weight = {
 		weight = 0
