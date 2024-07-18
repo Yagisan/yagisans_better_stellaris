@@ -51,6 +51,7 @@ artifact_arcane_deciphering = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 		has_technology = tech_arcane_deciphering
 	}
 	allow = {
@@ -153,6 +154,7 @@ artifact_proclaim_religious_finding = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 		is_spiritualist = yes
 	}
 	effect = {
@@ -214,6 +216,7 @@ artifact_proclaim_superiority = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 		is_xenophobe = yes
 	}
 	effect = {
@@ -276,6 +279,7 @@ artifact_celebrate_diversity = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 		is_xenophile = yes
 	}
 	effect = {
@@ -451,6 +455,7 @@ artifact_find_military_applications = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 		has_technology = tech_arcane_deciphering
 	}
 	effect = {
@@ -510,6 +515,7 @@ artifact_find_peaceful_applications = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 		has_technology = tech_arcane_deciphering
 		is_homicidal = no
 	}
@@ -570,6 +576,7 @@ artifact_sell_collector = {
 				type = minor_artifacts
 				amount >= @minor_artifact_ai_threshold
 			}
+		}
 	}
 	effect = {
 		add_resource = {
