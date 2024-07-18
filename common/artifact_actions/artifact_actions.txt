@@ -1,6 +1,10 @@
 @minor_artifact_decision_cost = 100
 @minor_artifact_decision_duration = 3600
 @minor_artifact_ai_threshold = 200
+# Overall goal is to have the AI make use of more artifact actions where possible
+# If the AI has an energy deficit no energy income, and is a regular empire, or gestalt with galactic market access,
+# then first priority is to sell artifacts to escape the deficit. (1000 weight)
+#
 artifact_arcane_deciphering = {
 	resources = {
 		category = artifact_actions
@@ -469,16 +473,22 @@ artifact_sell_collector = {
 		}
 	}
 	ai_weight = {
-		weight = 100
+		weight = 0
 		modifier = {
-			factor = 0
+			add = 1000
+			# We are broke
 			has_resource = {
 				type = energy
-				amount > 5000
+				amount < 500
+			}
+			# and we aren't earning money
+			has_monthly_income = {
+				resource = energy
+				value < 1
 			}
 		}
 		modifier = {
-			factor = 0
+			weight = 0
 			has_resource = {
 				type = minor_artifacts
 				amount < @minor_artifact_ai_threshold
@@ -489,6 +499,10 @@ artifact_sell_collector = {
 		NAND = {
 			is_gestalt = yes
 			is_homicidal = yes
+		}
+		has_resource = {
+			type = minor_artifacts
+			amount >= @minor_artifact_ai_threshold
 		}
 	}
 	effect = {
