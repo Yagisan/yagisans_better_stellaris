@@ -8,7 +8,10 @@
 #
 # Next priority is, if arcane deciphering is researched, use it. (200 weight)
 #
-
+# Next priority is, if spiritualist, proclaim a religious finding. (50 weight)
+#
+# Next priority is, if xenophile, celebrate diversity.  (50 weight)
+#
 artifact_arcane_deciphering = {
 	resources = {
 		category = artifact_actions
@@ -117,20 +120,29 @@ artifact_proclaim_religious_finding = {
 		}
 	}
 	ai_weight = {
-		weight = 100
+		weight = 0
 		modifier = {
-			factor = 1.5
-			is_xenophile = yes
-		}
-		modifier = {
-			factor = 0
-			has_resource = {
-				type = minor_artifacts
-				amount < @minor_artifact_ai_threshold
+			add = 50
+			NOT = {
+				has_modifier = proclaim_religious_finding
+			}
+			OR = {
+				has_resource = {
+					type = minor_artifacts
+					amount >= @minor_artifact_decision_cost
+				}
+				has_monthly_income = {
+					resource = minor_artifacts
+					value > 0
+				}
 			}
 		}
 	}
 	potential = {
+		has_resource = {
+			type = minor_artifacts
+			amount >= @minor_artifact_ai_threshold
+		}
 		is_spiritualist = yes
 	}
 	effect = {
@@ -213,15 +225,23 @@ artifact_celebrate_diversity = {
 		}
 	}
 	ai_weight = {
-		weight = 100
+		weight = 0
 		modifier = {
-			factor = 1.5
+			add = 50
+			NOT = {
+				has_modifier = celebrate_diversity
+			}
+			OR = {
+				has_resource = {
+					type = minor_artifacts
+					amount >= @minor_artifact_decision_cost
+				}
+				has_monthly_income = {
+					resource = minor_artifacts
+					value > 0
+				}
+			}
 			is_xenophile = yes
-		}
-		modifier = {
-			factor = 0.25
-			is_spiritualist = yes
-			is_xenophile = no
 		}
 		modifier = {
 			factor = 0
@@ -232,8 +252,11 @@ artifact_celebrate_diversity = {
 		}
 	}
 	potential = {
-		is_gestalt = no
-		is_xenophobe = no
+		has_resource = {
+			type = minor_artifacts
+			amount >= @minor_artifact_ai_threshold
+		}
+		is_xenophile = yes
 	}
 	effect = {
 		add_monthly_resource_mult = {
