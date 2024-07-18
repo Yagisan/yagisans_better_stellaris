@@ -12,6 +12,8 @@
 #
 # Next priority is, if xenophile, celebrate diversity.  (50 weight)
 #
+# Next priority is, if xenophobe, proclaim superiority. (40 weight)
+#
 artifact_arcane_deciphering = {
 	resources = {
 		category = artifact_actions
@@ -172,23 +174,25 @@ artifact_proclaim_superiority = {
 		}
 	}
 	ai_weight = {
-		weight = 100
+		weight = 0
 		modifier = {
-			factor = 0
-			has_resource = {
-				type = minor_artifacts
-				amount < @minor_artifact_ai_threshold
+			add = 40
+			NOT = {
+				has_modifier = proclaim_superiority
+			}
+			OR = {
+				has_resource = {
+					type = minor_artifacts
+					amount >= @minor_artifact_decision_cost
+				}
+				has_monthly_income = {
+					resource = minor_artifacts
+					value > 0
+				}
 			}
 		}
 		modifier = {
-			factor = 0.1
-			resource_stockpile_compare = {
-				resource = influence
-				value > 500
-			}
-		}
-		modifier = {
-			factor = 0
+			weight = 0
 			resource_stockpile_compare = {
 				resource = influence
 				value > 800
@@ -196,6 +200,10 @@ artifact_proclaim_superiority = {
 		}
 	}
 	potential = {
+		has_resource = {
+			type = minor_artifacts
+			amount >= @minor_artifact_ai_threshold
+		}
 		is_xenophobe = yes
 	}
 	effect = {
