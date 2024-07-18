@@ -18,12 +18,35 @@ gateway_0 = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
+	dismantle_cost = {
+		category = megastructures_hyper_relay
+		cost = {
+			energy = 2500
+		}
+	}
+	dismantle_time = 360
+	dismantle_potential = {
+		always = yes
+	}
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_gateway_construction
+		}
+	}
+	on_dismantle_complete = {
+		from = {
+			add_resource = {
+				alloys = 2500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+		}
+	}
 	potential = {
 		has_technology = tech_gateway_construction
 	}
 	possible = {
 		hidden_trigger = {
-		exists = starbase
+			exists = starbase
 		}
 		custom_tooltip = {
 			fail_text = "requires_inside_border_or_subject"
@@ -178,6 +201,29 @@ gateway_final = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
+	dismantle_cost = {
+		category = megastructures_hyper_relay
+		cost = {
+			energy = 2500
+		}
+	}
+	dismantle_time = 360
+	dismantle_potential = {
+		always = yes
+	}
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_gateway_construction
+		}
+	}
+	on_dismantle_complete = {
+		from = {
+			add_resource = {
+				alloys = 2500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+		}
+	}
 	bypass_type = gateway
 	on_build_complete = {
 		activate_gateway = fromfrom
@@ -259,6 +305,29 @@ gateway_restored = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
+	dismantle_cost = {
+		category = megastructures_hyper_relay
+		cost = {
+			energy = 2500
+		}
+	}
+	dismantle_time = 360
+	dismantle_potential = {
+		always = yes
+	}
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_gateway_construction
+		}
+	}
+	on_dismantle_complete = {
+		from = {
+			add_resource = {
+				alloys = 2500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+		}
+	}
 	bypass_type = gateway
 	on_build_complete = {
 		activate_gateway = fromfrom
@@ -325,8 +394,9 @@ gateway_restored = {
 						}
 					}
 					80 = {
-					}					# no luck
 					}
+					# no luck
+				}
 				country_event = {
 					id = origin.1050
 				}
