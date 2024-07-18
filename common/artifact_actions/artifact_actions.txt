@@ -14,6 +14,8 @@
 #
 # Next priority is, if xenophobe, proclaim superiority. (40 weight)
 #
+# Last priority is, if not homicidal, find peaceful applications. (10 weight)
+#
 artifact_arcane_deciphering = {
 	resources = {
 		category = artifact_actions
@@ -463,24 +465,21 @@ artifact_find_peaceful_applications = {
 		}
 	}
 	ai_weight = {
-		weight = 10
+		weight = 0
 		modifier = {
-			factor = 0.1
-			is_militarist = yes
-		}
-		modifier = {
-			factor = 1.25
-			is_pacifist = yes
-		}
-		modifier = {
-			factor = 0.1
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			has_resource = {
-				type = minor_artifacts
-				amount < @minor_artifact_ai_threshold
+			add = 10
+			NOT = {
+				has_modifier = artifact_find_applications_cooldown
+			}
+			OR = {
+				has_resource = {
+					type = minor_artifacts
+					amount >= 150
+				}
+				has_monthly_income = {
+					resource = minor_artifacts
+					value > 0
+				}
 			}
 		}
 	}
@@ -493,6 +492,10 @@ artifact_find_peaceful_applications = {
 		}
 	}
 	potential = {
+		has_resource = {
+			type = minor_artifacts
+			amount >= @minor_artifact_ai_threshold
+		}
 		has_technology = tech_arcane_deciphering
 		is_homicidal = no
 	}
