@@ -9,6 +9,7 @@
 # Next priority is, if arcane deciphering is researched, use it. (200 weight)
 #
 # Next priority is, if lgates are found, open them. (150 weight)
+# Gestalts, Materialists, Homicidals, and technocrat empires will do this.
 #
 # Next priority is, if not a pacifist, and if at war, or a crisis exists, find military applications (125 weight)
 #
@@ -17,6 +18,7 @@
 # Next priority is, if xenophile, celebrate diversity.  (50 weight)
 #
 # Next priority is, if xenophobe, proclaim superiority. (40 weight)
+# This will no occur if they have over 800 influence.
 #
 # Last priority is, if not homicidal, find peaceful applications. (10 weight)
 #
