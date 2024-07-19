@@ -6,6 +6,8 @@
 # If the AI has an energy deficit no energy income, and is a regular empire, or gestalt with galactic market access,
 # then first priority is to sell artifacts to escape the deficit. (1000 weight)
 #
+# Next priority is, if a precursor world has been surveyed, research its special project. (500 weight)
+#
 # Next priority is, if arcane deciphering is researched, use it. (200 weight)
 #
 # Next priority is, if lgates are found, open them. (150 weight)
@@ -696,7 +698,7 @@ artifact_irassian_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
 		has_country_flag = irassian_world_found
@@ -727,9 +729,20 @@ artifact_yuht_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
+		OR = {
+			is_ai = no
+			has_resource = {
+				type = minor_artifacts
+				amount >= 750
+			}
+			has_monthly_income = {
+				resource = minor_artifacts
+				value > 0
+			}
+		}
 		has_country_flag = yuht_world_found
 		NOT = {
 			has_country_flag = yuht_research_started
@@ -758,9 +771,20 @@ artifact_vultaum_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
+		OR = {
+			is_ai = no
+			has_resource = {
+				type = minor_artifacts
+				amount >= 750
+			}
+			has_monthly_income = {
+				resource = minor_artifacts
+				value > 0
+			}
+		}
 		has_country_flag = vultaum_world_found
 		NOT = {
 			has_country_flag = vultaum_research_started
@@ -789,9 +813,20 @@ artifact_cybrex_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
+		OR = {
+			is_ai = no
+			has_resource = {
+				type = minor_artifacts
+				amount >= 750
+			}
+			has_monthly_income = {
+				resource = minor_artifacts
+				value > 0
+			}
+		}
 		has_country_flag = cybrex_world_found
 		NOT = {
 			has_country_flag = cybrex_research_started
@@ -820,9 +855,20 @@ artifact_league_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
+		OR = {
+			is_ai = no
+			has_resource = {
+				type = minor_artifacts
+				amount >= 750
+			}
+			has_monthly_income = {
+				resource = minor_artifacts
+				value > 0
+			}
+		}
 		OR = {
 			has_country_flag = league_world_found
 			any_owned_planet = {
@@ -856,9 +902,20 @@ artifact_baol_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
+		OR = {
+			is_ai = no
+			has_resource = {
+				type = minor_artifacts
+				amount >= 750
+			}
+			has_monthly_income = {
+				resource = minor_artifacts
+				value > 0
+			}
+		}
 		has_country_flag = last_baol_system
 		NOT = {
 			has_country_flag = baol_research_started
@@ -887,9 +944,20 @@ artifact_zroni_research = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 500
 	}
 	potential = {
+		OR = {
+			is_ai = no
+			has_resource = {
+				type = minor_artifacts
+				amount >= 750
+			}
+			has_monthly_income = {
+				resource = minor_artifacts
+				value > 0
+			}
+		}
 		has_country_flag = last_zroni_system
 		NOT = {
 			has_country_flag = zroni_research_started
