@@ -79,6 +79,7 @@ country_event = {
 					limit = {
 						is_unemployed = yes
 						is_being_purged = no
+						is_being_assimilated = no
 						is_sapient = yes
 						# Must not be a robot
 						is_robot_pop = no
@@ -194,6 +195,7 @@ country_event = {
 					limit = {
 						is_unemployed = yes
 						is_being_purged = no
+						is_being_assimilated = no
 						is_sapient = yes
 						# Must be a robot
 						is_robot_pop = yes
@@ -424,6 +426,7 @@ country_event = {
 					limit = {
 						is_unemployed = no
 						is_being_purged = no
+						is_being_assimilated = no
 						is_sapient = yes
 					}
 					count > 0
