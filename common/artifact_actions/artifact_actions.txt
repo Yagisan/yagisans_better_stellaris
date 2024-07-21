@@ -90,6 +90,7 @@ artifact_arcane_deciphering = {
 				}
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Arcane Deciphering"
 	}
 }
 
@@ -151,6 +152,7 @@ artifact_lgate_clue = {
 				days = 3600
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - L-Gate Clue"
 	}
 }
 
@@ -201,6 +203,7 @@ artifact_proclaim_religious_finding = {
 			modifier = "proclaim_religious_finding"
 			days = @minor_artifact_decision_duration
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Proclaim Religious Finding"
 	}
 	allow = {
 		NOT = {
@@ -263,6 +266,7 @@ artifact_proclaim_superiority = {
 			modifier = "proclaim_superiority"
 			days = @minor_artifact_decision_duration
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Proclaim Superiority"
 	}
 	allow = {
 		NOT = {
@@ -326,6 +330,7 @@ artifact_celebrate_diversity = {
 			modifier = "celebrate_diversity"
 			days = @minor_artifact_decision_duration
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Celebrate Diversity"
 	}
 	allow = {
 		NOT = {
@@ -504,6 +509,7 @@ artifact_find_military_applications = {
 				}
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Find Military Applications"
 	}
 }
 
@@ -565,6 +571,7 @@ artifact_find_peaceful_applications = {
 				}
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Find Peaceful Applications"
 	}
 }
 
@@ -621,6 +628,7 @@ artifact_sell_collector = {
 				days = 180
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Sell to Collector"
 	}
 	allow = {
 		NOT = {
@@ -718,6 +726,7 @@ artifact_irassian_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Irassian Research"
 	}
 }
 
@@ -760,6 +769,7 @@ artifact_yuht_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Yuht Research"
 	}
 }
 
@@ -802,6 +812,7 @@ artifact_vultaum_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Vultaum Research"
 	}
 }
 
@@ -844,6 +855,7 @@ artifact_cybrex_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Cybrex Research"
 	}
 }
 
@@ -891,6 +903,7 @@ artifact_league_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - League Research"
 	}
 }
 
@@ -933,6 +946,7 @@ artifact_baol_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Baol Research"
 	}
 }
 
@@ -975,6 +989,7 @@ artifact_zroni_research = {
 				id = ancrel.10040
 			}
 		}
+		log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Zroni Research"
 	}
 }
 
