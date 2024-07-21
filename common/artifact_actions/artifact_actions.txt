@@ -102,7 +102,7 @@ artifact_lgate_clue = {
 		}
 	}
 	ai_weight = {
-		weight = 150
+		weight = 250
 	}
 	potential = {
 		OR = {
