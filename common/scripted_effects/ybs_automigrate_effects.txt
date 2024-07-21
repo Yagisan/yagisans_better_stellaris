@@ -1782,6 +1782,27 @@ ybs_move_pop_popgrowth_any = {
 	}
 }
 
+ybs_move_pop_bio_trophy = {
+	random_owned_planet = {
+		limit = {
+			ybs_planet_is_resettlement_target = yes
+			# Bio Trophy is a special case :(
+			ybs_planet_is_good_for_bio_trophy = yes
+		}
+		resettle_pop = {
+			pop = PREVPREV
+			planet = this
+		}
+		log = "Yagisan - Employment found (Bio Trophy). Resettling to \\[This.GetName]"
+		prev = {
+			set_variable = {
+				which = ybs_planet_found
+				value = 1
+			}
+		}
+	}
+}
+
 ybs_move_pop_hab_80 = {
 	random_owned_planet = {
 		limit = {

@@ -593,7 +593,7 @@ ybs_planet_is_good_for_popgrowth = {
 		has_forbidden_jobs = bath_attendant
 		has_forbidden_jobs = bath_attendant_individual_machine
 		has_forbidden_jobs = bath_attendant_hive
-		has_forbidden_jobs = bath_attendant_machine		
+		has_forbidden_jobs = bath_attendant_machine
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -615,4 +615,15 @@ ybs_planet_is_good_for_popgrowth = {
 		has_available_jobs = bath_attendant_hive
 		has_available_jobs = bath_attendant_machine
 	}
+}
+
+# Bio trophy job search
+ybs_planet_is_good_for_bio_trophy = {
+	optimize_memory
+	# Check for forbidden jobs first. Not suitable if any of these are found.
+	NOT = {
+		has_forbidden_jobs = bio_trophy
+	}
+	# Check for a free suitable job.
+	has_available_jobs = bio_trophy
 }
