@@ -23,7 +23,18 @@ event = {
 		# ybs_unemployed_migration_counter is set/reset in ybs_automigrate.1
 		every_playable_country = {
 			limit = {
-				is_ai = no
+				OR = {
+					# Human Players
+					is_ai = no
+					# Vassals under Human Players
+					AND = {
+						is_ai = yes
+						is_subject = yes
+						overlord = {
+							is_ai = no
+						}
+					}
+				}
 			}
 			# Greener Pastures
 			country_event = {
