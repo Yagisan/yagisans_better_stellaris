@@ -8,4 +8,4 @@ tags={
 	"Military"
 	"Balance"
 }
-supported_version="v3.12.5"
+supported_version="v3.13.0"
