@@ -328,15 +328,16 @@ ybs_anomaly_spawner = {
 						category = object_uninhabitable_category
 					}
 				}
-				5 = {
-					modifier = {
-						factor = 0
-						uninhabitable_regular_planet = no
-					}
-					add_anomaly = {
-						category = station_uninhabitable_category
-					}
-				}
+				# station_uninhabitable_category was removed around 3.11
+				#5 = {
+				#	modifier = {
+				#		factor = 0
+				#		uninhabitable_regular_planet = no
+				#	}
+				#	add_anomaly = {
+				#		category = station_uninhabitable_category
+				#	}
+				#}
 				# Barren / Cold Barren events.
 				5 = {
 					modifier = {
