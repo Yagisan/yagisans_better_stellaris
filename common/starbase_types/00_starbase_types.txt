@@ -15,6 +15,10 @@
 sshipyard = {
 	potential = {
 		has_starbase_size > starbase_outpost
+		NOR = {
+			has_starbase_module = hatchery
+			has_starbase_module = beastport
+		}
 		NAND = {
 			owner = {
 				is_ai = yes
@@ -22,6 +26,12 @@ sshipyard = {
 			}
 			solar_system = {
 				is_same_value = sector.sector_capital.solar_system
+			}
+		}
+		owner = {
+			OR = {
+				is_ai = no
+				uses_standard_ship_sizes = yes
 			}
 		}
 	}
@@ -57,11 +67,24 @@ sshipyard = {
 					}
 				}
 			}
+		modifier = {
+			factor = 0
+			exists = owner
+			owner = {
+				uses_standard_ship_sizes = no
+			}
 		}
 	}
 	ai_design = {
 		min = {
-			base = 1
+			base = 0
+			modifier = {
+				add = 1
+				exists = owner
+				owner = {
+					uses_standard_ship_sizes = yes
+				}
+			}
 		}
 		ratio = {
 			base = 0.2
@@ -77,6 +100,13 @@ sshipyard = {
 				exists = owner
 				owner = {
 					has_ethic = ethic_fanatic_militarist
+				}
+			}
+			modifier = {
+				factor = 0
+				exists = owner
+				owner = {
+					uses_standard_ship_sizes = no
 				}
 			}
 			modifier = {
@@ -160,6 +190,18 @@ sshipyard = {
 			}
 		}
 	}
+}
+
+# Hatchery
+inline_script = {
+	script = grand_archive/ship_building_starbase_type
+	TYPE = hatchery
+}
+
+# Beastport
+inline_script = {
+	script = grand_archive/ship_building_starbase_type
+	TYPE = beastport
 }
 
 # Anchorage
@@ -549,6 +591,9 @@ strading_hub = {
 				base = 2
 			}
 			shroud_beacon = {
+				base = 1
+			}
+			hyperlane_detailer = {
 				base = 1
 			}
 		}
@@ -1355,6 +1400,12 @@ sorbital_ring = {
 			orbital_ring_shipyard = {
 				base = 0				# Generally better to use normal starbases for this
 			}
+			orbital_ring_hatchery = {
+				base = 0				# Generally better to use normal starbases for this
+			}
+			orbital_ring_beastport = {
+				base = 0				# Generally better to use normal starbases for this
+			}
 			orbital_ring_anchorage = {
 				base = 0				# Generally better to use normal starbases for this
 			}
@@ -1556,6 +1607,18 @@ sorbital_shipyard = {
 			}
 		}
 	}
+}
+
+# Orbital Hatchery
+inline_script = {
+	script = grand_archive/ship_building_starbase_type
+	TYPE = orbital_ring_hatchery
+}
+
+# Orbital Beastport
+inline_script = {
+	script = grand_archive/ship_building_starbase_type
+	TYPE = orbital_ring_beastport
 }
 
 # Anchorage
@@ -1947,6 +2010,12 @@ sorbital_seeder = {
 				}
 			}
 			orbital_ring_shipyard = {
+				base = 0				# Generally better to use normal starbases for this
+			}
+			orbital_ring_hatchery = {
+				base = 0				# Generally better to use normal starbases for this
+			}
+			orbital_ring_beastport = {
 				base = 0				# Generally better to use normal starbases for this
 			}
 			orbital_ring_anchorage = {
