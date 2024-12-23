@@ -67,6 +67,7 @@ sshipyard = {
 					}
 				}
 			}
+		}
 		modifier = {
 			factor = 0
 			exists = owner
