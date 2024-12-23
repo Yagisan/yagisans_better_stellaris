@@ -1218,6 +1218,7 @@ artifact_analysis = {
 				value = 1
 			}
 			artifact_analysis_effect = yes
+			log = "Yagisan - Artefact Operation by [Root.Owner.GetName] - Artifact Analysis"
 		}
 	}
 }
