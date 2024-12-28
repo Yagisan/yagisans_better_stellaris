@@ -235,6 +235,11 @@ ybs_planet_is_good_for_research = {
 		has_forbidden_jobs = astrometeorologist
 		has_forbidden_jobs = astrometeorologist_hive
 		has_forbidden_jobs = astrometeorologist_machine
+		has_forbidden_jobs = geologist
+		has_forbidden_jobs = drone_geologist
+		has_forbidden_jobs = wrangler
+		has_forbidden_jobs = rancher
+		has_forbidden_jobs = drone_wrangler
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -266,6 +271,11 @@ ybs_planet_is_good_for_research = {
 		has_available_jobs = astrometeorologist
 		has_available_jobs = astrometeorologist_hive
 		has_available_jobs = astrometeorologist_machine
+		has_available_jobs = geologist
+		has_available_jobs = drone_geologist
+		has_available_jobs = wrangler
+		has_available_jobs = rancher
+		has_available_jobs = drone_wrangler
 	}
 }
 
@@ -298,6 +308,13 @@ ybs_planet_is_good_for_unity = {
 		has_forbidden_jobs = robot_caretaker
 		has_forbidden_jobs = overlord_manager
 		has_forbidden_jobs = storm_dancer
+		has_forbidden_jobs = wonder_curator
+		has_forbidden_jobs = drone_wonder_curator
+		has_forbidden_jobs = historical_curator
+		has_forbidden_jobs = drone_historical_curator
+		has_forbidden_jobs = animal_handler
+		has_forbidden_jobs = beastfighter
+		has_forbidden_jobs = symbiosis_integrator
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -323,6 +340,13 @@ ybs_planet_is_good_for_unity = {
 		has_available_jobs = robot_caretaker
 		has_available_jobs = overlord_manager
 		has_available_jobs = storm_dancer
+		has_available_jobs = wonder_curator
+		has_available_jobs = drone_wonder_curator
+		has_available_jobs = historical_curator
+		has_available_jobs = drone_historical_curator
+		has_available_jobs = animal_handler
+		has_available_jobs = beastfighter
+		has_available_jobs = symbiosis_integrator
 	}
 }
 
@@ -542,6 +566,8 @@ ybs_planet_is_good_for_energy = {
 		has_forbidden_jobs = space_time_anomaly_researcher_gestalt
 		has_forbidden_jobs = myrmeku_power_farmer
 		has_forbidden_jobs = myrmeku_power_farmer_gestalt
+		has_forbidden_jobs = treasure_gatherer
+		has_forbidden_jobs = treasure_gatherer_gestalt
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -551,6 +577,8 @@ ybs_planet_is_good_for_energy = {
 		has_available_jobs = space_time_anomaly_researcher_gestalt
 		has_available_jobs = myrmeku_power_farmer
 		has_available_jobs = myrmeku_power_farmer_gestalt
+		has_available_jobs = treasure_gatherer
+		has_available_jobs = treasure_gatherer_gestalt
 	}
 }
 
@@ -567,6 +595,8 @@ ybs_planet_is_good_for_farming = {
 		has_forbidden_jobs = titan_hunter
 		has_forbidden_jobs = puddle_technician
 		has_forbidden_jobs = puddle_technician_drone
+		has_forbidden_jobs = trophy_hunter
+		has_forbidden_jobs = hunter_drone
 	}
 	# Check for a free suitable job.
 	OR = {
@@ -576,6 +606,8 @@ ybs_planet_is_good_for_farming = {
 		has_available_jobs = titan_hunter
 		has_available_jobs = puddle_technician
 		has_available_jobs = puddle_technician_drone
+		has_available_jobs = trophy_hunter
+		has_available_jobs = hunter_drone
 	}
 }
 
