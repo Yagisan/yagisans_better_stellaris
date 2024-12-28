@@ -2585,7 +2585,7 @@ storm_attraction_computer = {
 	construction_days = @b1_time
 	potential = {
 		has_cosmic_storms_dlc = yes
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		owner = {
 			has_technology = "tech_storm_manipulation"
 		}
@@ -2647,7 +2647,7 @@ storm_repelling_computer = {
 	construction_days = @b1_time
 	potential = {
 		has_cosmic_storms_dlc = yes
-		is_orbital_ring = no
+		is_normal_starbase = yes
 		owner = {
 			has_technology = "tech_storm_manipulation"
 		}
