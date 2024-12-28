@@ -480,7 +480,7 @@ gateway_ness_restored = {
 				has_grand_archive_dlc = yes
 				exists = from
 				from = {
-					has_origin = origin_treasure_hunters
+					is_treasure_hunter_empire = yes # undercoat: moved to scripted trigger
 					has_special_project = ACTIVATE_GATEWAY_PROJECT
 				}
 				fromfrom = {
