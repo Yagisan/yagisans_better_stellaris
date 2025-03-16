@@ -15,7 +15,7 @@
 # Set primary habitability to 0.70 (was 0.80)
 # Set secondary habitability to 0.50 (was 0.60)
 # Set tertiary habitability to 0.10 (was 0.20)
-@primary = 0.6
+@primary = 0.7
 @secondary = 0.5
 @tertiary = 0.1
 @machine_primary = 0.75
