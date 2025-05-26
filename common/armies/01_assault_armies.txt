@@ -566,6 +566,42 @@ gene_warrior_army = {
 	}
 }
 
+# Wilderness Pre-sapient Army
+wilderness_pre_sapient_assault_army = {
+	defensive = no
+	is_pop_spawned = no
+	health = 3.25
+	damage = 1.5
+	morale = 0.5
+	morale_damage = 1.25
+	has_morale = yes
+	collateral_damage = 5
+	war_exhaustion = 0.25
+	icon = GFX_wilderness_army_type_assault
+	prerequisites = {
+		"tech_assault_armies"
+	}
+	has_species = no
+	pop_limited = no
+	resources = {
+		category = armies
+		cost = {
+			food = 200
+		}
+		upkeep = {
+			food = 1
+			energy = 1
+		}
+	}
+	time = 90
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+}
+
 ### Machine Empire Armies
 # Hunter-Killer Armies
 machine_assault_1 = {
@@ -978,5 +1014,74 @@ individual_machine_assault_3 = {
 	}
 	ai_weight = {
 		base = 50
+	}
+}
+
+# Perfected Clone Armies
+perfected_clone_army = {
+	damage = 1.5	# 2.25 - 4.50
+	health = 1.5	# 300
+	morale = 1.5	# 300
+	morale_damage = 1	# 1.50 - 3.00
+	collateral_damage = 0.5	# 50%
+	war_exhaustion = 0.25	# 25%
+	time = 30
+	icon = GFX_army_type_clone
+	pop_limited = no
+	resources = {
+		category = armies
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
+			minerals = 100
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 100
+			mult = @mineral_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	show_tech_unlock_if = {
+		OR = {
+			has_active_tradition = tr_cloning_somatic_synthesization
+			has_active_tradition = tr_cloning_somatic_synthesization_clone_army
+		}
+	}
+	potential_country = {
+		OR = {
+			has_active_tradition = tr_cloning_somatic_synthesization
+			has_active_tradition = tr_cloning_somatic_synthesization_clone_army
+		}
+	}
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				has_trait = "trait_limited_cybernetic"
+				is_sapient = no
+			}
+		}
+	}
+	ai_weight = {
+		base = 100
+		modifier = {
+			set = 0
+			is_fallen_empire = yes
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_clone_army
+		}
 	}
 }
