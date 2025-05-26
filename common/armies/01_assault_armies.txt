@@ -1,4 +1,4 @@
-#Defensive armies can't transport of the planet
+#Defensive armies can't transport off the planet
 #maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
 #ai_weight: as standard, but note that it pre-filters by whether the country can recruit this army (measuring by whether it is an assault army, whether it has the tech prereqs, and whether it passes potential_country)
@@ -18,7 +18,21 @@ assault_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 100
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 100
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 1
@@ -27,14 +41,15 @@ assault_army = {
 	show_tech_unlock_if = {
 		OR = {
 			is_machine_empire = no
-			is_machine_assimilator = yes
+			has_valid_civic = civic_machine_assimilator
 		}
 	}
 	potential_country = {
 		OR = {
 			is_machine_empire = no
-			is_machine_assimilator = yes
+			has_valid_civic = civic_machine_assimilator
 		}
+		is_wilderness_empire = no
 	}
 	potential = {
 		from = {
@@ -55,7 +70,10 @@ assault_army = {
 				has_technology = tech_telepathy
 				has_technology = tech_gene_seed_purification
 				AND = {
-					is_militarist = yes
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
 					has_technology = tech_gene_banks
 				}
 			}
@@ -71,7 +89,7 @@ assault_army = {
 					has_ai_personality_behaviour = robot_liberator
 					has_technology = tech_droid_workers
 				}
-				has_reanimated_armies = yes
+				has_valid_civic = civic_reanimated_armies
 			}
 		}
 	}
@@ -90,7 +108,21 @@ slave_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 50
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 50
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 0.5
@@ -115,17 +147,21 @@ slave_army = {
 				}
 			}
 		}
-		any_owned_pop = {
+		any_owned_pop_group = {
 			is_pop_category = slave
 		}
 	}
 	potential_country = {
+		OR = {
 		has_policy_flag = slavery_allowed
+			has_exploited_disconnected_drones = yes
+		}
 		is_machine_empire = no
+		is_wilderness_empire = no
 	}
 	potential = {
 		owner = {
-			any_owned_pop = {
+			any_owned_pop_group = {
 				is_pop_category = slave
 				is_same_species = from
 			}
@@ -151,7 +187,10 @@ slave_army = {
 				has_technology = tech_telepathy
 				has_technology = tech_gene_seed_purification
 				AND = {
-					is_militarist = yes
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
 					has_technology = tech_gene_banks
 				}
 				AND = {
@@ -177,7 +216,21 @@ clone_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 75
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 75
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 0.75
@@ -189,14 +242,15 @@ clone_army = {
 	show_tech_unlock_if = {
 		OR = {
 			is_machine_empire = no
-			is_machine_assimilator = yes
+			has_civic = civic_machine_assimilator
 		}
 	}
 	potential_country = {
 		OR = {
 			is_machine_empire = no
-			is_machine_assimilator = yes
+			has_civic = civic_machine_assimilator
 		}
+		is_wilderness_empire = no
 	}
 	potential = {
 		from = {
@@ -217,14 +271,17 @@ clone_army = {
 				has_technology = tech_telepathy
 				has_technology = tech_gene_seed_purification
 				NAND = {
-					is_militarist = yes
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
 					has_technology = tech_gene_banks
 				}
 			}
 		}
 		modifier = {
 			factor = 2
-			is_clone_army_empire = yes
+			has_origin = origin_clone_army
 		}
 	}
 }
@@ -243,7 +300,21 @@ robotic_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 150
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 150
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 1.5
@@ -251,6 +322,7 @@ robotic_army = {
 	}
 	potential_country = {
 		is_machine_empire = no
+		is_wilderness_empire = no
 	}
 	potential = {
 		from = {
@@ -307,7 +379,21 @@ psionic_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 250
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 250
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 2.5
@@ -318,6 +404,7 @@ psionic_army = {
 	}
 	potential_country = {
 		is_machine_empire = no
+		is_wilderness_empire = no
 	}
 	potential = {
 		from = {
@@ -325,7 +412,10 @@ psionic_army = {
 				NOT = {
 					host_has_dlc = "Utopia"
 				}
-				has_psionic_species_trait = yes
+				OR = {
+					has_trait = trait_latent_psionic
+					has_trait = trait_psionic
+				}
 			}
 			NOR = {
 				has_trait = "trait_mechanical"
@@ -370,7 +460,21 @@ xenomorph_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 200
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 2
@@ -378,6 +482,7 @@ xenomorph_army = {
 	}
 	potential_country = {
 		is_machine_empire = no
+		is_wilderness_empire = no
 	}
 	prerequisites = {
 		"tech_morphogenetic_field_mastery"
@@ -412,7 +517,21 @@ gene_warrior_army = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 300
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 300
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 3
@@ -423,6 +542,7 @@ gene_warrior_army = {
 	}
 	potential_country = {
 		is_machine_empire = no
+		is_wilderness_empire = no
 	}
 	potential = {
 		from = {
@@ -461,7 +581,21 @@ machine_assault_1 = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 100
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 100
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 1
@@ -504,7 +638,21 @@ machine_assault_2 = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 200
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 2
@@ -540,7 +688,21 @@ machine_assault_3 = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 800
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 800
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 8
@@ -582,10 +744,10 @@ undead_army = {
 		}
 	}
 	show_tech_unlock_if = {
-		has_reanimated_armies = yes
+		has_valid_civic = civic_reanimated_armies
 	}
 	potential_country = {
-		has_reanimated_armies = yes
+		has_valid_civic = civic_reanimated_armies
 	}
 	potential = {
 		from = {
@@ -597,10 +759,6 @@ undead_army = {
 		}
 		planet = {
 			has_active_building = building_dread_encampment
-			num_assigned_jobs = {
-				job = necromancer
-				value >= 1
-			}
 		}
 	}
 	ai_weight = {
@@ -685,7 +843,21 @@ individual_machine_assault_1 = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 100
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 100
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 1
@@ -728,7 +900,21 @@ individual_machine_assault_2 = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 200
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 2
@@ -764,7 +950,21 @@ individual_machine_assault_3 = {
 	resources = {
 		category = armies
 		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
 			minerals = 800
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = 800
+			mult = @mineral_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 8
