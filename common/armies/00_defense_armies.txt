@@ -39,7 +39,7 @@ defense_army = {
 			is_primitive = no
 			OR = {
 				is_machine_empire = no
-				is_machine_assimilator = yes
+				has_valid_civic = civic_machine_assimilator
 			}
 		}
 	}
@@ -67,13 +67,7 @@ undead_defense_army = {
 		}
 		planet = {
 			OR = {
-				AND = {
 					has_active_building = building_dread_encampment
-					num_assigned_jobs = {
-						job = necromancer
-						value >= 1
-					}
-				}
 				has_planet_flag = active_dread_outpost
 			}
 		}
@@ -192,14 +186,14 @@ offspring_defense = {
 			}
 			AND = {
 				planet.owner = {
-					is_progenitor_hive_empire = yes
+					has_origin = origin_progenitor_hive
 				}
 				OR = {
 					AND = {
 						has_building = building_offspring_nest
 						num_assigned_jobs = {
-							job = offspring_drone
-							value >= 1
+							job = spawning_drone
+							value >= 100
 						}
 					}
 					has_deposit = d_progenitor
