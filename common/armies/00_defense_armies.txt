@@ -215,6 +215,27 @@ offspring_defense = {
 	}
 }
 
+# Wilderness Defense
+wilderness_pre_sapient_defence_army = {
+	defensive = yes
+	is_pop_spawned = yes
+	health = 1.25
+	damage = 1.5
+	morale = 1.25
+	collateral_damage = 0
+	war_exhaustion = 0.25
+	icon = GFX_wilderness_army_type_defensive
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = yes
+		}
+		from = {
+			is_sapient = no
+		}
+	}
+}
+
 ################################
 # Sovereign Guardianship Civic #
 ################################
