@@ -24,7 +24,7 @@ occupation_army = {
 		owner = {
 			OR = {
 				is_machine_empire = no
-				is_machine_assimilator = yes
+				has_valid_civic = civic_machine_assimilator
 			}
 		}
 	}
@@ -75,7 +75,6 @@ machine_occupation_army = {
 		owner = {
 			is_machine_empire = yes
 		}
-		# undercoat: moved to scripted trigger
 		from = {
 			has_trait = "trait_machine_unit"
 		}
