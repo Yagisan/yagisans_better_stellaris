@@ -761,6 +761,22 @@ fruitful_army = {
 	health = 2
 	has_morale = no
 	icon = GFX_army_type_xenomorph
+	potential_country = {
+		always = no
+	}
+}
+
+# behemoth Armies
+# Spawned when a planet is being bombed by a small behemoth
+behemoth_army = {
+	defensive = yes
+	damage = 6
+	morale_damage = 6
+	collateral_damage = 6
+	war_exhaustion = 0.25
+	health = 10
+	has_morale = no
+	icon = GFX_army_type_behemoth
 	has_species = no
 	potential_country = {
 		always = no
